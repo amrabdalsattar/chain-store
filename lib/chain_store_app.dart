@@ -1,5 +1,3 @@
-import 'package:connect_chain_market/core/routing/routes.dart';
-
 import 'core/helpers/cache/user_data_operator.dart';
 import 'core/routing/app_router.dart';
 import 'core/theming/themes_helper.dart';
@@ -23,7 +21,7 @@ class ChainStoreApp extends StatelessWidget {
             title: 'ChainStore',
             theme: ThemesHelper.lightTheme,
             onGenerateRoute: AppRouter.generateRoute,
-            initialRoute: Routes.onboardingRoute,
+            initialRoute: UserDataOperator.getInitialRoute(),
           ),
     );
   }

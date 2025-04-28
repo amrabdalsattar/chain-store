@@ -24,16 +24,10 @@ class DialogsHelper {
       builder:
           (context) => AlertDialog(
             icon: const Icon(Icons.error, color: ColorsHelper.red, size: 32),
-            content: Text(
-              error,
-              // style: AppTextStyles.cairoPrimaryBold16,
-            ),
+            content: Text(error, style: AppTextStyles.rubikPrimaryBold16),
             actions: [
               TextButton(
-                child: Text(
-                  'OK',
-                  // style: AppTextStyles.cairoPrimaryBold16,
-                ),
+                child: Text('OK', style: AppTextStyles.rubikPrimaryBold16),
                 onPressed: () {
                   context.pop();
                 },
@@ -66,8 +60,9 @@ class DialogsHelper {
             children: [
               Text(
                 message,
-                // style: AppTextStyles.cairoBlackSemiBold16
-                //     .copyWith(fontWeight: FontWeight.w400),
+                style: AppTextStyles.robotoBlackSemiBold16.copyWith(
+                  fontWeight: FontWeight.w400,
+                ),
                 textAlign: TextAlign.center,
               ),
               verticalSpace(12),
@@ -140,17 +135,14 @@ class DialogsHelper {
       context: context,
       builder:
           (context) => AlertDialog(
-            content: Text(
-              message,
-              // style: AppTextStyles.cairoBlackBold15,
-            ),
+            content: Text(message, style: AppTextStyles.rubikBlackBold15),
             actions: [
               TextButton(
                 child: Text(
                   'Cancel',
-                  // style: AppTextStyles.cairoPrimaryBold16.copyWith(
-                  //   color: ColorsHelper.rejectedOrderBackGroundColor,
-                  // ),
+                  style: AppTextStyles.rubikPrimaryBold16.copyWith(
+                    color: ColorsHelper.rejectedOrderBackGroundColor,
+                  ),
                 ),
                 onPressed: () {
                   onCancel();
@@ -160,9 +152,9 @@ class DialogsHelper {
               TextButton(
                 child: Text(
                   'Yes',
-                  // style: AppTextStyles.cairoPrimaryBold16.copyWith(
-                  //   color: ColorsHelper.green,
-                  // ),
+                  style: AppTextStyles.rubikPrimaryBold16.copyWith(
+                    color: ColorsHelper.green,
+                  ),
                 ),
                 onPressed: () {
                   onContinue();

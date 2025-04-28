@@ -99,7 +99,7 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.medium,
   );
 
-  static TextStyle carioGrayRegular10 = TextStyle(
+  static TextStyle rubikGrayRegular10 = TextStyle(
     fontSize: 10.sp,
     color: ColorsHelper.gray,
     fontWeight: FontWeightHelper.regular,
@@ -150,12 +150,12 @@ class AppTextStyles {
     color: ColorsHelper.gray,
     fontWeight: FontWeightHelper.regular,
   );
-  static TextStyle carioGrayBold12 = TextStyle(
+  static TextStyle rubikGrayBold12 = TextStyle(
     fontSize: 12.sp,
     color: ColorsHelper.gray,
     fontWeight: FontWeightHelper.bold,
   );
-  static TextStyle carioRedBold12 = TextStyle(
+  static TextStyle rubikRedBold12 = TextStyle(
     fontSize: 12.sp,
     color: ColorsHelper.red,
     fontWeight: FontWeightHelper.bold,
