@@ -26,10 +26,7 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 horizontalSpace(double.infinity),
-                const Logo(
-                  height: 61,
-                  width: 51,
-                ),
+                const Logo(height: 61, width: 51),
                 const ScreenLabel(
                   title: 'قم بتسجيل الدخول الي حسابك',
                   subTitle: 'ادخل لحسابك وابدأ رحلتك معنا !',
@@ -37,9 +34,8 @@ class LoginScreen extends StatelessWidget {
                 verticalSpace(48),
                 const LoginForm(),
                 ForgotPasswordTextButton(
-                  onPressed: () => context.pushNamed(
-                    Routes.forgetPasswordScreenRoute,
-                  ),
+                  onPressed:
+                      () => context.pushNamed(Routes.forgetPasswordScreenRoute),
                 ),
                 verticalSpace(40),
                 const LoginButtonBlocConsumer(),

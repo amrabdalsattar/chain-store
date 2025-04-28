@@ -4,7 +4,7 @@ import 'colors_helper.dart';
 
 class ThemesHelper {
   static ThemeData lightTheme = ThemeData(
-    fontFamily: 'cairo',
+    fontFamily: 'roboto',
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: ColorsHelper.primaryColor,
       selectionHandleColor: ColorsHelper.primaryColor,
