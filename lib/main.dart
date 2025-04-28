@@ -1,4 +1,4 @@
-import 'package:connect_chain_market/chain_market_app.dart';
+import 'chain_market_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
