@@ -71,7 +71,7 @@ class CustomTextFormField extends StatelessWidget {
         focusColor: ColorsHelper.primaryColor,
         hintText: hintText,
         suffixIcon: suffixIcon,
-        // hintStyle: AppTextStyles.tajawalGrayRegular15.copyWith(height: 1.8),
+        hintStyle: AppTextStyles.robotoGrayRegular15.copyWith(height: 1.8),
         fillColor: fillColor ?? ColorsHelper.offWhite,
         filled: filled ?? true,
         focusedBorder:

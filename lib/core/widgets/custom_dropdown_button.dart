@@ -55,7 +55,7 @@ class CustomDropdownButton extends StatelessWidget {
           ),
         ),
       ),
-      // style: AppTextStyles.tajawalDarkGrayMedium14,
+      style: AppTextStyles.robotoDarkGrayMedium14,
       icon: const Icon(Icons.arrow_drop_down, color: ColorsHelper.gray),
     );
   }

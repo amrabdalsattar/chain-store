@@ -16,7 +16,7 @@ class ResendOtpButton extends StatelessWidget {
                   }
                   : null,
           child: Text(
-            'اعادة الإرسال',
+            'Re-send OTP',
             // style: AppTextStyles.cairoSemiOpacityBlackRegular16
             //     .copyWith(fontWeight: FontWeightHelper.medium),
           ),

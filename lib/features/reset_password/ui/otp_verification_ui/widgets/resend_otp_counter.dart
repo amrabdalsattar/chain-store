@@ -14,7 +14,7 @@ class ResendOtpCounter extends StatelessWidget {
       },
       builder: (context, remainingSeconds) {
         return Text(
-          'إعادة الإرسال خلال $remainingSeconds',
+          'Resend in $remainingSeconds',
           // style: AppTextStyles.cairoSemiGreyRegular12.copyWith(fontSize: 12),
         );
       },

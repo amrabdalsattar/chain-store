@@ -4,29 +4,27 @@ import '../helpers/app_images.dart';
 
 class CustomLoadingIndicator extends StatelessWidget {
   final String title;
-  const CustomLoadingIndicator({
-    super.key,
-    this.title = 'تحميل...',
-  });
+  const CustomLoadingIndicator({super.key, this.title = 'Loading...'});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SpinningLogo(),
-        SizedBox(height: 16),
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SpinningLogo(),
+          SizedBox(height: 16),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }
 
@@ -43,9 +41,10 @@ class _SpinningLogoState extends State<SpinningLogo>
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2))
-          ..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..repeat();
     super.initState();
   }
 

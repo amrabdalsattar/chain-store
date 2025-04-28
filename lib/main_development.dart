@@ -1,4 +1,4 @@
-import 'chain_market_app.dart';
+import 'chain_store_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ void main() async {
 
   await setupManager.initialSetup();
 
-  runApp(localizationSetup(const ChainMarketApp()));
+  runApp(localizationSetup(const ChainStoreApp()));
 }
 
 EasyLocalization localizationSetup(Widget myApp) {

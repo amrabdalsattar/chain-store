@@ -33,7 +33,7 @@ class CustomEmptyWidget extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             message,
-            // style: AppTextStyles.cairoBlackSemiBold16,
+            style: AppTextStyles.robotoBlackSemiBold16,
             textAlign: TextAlign.center,
           ),
         ],

@@ -14,32 +14,37 @@ class ForgetPasswordButtonBlocConsumer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
-      listenWhen: (previous, current) =>
-          current is ForgetPasswordLoadingState ||
-          current is ForgetPasswordSuccessState ||
-          current is ForgetPasswordErrorState,
+      listenWhen:
+          (previous, current) =>
+              current is ForgetPasswordLoadingState ||
+              current is ForgetPasswordSuccessState ||
+              current is ForgetPasswordErrorState,
       listener: (context, state) {
         state.whenOrNull(
-            forgetPasswordError: (apiErrorModel) =>
-                DialogsHelper.showErrorDialog(
-                    context, apiErrorModel.getErrorMessages()!),
-            forgetPasswordSuccess: (successMessage) {
-              DialogsHelper.showSnackBar(context, successMessage);
+          forgetPasswordError:
+              (apiErrorModel) => DialogsHelper.showErrorDialog(
+                context,
+                apiErrorModel.getErrorMessages()!,
+              ),
+          forgetPasswordSuccess: (successMessage) {
+            DialogsHelper.showSnackBar(context, successMessage);
 
-              context.pushNamed(
-                Routes.otpScreenRoute,
-                arguments: context.read<ResetPasswordCubit>(),
-              );
-            });
+            context.pushNamed(
+              Routes.otpScreenRoute,
+              arguments: context.read<ResetPasswordCubit>(),
+            );
+          },
+        );
       },
-      builder: (context, state) => CustomButton(
-        title: 'إرسال الرمز',
-        width: double.infinity,
-        isLoading: state is ForgetPasswordLoadingState,
-        onTap: () {
-          context.read<ResetPasswordCubit>().emitForgetPasswordStates();
-        },
-      ),
+      builder:
+          (context, state) => CustomButton(
+            title: 'Send OTP',
+            width: double.infinity,
+            isLoading: state is ForgetPasswordLoadingState,
+            onTap: () {
+              context.read<ResetPasswordCubit>().emitForgetPasswordStates();
+            },
+          ),
     );
   }
 }

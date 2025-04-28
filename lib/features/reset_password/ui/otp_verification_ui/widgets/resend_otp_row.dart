@@ -29,9 +29,10 @@ class ResendOtpRow extends StatelessWidget {
                       }
                       : null,
               child: Text(
-                'اعادة الإرسال',
-                // style: AppTextStyles.cairoSemiOpacityBlackRegular16
-                //     .copyWith(fontWeight: FontWeightHelper.medium),
+                'Re-send',
+                style: AppTextStyles.rubikSemiOpacityBlackRegular16.copyWith(
+                  fontWeight: FontWeightHelper.medium,
+                ),
               ),
             ),
           ],

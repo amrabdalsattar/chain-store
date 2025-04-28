@@ -26,7 +26,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
           CustomTextFormField(
             controller:
                 context.read<ResetPasswordCubit>().newPasswordController,
-            hintText: 'أدخل كلمة المرور',
+            hintText: 'Enter password',
             prefixIconPath: AppImages.lockIcon,
             isObscure: isPassObscure,
             suffixIcon: InkWell(
@@ -51,22 +51,22 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'يرجى إدخال كلمة مرور صالحة';
+                return 'Please enter a valid password.';
               }
               if (value.length < 8) {
-                return 'كلمة المرور يجب أن تكون أطول من 8 خانات';
+                return 'The password must be longer than 8 characters.';
               }
               if (!AppRegex.hasUpperCase(value)) {
-                return 'كلمة المرور يجب أن تحتوي على حرف كبير';
+                return 'The password must contain at least one uppercase letter.';
               }
               if (!AppRegex.hasSpecialCharacter(value)) {
-                return 'كلمة المرور يجب أن تحتوي على حرف خاص';
+                return 'The password must contain a special character.';
               }
               if (!AppRegex.hasNumber(value)) {
-                return 'كلمة المرور يجب أن تحتوي على رقم';
+                return 'The password must contain a number.';
               }
               if (!AppRegex.hasLowerCase(value)) {
-                return 'كلمة المرور يجب أن تحتوي على حرف صغير';
+                return 'The password must contain a lowercase letter.';
               }
             },
           ),

@@ -24,7 +24,7 @@ class _DoubleClickedPopScopeState extends State<DoubleClickedPopScope> {
         if (_lastBackPressTime == null ||
             now.difference(_lastBackPressTime!) > const Duration(seconds: 2)) {
           _lastBackPressTime = now;
-          DialogsHelper.showBasicToast('اضغط رجوع مرة اخرى للخروج');
+          DialogsHelper.showBasicToast('Press back again to exit.');
         } else {
           context.pop();
         }

@@ -14,29 +14,36 @@ class ResetPasswordBlocConsumerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
-      listenWhen: (previous, current) =>
-          current is ResetPasswordLoadingState ||
-          current is ResetPasswordErrorState ||
-          current is ResetPasswordSuccessState,
+      listenWhen:
+          (previous, current) =>
+              current is ResetPasswordLoadingState ||
+              current is ResetPasswordErrorState ||
+              current is ResetPasswordSuccessState,
       listener: (context, state) {
         state.whenOrNull(
-          resetPasswordError: (apiErrorModel) => DialogsHelper.showErrorDialog(
-              context, apiErrorModel.getErrorMessages()!),
+          resetPasswordError:
+              (apiErrorModel) => DialogsHelper.showErrorDialog(
+                context,
+                apiErrorModel.getErrorMessages()!,
+              ),
           resetPasswordSuccess: (message) {
             DialogsHelper.showSnackBar(context, message);
-            context.pushNamedAndRemoveUntil(Routes.loginRoute,
-                predicate: (route) => false);
+            context.pushNamedAndRemoveUntil(
+              Routes.loginRoute,
+              predicate: (route) => false,
+            );
           },
         );
       },
-      builder: (context, state) => CustomButton(
-        title: 'حفظ كلمة المرور',
-        width: double.infinity,
-        isLoading: state is ResetPasswordLoadingState,
-        onTap: () {
-          context.read<ResetPasswordCubit>().emitResetPasswordStates();
-        },
-      ),
+      builder:
+          (context, state) => CustomButton(
+            title: 'Save password',
+            width: double.infinity,
+            isLoading: state is ResetPasswordLoadingState,
+            onTap: () {
+              context.read<ResetPasswordCubit>().emitResetPasswordStates();
+            },
+          ),
     );
   }
 }

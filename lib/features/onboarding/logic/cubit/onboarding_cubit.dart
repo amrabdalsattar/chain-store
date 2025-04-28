@@ -14,23 +14,23 @@ class OnboardingCubit extends Cubit<int> {
 
   List<OnboardingPageModel> onboardingPages = [
     OnboardingPageModel(
-      title: 'كل الموردين في مكان واحد',
+      title: 'All the suppliers in one place.',
       description:
-          'نوفر لك شبكة واسعة من الموردين لتتمكن من العثور على المنتجات التي تحتاجها بسهولة، مع خيارات متعددة وأسعار تنافسية لتناسب احتياجات عملك',
+          'We provide you with a wide network of suppliers so you can easily find the products you need, with multiple options and competitive prices to suit your business needs.',
       imagePath: AppImages.firstOnboardingPage,
     ),
     OnboardingPageModel(
-      title: 'إدارة طلباتك بكل سهولة',
+      title: 'Manage your orders with ease',
       description:
-          'تابع جميع طلباتك من مكان واحد، من تقديم الطلب حتى استلامه، مع إشعارات فورية وتحديثات لحظية لضمان تجربة سلسة ومنظمة',
+          'Track all your orders from one place — from placing the order to receiving it — with instant notifications and real-time updates to ensure a smooth and organized experience.',
       imagePath: AppImages.secondOnboardingPage,
     ),
     OnboardingPageModel(
-      title: 'تواصل مباشر وسريع',
+      title: 'Direct and fast communication.',
       description:
-          'تواصل مع الموردين مباشرة داخل التطبيق، ناقش تفاصيل الطلبات، اسأل عن المنتجات، واتخذ قرارات مستنيرة بسرعة وسهولة دون أي تعقيدات',
+          'Communicate directly with suppliers within the app — discuss order details, inquire about products, and make informed decisions quickly and easily without any complications.',
       imagePath: AppImages.thirdOnboardingPage,
-    )
+    ),
   ];
 
   void updatePageIndex(int index) => emit(index);

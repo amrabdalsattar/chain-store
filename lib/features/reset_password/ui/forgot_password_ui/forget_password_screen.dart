@@ -27,12 +27,12 @@ class ForgetPasswordScreen extends StatelessWidget {
                 const ScreenLabel(
                   title: ConstantString.forgetPassword,
                   subTitle:
-                      'لا تقلق! فقط ادخل عنوان بريدك الإلكتروني أدناه وسنرسل لك رمز التحقق لإعادة تعيين كلمة المرور',
+                      'Don’t worry—just enter your email address below, and we’ll send you a verification code to reset your password.',
                 ),
                 verticalSpace(24),
                 Text(
                   ConstantString.email,
-                  // style: AppTextStyles.cairoDarkGrayBold16,
+                  style: AppTextStyles.rubikDarkGrayBold16,
                 ),
                 verticalSpace(8),
                 const ForgetPasswordForm(),

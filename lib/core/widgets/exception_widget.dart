@@ -29,7 +29,7 @@ class ExceptionWidget extends StatelessWidget {
           child: InkWell(
             onTap: () => retryFunction(),
             child: const Text(
-              'retry',
+              'Retry',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.red, fontSize: 20),
             ),

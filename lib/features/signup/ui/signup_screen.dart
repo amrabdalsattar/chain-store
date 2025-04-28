@@ -18,21 +18,22 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding:
-              EdgeInsets.only(left: 32.w, right: 32.w, top: 30.h, bottom: 24.h),
+          padding: EdgeInsets.only(
+            left: 32.w,
+            right: 32.w,
+            top: 30.h,
+            bottom: 24.h,
+          ),
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 horizontalSpace(double.infinity),
-                const Logo(
-                  height: 61,
-                  width: 51,
-                ),
+                const Logo(height: 61, width: 51),
                 const ScreenLabel(
-                  title: 'قم بانشاء حساب جديد',
-                  subTitle: 'سجّل حسابك وابدأ إدارة طلباتك بكل سهولة  !',
+                  title: 'Create a new account.',
+                  subTitle: 'Sign up and start managing your orders with ease!',
                 ),
                 verticalSpace(48),
                 const SignupForm(),
@@ -42,11 +43,12 @@ class SignupScreen extends StatelessWidget {
                 const SocialMediaRegistrationWidgets(),
                 verticalSpace(24),
                 ActionableTextRow(
-                    onTap: () {
-                      context.pop();
-                    },
-                    text: ' لديك حساب ؟ ',
-                    actionText: 'تسجيل الدخول')
+                  onTap: () {
+                    context.pop();
+                  },
+                  text: 'Do you have an account?',
+                  actionText: 'Login',
+                ),
               ],
             ),
           ),

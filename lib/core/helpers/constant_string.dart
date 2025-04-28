@@ -1,13 +1,13 @@
 class ConstantString {
   static const emailConfirmationSuccessMessage =
-      'تم إرسال رابط التأكيد، يرجى تأكيد بريدك الإلكتروني';
-  static const unknownError = 'خطأ غير معروف';
-  static const password = 'كلمة السر';
-  static const forgetPassword = 'نسيت كلمة السر؟';
-  static const enterPassword = 'من فضلك ادخل كلمة السر';
-  static const confirmPassword = 'تاكيد كلمة السر';
-  static const email = 'البريد الالكتروني';
-  static const otpVerified = 'تم التحقق من الرمز المؤقت بنجاح';
-  static const otpSentMessage = 'تم إرسال الرمز المؤقت إلى بريدك الإلكتروني';
-  static const passwordResetMessage = 'تم إعادة تعيين كلمة المرور بنجاح';
+      'A confirmation link has been sent—please verify your email address.';
+  static const unknownError = 'Unknown error';
+  static const password = 'Password';
+  static const forgetPassword = 'Forgot password?';
+  static const enterPassword = 'Please Enter your password';
+  static const confirmPassword = 'Password confirmation';
+  static const email = 'Email';
+  static const otpVerified = 'The OTP has been successfully verified.';
+  static const otpSentMessage = 'The OTP has been sent to your email.';
+  static const passwordResetMessage = 'Password has been reset successfully.';
 }

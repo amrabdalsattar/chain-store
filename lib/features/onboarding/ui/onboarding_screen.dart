@@ -27,9 +27,9 @@ class OnboardingScreen extends StatelessWidget {
                 controller: cubit.pageController,
                 itemCount: pages.length,
                 onPageChanged: cubit.updatePageIndex,
-                itemBuilder: (context, index) => OnboardingCard(
-                  onboardingPageModel: pages[index],
-                ),
+                itemBuilder:
+                    (context, index) =>
+                        OnboardingCard(onboardingPageModel: pages[index]),
               ),
             ),
             Padding(
@@ -38,19 +38,20 @@ class OnboardingScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BlocBuilder<OnboardingCubit, int>(
-                    builder: (context, index) => PageIndicator(
-                      length: pages.length,
-                      activeIndex: index,
-                    ),
+                    builder:
+                        (context, index) => PageIndicator(
+                          length: pages.length,
+                          activeIndex: index,
+                        ),
                   ),
                   CustomButton(
-                    title: 'التالي',
+                    title: 'Next',
                     width: 155.w,
                     elevation: 2,
                     onTap: () {
                       cubit.nextPage(context);
                     },
-                  )
+                  ),
                 ],
               ),
             ),

@@ -39,7 +39,7 @@ class OtpTextField extends StatelessWidget {
           contentPadding: EdgeInsets.only(top: 16.h, bottom: 16.h),
           focusColor: ColorsHelper.primaryColor,
           hintText: '-',
-          // hintStyle: AppTextStyles.cairoFadedBlackRegular16,
+          hintStyle: AppTextStyles.robotoFadedBlackRegular16,
           fillColor: ColorsHelper.offWhite,
           filled: true,
           focusedBorder: OutlineInputBorder(

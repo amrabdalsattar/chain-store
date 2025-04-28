@@ -1,3 +1,5 @@
+import 'package:connect_chain_market/core/routing/routes.dart';
+
 import 'core/helpers/cache/user_data_operator.dart';
 import 'core/routing/app_router.dart';
 import 'core/theming/themes_helper.dart';
@@ -5,8 +7,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ChainMarketApp extends StatelessWidget {
-  const ChainMarketApp({super.key});
+class ChainStoreApp extends StatelessWidget {
+  const ChainStoreApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +16,14 @@ class ChainMarketApp extends StatelessWidget {
       designSize: Size(390, 844),
       builder:
           (_, child) => MaterialApp(
-            locale: Locale("ar"),
+            locale: Locale("en"),
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,
-            title: 'ChainMarket',
+            title: 'ChainStore',
             theme: ThemesHelper.lightTheme,
             onGenerateRoute: AppRouter.generateRoute,
-            initialRoute: UserDataOperator.getInitialRoute(),
+            initialRoute: Routes.onboardingRoute,
           ),
     );
   }

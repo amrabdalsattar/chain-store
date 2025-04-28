@@ -22,8 +22,8 @@ class SocialMediaRegistrationWidgets extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                'او',
-                // style: AppTextStyles.cairoSemiOpacityBlackRegular16,
+                'or',
+                style: AppTextStyles.rubikSemiOpacityBlackRegular16,
               ),
             ),
             Expanded(

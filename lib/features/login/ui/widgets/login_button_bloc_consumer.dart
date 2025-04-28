@@ -15,26 +15,32 @@ class LoginButtonBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       bloc: context.read<LoginCubit>(),
-      listenWhen: (previous, current) =>
-          current is LoginErrorState ||
-          current is LoginSuccessState ||
-          current is LoginLoadingState,
+      listenWhen:
+          (previous, current) =>
+              current is LoginErrorState ||
+              current is LoginSuccessState ||
+              current is LoginLoadingState,
       listener: (context, state) {
         state.whenOrNull(
-          error: (apiErrorModel) => DialogsHelper.showErrorDialog(
-              context, apiErrorModel.getErrorMessages()!),
-          success: (loginResponseModel) =>
-              context.pushNamed(Routes.preLoginScreenRoute),
+          error:
+              (apiErrorModel) => DialogsHelper.showErrorDialog(
+                context,
+                apiErrorModel.getErrorMessages()!,
+              ),
+          success:
+              (loginResponseModel) =>
+                  context.pushNamed(Routes.preLoginScreenRoute),
         );
       },
-      builder: (context, state) => CustomButton(
-        title: 'تسجيل الدخول',
-        width: double.infinity,
-        isLoading: state is LoginLoadingState,
-        onTap: () {
-          context.read<LoginCubit>().emitLoginStates();
-        },
-      ),
+      builder:
+          (context, state) => CustomButton(
+            title: 'Sign in',
+            width: double.infinity,
+            isLoading: state is LoginLoadingState,
+            onTap: () {
+              context.read<LoginCubit>().emitLoginStates();
+            },
+          ),
     );
   }
 }

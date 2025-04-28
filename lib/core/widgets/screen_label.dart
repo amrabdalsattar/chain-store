@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../helpers/spacing.dart';
+import '../theming/app_text_styles.dart';
 
 class ScreenLabel extends StatelessWidget {
   final String title;
@@ -12,15 +13,9 @@ class ScreenLabel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          // style: AppTextStyles.cairoDarkGrayBold22,
-        ),
+        Text(title, style: AppTextStyles.rubikDarkGrayBold22),
         verticalSpace(10),
-        Text(
-          subTitle,
-          // style: AppTextStyles.cairoSemiGreyRegular12,
-        ),
+        Text(subTitle, style: AppTextStyles.rubikSemiGreyRegular12),
       ],
     );
   }

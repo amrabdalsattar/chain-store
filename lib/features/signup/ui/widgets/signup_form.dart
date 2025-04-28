@@ -37,11 +37,11 @@ class _SignUpFormState extends State<SignupForm> {
         children: [
           verticalSpace(24),
           CustomTextFormField(
-            hintText: 'الإسم',
+            hintText: 'Name',
             controller: signupCubit.nameController,
             validator: (value) {
               if (value == null || value.isEmpty || AppRegex.hasNumber(value)) {
-                return 'لا يمكن ان يحتوي علي رموز او ارقام';
+                return 'It cannot contain symbols or numbers';
               }
             },
             prefixIconPath: AppImages.personIcon,
@@ -55,7 +55,7 @@ class _SignUpFormState extends State<SignupForm> {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return 'من فضلك ادخل بريد الكتروني صحيح';
+                return 'Please enter a valid email address';
               }
             },
             prefixIconPath: AppImages.emailIcon,
@@ -63,13 +63,13 @@ class _SignUpFormState extends State<SignupForm> {
           ),
           verticalSpace(24),
           CustomTextFormField(
-            hintText: 'رقم الهاتف',
+            hintText: 'Phone Number',
             controller: signupCubit.phoneNumberController,
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isPhoneNumberValid(value)) {
-                return 'من فضلك ادخل رقم هاتف صحيح';
+                return 'Please enter a valid phone number';
               }
             },
             prefixIconPath: AppImages.phoneIcon,
@@ -81,24 +81,29 @@ class _SignUpFormState extends State<SignupForm> {
               signupCubit.changeBusinessType(value ?? '');
             },
             value: null,
-            items: signupCubit.businessTypesList
-                .map((value) =>
-                    DropdownMenuItem<String>(value: value, child: Text(value)))
-                .toList(),
-            hintText: 'نوع المنتج',
+            items:
+                signupCubit.businessTypesList
+                    .map(
+                      (value) => DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      ),
+                    )
+                    .toList(),
+            hintText: "Product's Type",
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'الرجاء إدخال نوع المنتج';
+                return "Please enter the product's type";
               }
             },
           ),
           verticalSpace(24),
           CustomTextFormField(
-            hintText: 'العنوان',
+            hintText: 'Address',
             controller: signupCubit.addressController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'هذه الخانة مطلوبة';
+                return 'This field is required.';
               }
             },
             prefixIconPath: AppImages.addressIcon,
@@ -115,31 +120,35 @@ class _SignUpFormState extends State<SignupForm> {
                   isPassObscure = !isPassObscure;
                 });
               },
-              child: isPassObscure
-                  ? const Icon(
-                      Icons.visibility_off,
-                      color: ColorsHelper.darkBlue,
-                    )
-                  : const Icon(Icons.visibility, color: ColorsHelper.darkBlue),
+              child:
+                  isPassObscure
+                      ? const Icon(
+                        Icons.visibility_off,
+                        color: ColorsHelper.darkBlue,
+                      )
+                      : const Icon(
+                        Icons.visibility,
+                        color: ColorsHelper.darkBlue,
+                      ),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'يرجى إدخال كلمة مرور صالحة';
+                return 'Please enter a valid password.';
               }
               if (value.length < 8) {
-                return 'كلمة المرور يجب أن تكون أطول من 8 خانات';
+                return 'The password must be longer than 8 characters.';
               }
               if (!AppRegex.hasUpperCase(value)) {
-                return 'كلمة المرور يجب أن تحتوي على حرف كبير';
+                return 'The password must contain at least one uppercase letter.';
               }
               if (!AppRegex.hasSpecialCharacter(value)) {
-                return 'كلمة المرور يجب أن تحتوي على حرف خاص';
+                return 'The password must contain a special character.';
               }
               if (!AppRegex.hasNumber(value)) {
-                return 'كلمة المرور يجب أن تحتوي على رقم';
+                return 'The password must contain a number.';
               }
               if (!AppRegex.hasLowerCase(value)) {
-                return 'كلمة المرور يجب أن تحتوي على حرف صغير';
+                return 'The password must contain a lowercase letter.';
               }
             },
           ),
@@ -150,27 +159,32 @@ class _SignUpFormState extends State<SignupForm> {
             prefixIconPath: AppImages.lockIcon,
             isObscure: isRepassObscure,
             suffixIcon: InkWell(
-              overlayColor:
-                  const WidgetStatePropertyAll(ColorsHelper.transparent),
+              overlayColor: const WidgetStatePropertyAll(
+                ColorsHelper.transparent,
+              ),
               onTap: () {
                 setState(() {
                   isRepassObscure = !isRepassObscure;
                 });
               },
-              child: isRepassObscure
-                  ? const Icon(
-                      Icons.visibility_off,
-                      color: ColorsHelper.darkBlue,
-                    )
-                  : const Icon(Icons.visibility, color: ColorsHelper.darkBlue),
+              child:
+                  isRepassObscure
+                      ? const Icon(
+                        Icons.visibility_off,
+                        color: ColorsHelper.darkBlue,
+                      )
+                      : const Icon(
+                        Icons.visibility,
+                        color: ColorsHelper.darkBlue,
+                      ),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'يرجى تأكيد كلمة المرور';
+                return 'Please confirm your password';
               }
               if (value !=
                   context.read<SignupCubit>().passwordController.text) {
-                return 'كلمات المرور غير متوافقة، حاول مرة أخرى.';
+                return 'Passwords do not match, please try again.';
               }
             },
           ),

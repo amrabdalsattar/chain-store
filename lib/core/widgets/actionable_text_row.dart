@@ -17,22 +17,24 @@ class ActionableTextRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: "$text ",
-              // style: AppTextStyles.cairoSemiOpacityBlackRegular16,
-            ),
-            TextSpan(
-              text: actionText,
-              // style: AppTextStyles.cairoPrimaryBold16,
-              recognizer: TapGestureRecognizer()..onTap = onTap,
-            ),
-          ],
+    return Container(
+      child: Align(
+        alignment: Alignment.center,
+        child: RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "$text ",
+                style: AppTextStyles.rubikSemiOpacityBlackRegular16,
+              ),
+              TextSpan(
+                text: actionText,
+                style: AppTextStyles.rubikPrimaryBold16,
+                recognizer: TapGestureRecognizer()..onTap = onTap,
+              ),
+            ],
+          ),
         ),
       ),
     );

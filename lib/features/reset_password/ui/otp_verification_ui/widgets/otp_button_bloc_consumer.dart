@@ -14,18 +14,21 @@ class OtpButtonBlocConsumer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
-      listenWhen: (previous, current) =>
-          current is ResendOtpVerficationSuccess ||
-          current is OtpVerificationLoadingState ||
-          current is OtpVerificationSuccessState ||
-          current is OtpVerificationErrorState,
+      listenWhen:
+          (previous, current) =>
+              current is ResendOtpVerficationSuccess ||
+              current is OtpVerificationLoadingState ||
+              current is OtpVerificationSuccessState ||
+              current is OtpVerificationErrorState,
       listener: (context, state) {
         state.whenOrNull(
-          resendOtpVerificationSuccess: (message) =>
-              DialogsHelper.showSnackBar(context, message),
-          otpVerificationError: (apiErrorModel) =>
-              DialogsHelper.showErrorDialog(
-                  context, apiErrorModel.getErrorMessages()!),
+          resendOtpVerificationSuccess:
+              (message) => DialogsHelper.showSnackBar(context, message),
+          otpVerificationError:
+              (apiErrorModel) => DialogsHelper.showErrorDialog(
+                context,
+                apiErrorModel.getErrorMessages()!,
+              ),
           otpVerificationSuccess: (message) {
             DialogsHelper.showSnackBar(context, message);
             context.pushNamed(
@@ -35,14 +38,15 @@ class OtpButtonBlocConsumer extends StatelessWidget {
           },
         );
       },
-      builder: (context, state) => CustomButton(
-        title: 'تحقق',
-        width: double.infinity,
-        isLoading: state is OtpVerificationLoadingState,
-        onTap: () {
-          context.read<ResetPasswordCubit>().emitOtpVerificationStates();
-        },
-      ),
+      builder:
+          (context, state) => CustomButton(
+            title: 'Verify',
+            width: double.infinity,
+            isLoading: state is OtpVerificationLoadingState,
+            onTap: () {
+              context.read<ResetPasswordCubit>().emitOtpVerificationStates();
+            },
+          ),
     );
   }
 }

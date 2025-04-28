@@ -28,8 +28,9 @@ class LoginScreen extends StatelessWidget {
                 horizontalSpace(double.infinity),
                 const Logo(height: 61, width: 51),
                 const ScreenLabel(
-                  title: 'قم بتسجيل الدخول الي حسابك',
-                  subTitle: 'ادخل لحسابك وابدأ رحلتك معنا !',
+                  title: 'Sign in to your account.',
+                  subTitle:
+                      'Access your account and start your journey with us!',
                 ),
                 verticalSpace(48),
                 const LoginForm(),
@@ -46,8 +47,8 @@ class LoginScreen extends StatelessWidget {
                   onTap: () {
                     context.pushNamed(Routes.signUpRoute);
                   },
-                  text: 'ليس لديك حساب؟',
-                  actionText: 'سجل الآن',
+                  text: 'Don’t have an account?',
+                  actionText: 'Sign up',
                 ),
               ],
             ),

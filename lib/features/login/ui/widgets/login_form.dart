@@ -10,9 +10,7 @@ import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../logic/login_cubit.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({
-    super.key,
-  });
+  const LoginForm({super.key});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -27,13 +25,13 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         children: [
           CustomTextFormField(
-            hintText: 'البريد الالكتروني',
+            hintText: 'Email',
             controller: context.read<LoginCubit>().emailController,
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return 'من فضلك ادخل بريد الكتروني صحيح';
+                return 'Please enter a valid email address.';
               }
             },
             prefixIconPath: AppImages.emailIcon,
@@ -46,23 +44,28 @@ class _LoginFormState extends State<LoginForm> {
             prefixIconPath: AppImages.lockIcon,
             isObscure: isObscureText,
             suffixIcon: InkWell(
-              overlayColor:
-                  const WidgetStatePropertyAll(ColorsHelper.transparent),
+              overlayColor: const WidgetStatePropertyAll(
+                ColorsHelper.transparent,
+              ),
               onTap: () {
                 setState(() {
                   isObscureText = !isObscureText;
                 });
               },
-              child: isObscureText
-                  ? const Icon(
-                      Icons.visibility_off,
-                      color: ColorsHelper.darkBlue,
-                    )
-                  : const Icon(Icons.visibility, color: ColorsHelper.darkBlue),
+              child:
+                  isObscureText
+                      ? const Icon(
+                        Icons.visibility_off,
+                        color: ColorsHelper.darkBlue,
+                      )
+                      : const Icon(
+                        Icons.visibility,
+                        color: ColorsHelper.darkBlue,
+                      ),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'من فضلك ادخل كلمة السر';
+                return 'Please enter your password.';
               }
             },
           ),

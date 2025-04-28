@@ -27,10 +27,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         toolbarHeight: preferredSize.height,
         leadingWidth: isLeadedByLogo ? 45.w : 0,
         centerTitle: false,
-        title: Text(
-          title,
-          // style: AppTextStyles.cairoBlackBold24,
-        ),
+        title: Text(title, style: AppTextStyles.rubikBlackBold24),
         actionsPadding: EdgeInsetsDirectional.only(end: 24.w),
         actions: [if (!hideBackButton) const CustomBackButton()],
         leading: isLeadedByLogo ? const Logo(width: 41, height: 51) : null,
