@@ -5,11 +5,12 @@ import '../../../../../core/theming/app_text_styles.dart';
 import '../../../../../core/theming/colors_helper.dart';
 
 class OtpTextField extends StatelessWidget {
-  const OtpTextField(
-      {super.key,
-      required this.textEditingController,
-      required this.focusNode,
-      this.onChanged});
+  const OtpTextField({
+    super.key,
+    required this.textEditingController,
+    required this.focusNode,
+    this.onChanged,
+  });
   final TextEditingController textEditingController;
   final FocusNode focusNode;
   final void Function(String)? onChanged;
@@ -38,7 +39,7 @@ class OtpTextField extends StatelessWidget {
           contentPadding: EdgeInsets.only(top: 16.h, bottom: 16.h),
           focusColor: ColorsHelper.primaryColor,
           hintText: '-',
-          hintStyle: AppTextStyles.cairoFadedBlackRegular16,
+          // hintStyle: AppTextStyles.cairoFadedBlackRegular16,
           fillColor: ColorsHelper.offWhite,
           filled: true,
           focusedBorder: OutlineInputBorder(
@@ -49,27 +50,16 @@ class OtpTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: ColorsHelper.semiGray,
-              width: 1.3,
-            ),
+            borderSide: BorderSide(color: ColorsHelper.semiGray, width: 1.3),
             borderRadius: BorderRadius.circular(8.r),
           ),
-          errorStyle: const TextStyle(
-            fontSize: 0,
-          ),
+          errorStyle: const TextStyle(fontSize: 0),
           errorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: ColorsHelper.red,
-              width: 1.3,
-            ),
+            borderSide: const BorderSide(color: ColorsHelper.red, width: 1.3),
             borderRadius: BorderRadius.circular(8.r),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: ColorsHelper.red,
-              width: 1.3,
-            ),
+            borderSide: const BorderSide(color: ColorsHelper.red, width: 1.3),
             borderRadius: BorderRadius.circular(8.r),
           ),
         ),

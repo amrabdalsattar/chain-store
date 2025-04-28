@@ -47,9 +47,10 @@ class CustomTextFormField extends StatelessWidget {
       canRequestFocus: isReadOnly != null ? !isReadOnly! : true,
       controller: controller,
       maxLines: maxLines,
-      textCapitalization: keyboardType == TextInputType.name
-          ? TextCapitalization.words
-          : TextCapitalization.none,
+      textCapitalization:
+          keyboardType == TextInputType.name
+              ? TextCapitalization.words
+              : TextCapitalization.none,
       keyboardType: keyboardType,
       validator: (value) => validator(value),
       decoration: InputDecoration(
@@ -57,22 +58,24 @@ class CustomTextFormField extends StatelessWidget {
           vertical: maxLines > 1 ? 16.h : 14.h,
           horizontal: 12.w,
         ),
-        prefixIcon: prefixIconPath != null
-            ? Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: SvgPicture.asset(
-                  prefixIconPath!,
-                  fit: BoxFit.scaleDown,
-                ),
-              )
-            : null,
+        prefixIcon:
+            prefixIconPath != null
+                ? Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: SvgPicture.asset(
+                    prefixIconPath!,
+                    fit: BoxFit.scaleDown,
+                  ),
+                )
+                : null,
         focusColor: ColorsHelper.primaryColor,
         hintText: hintText,
         suffixIcon: suffixIcon,
-        hintStyle: AppTextStyles.tajawalGrayRegular15.copyWith(height: 1.8),
+        // hintStyle: AppTextStyles.tajawalGrayRegular15.copyWith(height: 1.8),
         fillColor: fillColor ?? ColorsHelper.offWhite,
         filled: filled ?? true,
-        focusedBorder: focusedBorder ??
+        focusedBorder:
+            focusedBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
                 color: ColorsHelper.primaryColor,
@@ -80,7 +83,8 @@ class CustomTextFormField extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(8.r),
             ),
-        enabledBorder: enabledBorder ??
+        enabledBorder:
+            enabledBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
                 color: ColorsHelper.borderGray,
@@ -89,17 +93,11 @@ class CustomTextFormField extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.r),
             ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: ColorsHelper.red,
-            width: 1.3,
-          ),
+          borderSide: const BorderSide(color: ColorsHelper.red, width: 1.3),
           borderRadius: BorderRadius.circular(8.r),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: ColorsHelper.red,
-            width: 1.3,
-          ),
+          borderSide: const BorderSide(color: ColorsHelper.red, width: 1.3),
           borderRadius: BorderRadius.circular(8.r),
         ),
         border: OutlineInputBorder(
@@ -111,7 +109,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
       ),
       obscureText: isObscure ?? false,
-      style: AppTextStyles.tajawalDarkGrayMedium14,
+      // style: AppTextStyles.tajawalDarkGrayMedium14,
       cursorColor: ColorsHelper.primaryColor,
     );
   }

@@ -30,12 +30,9 @@ class CustomDropdownButton extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: ColorsHelper.offWhite,
-        contentPadding: EdgeInsets.symmetric(
-          vertical: 14.h,
-          horizontal: 16.w,
-        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
         hintText: hintText,
-        hintStyle: AppTextStyles.tajawalGrayRegular15.copyWith(height: 1.8),
+        // hintStyle: AppTextStyles.tajawalGrayRegular15.copyWith(height: 1.8),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
@@ -58,11 +55,8 @@ class CustomDropdownButton extends StatelessWidget {
           ),
         ),
       ),
-      style: AppTextStyles.tajawalDarkGrayMedium14,
-      icon: const Icon(
-        Icons.arrow_drop_down,
-        color: ColorsHelper.gray,
-      ),
+      // style: AppTextStyles.tajawalDarkGrayMedium14,
+      icon: const Icon(Icons.arrow_drop_down, color: ColorsHelper.gray),
     );
   }
 }

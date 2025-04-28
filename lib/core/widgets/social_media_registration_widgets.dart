@@ -17,22 +17,18 @@ class SocialMediaRegistrationWidgets extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Container(
-              height: 1,
-              color: ColorsHelper.dividerGray,
-            )),
+              child: Container(height: 1, color: ColorsHelper.dividerGray),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 'او',
-                style: AppTextStyles.cairoSemiOpacityBlackRegular16,
+                // style: AppTextStyles.cairoSemiOpacityBlackRegular16,
               ),
             ),
             Expanded(
-                child: Container(
-              height: 1,
-              color: ColorsHelper.dividerGray,
-            )),
+              child: Container(height: 1, color: ColorsHelper.dividerGray),
+            ),
           ],
         ),
         verticalSpace(24),

@@ -11,7 +11,7 @@ class CustomErrorWidget extends StatelessWidget {
     return Center(
       child: Text(
         errorMessage,
-        style: AppTextStyles.cairoBlackBold15,
+        // style: AppTextStyles.cairoBlackBold15,
       ),
     );
   }

@@ -52,16 +52,15 @@ class CustomButton extends StatelessWidget {
             ),
           ],
         ),
-        child: isLoading
-            ? const LoadingIndicator(
-                color: ColorsHelper.white,
-              )
-            : Center(
-                child: Text(
-                  title,
-                  style: textStyle ?? AppTextStyles.cairoWhiteBold16,
+        child:
+            isLoading
+                ? const LoadingIndicator(color: ColorsHelper.white)
+                : Center(
+                  child: Text(
+                    title,
+                    // style: textStyle ?? AppTextStyles.cairoWhiteBold16,
+                  ),
                 ),
-              ),
       ),
     );
   }

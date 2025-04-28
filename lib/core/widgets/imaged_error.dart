@@ -25,7 +25,10 @@ class ImagedError extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.25,
           ),
           verticalSpace(40),
-          Text(errorMessage, style: AppTextStyles.cairoBlackSemiBold16),
+          Text(
+            errorMessage,
+            // style: AppTextStyles.cairoBlackSemiBold16,
+          ),
         ],
       ),
     );

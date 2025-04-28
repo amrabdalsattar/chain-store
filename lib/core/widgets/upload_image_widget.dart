@@ -7,10 +7,7 @@ import '../theming/app_text_styles.dart';
 import '../theming/colors_helper.dart';
 
 class UploadImageWidget extends StatelessWidget {
-  const UploadImageWidget({
-    super.key,
-    this.onTap,
-  });
+  const UploadImageWidget({super.key, this.onTap});
 
   final void Function()? onTap;
 
@@ -31,16 +28,13 @@ class UploadImageWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.cloud_upload_outlined,
-                  size: 36,
-                ),
+                const Icon(Icons.cloud_upload_outlined, size: 36),
                 verticalSpace(12),
                 Text(
                   'يمكنك اضافه حتي 5 صور',
-                  style: AppTextStyles.cairoSemiGreyRegular12
-                      .copyWith(color: ColorsHelper.subText),
-                )
+                  // style: AppTextStyles.cairoSemiGreyRegular12
+                  //     .copyWith(color: ColorsHelper.subText),
+                ),
               ],
             ),
           ),

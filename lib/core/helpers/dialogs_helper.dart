@@ -14,37 +14,32 @@ class DialogsHelper {
   static void showLoading(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) => const LoadingIndicator(
-        color: ColorsHelper.white,
-      ),
+      builder: (context) => const LoadingIndicator(color: ColorsHelper.white),
     );
   }
 
   static void showErrorDialog(BuildContext context, String error) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        icon: const Icon(
-          Icons.error,
-          color: ColorsHelper.red,
-          size: 32,
-        ),
-        content: Text(
-          error,
-          style: AppTextStyles.cairoPrimaryBold16,
-        ),
-        actions: [
-          TextButton(
-            child: Text(
-              'حسنًا',
-              style: AppTextStyles.cairoPrimaryBold16,
+      builder:
+          (context) => AlertDialog(
+            icon: const Icon(Icons.error, color: ColorsHelper.red, size: 32),
+            content: Text(
+              error,
+              // style: AppTextStyles.cairoPrimaryBold16,
             ),
-            onPressed: () {
-              context.pop();
-            },
-          )
-        ],
-      ),
+            actions: [
+              TextButton(
+                child: Text(
+                  'OK',
+                  // style: AppTextStyles.cairoPrimaryBold16,
+                ),
+                onPressed: () {
+                  context.pop();
+                },
+              ),
+            ],
+          ),
     );
   }
 
@@ -71,18 +66,18 @@ class DialogsHelper {
             children: [
               Text(
                 message,
-                style: AppTextStyles.cairoBlackSemiBold16
-                    .copyWith(fontWeight: FontWeight.w400),
+                // style: AppTextStyles.cairoBlackSemiBold16
+                //     .copyWith(fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,
               ),
               verticalSpace(12),
               CustomButton(
-                title: 'إغلاق',
+                title: 'close',
                 width: 324.w,
                 onTap: () {
                   context.pop();
                 },
-              )
+              ),
             ],
           ),
         );
@@ -90,13 +85,18 @@ class DialogsHelper {
     );
   }
 
-  static void showSnackBar(BuildContext context, String message,
-      {Color? backgroundColor}) {
+  static void showSnackBar(
+    BuildContext context,
+    String message, {
+    Color? backgroundColor,
+  }) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
         ),
         content: Text(message),
         backgroundColor: backgroundColor ?? ColorsHelper.green,
@@ -118,11 +118,11 @@ class DialogsHelper {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('لا'),
+              child: const Text('No'),
             ),
             TextButton(
               onPressed: () => Navigator.of(context)..pop(true),
-              child: const Text('نعم'),
+              child: const Text('Yes'),
             ),
           ],
         );
@@ -138,38 +138,39 @@ class DialogsHelper {
   }) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        content: Text(
-          message,
-          style: AppTextStyles.cairoBlackBold15,
-        ),
-        actions: [
-          TextButton(
-            child: Text(
-              'إلغاء',
-              style: AppTextStyles.cairoPrimaryBold16.copyWith(
-                color: ColorsHelper.rejectedOrderBackGroundColor,
-              ),
+      builder:
+          (context) => AlertDialog(
+            content: Text(
+              message,
+              // style: AppTextStyles.cairoBlackBold15,
             ),
-            onPressed: () {
-              onCancel();
-              context.pop();
-            },
-          ),
-          TextButton(
-            child: Text(
-              'نعم',
-              style: AppTextStyles.cairoPrimaryBold16.copyWith(
-                color: ColorsHelper.green,
+            actions: [
+              TextButton(
+                child: Text(
+                  'Cancel',
+                  // style: AppTextStyles.cairoPrimaryBold16.copyWith(
+                  //   color: ColorsHelper.rejectedOrderBackGroundColor,
+                  // ),
+                ),
+                onPressed: () {
+                  onCancel();
+                  context.pop();
+                },
               ),
-            ),
-            onPressed: () {
-              onContinue();
-              context.pop();
-            },
+              TextButton(
+                child: Text(
+                  'Yes',
+                  // style: AppTextStyles.cairoPrimaryBold16.copyWith(
+                  //   color: ColorsHelper.green,
+                  // ),
+                ),
+                onPressed: () {
+                  onContinue();
+                  context.pop();
+                },
+              ),
+            ],
           ),
-        ],
-      ),
     );
   }
 
@@ -190,10 +191,7 @@ class DialogsHelper {
       alignment: alignment,
       animationDuration: const Duration(milliseconds: 300),
       animationBuilder: (context, animation, alignment, child) {
-        return FadeTransition(
-          opacity: animation,
-          child: child,
-        );
+        return FadeTransition(opacity: animation, child: child);
       },
       showIcon: true,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),

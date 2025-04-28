@@ -22,17 +22,18 @@ class ResendOtpRow extends StatelessWidget {
           children: [
             const ResendOtpCounter(),
             MaterialButton(
-              onPressed: context.read<ResetPasswordCubit>().canResendOtp
-                  ? () {
-                      context.read<ResetPasswordCubit>().emitResendOtpState();
-                    }
-                  : null,
+              onPressed:
+                  context.read<ResetPasswordCubit>().canResendOtp
+                      ? () {
+                        context.read<ResetPasswordCubit>().emitResendOtpState();
+                      }
+                      : null,
               child: Text(
                 'اعادة الإرسال',
-                style: AppTextStyles.cairoSemiOpacityBlackRegular16
-                    .copyWith(fontWeight: FontWeightHelper.medium),
+                // style: AppTextStyles.cairoSemiOpacityBlackRegular16
+                //     .copyWith(fontWeight: FontWeightHelper.medium),
               ),
-            )
+            ),
           ],
         );
       },

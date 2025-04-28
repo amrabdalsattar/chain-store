@@ -24,11 +24,12 @@ class ActionableTextRow extends StatelessWidget {
         text: TextSpan(
           children: [
             TextSpan(
-                text: "$text ",
-                style: AppTextStyles.cairoSemiOpacityBlackRegular16),
+              text: "$text ",
+              // style: AppTextStyles.cairoSemiOpacityBlackRegular16,
+            ),
             TextSpan(
               text: actionText,
-              style: AppTextStyles.cairoPrimaryBold16,
+              // style: AppTextStyles.cairoPrimaryBold16,
               recognizer: TapGestureRecognizer()..onTap = onTap,
             ),
           ],

@@ -1,5 +1,5 @@
+import 'package:connect_chain_market/core/helpers/cache/user_data_operator.dart';
 import 'package:connect_chain_market/core/routing/app_router.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
 import 'package:connect_chain_market/core/theming/themes_helper.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class ChainMarketApp extends StatelessWidget {
             title: 'ChainMarket',
             theme: ThemesHelper.lightTheme,
             onGenerateRoute: AppRouter.generateRoute,
-            initialRoute: Routes.onboardingRoute,
+            initialRoute: UserDataOperator.getInitialRoute(),
           ),
     );
   }

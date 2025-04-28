@@ -24,8 +24,8 @@ class OnboardingCard extends StatelessWidget {
             horizontalSpace(18),
             Text(
               onboardingPageModel.title,
-              style: AppTextStyles.cairoPrimaryBold20,
-            )
+              // style: AppTextStyles.cairoPrimaryBold20,
+            ),
           ],
         ),
         verticalSpace(18),
@@ -33,10 +33,10 @@ class OnboardingCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 32.w),
           child: Text(
             onboardingPageModel.description,
-            style: AppTextStyles.cairoFadedBlackRegular16,
+            // style: AppTextStyles.cairoFadedBlackRegular16,
             textAlign: TextAlign.center,
           ),
-        )
+        ),
       ],
     );
   }

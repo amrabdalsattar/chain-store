@@ -6,11 +6,7 @@ import '../theming/app_text_styles.dart';
 class ScreenLabel extends StatelessWidget {
   final String title;
   final String subTitle;
-  const ScreenLabel({
-    super.key,
-    required this.title,
-    required this.subTitle,
-  });
+  const ScreenLabel({super.key, required this.title, required this.subTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +15,12 @@ class ScreenLabel extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyles.cairoDarkGrayBold22,
+          // style: AppTextStyles.cairoDarkGrayBold22,
         ),
         verticalSpace(10),
         Text(
           subTitle,
-          style: AppTextStyles.cairoSemiGreyRegular12,
+          // style: AppTextStyles.cairoSemiGreyRegular12,
         ),
       ],
     );

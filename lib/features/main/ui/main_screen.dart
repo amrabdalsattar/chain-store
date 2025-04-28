@@ -12,7 +12,7 @@ class MainScreen extends StatelessWidget {
 
     return BlocBuilder<MainCubit, dynamic>(
       bloc: mainCubit,
-      builder: (_, state) => Scaffold(body: Center()),
+      builder: (_, state) => Scaffold(body: Center(child: Text('main screen'))),
     );
   }
 }

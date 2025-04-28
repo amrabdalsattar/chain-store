@@ -19,7 +19,7 @@ class ForgotPasswordTextButton extends StatelessWidget {
         },
         child: Text(
           ConstantString.forgetPassword,
-          style: AppTextStyles.tajawalPrimaryMedium15,
+          // style: AppTextStyles.tajawalPrimaryMedium15,
         ),
       ),
     );
