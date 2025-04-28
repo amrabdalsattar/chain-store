@@ -7,7 +7,7 @@ platform :android do
     sh "flutter build apk --release --obfuscate --split-debug-info=out/android --flavor production --target lib/main_production.dart --no-tree-shake-icons"
     release = firebase_app_distribution(
             app: "1:287776857436:android:034b0bd1f5815914b63599",
-            testers: "amrmmohamed00@gmail.com",
+            groups: "android-testers",
             release_notes: "First Version",
             firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
             android_artifact_type: "APK",
