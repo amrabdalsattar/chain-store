@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "287776857436",
+    "project_id": "connect-chain-82db8",
+    "storage_bucket": "connect-chain-82db8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287776857436:android:034b0bd1f5815914b63599",
+        "android_client_info": {
+          "package_name": "com.connectchain.market.connect_chain_market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwcs6jiPp_itCp8vX7PeoTFnq0dRadwaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287776857436:android:bb6740a8c9021a70b63599",
+        "android_client_info": {
+          "package_name": "com.example.connect_chain"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwcs6jiPp_itCp8vX7PeoTFnq0dRadwaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
