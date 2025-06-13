@@ -64,10 +64,10 @@ class BusinessCategoryItem extends StatelessWidget {
                 title,
                 style:
                     isSelected
-                        ? AppTextStyles.robotoBlackRegular14.copyWith(
+                        ? AppTextStyles.robotoBlackRegular12.copyWith(
                           color: ColorsHelper.white,
                         )
-                        : AppTextStyles.robotoBlackRegular14,
+                        : AppTextStyles.robotoBlackRegular12,
                 overflow: TextOverflow.ellipsis,
               ),
             ),

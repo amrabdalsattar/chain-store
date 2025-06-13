@@ -23,7 +23,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       bloc: mainCubit,
       builder:
           (_, state) => Container(
-            height: 70.h,
+            height: 80.h,
             decoration: BoxDecoration(
               color: ColorsHelper.white,
               boxShadow: [

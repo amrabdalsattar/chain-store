@@ -1,9 +1,9 @@
 import '../../features/business_category/logic/cubit/business_category_cubit.dart';
 import '../../features/business_category/ui/business_category_screen.dart';
 import '../../features/categories/ui/categories_screen.dart';
-import '../../features/cart_checkout/ui/screens/cart_checkout_screen.dart';
-import '../../features/cart_checkout/ui/screens/order_confirmation_screen.dart';
-import '../../features/cart_checkout/ui/screens/shopping_cart_screen.dart';
+import '../../features/cart_checkout/ui/cart_checkout_screen.dart/cart_checkout_screen.dart';
+import '../../features/cart_checkout/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
+import '../../features/cart_checkout/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/product_details/data/models/product_model.dart';

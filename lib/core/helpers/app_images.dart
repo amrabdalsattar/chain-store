@@ -20,6 +20,7 @@ class AppImages {
   static const String clothesIcon = 'assets/images/clothes.png';
   static const String electronicsIcon = 'assets/images/electronics.png';
   static const String addIcon = 'assets/images/add.png';
+  static const String emptyCart = 'assets/images/empty_cart.png';
 
   // Cart & Checkout Images
   static const String productPlaceholder =

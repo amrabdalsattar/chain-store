@@ -13,13 +13,11 @@ class MainScreen extends StatelessWidget {
 
     return BlocBuilder<MainCubit, dynamic>(
       bloc: mainCubit,
-      builder: (_, state) => Scaffold(
-        body: IndexedStack(
-          index: mainCubit.currentTabIndex,
-          children: mainCubit.mainTabs,
-        ),
-        bottomNavigationBar: const CustomBottomNavBar(),
-      ),
+      builder:
+          (_, state) => Scaffold(
+            body: mainCubit.mainTabs[mainCubit.currentTabIndex],
+            bottomNavigationBar: const CustomBottomNavBar(),
+          ),
     );
   }
 }

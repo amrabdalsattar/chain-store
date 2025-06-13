@@ -20,13 +20,13 @@ class _OrderSummarySectionState extends State<OrderSummarySection>
 
   final List<Map<String, dynamic>> _cartItems = [
     {
-      'imageUrl': 'assets/images/product1.png',
+      'imageUrl': 'assets/images/clothes.png',
       'title': 'Nike Air Zoom Pegasus 38',
       'price': 'EGP 1,200.00',
       'quantity': 1,
     },
     {
-      'imageUrl': 'assets/images/product2.png',
+      'imageUrl': 'assets/images/clothes.png',
       'title': 'Wireless Bluetooth Headphones',
       'price': 'EGP 1,500.00',
       'quantity': 1,

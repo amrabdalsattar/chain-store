@@ -27,7 +27,6 @@ class BusinessCategoryScreen extends StatelessWidget {
               onTap:
                   businessCategoryCubit.isButtonEnabled
                       ? () {
-                        businessCategoryCubit.submitCategories();
                         context.pushNamed(Routes.mainScreenRoute);
                       }
                       : null,
@@ -62,7 +61,7 @@ class BusinessCategoryScreen extends StatelessWidget {
                 // subtitle of the Page
                 Text(
                   'Choose your business category to help us tailor your experience.',
-                  style: AppTextStyles.robotoBlackRegular14,
+                  style: AppTextStyles.robotoBlackRegular12,
                 ),
                 verticalSpace(32),
 

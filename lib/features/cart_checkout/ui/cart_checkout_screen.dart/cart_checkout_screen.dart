@@ -8,10 +8,10 @@ import '../../../../core/theming/colors_helper.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 
 import '../../../../core/widgets/custom_button.dart';
-import '../widgets/address_section.dart';
+import '../shared_widgets/address_section.dart';
 
-import '../widgets/payment_method_section.dart';
-import '../widgets/expandable_order_summary_section.dart';
+import '../shared_widgets/payment_method_section.dart';
+import '../shared_widgets/expandable_order_summary_section.dart';
 
 class CartCheckoutScreen extends StatelessWidget {
   const CartCheckoutScreen({super.key});

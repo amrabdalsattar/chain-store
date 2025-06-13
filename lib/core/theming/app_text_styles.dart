@@ -27,6 +27,7 @@ class AppTextStyles {
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.bold,
   );
+
   static TextStyle rubikBlackBold24 = TextStyle(
     fontFamily: 'rubik',
     fontSize: 24.sp,
@@ -263,8 +264,8 @@ class AppTextStyles {
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.semiBold,
   );
-  static TextStyle robotoBlackRegular14 = TextStyle(
-    fontSize: 14.sp,
+  static TextStyle robotoBlackRegular12 = TextStyle(
+    fontSize: 12.sp,
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.regular,
   );
