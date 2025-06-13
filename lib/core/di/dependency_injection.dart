@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/cart_checkout/data/datasources/cart_remote_datasource.dart';
+import '../../features/cart_checkout/data/repos/cart_repo.dart';
 import '../../features/login/data/datasources/login_datasource.dart';
 import '../../features/login/data/repos/login_repo.dart';
 import '../../features/pre_login/data/datasources/pre_login_datasource.dart';
@@ -38,4 +40,10 @@ Future<void> setUpGetIt() async {
     () => PreLoginDatasource(getIt()),
   );
   getIt.registerLazySingleton<PreLoginRepo>(() => PreLoginRepo(getIt()));
+
+  // Cart DI
+  getIt.registerLazySingleton<CartRemoteDatasource>(
+    () => CartRemoteDatasource(getIt()),
+  );
+  getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
 }
