@@ -12,21 +12,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.hideBackButton = false,
     required this.title,
     this.isLeadedByLogo = true,
+    this.centerTitle,
   });
 
   final bool hideBackButton;
   final String title;
   final bool isLeadedByLogo;
-
+  final bool? centerTitle;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.only(start: isLeadedByLogo ? 30.w : 0),
       child: AppBar(
-        surfaceTintColor: ColorsHelper.white,
+        backgroundColor: ColorsHelper.homeScaffoldColor,
+        surfaceTintColor: ColorsHelper.homeScaffoldColor,
         toolbarHeight: preferredSize.height,
         leadingWidth: isLeadedByLogo ? 45.w : 0,
-        centerTitle: false,
+        centerTitle: centerTitle,
         title: Text(title, style: AppTextStyles.rubikBlackBold24),
         actionsPadding: EdgeInsetsDirectional.only(end: 24.w),
         actions: [if (!hideBackButton) const CustomBackButton()],

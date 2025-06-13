@@ -12,7 +12,8 @@ part of 'reset_password_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ResetPasswordState {
@@ -30,8 +31,7 @@ mixin _$ResetPasswordState {
     required TResult Function() resetPasswordLoading,
     required TResult Function(String message) resetPasswordSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) resetPasswordError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -46,8 +46,7 @@ mixin _$ResetPasswordState {
     TResult? Function()? resetPasswordLoading,
     TResult? Function(String message)? resetPasswordSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? resetPasswordError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -63,33 +62,31 @@ mixin _$ResetPasswordState {
     TResult Function(String message)? resetPasswordSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? resetPasswordError,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ForgotPasswordInitialState value)? initial,
@@ -97,18 +94,17 @@ mixin _$ResetPasswordState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
     TResult? Function(ResetPasswordErrorState value)? resetPasswordError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ForgotPasswordInitialState value)? initial,
@@ -119,21 +115,21 @@ mixin _$ResetPasswordState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
     TResult Function(ResetPasswordErrorState value)? resetPasswordError,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResetPasswordStateCopyWith<$Res> {
   factory $ResetPasswordStateCopyWith(
-          ResetPasswordState value, $Res Function(ResetPasswordState) then) =
-      _$ResetPasswordStateCopyWithImpl<$Res, ResetPasswordState>;
+    ResetPasswordState value,
+    $Res Function(ResetPasswordState) then,
+  ) = _$ResetPasswordStateCopyWithImpl<$Res, ResetPasswordState>;
 }
 
 /// @nodoc
@@ -153,20 +149,20 @@ class _$ResetPasswordStateCopyWithImpl<$Res, $Val extends ResetPasswordState>
 /// @nodoc
 abstract class _$$ForgotPasswordInitialStateImplCopyWith<$Res> {
   factory _$$ForgotPasswordInitialStateImplCopyWith(
-          _$ForgotPasswordInitialStateImpl value,
-          $Res Function(_$ForgotPasswordInitialStateImpl) then) =
-      __$$ForgotPasswordInitialStateImplCopyWithImpl<$Res>;
+    _$ForgotPasswordInitialStateImpl value,
+    $Res Function(_$ForgotPasswordInitialStateImpl) then,
+  ) = __$$ForgotPasswordInitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ForgotPasswordInitialStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ForgotPasswordInitialStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ForgotPasswordInitialStateImpl>
     implements _$$ForgotPasswordInitialStateImplCopyWith<$Res> {
   __$$ForgotPasswordInitialStateImplCopyWithImpl(
-      _$ForgotPasswordInitialStateImpl _value,
-      $Res Function(_$ForgotPasswordInitialStateImpl) _then)
-      : super(_value, _then);
+    _$ForgotPasswordInitialStateImpl _value,
+    $Res Function(_$ForgotPasswordInitialStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
@@ -258,24 +254,24 @@ class _$ForgotPasswordInitialStateImpl implements _ForgotPasswordInitialState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return initial(this);
@@ -289,12 +285,12 @@ class _$ForgotPasswordInitialStateImpl implements _ForgotPasswordInitialState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -314,7 +310,7 @@ class _$ForgotPasswordInitialStateImpl implements _ForgotPasswordInitialState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -336,20 +332,20 @@ abstract class _ForgotPasswordInitialState implements ResetPasswordState {
 /// @nodoc
 abstract class _$$ForgetPasswordLoadingStateImplCopyWith<$Res> {
   factory _$$ForgetPasswordLoadingStateImplCopyWith(
-          _$ForgetPasswordLoadingStateImpl value,
-          $Res Function(_$ForgetPasswordLoadingStateImpl) then) =
-      __$$ForgetPasswordLoadingStateImplCopyWithImpl<$Res>;
+    _$ForgetPasswordLoadingStateImpl value,
+    $Res Function(_$ForgetPasswordLoadingStateImpl) then,
+  ) = __$$ForgetPasswordLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ForgetPasswordLoadingStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ForgetPasswordLoadingStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ForgetPasswordLoadingStateImpl>
     implements _$$ForgetPasswordLoadingStateImplCopyWith<$Res> {
   __$$ForgetPasswordLoadingStateImplCopyWithImpl(
-      _$ForgetPasswordLoadingStateImpl _value,
-      $Res Function(_$ForgetPasswordLoadingStateImpl) _then)
-      : super(_value, _then);
+    _$ForgetPasswordLoadingStateImpl _value,
+    $Res Function(_$ForgetPasswordLoadingStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
@@ -441,24 +437,24 @@ class _$ForgetPasswordLoadingStateImpl implements ForgetPasswordLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return forgetPasswordLoading(this);
@@ -472,12 +468,12 @@ class _$ForgetPasswordLoadingStateImpl implements ForgetPasswordLoadingState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -497,7 +493,7 @@ class _$ForgetPasswordLoadingStateImpl implements ForgetPasswordLoadingState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -518,36 +514,36 @@ abstract class ForgetPasswordLoadingState implements ResetPasswordState {
 /// @nodoc
 abstract class _$$ForgetPasswordSuccessStateImplCopyWith<$Res> {
   factory _$$ForgetPasswordSuccessStateImplCopyWith(
-          _$ForgetPasswordSuccessStateImpl value,
-          $Res Function(_$ForgetPasswordSuccessStateImpl) then) =
-      __$$ForgetPasswordSuccessStateImplCopyWithImpl<$Res>;
+    _$ForgetPasswordSuccessStateImpl value,
+    $Res Function(_$ForgetPasswordSuccessStateImpl) then,
+  ) = __$$ForgetPasswordSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
 class __$$ForgetPasswordSuccessStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ForgetPasswordSuccessStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ForgetPasswordSuccessStateImpl>
     implements _$$ForgetPasswordSuccessStateImplCopyWith<$Res> {
   __$$ForgetPasswordSuccessStateImplCopyWithImpl(
-      _$ForgetPasswordSuccessStateImpl _value,
-      $Res Function(_$ForgetPasswordSuccessStateImpl) _then)
-      : super(_value, _then);
+    _$ForgetPasswordSuccessStateImpl _value,
+    $Res Function(_$ForgetPasswordSuccessStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ForgetPasswordSuccessStateImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$ForgetPasswordSuccessStateImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -581,8 +577,9 @@ class _$ForgetPasswordSuccessStateImpl implements ForgetPasswordSuccessState {
   @override
   @pragma('vm:prefer-inline')
   _$$ForgetPasswordSuccessStateImplCopyWith<_$ForgetPasswordSuccessStateImpl>
-      get copyWith => __$$ForgetPasswordSuccessStateImplCopyWithImpl<
-          _$ForgetPasswordSuccessStateImpl>(this, _$identity);
+  get copyWith => __$$ForgetPasswordSuccessStateImplCopyWithImpl<
+    _$ForgetPasswordSuccessStateImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -650,24 +647,24 @@ class _$ForgetPasswordSuccessStateImpl implements ForgetPasswordSuccessState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return forgetPasswordSuccess(this);
@@ -681,12 +678,12 @@ class _$ForgetPasswordSuccessStateImpl implements ForgetPasswordSuccessState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -706,7 +703,7 @@ class _$ForgetPasswordSuccessStateImpl implements ForgetPasswordSuccessState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -730,42 +727,42 @@ abstract class ForgetPasswordSuccessState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ForgetPasswordSuccessStateImplCopyWith<_$ForgetPasswordSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ForgetPasswordErrorStateImplCopyWith<$Res> {
   factory _$$ForgetPasswordErrorStateImplCopyWith(
-          _$ForgetPasswordErrorStateImpl value,
-          $Res Function(_$ForgetPasswordErrorStateImpl) then) =
-      __$$ForgetPasswordErrorStateImplCopyWithImpl<$Res>;
+    _$ForgetPasswordErrorStateImpl value,
+    $Res Function(_$ForgetPasswordErrorStateImpl) then,
+  ) = __$$ForgetPasswordErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
 class __$$ForgetPasswordErrorStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ForgetPasswordErrorStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ForgetPasswordErrorStateImpl>
     implements _$$ForgetPasswordErrorStateImplCopyWith<$Res> {
   __$$ForgetPasswordErrorStateImplCopyWithImpl(
-      _$ForgetPasswordErrorStateImpl _value,
-      $Res Function(_$ForgetPasswordErrorStateImpl) _then)
-      : super(_value, _then);
+    _$ForgetPasswordErrorStateImpl _value,
+    $Res Function(_$ForgetPasswordErrorStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$ForgetPasswordErrorStateImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
+  $Res call({Object? apiErrorModel = null}) {
+    return _then(
+      _$ForgetPasswordErrorStateImpl(
+        null == apiErrorModel
+            ? _value.apiErrorModel
+            : apiErrorModel // ignore: cast_nullable_to_non_nullable
+                as ApiErrorModel,
+      ),
+    );
   }
 }
 
@@ -800,8 +797,9 @@ class _$ForgetPasswordErrorStateImpl implements ForgetPasswordErrorState {
   @override
   @pragma('vm:prefer-inline')
   _$$ForgetPasswordErrorStateImplCopyWith<_$ForgetPasswordErrorStateImpl>
-      get copyWith => __$$ForgetPasswordErrorStateImplCopyWithImpl<
-          _$ForgetPasswordErrorStateImpl>(this, _$identity);
+  get copyWith => __$$ForgetPasswordErrorStateImplCopyWithImpl<
+    _$ForgetPasswordErrorStateImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -869,24 +867,24 @@ class _$ForgetPasswordErrorStateImpl implements ForgetPasswordErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return forgetPasswordError(this);
@@ -900,12 +898,12 @@ class _$ForgetPasswordErrorStateImpl implements ForgetPasswordErrorState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -925,7 +923,7 @@ class _$ForgetPasswordErrorStateImpl implements ForgetPasswordErrorState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -949,26 +947,29 @@ abstract class ForgetPasswordErrorState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ForgetPasswordErrorStateImplCopyWith<_$ForgetPasswordErrorStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OtpVerificationLoadingStateImplCopyWith<$Res> {
   factory _$$OtpVerificationLoadingStateImplCopyWith(
-          _$OtpVerificationLoadingStateImpl value,
-          $Res Function(_$OtpVerificationLoadingStateImpl) then) =
-      __$$OtpVerificationLoadingStateImplCopyWithImpl<$Res>;
+    _$OtpVerificationLoadingStateImpl value,
+    $Res Function(_$OtpVerificationLoadingStateImpl) then,
+  ) = __$$OtpVerificationLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$OtpVerificationLoadingStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$OtpVerificationLoadingStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<
+          $Res,
+          _$OtpVerificationLoadingStateImpl
+        >
     implements _$$OtpVerificationLoadingStateImplCopyWith<$Res> {
   __$$OtpVerificationLoadingStateImplCopyWithImpl(
-      _$OtpVerificationLoadingStateImpl _value,
-      $Res Function(_$OtpVerificationLoadingStateImpl) _then)
-      : super(_value, _then);
+    _$OtpVerificationLoadingStateImpl _value,
+    $Res Function(_$OtpVerificationLoadingStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
@@ -1060,24 +1061,24 @@ class _$OtpVerificationLoadingStateImpl implements OtpVerificationLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return otpVerificationLoading(this);
@@ -1091,12 +1092,12 @@ class _$OtpVerificationLoadingStateImpl implements OtpVerificationLoadingState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1116,7 +1117,7 @@ class _$OtpVerificationLoadingStateImpl implements OtpVerificationLoadingState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1138,36 +1139,39 @@ abstract class OtpVerificationLoadingState implements ResetPasswordState {
 /// @nodoc
 abstract class _$$OtpVerificationSuccessStateImplCopyWith<$Res> {
   factory _$$OtpVerificationSuccessStateImplCopyWith(
-          _$OtpVerificationSuccessStateImpl value,
-          $Res Function(_$OtpVerificationSuccessStateImpl) then) =
-      __$$OtpVerificationSuccessStateImplCopyWithImpl<$Res>;
+    _$OtpVerificationSuccessStateImpl value,
+    $Res Function(_$OtpVerificationSuccessStateImpl) then,
+  ) = __$$OtpVerificationSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
 class __$$OtpVerificationSuccessStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$OtpVerificationSuccessStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<
+          $Res,
+          _$OtpVerificationSuccessStateImpl
+        >
     implements _$$OtpVerificationSuccessStateImplCopyWith<$Res> {
   __$$OtpVerificationSuccessStateImplCopyWithImpl(
-      _$OtpVerificationSuccessStateImpl _value,
-      $Res Function(_$OtpVerificationSuccessStateImpl) _then)
-      : super(_value, _then);
+    _$OtpVerificationSuccessStateImpl _value,
+    $Res Function(_$OtpVerificationSuccessStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$OtpVerificationSuccessStateImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$OtpVerificationSuccessStateImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -1201,8 +1205,9 @@ class _$OtpVerificationSuccessStateImpl implements OtpVerificationSuccessState {
   @override
   @pragma('vm:prefer-inline')
   _$$OtpVerificationSuccessStateImplCopyWith<_$OtpVerificationSuccessStateImpl>
-      get copyWith => __$$OtpVerificationSuccessStateImplCopyWithImpl<
-          _$OtpVerificationSuccessStateImpl>(this, _$identity);
+  get copyWith => __$$OtpVerificationSuccessStateImplCopyWithImpl<
+    _$OtpVerificationSuccessStateImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1270,24 +1275,24 @@ class _$OtpVerificationSuccessStateImpl implements OtpVerificationSuccessState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return otpVerificationSuccess(this);
@@ -1301,12 +1306,12 @@ class _$OtpVerificationSuccessStateImpl implements OtpVerificationSuccessState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1326,7 +1331,7 @@ class _$OtpVerificationSuccessStateImpl implements OtpVerificationSuccessState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1350,42 +1355,42 @@ abstract class OtpVerificationSuccessState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OtpVerificationSuccessStateImplCopyWith<_$OtpVerificationSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OtpVerificationErrorStateImplCopyWith<$Res> {
   factory _$$OtpVerificationErrorStateImplCopyWith(
-          _$OtpVerificationErrorStateImpl value,
-          $Res Function(_$OtpVerificationErrorStateImpl) then) =
-      __$$OtpVerificationErrorStateImplCopyWithImpl<$Res>;
+    _$OtpVerificationErrorStateImpl value,
+    $Res Function(_$OtpVerificationErrorStateImpl) then,
+  ) = __$$OtpVerificationErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
 class __$$OtpVerificationErrorStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$OtpVerificationErrorStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$OtpVerificationErrorStateImpl>
     implements _$$OtpVerificationErrorStateImplCopyWith<$Res> {
   __$$OtpVerificationErrorStateImplCopyWithImpl(
-      _$OtpVerificationErrorStateImpl _value,
-      $Res Function(_$OtpVerificationErrorStateImpl) _then)
-      : super(_value, _then);
+    _$OtpVerificationErrorStateImpl _value,
+    $Res Function(_$OtpVerificationErrorStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$OtpVerificationErrorStateImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
+  $Res call({Object? apiErrorModel = null}) {
+    return _then(
+      _$OtpVerificationErrorStateImpl(
+        null == apiErrorModel
+            ? _value.apiErrorModel
+            : apiErrorModel // ignore: cast_nullable_to_non_nullable
+                as ApiErrorModel,
+      ),
+    );
   }
 }
 
@@ -1420,8 +1425,9 @@ class _$OtpVerificationErrorStateImpl implements OtpVerificationErrorState {
   @override
   @pragma('vm:prefer-inline')
   _$$OtpVerificationErrorStateImplCopyWith<_$OtpVerificationErrorStateImpl>
-      get copyWith => __$$OtpVerificationErrorStateImplCopyWithImpl<
-          _$OtpVerificationErrorStateImpl>(this, _$identity);
+  get copyWith => __$$OtpVerificationErrorStateImplCopyWithImpl<
+    _$OtpVerificationErrorStateImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1489,24 +1495,24 @@ class _$OtpVerificationErrorStateImpl implements OtpVerificationErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return otpVerificationError(this);
@@ -1520,12 +1526,12 @@ class _$OtpVerificationErrorStateImpl implements OtpVerificationErrorState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1545,7 +1551,7 @@ class _$OtpVerificationErrorStateImpl implements OtpVerificationErrorState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1569,42 +1575,45 @@ abstract class OtpVerificationErrorState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OtpVerificationErrorStateImplCopyWith<_$OtpVerificationErrorStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ResendOtpVerficationSuccessImplCopyWith<$Res> {
   factory _$$ResendOtpVerficationSuccessImplCopyWith(
-          _$ResendOtpVerficationSuccessImpl value,
-          $Res Function(_$ResendOtpVerficationSuccessImpl) then) =
-      __$$ResendOtpVerficationSuccessImplCopyWithImpl<$Res>;
+    _$ResendOtpVerficationSuccessImpl value,
+    $Res Function(_$ResendOtpVerficationSuccessImpl) then,
+  ) = __$$ResendOtpVerficationSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
 class __$$ResendOtpVerficationSuccessImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ResendOtpVerficationSuccessImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<
+          $Res,
+          _$ResendOtpVerficationSuccessImpl
+        >
     implements _$$ResendOtpVerficationSuccessImplCopyWith<$Res> {
   __$$ResendOtpVerficationSuccessImplCopyWithImpl(
-      _$ResendOtpVerficationSuccessImpl _value,
-      $Res Function(_$ResendOtpVerficationSuccessImpl) _then)
-      : super(_value, _then);
+    _$ResendOtpVerficationSuccessImpl _value,
+    $Res Function(_$ResendOtpVerficationSuccessImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ResendOtpVerficationSuccessImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$ResendOtpVerficationSuccessImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -1638,8 +1647,9 @@ class _$ResendOtpVerficationSuccessImpl implements ResendOtpVerficationSuccess {
   @override
   @pragma('vm:prefer-inline')
   _$$ResendOtpVerficationSuccessImplCopyWith<_$ResendOtpVerficationSuccessImpl>
-      get copyWith => __$$ResendOtpVerficationSuccessImplCopyWithImpl<
-          _$ResendOtpVerficationSuccessImpl>(this, _$identity);
+  get copyWith => __$$ResendOtpVerficationSuccessImplCopyWithImpl<
+    _$ResendOtpVerficationSuccessImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1707,24 +1717,24 @@ class _$ResendOtpVerficationSuccessImpl implements ResendOtpVerficationSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return resendOtpVerificationSuccess(this);
@@ -1738,12 +1748,12 @@ class _$ResendOtpVerficationSuccessImpl implements ResendOtpVerficationSuccess {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1763,7 +1773,7 @@ class _$ResendOtpVerficationSuccessImpl implements ResendOtpVerficationSuccess {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1787,14 +1797,15 @@ abstract class ResendOtpVerficationSuccess implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResendOtpVerficationSuccessImplCopyWith<_$ResendOtpVerficationSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OtpTimerRunningStateImplCopyWith<$Res> {
-  factory _$$OtpTimerRunningStateImplCopyWith(_$OtpTimerRunningStateImpl value,
-          $Res Function(_$OtpTimerRunningStateImpl) then) =
-      __$$OtpTimerRunningStateImplCopyWithImpl<$Res>;
+  factory _$$OtpTimerRunningStateImplCopyWith(
+    _$OtpTimerRunningStateImpl value,
+    $Res Function(_$OtpTimerRunningStateImpl) then,
+  ) = __$$OtpTimerRunningStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String remainingSeconds});
 }
@@ -1803,23 +1814,25 @@ abstract class _$$OtpTimerRunningStateImplCopyWith<$Res> {
 class __$$OtpTimerRunningStateImplCopyWithImpl<$Res>
     extends _$ResetPasswordStateCopyWithImpl<$Res, _$OtpTimerRunningStateImpl>
     implements _$$OtpTimerRunningStateImplCopyWith<$Res> {
-  __$$OtpTimerRunningStateImplCopyWithImpl(_$OtpTimerRunningStateImpl _value,
-      $Res Function(_$OtpTimerRunningStateImpl) _then)
-      : super(_value, _then);
+  __$$OtpTimerRunningStateImplCopyWithImpl(
+    _$OtpTimerRunningStateImpl _value,
+    $Res Function(_$OtpTimerRunningStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? remainingSeconds = null,
-  }) {
-    return _then(_$OtpTimerRunningStateImpl(
-      remainingSeconds: null == remainingSeconds
-          ? _value.remainingSeconds
-          : remainingSeconds // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? remainingSeconds = null}) {
+    return _then(
+      _$OtpTimerRunningStateImpl(
+        remainingSeconds:
+            null == remainingSeconds
+                ? _value.remainingSeconds
+                : remainingSeconds // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
@@ -1854,9 +1867,11 @@ class _$OtpTimerRunningStateImpl implements OtpTimerRunningState {
   @override
   @pragma('vm:prefer-inline')
   _$$OtpTimerRunningStateImplCopyWith<_$OtpTimerRunningStateImpl>
-      get copyWith =>
-          __$$OtpTimerRunningStateImplCopyWithImpl<_$OtpTimerRunningStateImpl>(
-              this, _$identity);
+  get copyWith =>
+      __$$OtpTimerRunningStateImplCopyWithImpl<_$OtpTimerRunningStateImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -1924,24 +1939,24 @@ class _$OtpTimerRunningStateImpl implements OtpTimerRunningState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return otpTimerRunning(this);
@@ -1955,12 +1970,12 @@ class _$OtpTimerRunningStateImpl implements OtpTimerRunningState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -1980,7 +1995,7 @@ class _$OtpTimerRunningStateImpl implements OtpTimerRunningState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2004,26 +2019,26 @@ abstract class OtpTimerRunningState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OtpTimerRunningStateImplCopyWith<_$OtpTimerRunningStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ResetPasswordLoadingStateImplCopyWith<$Res> {
   factory _$$ResetPasswordLoadingStateImplCopyWith(
-          _$ResetPasswordLoadingStateImpl value,
-          $Res Function(_$ResetPasswordLoadingStateImpl) then) =
-      __$$ResetPasswordLoadingStateImplCopyWithImpl<$Res>;
+    _$ResetPasswordLoadingStateImpl value,
+    $Res Function(_$ResetPasswordLoadingStateImpl) then,
+  ) = __$$ResetPasswordLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ResetPasswordLoadingStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ResetPasswordLoadingStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordLoadingStateImpl>
     implements _$$ResetPasswordLoadingStateImplCopyWith<$Res> {
   __$$ResetPasswordLoadingStateImplCopyWithImpl(
-      _$ResetPasswordLoadingStateImpl _value,
-      $Res Function(_$ResetPasswordLoadingStateImpl) _then)
-      : super(_value, _then);
+    _$ResetPasswordLoadingStateImpl _value,
+    $Res Function(_$ResetPasswordLoadingStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
@@ -2115,24 +2130,24 @@ class _$ResetPasswordLoadingStateImpl implements ResetPasswordLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return resetPasswordLoading(this);
@@ -2146,12 +2161,12 @@ class _$ResetPasswordLoadingStateImpl implements ResetPasswordLoadingState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2171,7 +2186,7 @@ class _$ResetPasswordLoadingStateImpl implements ResetPasswordLoadingState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2192,36 +2207,36 @@ abstract class ResetPasswordLoadingState implements ResetPasswordState {
 /// @nodoc
 abstract class _$$ResetPasswordSuccessStateImplCopyWith<$Res> {
   factory _$$ResetPasswordSuccessStateImplCopyWith(
-          _$ResetPasswordSuccessStateImpl value,
-          $Res Function(_$ResetPasswordSuccessStateImpl) then) =
-      __$$ResetPasswordSuccessStateImplCopyWithImpl<$Res>;
+    _$ResetPasswordSuccessStateImpl value,
+    $Res Function(_$ResetPasswordSuccessStateImpl) then,
+  ) = __$$ResetPasswordSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
 class __$$ResetPasswordSuccessStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ResetPasswordSuccessStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordSuccessStateImpl>
     implements _$$ResetPasswordSuccessStateImplCopyWith<$Res> {
   __$$ResetPasswordSuccessStateImplCopyWithImpl(
-      _$ResetPasswordSuccessStateImpl _value,
-      $Res Function(_$ResetPasswordSuccessStateImpl) _then)
-      : super(_value, _then);
+    _$ResetPasswordSuccessStateImpl _value,
+    $Res Function(_$ResetPasswordSuccessStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ResetPasswordSuccessStateImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$ResetPasswordSuccessStateImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -2255,8 +2270,9 @@ class _$ResetPasswordSuccessStateImpl implements ResetPasswordSuccessState {
   @override
   @pragma('vm:prefer-inline')
   _$$ResetPasswordSuccessStateImplCopyWith<_$ResetPasswordSuccessStateImpl>
-      get copyWith => __$$ResetPasswordSuccessStateImplCopyWithImpl<
-          _$ResetPasswordSuccessStateImpl>(this, _$identity);
+  get copyWith => __$$ResetPasswordSuccessStateImplCopyWithImpl<
+    _$ResetPasswordSuccessStateImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2324,24 +2340,24 @@ class _$ResetPasswordSuccessStateImpl implements ResetPasswordSuccessState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return resetPasswordSuccess(this);
@@ -2355,12 +2371,12 @@ class _$ResetPasswordSuccessStateImpl implements ResetPasswordSuccessState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2380,7 +2396,7 @@ class _$ResetPasswordSuccessStateImpl implements ResetPasswordSuccessState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2404,42 +2420,42 @@ abstract class ResetPasswordSuccessState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResetPasswordSuccessStateImplCopyWith<_$ResetPasswordSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ResetPasswordErrorStateImplCopyWith<$Res> {
   factory _$$ResetPasswordErrorStateImplCopyWith(
-          _$ResetPasswordErrorStateImpl value,
-          $Res Function(_$ResetPasswordErrorStateImpl) then) =
-      __$$ResetPasswordErrorStateImplCopyWithImpl<$Res>;
+    _$ResetPasswordErrorStateImpl value,
+    $Res Function(_$ResetPasswordErrorStateImpl) then,
+  ) = __$$ResetPasswordErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
 class __$$ResetPasswordErrorStateImplCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res,
-        _$ResetPasswordErrorStateImpl>
+    extends
+        _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordErrorStateImpl>
     implements _$$ResetPasswordErrorStateImplCopyWith<$Res> {
   __$$ResetPasswordErrorStateImplCopyWithImpl(
-      _$ResetPasswordErrorStateImpl _value,
-      $Res Function(_$ResetPasswordErrorStateImpl) _then)
-      : super(_value, _then);
+    _$ResetPasswordErrorStateImpl _value,
+    $Res Function(_$ResetPasswordErrorStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$ResetPasswordErrorStateImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
+  $Res call({Object? apiErrorModel = null}) {
+    return _then(
+      _$ResetPasswordErrorStateImpl(
+        null == apiErrorModel
+            ? _value.apiErrorModel
+            : apiErrorModel // ignore: cast_nullable_to_non_nullable
+                as ApiErrorModel,
+      ),
+    );
   }
 }
 
@@ -2474,8 +2490,9 @@ class _$ResetPasswordErrorStateImpl implements ResetPasswordErrorState {
   @override
   @pragma('vm:prefer-inline')
   _$$ResetPasswordErrorStateImplCopyWith<_$ResetPasswordErrorStateImpl>
-      get copyWith => __$$ResetPasswordErrorStateImplCopyWithImpl<
-          _$ResetPasswordErrorStateImpl>(this, _$identity);
+  get copyWith => __$$ResetPasswordErrorStateImplCopyWithImpl<
+    _$ResetPasswordErrorStateImpl
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2543,24 +2560,24 @@ class _$ResetPasswordErrorStateImpl implements ResetPasswordErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ForgotPasswordInitialState value) initial,
     required TResult Function(ForgetPasswordLoadingState value)
-        forgetPasswordLoading,
+    forgetPasswordLoading,
     required TResult Function(ForgetPasswordSuccessState value)
-        forgetPasswordSuccess,
+    forgetPasswordSuccess,
     required TResult Function(ForgetPasswordErrorState value)
-        forgetPasswordError,
+    forgetPasswordError,
     required TResult Function(OtpVerificationLoadingState value)
-        otpVerificationLoading,
+    otpVerificationLoading,
     required TResult Function(OtpVerificationSuccessState value)
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     required TResult Function(OtpVerificationErrorState value)
-        otpVerificationError,
+    otpVerificationError,
     required TResult Function(ResendOtpVerficationSuccess value)
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     required TResult Function(OtpTimerRunningState value) otpTimerRunning,
     required TResult Function(ResetPasswordLoadingState value)
-        resetPasswordLoading,
+    resetPasswordLoading,
     required TResult Function(ResetPasswordSuccessState value)
-        resetPasswordSuccess,
+    resetPasswordSuccess,
     required TResult Function(ResetPasswordErrorState value) resetPasswordError,
   }) {
     return resetPasswordError(this);
@@ -2574,12 +2591,12 @@ class _$ResetPasswordErrorStateImpl implements ResetPasswordErrorState {
     TResult? Function(ForgetPasswordSuccessState value)? forgetPasswordSuccess,
     TResult? Function(ForgetPasswordErrorState value)? forgetPasswordError,
     TResult? Function(OtpVerificationLoadingState value)?
-        otpVerificationLoading,
+    otpVerificationLoading,
     TResult? Function(OtpVerificationSuccessState value)?
-        otpVerificationSuccess,
+    otpVerificationSuccess,
     TResult? Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult? Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult? Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult? Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult? Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2599,7 +2616,7 @@ class _$ResetPasswordErrorStateImpl implements ResetPasswordErrorState {
     TResult Function(OtpVerificationSuccessState value)? otpVerificationSuccess,
     TResult Function(OtpVerificationErrorState value)? otpVerificationError,
     TResult Function(ResendOtpVerficationSuccess value)?
-        resendOtpVerificationSuccess,
+    resendOtpVerificationSuccess,
     TResult Function(OtpTimerRunningState value)? otpTimerRunning,
     TResult Function(ResetPasswordLoadingState value)? resetPasswordLoading,
     TResult Function(ResetPasswordSuccessState value)? resetPasswordSuccess,
@@ -2623,5 +2640,5 @@ abstract class ResetPasswordErrorState implements ResetPasswordState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResetPasswordErrorStateImplCopyWith<_$ResetPasswordErrorStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

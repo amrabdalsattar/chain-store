@@ -7,35 +7,53 @@ import 'shared_preferences_keys.dart';
 class UserDataOperator {
   static Map<String, dynamic> getUserData() {
     return {
-      SharedPreferencesKeys.userName:
-          SharedPreferencesHelper.getString(SharedPreferencesKeys.userName),
-      SharedPreferencesKeys.userId:
-          SharedPreferencesHelper.getString(SharedPreferencesKeys.userId),
-      SharedPreferencesKeys.userAddress:
-          SharedPreferencesHelper.getString(SharedPreferencesKeys.userAddress),
-      SharedPreferencesKeys.userEmail:
-          SharedPreferencesHelper.getString(SharedPreferencesKeys.userEmail),
+      SharedPreferencesKeys.userName: SharedPreferencesHelper.getString(
+        SharedPreferencesKeys.userName,
+      ),
+      SharedPreferencesKeys.userId: SharedPreferencesHelper.getString(
+        SharedPreferencesKeys.userId,
+      ),
+      SharedPreferencesKeys.userAddress: SharedPreferencesHelper.getString(
+        SharedPreferencesKeys.userAddress,
+      ),
+      SharedPreferencesKeys.userEmail: SharedPreferencesHelper.getString(
+        SharedPreferencesKeys.userEmail,
+      ),
       SharedPreferencesKeys.userBusinessType: SharedPreferencesHelper.getString(
-          SharedPreferencesKeys.userBusinessType),
+        SharedPreferencesKeys.userBusinessType,
+      ),
       SharedPreferencesKeys.userPhoneNumber: SharedPreferencesHelper.getString(
-          SharedPreferencesKeys.userPhoneNumber),
+        SharedPreferencesKeys.userPhoneNumber,
+      ),
     };
   }
 
   static Future<void> saveUserData(UserData userData) async {
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.userName, userData.name);
+      SharedPreferencesKeys.userName,
+      userData.name,
+    );
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.userId, userData.id);
+      SharedPreferencesKeys.userId,
+      userData.id,
+    );
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.userBusinessType, userData.businessType);
+      SharedPreferencesKeys.userBusinessType,
+      userData.businessType,
+    );
 
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.userAddress, userData.address);
+      SharedPreferencesKeys.userAddress,
+      userData.address,
+    );
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.userEmail, userData.email);
+      SharedPreferencesKeys.userEmail,
+      userData.email,
+    );
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.userPhoneNumber, userData.phone);
+      SharedPreferencesKeys.userPhoneNumber,
+      userData.phone,
+    );
   }
 
   static Future<void> clearUserData() async {
@@ -44,19 +62,24 @@ class UserDataOperator {
     await SharedPreferencesHelper.removeData(SharedPreferencesKeys.userEmail);
     await SharedPreferencesHelper.removeData(SharedPreferencesKeys.userId);
     await SharedPreferencesHelper.removeData(
-        SharedPreferencesKeys.userPhoneNumber);
+      SharedPreferencesKeys.userPhoneNumber,
+    );
     await SharedPreferencesHelper.removeData(
-        SharedPreferencesKeys.userBusinessType);
+      SharedPreferencesKeys.userBusinessType,
+    );
   }
 
   static setViewOnBoardingBool() async {
     await SharedPreferencesHelper.setData(
-        SharedPreferencesKeys.isViewedOnboarding, true);
+      SharedPreferencesKeys.isViewedOnboarding,
+      true,
+    );
   }
 
   static bool isViewedOnboarding() {
     return SharedPreferencesHelper.getBool(
-            SharedPreferencesKeys.isViewedOnboarding) ??
+          SharedPreferencesKeys.isViewedOnboarding,
+        ) ??
         false;
   }
 
@@ -67,7 +90,8 @@ class UserDataOperator {
       return Routes.onboardingRoute;
     }
     if (isLoggedIn) {
-      return Routes.mainScreenRoute;
+      // return Routes.mainScreenRoute;
+      return Routes.businessCateogrySreenRoute;
     }
     return Routes.loginRoute;
   }

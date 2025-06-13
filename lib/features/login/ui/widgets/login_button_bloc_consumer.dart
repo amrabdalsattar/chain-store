@@ -29,7 +29,8 @@ class LoginButtonBlocConsumer extends StatelessWidget {
               ),
           success:
               (loginResponseModel) =>
-                  context.pushNamed(Routes.preLoginScreenRoute),
+              // context.pushNamed(Routes.preLoginScreenRoute),
+              context.pushNamed(Routes.businessCateogrySreenRoute),
         );
       },
       builder:
