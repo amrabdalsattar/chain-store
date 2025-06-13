@@ -1,11 +1,10 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/widgets/custom_image_widget.dart';
-import 'package:connect_chain_market/features/cart_checkout/ui/widgets/expandable_order_summary_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_helper.dart';
+import '../../../../core/widgets/custom_image_widget.dart';
+import 'expandable_order_summary_header.dart';
 
 class OrderSummarySection extends StatefulWidget {
   const OrderSummarySection({super.key, this.hideProductsSection = false});

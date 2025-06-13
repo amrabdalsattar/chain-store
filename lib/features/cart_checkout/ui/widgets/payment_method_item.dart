@@ -109,10 +109,10 @@ class _PaymentMethodItemState extends State<PaymentMethodItem> {
                 Theme(
                   data: ThemeData(
                     radioTheme: RadioThemeData(
-                      fillColor: MaterialStateProperty.resolveWith<Color>((
-                        Set<MaterialState> states,
+                      fillColor: WidgetStateProperty.resolveWith<Color>((
+                        Set<WidgetState> states,
                       ) {
-                        if (states.contains(MaterialState.selected)) {
+                        if (states.contains(WidgetState.selected)) {
                           return ColorsHelper.primaryColor;
                         }
                         return Colors.grey.shade400;
@@ -309,7 +309,7 @@ class _PaymentMethodItemState extends State<PaymentMethodItem> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: ColorsHelper.primaryColor,
                 width: 1.5,
               ),

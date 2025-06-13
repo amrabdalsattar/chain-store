@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/helpers/spacing.dart';
-import '../../../core/theming/app_text_styles.dart';
 import '../../../core/theming/colors_helper.dart';
 import '../../../core/widgets/custom_app_bar.dart';
 import '../logic/cubit/quotation_cubit.dart';
@@ -34,7 +31,7 @@ class QuotationScreenContent extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsHelper.homeScaffoldColor,
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Request for Quotation',
         hideBackButton: false,
       ),
@@ -43,23 +40,21 @@ class QuotationScreenContent extends StatelessWidget {
           if (state.isSubmitted) {
             return const QuotationSuccess();
           }
-          
+
           return Column(
             children: [
               QuotationStepper(
                 currentStep: cubit.currentStep,
                 onStepTapped: cubit.goToStep,
               ),
-              Expanded(
-                child: _buildCurrentStep(cubit),
-              ),
+              Expanded(child: _buildCurrentStep(cubit)),
             ],
           );
         },
       ),
     );
   }
-  
+
   Widget _buildCurrentStep(QuotationCubit cubit) {
     switch (cubit.currentStep) {
       case 0:

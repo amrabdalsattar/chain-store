@@ -1,10 +1,10 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/widgets/custom_button.dart';
-import 'package:connect_chain_market/features/business_category/logic/cubit/business_category_cubit.dart';
-import 'package:connect_chain_market/features/business_category/ui/widgets/custom_category_chip.dart';
+import '../../../core/helpers/extensions.dart';
+import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
+import '../../../core/theming/app_text_styles.dart';
+import '../../../core/widgets/custom_button.dart';
+import '../logic/cubit/business_category_cubit.dart';
+import 'widgets/custom_category_chip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class QuotationModel {
   final String? id;
   final String productName;
@@ -48,8 +46,4 @@ class QuotationModel {
   }
 }
 
-enum QuotationStatus {
-  pending,
-  approved,
-  rejected,
-}
+enum QuotationStatus { pending, approved, rejected }
