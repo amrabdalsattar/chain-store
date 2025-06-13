@@ -10,7 +10,9 @@ class CartInitialState extends CartState {
 }
 
 // Fetching Cart Info states
-class LoadingCartInfoState extends CartState {}
+class LoadingCartInfoState extends CartState {
+  const LoadingCartInfoState();
+}
 
 class LoadedCartInfoState extends CartState {
   final CartInfo cartInfo;

@@ -12,7 +12,7 @@ class CartResponseModel {
 }
 
 class CartInfo {
-  int? total;
+  double? total;
   List<CartItemModel>? items;
 
   CartInfo({this.total, this.items});
@@ -32,7 +32,7 @@ class CartItemModel {
   int? productId;
   String? productName;
   String? productImage;
-  int? price;
+  double? price;
   int? quantity;
   int? minimumOrder;
 

@@ -6,7 +6,8 @@ import '../../../../../core/theming/app_text_styles.dart';
 import '../../../../../core/theming/colors_helper.dart';
 
 class QuantityControlWidget extends StatelessWidget {
-  const QuantityControlWidget({super.key});
+  final int quantity;
+  const QuantityControlWidget({super.key, required this.quantity});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class QuantityControlWidget extends StatelessWidget {
         children: [
           Icon(Icons.remove, size: 16.w, color: ColorsHelper.black),
           horizontalSpace(8),
-          Text('1', style: AppTextStyles.robotoBlackRegular12),
+          Text('$quantity', style: AppTextStyles.robotoBlackRegular12),
           horizontalSpace(8),
 
           Icon(Icons.add, size: 16.w, color: ColorsHelper.black),

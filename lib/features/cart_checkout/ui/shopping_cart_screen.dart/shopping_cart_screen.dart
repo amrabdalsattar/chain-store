@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../shared_widgets/cart_app_bar.dart';
-import 'widgets/empty_cart.dart';
+import 'widgets/cart_bloc_builder.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
   const ShoppingCartScreen({super.key});
@@ -11,7 +11,7 @@ class ShoppingCartScreen extends StatelessWidget {
     return const Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: CartAppBar(),
-      body: EmptyCart(),
+      body: CartBlocBuilder(),
     );
   }
 }

@@ -8,7 +8,7 @@ class CartRemoteDatasource {
   final ApiHelper _apiHelper;
   const CartRemoteDatasource(this._apiHelper);
 
-  Future<CartInfo?> getCartInfo() async {
+  Future<CartInfo> getCartInfo() async {
     final response = await _apiHelper.get(
       ApiRequestModel(
         endPoint: ApiConstants.getCartItemsEP,
@@ -21,6 +21,7 @@ class CartRemoteDatasource {
     final CartResponseModel cartResponseModel = CartResponseModel.fromJson(
       response,
     );
-    return cartResponseModel.cartInfo;
+
+    return cartResponseModel.cartInfo!;
   }
 }

@@ -4,11 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theming/app_text_styles.dart';
 import '../../../../../core/theming/colors_helper.dart';
+import '../../../../../core/utils/format_utils.dart';
 import '../../../../../core/widgets/custom_image_widget.dart';
+import '../../../data/models/cart_response_model.dart';
 import 'quantity_control_widget.dart';
 
 class ShoppingCartItem extends StatelessWidget {
-  const ShoppingCartItem({super.key});
+  final CartItemModel item;
+  const ShoppingCartItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +42,9 @@ class ShoppingCartItem extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.r),
-              child: const CustomImageWidget(
-                fit: BoxFit.fill,
-                imageUrl:
-                    'https://th.bing.com/th/id/OIP.bO4pS4CxtlOHb0LsEMiIWwHaIf?cb=iwp2&rs=1&pid=ImgDetMain',
+              child: CustomImageWidget(
+                fit: BoxFit.cover,
+                imageUrl: item.productImage!,
               ),
             ),
           ),
@@ -54,7 +56,7 @@ class ShoppingCartItem extends StatelessWidget {
               children: [
                 // Product title
                 Text(
-                  'iphone 16 pro max M/13134 , 256G',
+                  item.productName!,
                   style: AppTextStyles.robotoBlackRegular12,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -67,7 +69,7 @@ class ShoppingCartItem extends StatelessWidget {
                     bottom: 8.h,
                   ),
                   child: Text(
-                    'Gold/1000mAh',
+                    'Available',
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: AppTextStyles.robotoFadedBlackRegular16.copyWith(
@@ -82,18 +84,20 @@ class ShoppingCartItem extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            '60,000 EGP',
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: AppTextStyles.robotoBlackBold12.copyWith(
-                              fontSize: 16.sp,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              '${priceFormat(item.price!)} EGP',
+                              maxLines: 1,
+                              style: AppTextStyles.robotoBlackBold12.copyWith(
+                                fontSize: 16.sp,
+                              ),
                             ),
                           ),
                           verticalSpace(6),
                           // Minimum order quantity
                           Text(
-                            'min.order : 50 pcs ',
+                            'min.order : ${item.minimumOrder} pcs ',
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: AppTextStyles.robotoFadedBlackRegular16
@@ -102,7 +106,7 @@ class ShoppingCartItem extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const QuantityControlWidget(),
+                    QuantityControlWidget(quantity: item.quantity!),
                   ],
                 ),
               ],

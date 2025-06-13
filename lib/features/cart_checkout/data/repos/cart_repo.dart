@@ -10,7 +10,8 @@ class CartRepo {
   Future<ApiResult<CartInfo>> getCartInfo() async {
     try {
       final result = await _remoteDatasource.getCartInfo();
-      return ApiResult.success(result!);
+
+      return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
