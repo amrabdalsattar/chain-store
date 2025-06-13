@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/helpers/app_images.dart';
-import '../../../../../core/helpers/extensions.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theming/app_text_styles.dart';
 import '../../../../../core/theming/colors_helper.dart';
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../../main/logic/cubit/main_cubit.dart';
 
 class EmptyCart extends StatelessWidget {
   const EmptyCart({super.key});
@@ -15,7 +15,7 @@ class EmptyCart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset(AppImages.emptyCart),
           verticalSpace(16),
@@ -26,16 +26,16 @@ class EmptyCart extends StatelessWidget {
             style: AppTextStyles.robotoBlackRegular12,
             textAlign: TextAlign.center,
           ),
-          verticalSpace(32),
+          verticalSpace(16),
           CustomButton(
             title: 'Start Shopping',
-            width: double.infinity,
+            width: MediaQuery.of(context).size.width * 0.7,
             radius: 32,
             height: 41,
             borderColor: ColorsHelper.primaryColor,
 
             onTap: () {
-              context.pop();
+              context.read<MainCubit>().toggleCurrentTabIndex = 4;
             },
           ),
         ],
