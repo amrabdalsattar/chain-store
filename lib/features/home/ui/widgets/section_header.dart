@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 
 class SectionHeader extends StatelessWidget {
@@ -19,7 +19,9 @@ class SectionHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyles.robotoWhiteBold16.copyWith(color: ColorsHelper.black),
+          style: AppTextStyles.robotoWhiteBold16.copyWith(
+            color: ColorsHelper.black,
+          ),
         ),
         GestureDetector(
           onTap: onSeeAllTap,

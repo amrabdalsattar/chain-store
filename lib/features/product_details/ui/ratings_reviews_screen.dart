@@ -45,7 +45,7 @@ class RatingsReviewsScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -161,7 +161,7 @@ class RatingsReviewsScreen extends StatelessWidget {
           ),
         ),
         horizontalSpace(8),
-        RatingStars(rating: 1, size: 16, showEmptyStars: false),
+        const RatingStars(rating: 1, size: 16, showEmptyStars: false),
         horizontalSpace(8),
         Expanded(
           child: Stack(
@@ -240,7 +240,7 @@ class RatingsReviewsScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),

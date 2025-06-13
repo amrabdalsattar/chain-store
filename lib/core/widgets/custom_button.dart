@@ -52,8 +52,8 @@ class CustomButton extends StatelessWidget {
               isEnabled
                   ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(
-                        elevation == 0 ? 0 : 0.25,
+                      color: Colors.black.withValues(
+                        alpha: elevation == 0 ? 0 : 0.25,
                       ),
                       blurRadius: elevation,
                       spreadRadius: 1,

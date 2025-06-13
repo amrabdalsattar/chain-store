@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,7 +38,7 @@ class ShoppingCartScreen extends StatelessWidget {
         'quantity': 1,
         'imageUrl': 'assets/images/product_placeholder.png',
       },
-    ];    
+    ];
 
     return Scaffold(
       resizeToAvoidBottomInset: true,

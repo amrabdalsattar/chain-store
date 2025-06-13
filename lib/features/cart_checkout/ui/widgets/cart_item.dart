@@ -1,8 +1,7 @@
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class CartItem extends StatelessWidget {
   final Map<String, dynamic> item;

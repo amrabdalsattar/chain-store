@@ -5,17 +5,20 @@ import 'notifications_state.dart';
 
 class NotificationsCubit extends Cubit<NotificationsState> {
   final NotificationsRepo _repo;
-  NotificationsCubit(this._repo) : super(NotificationsLoadingState()) {
+  NotificationsCubit(this._repo) : super(const NotificationsLoadingState()) {
     getNotifications();
   }
 
   void getNotifications() async {
     final result = await _repo.getNotifications();
 
-    result.when(success: (notifications) {
-      if (!isClosed) emit(NotificationsSuccessState(notifications));
-    }, failure: (apiErrorModel) {
-      if (!isClosed) emit(NotificationsErrorState(apiErrorModel));
-    });
+    result.when(
+      success: (notifications) {
+        if (!isClosed) emit(NotificationsSuccessState(notifications));
+      },
+      failure: (apiErrorModel) {
+        if (!isClosed) emit(NotificationsErrorState(apiErrorModel));
+      },
+    );
   }
 }

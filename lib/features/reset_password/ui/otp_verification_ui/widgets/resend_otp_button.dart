@@ -15,7 +15,7 @@ class ResendOtpButton extends StatelessWidget {
                     context.read<ResetPasswordCubit>().emitResendOtpState();
                   }
                   : null,
-          child: Text(
+          child: const Text(
             'Re-send OTP',
             // style: AppTextStyles.cairoSemiOpacityBlackRegular16
             //     .copyWith(fontWeight: FontWeightHelper.medium),

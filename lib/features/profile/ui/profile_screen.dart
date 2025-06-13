@@ -1,12 +1,12 @@
-import 'package:connect_chain_market/core/helpers/app_images.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/core/widgets/custom_app_bar.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
-import 'package:connect_chain_market/features/profile/logic/cubit/profile_cubit.dart';
-import 'package:connect_chain_market/features/profile/ui/widgets/logout_button.dart';
-import 'package:connect_chain_market/features/profile/ui/widgets/profile_header.dart';
-import 'package:connect_chain_market/features/profile/ui/widgets/profile_menu_item.dart';
+import '../../../core/helpers/app_images.dart';
+import '../../../core/helpers/spacing.dart';
+import '../../../core/theming/colors_helper.dart';
+import '../../../core/widgets/custom_app_bar.dart';
+import '../../../core/routing/routes.dart';
+import '../logic/cubit/profile_cubit.dart';
+import 'widgets/logout_button.dart';
+import 'widgets/profile_header.dart';
+import 'widgets/profile_menu_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -140,7 +140,7 @@ class _ProfileScreenContent extends StatelessWidget {
             // Loading overlay
             if (state is ProfileLogoutLoading)
               Container(
-                color: Colors.black.withOpacity(0.3),
+                color: Colors.black.withValues(alpha: 0.3),
                 child: const Center(child: CircularProgressIndicator()),
               ),
           ],
@@ -150,6 +150,10 @@ class _ProfileScreenContent extends StatelessWidget {
   }
 
   Widget _buildDivider() {
-    return Divider(color: ColorsHelper.borderGray, thickness: 0.5, height: 1);
+    return const Divider(
+      color: ColorsHelper.borderGray,
+      thickness: 0.5,
+      height: 1,
+    );
   }
 }

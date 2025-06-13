@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:connect_chain_market/core/helpers/app_images.dart';
-import 'package:connect_chain_market/features/business_category/data/models/business_category_model.dart';
+import '../../../../core/helpers/app_images.dart';
+import '../../data/models/business_category_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'business_category_state.dart';
@@ -11,10 +11,19 @@ class BusinessCategoryCubit extends Cubit<BusinessCategoryState> {
 
   // Initialize categories list with models
   final List<BusinessCategoryModel> _categories = [
-    const BusinessCategoryModel(name: 'Mobile Phone', iconPath: AppImages.mobilePhoneIcon),
-    const BusinessCategoryModel(name: 'Electronics', iconPath: AppImages.electronicsIcon),
+    const BusinessCategoryModel(
+      name: 'Mobile Phone',
+      iconPath: AppImages.mobilePhoneIcon,
+    ),
+    const BusinessCategoryModel(
+      name: 'Electronics',
+      iconPath: AppImages.electronicsIcon,
+    ),
     const BusinessCategoryModel(name: 'Sports', iconPath: AppImages.sportsIcon),
-    const BusinessCategoryModel(name: 'Clothes', iconPath: AppImages.clothesIcon),
+    const BusinessCategoryModel(
+      name: 'Clothes',
+      iconPath: AppImages.clothesIcon,
+    ),
     const BusinessCategoryModel(name: 'Bags', iconPath: AppImages.bagsIcon),
     const BusinessCategoryModel(name: 'Other', iconPath: AppImages.addIcon),
   ];
@@ -48,7 +57,7 @@ class BusinessCategoryCubit extends Cubit<BusinessCategoryState> {
     _selectedCategories.add(categoryName);
     emit(BusinessCategorySelectedState(categoryName));
   }
-  
+
   // Submit selected categories
   // void submitCategories() {
   //   if (_selectedCategories.isNotEmpty) {
@@ -65,7 +74,7 @@ class BusinessCategoryCubit extends Cubit<BusinessCategoryState> {
   // Submit selected categories
   void submitCategories() {
     if (_selectedCategories.isNotEmpty) {
-      emit(BusinessCategorySubmitedState(_selectedCategories.join(', ')));
+      emit(BusinessCategorySubmittedState(_selectedCategories.join(', ')));
     }
   }
 }

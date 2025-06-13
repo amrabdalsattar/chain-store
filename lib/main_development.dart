@@ -6,7 +6,7 @@ import 'core/helpers/setup_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SetupManager setupManager = SetupManager();
+  final SetupManager setupManager = SetupManager();
 
   await setupManager.initialSetup();
 

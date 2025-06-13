@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/core/widgets/custom_image_widget.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../../../core/widgets/custom_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,7 +36,7 @@ class ProductCard extends StatelessWidget {
           color: ColorsHelper.white,
           boxShadow: [
             BoxShadow(
-              color: ColorsHelper.boxShadow.withOpacity(0.08),
+              color: ColorsHelper.boxShadow.withValues(alpha: 0.08),
               blurRadius: 6,
               offset: const Offset(0, 3),
             ),
@@ -77,7 +77,7 @@ class ProductCard extends StatelessWidget {
 
                             child: CustomImageWidget(
                               imageUrl: imageUrl,
-                              fit: BoxFit.cover ,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
@@ -94,8 +94,8 @@ class ProductCard extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: ColorsHelper.boxShadow.withOpacity(
-                                      0.1,
+                                    color: ColorsHelper.boxShadow.withValues(
+                                      alpha: 0.1,
                                     ),
                                     blurRadius: 4,
                                     offset: const Offset(0, 2),
@@ -109,7 +109,7 @@ class ProductCard extends StatelessWidget {
                                 color:
                                     isFavorite
                                         ? Colors.red
-                                        : Colors.red.withOpacity(0.7),
+                                        : Colors.red.withValues(alpha: 0.7),
                                 size: 16.r,
                               ),
                             ),

@@ -1,4 +1,4 @@
-import 'package:connect_chain_market/features/cart_checkout/ui/screens/shopping_cart_screen.dart';
+import '../../../cart_checkout/ui/screens/shopping_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

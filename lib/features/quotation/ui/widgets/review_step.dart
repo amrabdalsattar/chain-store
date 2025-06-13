@@ -25,7 +25,7 @@ class ReviewStep extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: ColorsHelper.primaryColor.withOpacity(0.12),
+                  color: ColorsHelper.primaryColor.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12.r),
                 ),
                 padding: EdgeInsets.all(10.w),
@@ -115,7 +115,7 @@ class ReviewStep extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
       decoration: BoxDecoration(
-        color: ColorsHelper.primaryColor.withOpacity(0.1),
+        color: ColorsHelper.primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8.r),
       ),
       child: Text(

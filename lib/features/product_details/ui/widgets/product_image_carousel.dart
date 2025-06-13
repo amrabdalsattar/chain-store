@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/helpers/app_images.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/helpers/app_images.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,7 +39,7 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 10,
                 offset: const Offset(0, 5),
               ),
@@ -95,7 +95,7 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
                               child: Container(
                                 padding: EdgeInsets.all(8.r),
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.8),
+                                  color: Colors.white.withValues(alpha: 0.8),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(
@@ -118,7 +118,7 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
                                 margin: EdgeInsets.only(right: 16.w),
                                 padding: EdgeInsets.all(8.r),
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.8),
+                                  color: Colors.white.withValues(alpha: 0.8),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(

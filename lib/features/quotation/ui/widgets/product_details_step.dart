@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +28,7 @@ class ProductDetailsStep extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: ColorsHelper.primaryColor.withOpacity(0.12),
+                    color: ColorsHelper.primaryColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(12.r),
                   ),
                   padding: EdgeInsets.all(10.w),

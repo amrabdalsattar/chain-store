@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -56,7 +56,7 @@ class QuantitySelector extends StatelessWidget {
           color:
               isEnabled
                   ? ColorsHelper.white
-                  : ColorsHelper.borderGray.withOpacity(0.3),
+                  : ColorsHelper.borderGray.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(10.r),
           border: Border.all(
             color:
@@ -67,7 +67,7 @@ class QuantitySelector extends StatelessWidget {
               isEnabled
                   ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 2,
                       offset: const Offset(0, 1),
                     ),

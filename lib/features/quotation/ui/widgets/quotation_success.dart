@@ -24,7 +24,7 @@ class QuotationSuccess extends StatelessWidget {
             height: 120.w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: ColorsHelper.primaryColor.withOpacity(0.12),
+              color: ColorsHelper.primaryColor.withValues(alpha: 0.12),
             ),
             child: Icon(
               Icons.check_circle_outline,

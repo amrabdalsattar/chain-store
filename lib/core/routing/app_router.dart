@@ -1,17 +1,17 @@
-import 'package:connect_chain_market/features/business_category/logic/cubit/business_category_cubit.dart';
-import 'package:connect_chain_market/features/business_category/ui/business_category_screen.dart';
-import 'package:connect_chain_market/features/categories/ui/categories_screen.dart';
-import 'package:connect_chain_market/features/cart_checkout/ui/screens/cart_checkout_screen.dart';
-import 'package:connect_chain_market/features/cart_checkout/ui/screens/order_confirmation_screen.dart';
-import 'package:connect_chain_market/features/cart_checkout/ui/screens/shopping_cart_screen.dart';
-import 'package:connect_chain_market/features/home/logic/cubit/home_cubit.dart';
-import 'package:connect_chain_market/features/home/ui/home_screen.dart';
-import 'package:connect_chain_market/features/product_details/data/models/product_model.dart';
-import 'package:connect_chain_market/features/product_details/ui/product_details_screen.dart';
-import 'package:connect_chain_market/features/product_details/ui/ratings_reviews_screen.dart';
-import 'package:connect_chain_market/features/profile/logic/cubit/profile_cubit.dart';
-import 'package:connect_chain_market/features/profile/ui/profile_screen.dart';
-import 'package:connect_chain_market/features/quotation/ui/quotation_screen.dart';
+import '../../features/business_category/logic/cubit/business_category_cubit.dart';
+import '../../features/business_category/ui/business_category_screen.dart';
+import '../../features/categories/ui/categories_screen.dart';
+import '../../features/cart_checkout/ui/screens/cart_checkout_screen.dart';
+import '../../features/cart_checkout/ui/screens/order_confirmation_screen.dart';
+import '../../features/cart_checkout/ui/screens/shopping_cart_screen.dart';
+import '../../features/home/logic/cubit/home_cubit.dart';
+import '../../features/home/ui/home_screen.dart';
+import '../../features/product_details/data/models/product_model.dart';
+import '../../features/product_details/ui/product_details_screen.dart';
+import '../../features/product_details/ui/ratings_reviews_screen.dart';
+import '../../features/profile/logic/cubit/profile_cubit.dart';
+import '../../features/profile/ui/profile_screen.dart';
+import '../../features/quotation/ui/quotation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,12 +56,11 @@ class AppRouter {
           ),
           settings: settings,
         );
-          case Routes.rattingScreenRoute:
+      case Routes.rattingScreenRoute:
         return CustomAnimationsBuilder.buildSlideRoute(
           screen: const RatingsReviewsScreen(),
           settings: settings,
         );
-
 
       case Routes.onboardingRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
@@ -82,7 +81,7 @@ class AppRouter {
           screen: const OrderConfirmationScreen(),
           settings: settings,
         );
-        
+
       case Routes.shoppingCartRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: const ShoppingCartScreen(),
@@ -140,7 +139,7 @@ class AppRouter {
           settings: settings,
         );
 
-      case Routes.businessCateogrySreenRoute:
+      case Routes.businessCategoryScreenRoute:
         return CustomAnimationsBuilder.slideFromLeft(
           screen: BlocProvider(
             create: (context) => BusinessCategoryCubit(),
@@ -148,13 +147,13 @@ class AppRouter {
           ),
           settings: settings,
         );
-        
+
       case Routes.categoriesScreenRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: const CategoriesScreen(),
           settings: settings,
         );
-        
+
       case Routes.quotationScreenRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: const QuotationScreen(),

@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/features/home/data/models/home_model.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -89,7 +89,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                             colors: [
-                              Colors.black.withOpacity(0.6),
+                              Colors.black.withValues(alpha: 0.6),
                               Colors.transparent,
                             ],
                           ),
@@ -154,7 +154,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
                 color:
                     _currentPage == index
                         ? ColorsHelper.primaryColor
-                        : ColorsHelper.primaryColor.withOpacity(0.3),
+                        : ColorsHelper.primaryColor.withValues(alpha: 0.3),
               ),
             ),
           ),

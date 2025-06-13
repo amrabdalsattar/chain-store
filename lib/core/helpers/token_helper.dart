@@ -7,12 +7,15 @@ bool isLoggedIn = false;
 abstract class TokenHelper {
   static getSecuredUserToken() async {
     return await SecuredStorageHelper.getSecuredString(
-        SharedPreferencesKeys.userToken);
+      SharedPreferencesKeys.userToken,
+    );
   }
 
   static setSecuredUserToken(String token) async {
     await SecuredStorageHelper.setSecuredString(
-        SharedPreferencesKeys.userToken, token);
+      SharedPreferencesKeys.userToken,
+      token,
+    );
   }
 
   static Future<void> saveUserToken(String token) async {
@@ -20,7 +23,7 @@ abstract class TokenHelper {
   }
 
   static checkIfUserIsLoggedIn() async {
-    String? userToken = await getSecuredUserToken();
+    final String? userToken = await getSecuredUserToken();
 
     if (!userToken.isNullOrEmpty()) {
       isLoggedIn = true;

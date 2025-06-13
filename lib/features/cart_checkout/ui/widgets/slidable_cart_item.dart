@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/widgets/custom_image_widget.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/widgets/custom_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -44,7 +44,7 @@ class SlidableCartItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.r),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 5,
                 offset: const Offset(0, 2),
               ),
@@ -64,7 +64,7 @@ class SlidableCartItem extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.r),
-                  child: CustomImageWidget(
+                  child: const CustomImageWidget(
                     fit: BoxFit.fill,
                     imageUrl:
                         'https://th.bing.com/th/id/OIP.bO4pS4CxtlOHb0LsEMiIWwHaIf?cb=iwp2&rs=1&pid=ImgDetMain',
@@ -97,7 +97,7 @@ class SlidableCartItem extends StatelessWidget {
                     ),
                     // Product price
                     Text(
-                      item['price'] + " EGP",
+                      item['price'] + ' EGP',
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: AppTextStyles.robotoBlackBold12.copyWith(

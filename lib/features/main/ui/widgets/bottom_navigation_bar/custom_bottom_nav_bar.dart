@@ -28,7 +28,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               color: ColorsHelper.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, -5),
                 ),
@@ -101,9 +101,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       child: AnimatedAlign(
         duration: const Duration(seconds: 30000),
         curve: Curves.easeOutCubic,
-        alignment: isSelected ? Alignment(0, -1.2) : Alignment(0, 0),
+        alignment:
+            isSelected ? const Alignment(0, -1.2) : const Alignment(0, 0),
         child: Transform.translate(
-          offset: isSelected ? Offset(0, -18.h) : Offset(0, 0),
+          offset: isSelected ? Offset(0, -18.h) : const Offset(0, 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -139,10 +140,11 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                                 color: ColorsHelper.primaryColor,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: ColorsHelper.primaryColor
-                                        .withOpacity(0.2),
+                                    color: ColorsHelper.primaryColor.withValues(
+                                      alpha: 0.2,
+                                    ),
                                     blurRadius: 8,
-                                    offset: Offset(0, 4),
+                                    offset: const Offset(0, 4),
                                   ),
                                 ],
                               ),
@@ -151,7 +153,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                               iconPath,
                               width: 20.w,
                               height: 20.h,
-                              colorFilter: ColorFilter.mode(
+                              colorFilter: const ColorFilter.mode(
                                 ColorsHelper.white,
                                 BlendMode.srcIn,
                               ),

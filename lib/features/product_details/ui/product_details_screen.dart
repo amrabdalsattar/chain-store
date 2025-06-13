@@ -1,17 +1,17 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/core/widgets/custom_button.dart';
-import 'package:connect_chain_market/features/product_details/data/models/product_model.dart';
-import 'package:connect_chain_market/features/product_details/logic/cubit/product_details_cubit.dart';
-import 'package:connect_chain_market/features/product_details/ui/widgets/color_selector.dart';
-import 'package:connect_chain_market/features/product_details/ui/widgets/expandable_description.dart';
-import 'package:connect_chain_market/features/product_details/ui/widgets/product_image_carousel.dart';
-import 'package:connect_chain_market/features/product_details/ui/widgets/quantity_selector.dart';
-import 'package:connect_chain_market/features/product_details/ui/widgets/rating_stars.dart';
-import 'package:connect_chain_market/features/product_details/ui/widgets/size_selector.dart';
+import '../../../core/helpers/extensions.dart';
+import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
+import '../../../core/theming/app_text_styles.dart';
+import '../../../core/theming/colors_helper.dart';
+import '../../../core/widgets/custom_button.dart';
+import '../data/models/product_model.dart';
+import '../logic/cubit/product_details_cubit.dart';
+import 'widgets/color_selector.dart';
+import 'widgets/expandable_description.dart';
+import 'widgets/product_image_carousel.dart';
+import 'widgets/quantity_selector.dart';
+import 'widgets/rating_stars.dart';
+import 'widgets/size_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +58,7 @@ class _ProductDetailsContent extends StatelessWidget {
           BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
             builder: (context, state) {
               return IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.favorite_border_outlined,
                   color: ColorsHelper.black,
                 ),
@@ -145,7 +145,9 @@ class _ProductDetailsContent extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(10.r),
                         decoration: BoxDecoration(
-                          color: ColorsHelper.primaryColor.withOpacity(0.15),
+                          color: ColorsHelper.primaryColor.withValues(
+                            alpha: 0.15,
+                          ),
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Row(
@@ -299,7 +301,7 @@ class _ProductDetailsContent extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.08),
+                          color: Colors.black.withValues(alpha: 0.08),
                           blurRadius: 10,
                           offset: const Offset(0, 5),
                         ),
@@ -332,7 +334,7 @@ class _ProductDetailsContent extends StatelessWidget {
                                       style: AppTextStyles.robotoBlackMedium15,
                                     ),
                                     horizontalSpace(4),
-                                    RatingStars(rating: 4, size: 16),
+                                    const RatingStars(rating: 4, size: 16),
                                   ],
                                 ),
                               ],
@@ -348,13 +350,13 @@ class _ProductDetailsContent extends StatelessWidget {
                         verticalSpace(8),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.thumb_up_alt_outlined,
                               size: 22,
                               color: ColorsHelper.black,
                             ),
                             horizontalSpace(8),
-                            Icon(
+                            const Icon(
                               Icons.thumb_down_alt_outlined,
                               size: 22,
                               color: ColorsHelper.black,
@@ -370,7 +372,7 @@ class _ProductDetailsContent extends StatelessWidget {
                     child: Container(
                       width: 50.w,
                       height: 50.h,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: ColorsHelper.liteGray,
                       ),
@@ -409,12 +411,12 @@ class _ProductDetailsContent extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
         decoration: BoxDecoration(
           color: ColorsHelper.white,
-          border: Border(
+          border: const Border(
             top: BorderSide(color: ColorsHelper.borderGray, width: 1),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, -5),
             ),

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:connect_chain_market/features/home/data/models/home_model.dart';
+import '../../data/models/home_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'home_state.dart';

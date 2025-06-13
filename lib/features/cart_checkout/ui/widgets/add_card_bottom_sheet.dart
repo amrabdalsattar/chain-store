@@ -55,7 +55,7 @@ class _AddCardBottomSheetState extends State<AddCardBottomSheet> {
                   child: Container(
                     width: 36.w,
                     height: 36.w,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: ColorsHelper.homeScaffoldColor,
                       shape: BoxShape.circle,
                     ),
@@ -204,7 +204,7 @@ class _AddCardBottomSheetState extends State<AddCardBottomSheet> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: ColorsHelper.primaryColor,
                 width: 1,
               ),

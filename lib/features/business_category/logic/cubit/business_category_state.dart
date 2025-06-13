@@ -8,5 +8,5 @@ class BusinessCategoryState with _$BusinessCategoryState {
   const factory BusinessCategoryState.categoryDeselected(String category) =
       BusinessCategoryDeselectedState;
   const factory BusinessCategoryState.categorySubmited(String category) =
-      BusinessCategorySubmitedState;
+      BusinessCategorySubmittedState;
 }

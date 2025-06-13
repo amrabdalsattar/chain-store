@@ -11,25 +11,23 @@ class ResetPasswordDataSource {
     await _apiHelper.post(
       ApiRequestModel(
         endPoint: ApiConstants.forgetPasswordEP,
-        queries: {
-          "email": email,
-        },
+        queries: {'email': email},
       ),
     );
   }
 
   Future<void> verifyOtp(String email, String otp) async {
-    await _apiHelper.post(ApiRequestModel(
-      endPoint: ApiConstants.otpVerificationEP,
-      body: {
-        "email": email,
-        "otp": otp,
-      },
-    ));
+    await _apiHelper.post(
+      ApiRequestModel(
+        endPoint: ApiConstants.otpVerificationEP,
+        body: {'email': email, 'otp': otp},
+      ),
+    );
   }
 
   Future<void> resetPassword(
-      ResetPasswordRequestModel resetPasswordRequestModel) async {
+    ResetPasswordRequestModel resetPasswordRequestModel,
+  ) async {
     await _apiHelper.put(
       ApiRequestModel(
         endPoint: ApiConstants.resetPasswordEP,

@@ -19,7 +19,7 @@ class SharedPreferencesHelper {
   }
 
   /// Saves a [value] to the SharedPreferences with given [key]
-  static setData(String key, dynamic value) async {
+  static setData(String key, value) async {
     switch (value.runtimeType) {
       case String:
         await _prefs.setString(key, value);

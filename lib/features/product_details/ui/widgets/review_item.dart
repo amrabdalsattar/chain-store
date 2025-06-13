@@ -20,7 +20,7 @@ class ReviewItem extends StatelessWidget {
             Container(
               width: 40.w,
               height: 40.w,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: ColorsHelper.homeScaffoldColor,
               ),
@@ -82,7 +82,7 @@ class ReviewItem extends StatelessWidget {
             height: 1.5,
           ),
         ),
-        if ((review['images'] as List).isNotEmpty) ...[  
+        if ((review['images'] as List).isNotEmpty) ...[
           verticalSpace(12),
           SizedBox(
             height: 80.h,
@@ -103,11 +103,12 @@ class ReviewItem extends StatelessWidget {
                     child: Image.asset(
                       review['images'][index],
                       fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) => Icon(
-                        Icons.image_not_supported_outlined,
-                        size: 30.w,
-                        color: Colors.grey,
-                      ),
+                      errorBuilder:
+                          (context, error, stackTrace) => Icon(
+                            Icons.image_not_supported_outlined,
+                            size: 30.w,
+                            color: Colors.grey,
+                          ),
                     ),
                   ),
                 );
@@ -116,7 +117,7 @@ class ReviewItem extends StatelessWidget {
           ),
         ],
         verticalSpace(16),
-        Divider(height: 1, thickness: 1, color: ColorsHelper.liteGray),
+        const Divider(height: 1, thickness: 1, color: ColorsHelper.liteGray),
         verticalSpace(16),
       ],
     );

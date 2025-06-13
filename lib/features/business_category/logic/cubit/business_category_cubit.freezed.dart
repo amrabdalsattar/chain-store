@@ -46,7 +46,7 @@ mixin _$BusinessCategoryState {
     categorySelected,
     required TResult Function(BusinessCategoryDeselectedState value)
     categoryDeselected,
-    required TResult Function(BusinessCategorySubmitedState value)
+    required TResult Function(BusinessCategorySubmittedState value)
     categorySubmited,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,14 +55,14 @@ mixin _$BusinessCategoryState {
     TResult? Function(BusinessCategorySelectedState value)? categorySelected,
     TResult? Function(BusinessCategoryDeselectedState value)?
     categoryDeselected,
-    TResult? Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult? Function(BusinessCategorySubmittedState value)? categorySubmited,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(BusinessCategorySelectedState value)? categorySelected,
     TResult Function(BusinessCategoryDeselectedState value)? categoryDeselected,
-    TResult Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult Function(BusinessCategorySubmittedState value)? categorySubmited,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -177,7 +177,7 @@ class _$InitialImpl implements _Initial {
     categorySelected,
     required TResult Function(BusinessCategoryDeselectedState value)
     categoryDeselected,
-    required TResult Function(BusinessCategorySubmitedState value)
+    required TResult Function(BusinessCategorySubmittedState value)
     categorySubmited,
   }) {
     return initial(this);
@@ -190,7 +190,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(BusinessCategorySelectedState value)? categorySelected,
     TResult? Function(BusinessCategoryDeselectedState value)?
     categoryDeselected,
-    TResult? Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult? Function(BusinessCategorySubmittedState value)? categorySubmited,
   }) {
     return initial?.call(this);
   }
@@ -201,7 +201,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(BusinessCategorySelectedState value)? categorySelected,
     TResult Function(BusinessCategoryDeselectedState value)? categoryDeselected,
-    TResult Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult Function(BusinessCategorySubmittedState value)? categorySubmited,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -337,7 +337,7 @@ class _$BusinessCategorySelectedStateImpl
     categorySelected,
     required TResult Function(BusinessCategoryDeselectedState value)
     categoryDeselected,
-    required TResult Function(BusinessCategorySubmitedState value)
+    required TResult Function(BusinessCategorySubmittedState value)
     categorySubmited,
   }) {
     return categorySelected(this);
@@ -350,7 +350,7 @@ class _$BusinessCategorySelectedStateImpl
     TResult? Function(BusinessCategorySelectedState value)? categorySelected,
     TResult? Function(BusinessCategoryDeselectedState value)?
     categoryDeselected,
-    TResult? Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult? Function(BusinessCategorySubmittedState value)? categorySubmited,
   }) {
     return categorySelected?.call(this);
   }
@@ -361,7 +361,7 @@ class _$BusinessCategorySelectedStateImpl
     TResult Function(_Initial value)? initial,
     TResult Function(BusinessCategorySelectedState value)? categorySelected,
     TResult Function(BusinessCategoryDeselectedState value)? categoryDeselected,
-    TResult Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult Function(BusinessCategorySubmittedState value)? categorySubmited,
     required TResult orElse(),
   }) {
     if (categorySelected != null) {
@@ -508,7 +508,7 @@ class _$BusinessCategoryDeselectedStateImpl
     categorySelected,
     required TResult Function(BusinessCategoryDeselectedState value)
     categoryDeselected,
-    required TResult Function(BusinessCategorySubmitedState value)
+    required TResult Function(BusinessCategorySubmittedState value)
     categorySubmited,
   }) {
     return categoryDeselected(this);
@@ -521,7 +521,7 @@ class _$BusinessCategoryDeselectedStateImpl
     TResult? Function(BusinessCategorySelectedState value)? categorySelected,
     TResult? Function(BusinessCategoryDeselectedState value)?
     categoryDeselected,
-    TResult? Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult? Function(BusinessCategorySubmittedState value)? categorySubmited,
   }) {
     return categoryDeselected?.call(this);
   }
@@ -532,7 +532,7 @@ class _$BusinessCategoryDeselectedStateImpl
     TResult Function(_Initial value)? initial,
     TResult Function(BusinessCategorySelectedState value)? categorySelected,
     TResult Function(BusinessCategoryDeselectedState value)? categoryDeselected,
-    TResult Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult Function(BusinessCategorySubmittedState value)? categorySubmited,
     required TResult orElse(),
   }) {
     if (categoryDeselected != null) {
@@ -600,7 +600,7 @@ class __$$BusinessCategorySubmitedStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BusinessCategorySubmitedStateImpl
-    implements BusinessCategorySubmitedState {
+    implements BusinessCategorySubmittedState {
   const _$BusinessCategorySubmitedStateImpl(this.category);
 
   @override
@@ -680,7 +680,7 @@ class _$BusinessCategorySubmitedStateImpl
     categorySelected,
     required TResult Function(BusinessCategoryDeselectedState value)
     categoryDeselected,
-    required TResult Function(BusinessCategorySubmitedState value)
+    required TResult Function(BusinessCategorySubmittedState value)
     categorySubmited,
   }) {
     return categorySubmited(this);
@@ -693,7 +693,7 @@ class _$BusinessCategorySubmitedStateImpl
     TResult? Function(BusinessCategorySelectedState value)? categorySelected,
     TResult? Function(BusinessCategoryDeselectedState value)?
     categoryDeselected,
-    TResult? Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult? Function(BusinessCategorySubmittedState value)? categorySubmited,
   }) {
     return categorySubmited?.call(this);
   }
@@ -704,7 +704,7 @@ class _$BusinessCategorySubmitedStateImpl
     TResult Function(_Initial value)? initial,
     TResult Function(BusinessCategorySelectedState value)? categorySelected,
     TResult Function(BusinessCategoryDeselectedState value)? categoryDeselected,
-    TResult Function(BusinessCategorySubmitedState value)? categorySubmited,
+    TResult Function(BusinessCategorySubmittedState value)? categorySubmited,
     required TResult orElse(),
   }) {
     if (categorySubmited != null) {
@@ -714,8 +714,8 @@ class _$BusinessCategorySubmitedStateImpl
   }
 }
 
-abstract class BusinessCategorySubmitedState implements BusinessCategoryState {
-  const factory BusinessCategorySubmitedState(final String category) =
+abstract class BusinessCategorySubmittedState implements BusinessCategoryState {
+  const factory BusinessCategorySubmittedState(final String category) =
       _$BusinessCategorySubmitedStateImpl;
 
   String get category;

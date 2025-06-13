@@ -10,26 +10,26 @@ class ThemesHelper {
       selectionHandleColor: ColorsHelper.primaryColor,
       selectionColor: ColorsHelper.primaryColor.withValues(alpha: 0.2),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       showSelectedLabels: true,
       showUnselectedLabels: true,
       unselectedItemColor: ColorsHelper.secondaryGray,
       selectedItemColor: ColorsHelper.primaryColor,
       // selectedLabelStyle: AppTextStyles.cairoPrimaryBold12,
       backgroundColor: Colors.white,
-      selectedIconTheme: const IconThemeData(color: ColorsHelper.primaryColor),
+      selectedIconTheme: IconThemeData(color: ColorsHelper.primaryColor),
     ),
     appBarTheme: const AppBarTheme(color: ColorsHelper.white),
     scaffoldBackgroundColor: ColorsHelper.white,
     primaryColor: ColorsHelper.primaryColor,
     canvasColor: Colors.white,
     splashColor: ColorsHelper.transparent,
-    textButtonTheme: TextButtonThemeData(
+    textButtonTheme: const TextButtonThemeData(
       // style: ButtonStyle(
       //     textStyle: WidgetStatePropertyAll(AppTextStyles.cairoBlackBold13
       //         .copyWith(color: ColorsHelper.black))),
     ),
-    dialogTheme: DialogThemeData(
+    dialogTheme: const DialogThemeData(
       backgroundColor: ColorsHelper.white,
       // titleTextStyle: AppTextStyles.cairoBlackBold13,
       surfaceTintColor: ColorsHelper.white,

@@ -18,7 +18,7 @@ class ImagePickerHelper {
     try {
       final XFile? image = await picker.pickImage(source: ImageSource.gallery);
       if (image == null) {
-        onError("No image selected");
+        onError('No image selected');
         return;
       }
       final file = File(image.path);

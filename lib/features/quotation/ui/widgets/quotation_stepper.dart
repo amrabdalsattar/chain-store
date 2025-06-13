@@ -22,7 +22,7 @@ class QuotationStepper extends StatelessWidget {
         color: ColorsHelper.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -68,7 +68,7 @@ class QuotationStepper extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             AnimatedContainer(
-              duration: Duration(milliseconds: 250),
+              duration: const Duration(milliseconds: 250),
               width: isActive ? 36.w : 30.w,
               height: isActive ? 36.w : 30.w,
               decoration: BoxDecoration(
@@ -81,9 +81,11 @@ class QuotationStepper extends StatelessWidget {
                     isActive
                         ? [
                           BoxShadow(
-                            color: ColorsHelper.primaryColor.withOpacity(0.18),
+                            color: ColorsHelper.primaryColor.withValues(
+                              alpha: 0.18,
+                            ),
                             blurRadius: 8,
-                            offset: Offset(0, 2),
+                            offset: const Offset(0, 2),
                           ),
                         ]
                         : [],

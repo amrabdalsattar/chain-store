@@ -1,12 +1,12 @@
-import 'package:connect_chain_market/core/helpers/app_images.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/core/widgets/custom_app_bar.dart';
-import 'package:connect_chain_market/features/categories/data/models/category_model.dart';
-import 'package:connect_chain_market/features/categories/ui/widgets/category_item.dart';
-import 'package:connect_chain_market/features/categories/ui/widgets/product_card.dart';
+import '../../../core/helpers/app_images.dart';
+import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
+import '../../../core/theming/app_text_styles.dart';
+import '../../../core/theming/colors_helper.dart';
+import '../../../core/widgets/custom_app_bar.dart';
+import '../data/models/category_model.dart';
+import 'widgets/category_item.dart';
+import 'widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +17,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsHelper.homeScaffoldColor,
-      appBar: CustomAppBar(title: 'Categories', hideBackButton: true),
+      appBar: const CustomAppBar(title: 'Categories', hideBackButton: true),
       body: SafeArea(
         child: Column(
           children: [
@@ -110,7 +110,7 @@ class CategoriesScreen extends StatelessWidget {
       'Featured',
       'Deals',
       'Consumer Electronics',
-      'Jewelry, Eyewear & Watches',
+      'Jewelry, EyeWear & Watches',
       'Apparel & Accessories',
       'Packaging & Printing',
       'Sports & Entertainment',
@@ -133,7 +133,7 @@ class CategoriesScreen extends StatelessWidget {
         color: ColorsHelper.white,
         boxShadow: [
           BoxShadow(
-            color: ColorsHelper.boxShadow.withOpacity(0.08),
+            color: ColorsHelper.boxShadow.withValues(alpha: 0.08),
             blurRadius: 4,
             offset: const Offset(2, 0),
           ),
@@ -173,7 +173,7 @@ class CategoriesScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color:
                           isSelected
-                              ? ColorsHelper.primaryColor.withOpacity(0.1)
+                              ? ColorsHelper.primaryColor.withValues(alpha: 0.1)
                               : Colors.transparent,
                       border: Border(
                         left: BorderSide(
@@ -287,17 +287,26 @@ class CategoriesScreen extends StatelessWidget {
 
   Widget _buildCategoryCircles() {
     final categories = [
-      CategoryModel(
+      const CategoryModel(
         name: 'Electronics',
         iconPath: AppImages.electronicsIcon,
         imageUrl: 'https://example.com/electronics.jpg',
       ),
-      CategoryModel(name: 'Fashion', iconPath: AppImages.sportsIcon),
-      CategoryModel(name: 'Home & Garden', iconPath: AppImages.sportsIcon),
-      CategoryModel(name: 'Beauty', iconPath: AppImages.sportsIcon),
-      CategoryModel(name: 'Sports', iconPath: AppImages.sportsIcon),
-      CategoryModel(name: 'Toys & Games', iconPath: AppImages.electronicsIcon),
-      CategoryModel(name: 'Automotive', iconPath: AppImages.electronicsIcon),
+      const CategoryModel(name: 'Fashion', iconPath: AppImages.sportsIcon),
+      const CategoryModel(
+        name: 'Home & Garden',
+        iconPath: AppImages.sportsIcon,
+      ),
+      const CategoryModel(name: 'Beauty', iconPath: AppImages.sportsIcon),
+      const CategoryModel(name: 'Sports', iconPath: AppImages.sportsIcon),
+      const CategoryModel(
+        name: 'Toys & Games',
+        iconPath: AppImages.electronicsIcon,
+      ),
+      const CategoryModel(
+        name: 'Automotive',
+        iconPath: AppImages.electronicsIcon,
+      ),
     ];
 
     return Container(

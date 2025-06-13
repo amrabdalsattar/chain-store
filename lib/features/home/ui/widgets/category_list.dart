@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/features/home/data/models/home_model.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -52,18 +52,14 @@ class CategoryItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
               boxShadow: [
                 BoxShadow(
-                  color: ColorsHelper.boxShadow.withOpacity(0.1),
+                  color: ColorsHelper.boxShadow.withValues(alpha: 0.1),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
               ],
             ),
             child: Center(
-              child: Image.asset(
-                category.iconPath,
-                width: 30.w,
-                height: 30.h,
-              ),
+              child: Image.asset(category.iconPath, width: 30.w, height: 30.h),
             ),
           ),
           SizedBox(height: 8.h),
