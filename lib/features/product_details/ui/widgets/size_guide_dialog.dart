@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,9 +9,7 @@ class SizeGuideDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.r),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
       child: Container(
         width: 327.w,
         padding: EdgeInsets.all(24.r),
@@ -51,7 +49,7 @@ class SizeGuideDialog extends StatelessWidget {
               ],
             ),
             verticalSpace(24),
-            
+
             // Size chart table
             Container(
               decoration: BoxDecoration(
@@ -79,7 +77,7 @@ class SizeGuideDialog extends StatelessWidget {
                       ],
                     ),
                   ),
-                  
+
                   // Table rows
                   _buildTableRow('XS', '34-36', '28-30', '34-36'),
                   _buildDivider(),
@@ -95,9 +93,9 @@ class SizeGuideDialog extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             verticalSpace(24),
-            
+
             // How to measure section
             Text(
               'How to Measure',
@@ -194,10 +192,6 @@ class SizeGuideDialog extends StatelessWidget {
   }
 
   Widget _buildDivider() {
-    return Divider(
-      height: 1,
-      thickness: 1,
-      color: ColorsHelper.liteGray,
-    );
+    return const Divider(height: 1, thickness: 1, color: ColorsHelper.liteGray);
   }
 }

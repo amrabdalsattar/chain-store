@@ -1,21 +1,18 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/features/home/data/models/home_model.dart';
-import 'package:connect_chain_market/features/home/logic/cubit/home_cubit.dart';
-import 'package:connect_chain_market/features/home/ui/widgets/banner_carousel.dart';
-import 'package:connect_chain_market/features/home/ui/widgets/category_list.dart';
-import 'package:connect_chain_market/features/home/ui/widgets/home_app_bar.dart';
-import 'package:connect_chain_market/features/home/ui/widgets/product_grid.dart';
-import 'package:connect_chain_market/features/home/ui/widgets/section_header.dart';
+import '../../../core/helpers/extensions.dart';
+import '../../../core/helpers/spacing.dart';
+import '../../../core/routing/routes.dart';
+import '../../../core/theming/colors_helper.dart';
+import '../data/models/home_model.dart';
+import '../logic/cubit/home_cubit.dart';
+import 'widgets/banner_carousel.dart';
+import 'widgets/category_list.dart';
+import 'widgets/home_app_bar.dart';
+import 'widgets/product_grid.dart';
+import 'widgets/request_for_quotation_button.dart';
+import 'widgets/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// Home Screen Widgets
-part 'widgets/request_for_qoutation_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -36,7 +33,7 @@ class _HomeScreenContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsHelper.homeScaffoldColor,
-      floatingActionButton: RequestForQoutationButton(),
+      floatingActionButton: const RequestForQuotationButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       body: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {

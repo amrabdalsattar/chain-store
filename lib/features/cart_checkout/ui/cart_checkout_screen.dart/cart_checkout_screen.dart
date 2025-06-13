@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,10 +8,10 @@ import '../../../../core/theming/colors_helper.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 
 import '../../../../core/widgets/custom_button.dart';
-import '../widgets/address_section.dart';
+import '../shared_widgets/address_section.dart';
 
-import '../widgets/payment_method_section.dart';
-import '../widgets/expandable_order_summary_section.dart';
+import '../shared_widgets/payment_method_section.dart';
+import '../shared_widgets/expandable_order_summary_section.dart';
 
 class CartCheckoutScreen extends StatelessWidget {
   const CartCheckoutScreen({super.key});

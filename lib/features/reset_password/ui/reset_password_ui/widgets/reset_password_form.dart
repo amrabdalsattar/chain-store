@@ -18,7 +18,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // First Textfield
-          Text(
+          const Text(
             ConstantString.password,
             // style: AppTextStyles.cairoDarkGrayBold16,
           ),
@@ -72,7 +72,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
           ),
           verticalSpace(24),
           // Second Textfield
-          Text(
+          const Text(
             ConstantString.password,
             // style: AppTextStyles.cairoDarkGrayBold16,
           ),

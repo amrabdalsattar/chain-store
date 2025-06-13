@@ -18,7 +18,7 @@ class NotificationsDatasource {
       ),
     );
 
-    NotificationResponseModel notificationResponseModel =
+    final NotificationResponseModel notificationResponseModel =
         NotificationResponseModel.fromJson(response);
 
     return notificationResponseModel.notifications;

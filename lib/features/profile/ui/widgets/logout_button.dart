@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/helpers/app_images.dart';
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/features/profile/logic/cubit/profile_cubit.dart';
+import '../../../../core/helpers/app_images.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../logic/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

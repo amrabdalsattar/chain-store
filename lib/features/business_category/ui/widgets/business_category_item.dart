@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,15 +28,16 @@ class BusinessCategoryItem extends StatelessWidget {
           color: isSelected ? ColorsHelper.primaryColor : Colors.transparent,
           borderRadius: BorderRadius.circular(40.r),
           border: Border.all(width: 1.r, color: ColorsHelper.borderGray),
-          boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: ColorsHelper.boxShadow,
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ]
-              : null,
+          boxShadow:
+              isSelected
+                  ? [
+                    BoxShadow(
+                      color: ColorsHelper.boxShadow,
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ]
+                  : null,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,11 +62,12 @@ class BusinessCategoryItem extends StatelessWidget {
             Flexible(
               child: Text(
                 title,
-                style: isSelected
-                    ? AppTextStyles.robotoBlackRegular14.copyWith(
-                        color: ColorsHelper.white,
-                      )
-                    : AppTextStyles.robotoBlackRegular14,
+                style:
+                    isSelected
+                        ? AppTextStyles.robotoBlackRegular12.copyWith(
+                          color: ColorsHelper.white,
+                        )
+                        : AppTextStyles.robotoBlackRegular12,
                 overflow: TextOverflow.ellipsis,
               ),
             ),

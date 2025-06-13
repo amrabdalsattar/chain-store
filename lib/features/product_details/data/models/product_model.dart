@@ -27,7 +27,7 @@ class ProductModel {
 
   // Sample product for demo purposes
   static ProductModel sampleProduct() {
-    return ProductModel(
+    return const ProductModel(
       id: '1',
       name: 'Cotton Club T-shirt',
       description:

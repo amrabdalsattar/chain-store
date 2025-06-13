@@ -21,7 +21,7 @@ class PushNotificationService {
       _firebaseMessaging.setAutoInitEnabled(true);
 
       await _firebaseMessaging.requestPermission();
-      String? token = await _firebaseMessaging.getToken();
+      final String? token = await _firebaseMessaging.getToken();
 
       log(token ?? 'null token');
 

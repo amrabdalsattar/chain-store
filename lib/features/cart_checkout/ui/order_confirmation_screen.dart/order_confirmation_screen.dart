@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,12 +7,12 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_helper.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_button.dart';
-import '../widgets/order_details_section.dart';
-import '../widgets/order_status_header.dart';
-import '../widgets/payment_method_info.dart';
-import '../widgets/expandable_order_summary_section.dart';
-import '../widgets/section_container.dart';
-import '../widgets/shipping_info_section.dart';
+import '../shared_widgets/order_details_section.dart';
+import '../shared_widgets/order_status_header.dart';
+import '../shared_widgets/payment_method_info.dart';
+import '../shared_widgets/expandable_order_summary_section.dart';
+import '../shared_widgets/section_container.dart';
+import '../shared_widgets/shipping_info_section.dart';
 
 class OrderConfirmationScreen extends StatelessWidget {
   const OrderConfirmationScreen({super.key});

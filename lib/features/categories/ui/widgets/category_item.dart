@@ -1,6 +1,6 @@
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/features/categories/data/models/category_model.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../data/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +29,7 @@ class CategoryItem extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: ColorsHelper.boxShadow.withOpacity(0.1),
+                    color: ColorsHelper.boxShadow.withValues(alpha: 0.1),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   ),

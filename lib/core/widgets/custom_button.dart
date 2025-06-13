@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
   final String title;
   final void Function()? onTap;
   final double width;
+  final double? height;
   final double elevation;
   final bool isLoading;
   final bool isEnabled;
@@ -29,6 +30,7 @@ class CustomButton extends StatelessWidget {
     this.textStyle,
     this.borderColor,
     this.radius,
+    this.height,
   });
 
   @override
@@ -36,7 +38,7 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: isEnabled && !isLoading ? onTap : null,
       child: Container(
-        height: 50.h,
+        height: height == null ? 50.h : height!.h,
         width: width,
         decoration: BoxDecoration(
           color:
@@ -52,8 +54,8 @@ class CustomButton extends StatelessWidget {
               isEnabled
                   ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(
-                        elevation == 0 ? 0 : 0.25,
+                      color: Colors.black.withValues(
+                        alpha: elevation == 0 ? 0 : 0.25,
                       ),
                       blurRadius: elevation,
                       spreadRadius: 1,

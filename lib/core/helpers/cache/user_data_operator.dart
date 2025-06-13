@@ -91,7 +91,7 @@ class UserDataOperator {
     }
     if (isLoggedIn) {
       // return Routes.mainScreenRoute;
-      return Routes.businessCateogrySreenRoute;
+      return Routes.mainScreenRoute;
     }
     return Routes.loginRoute;
   }

@@ -1,8 +1,7 @@
-
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
-import 'package:connect_chain_market/features/business_category/logic/cubit/business_category_cubit.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../logic/cubit/business_category_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,11 +19,11 @@ class CustomCategoryChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<BusinessCategoryCubit>();
-    
+
     return BlocBuilder<BusinessCategoryCubit, BusinessCategoryState>(
       builder: (context, state) {
         final isSelected = cubit.isCategorySelected(title);
-        
+
         return InkWell(
           onTap: () {
             cubit.toggleCategorySelection(title);
@@ -44,11 +43,12 @@ class CustomCategoryChip extends StatelessWidget {
                 horizontalSpace(8),
                 Text(
                   title,
-                  style: isSelected
-                      ? AppTextStyles.robotoBlackRegular14.copyWith(
-                          color: ColorsHelper.white,
-                        )
-                      : AppTextStyles.robotoBlackRegular14,
+                  style:
+                      isSelected
+                          ? AppTextStyles.robotoBlackRegular12.copyWith(
+                            color: ColorsHelper.white,
+                          )
+                          : AppTextStyles.robotoBlackRegular12,
                 ),
               ],
             ),

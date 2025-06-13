@@ -18,11 +18,11 @@ class SignupCubit extends Cubit<SignupState> {
   TextEditingController addressController = TextEditingController();
 
   List<String> get businessTypesList => [
-        "Clothes",
-        "Food",
-        "Beverages",
-        "Other",
-      ];
+    'Clothes',
+    'Food',
+    'Beverages',
+    'Other',
+  ];
   String businessType = '';
 
   void changeBusinessType(String value) {

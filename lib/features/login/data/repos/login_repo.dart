@@ -13,7 +13,7 @@ class LoginRepo {
     required String password,
   }) async {
     try {
-      var result = await _loginDatasource.login(
+      final result = await _loginDatasource.login(
         email: email,
         password: password,
       );

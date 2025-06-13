@@ -16,7 +16,7 @@ class PreLoginCubit extends Cubit<PreLoginState> {
     );
     result.when(
       success: (success) {
-        if (!isClosed) emit(PreLoginSuccessState());
+        if (!isClosed) emit(const PreLoginSuccessState());
       },
       failure: (apiErrorModel) {
         if (!isClosed) emit(PreLoginErrorState(apiErrorModel));

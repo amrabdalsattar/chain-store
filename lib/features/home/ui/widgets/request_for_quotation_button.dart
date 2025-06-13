@@ -1,10 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-part of '../home_screen.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
 
-class RequestForQoutationButton extends StatelessWidget {
-  const RequestForQoutationButton({
-    super.key,
-  });
+class RequestForQuotationButton extends StatelessWidget {
+  const RequestForQuotationButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,7 @@ class RequestForQoutationButton extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 19.h),
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(color: ColorsHelper.boxShadow, blurRadius: 24.r),
@@ -25,10 +29,10 @@ class RequestForQoutationButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.edit_outlined, color: ColorsHelper.white),
+            const Icon(Icons.edit_outlined, color: ColorsHelper.white),
             horizontalSpace(2.5),
             Text(
-              'Request For Qoutation',
+              'Request For Quotation',
               style: AppTextStyles.rubikWhiteBold14,
             ),
           ],

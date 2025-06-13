@@ -20,13 +20,13 @@ class SignupRequestModel {
   });
 
   Map<String, dynamic> toJson() => {
-        "name": name,
-        "phoneNumber": phoneNumber,
-        "email": email,
-        "password": password,
-        "businessType": businessType,
-        "address": address,
-        "confirmPassword": confirmPassword,
-        "role": role,
-      };
+    'name': name,
+    'phoneNumber': phoneNumber,
+    'email': email,
+    'password': password,
+    'businessType': businessType,
+    'address': address,
+    'confirmPassword': confirmPassword,
+    'role': role,
+  };
 }

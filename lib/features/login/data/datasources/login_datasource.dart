@@ -8,16 +8,18 @@ class LoginDatasource {
   const LoginDatasource(this._apiHelper);
 
   Future<LoginResponseModel> login({
-    required String email,    
+    required String email,
     required String password,
   }) async {
     final result = await _apiHelper.post(
-      ApiRequestModel(endPoint: ApiConstants.loginEP, body: {
-        "email": email,
-        "password": password,
-      }),
+      ApiRequestModel(
+        endPoint: ApiConstants.loginEP,
+        body: {'email': email, 'password': password},
+      ),
     );
-    LoginResponseModel loginResponseModel = LoginResponseModel.fromJson(result);
+    final LoginResponseModel loginResponseModel = LoginResponseModel.fromJson(
+      result,
+    );
 
     return loginResponseModel;
   }

@@ -4,7 +4,7 @@ import '../../../core/routing/routes.dart';
 import '../../../core/theming/app_text_styles.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../logic/cubit/business_category_cubit.dart';
-import 'widgets/custom_category_chip.dart';
+import 'widgets/categories_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +27,6 @@ class BusinessCategoryScreen extends StatelessWidget {
               onTap:
                   businessCategoryCubit.isButtonEnabled
                       ? () {
-                        businessCategoryCubit.submitCategories();
                         context.pushNamed(Routes.mainScreenRoute);
                       }
                       : null,
@@ -62,44 +61,17 @@ class BusinessCategoryScreen extends StatelessWidget {
                 // subtitle of the Page
                 Text(
                   'Choose your business category to help us tailor your experience.',
-                  style: AppTextStyles.robotoBlackRegular14,
+                  style: AppTextStyles.robotoBlackRegular12,
                 ),
                 verticalSpace(32),
 
-                // Start of cateogires Section
+                // Start of categories Section
                 CategoriesList(businessCategoryCubit: businessCategoryCubit),
               ],
             ),
           ),
         ),
       ),
-    );
-  }
-}
-
-class CategoriesList extends StatelessWidget {
-  const CategoriesList({super.key, required this.businessCategoryCubit});
-
-  final BusinessCategoryCubit businessCategoryCubit;
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<BusinessCategoryCubit, BusinessCategoryState>(
-      builder: (context, state) {
-        return Wrap(
-          spacing: 12.w,
-          runSpacing: 12.h,
-          children: List.generate(businessCategoryCubit.categories.length, (
-            index,
-          ) {
-            final category = businessCategoryCubit.categories[index];
-            return CustomCategoryChip(
-              iconPath: category.iconPath,
-              title: category.name,
-            );
-          }),
-        );
-      },
     );
   }
 }

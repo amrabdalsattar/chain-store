@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/colors_helper.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,7 +31,7 @@ class ExpandableOrderSummaryHeader extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
             decoration: BoxDecoration(
-              color: ColorsHelper.primaryColor.withOpacity(0.1),
+              color: ColorsHelper.primaryColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8.r),
             ),
             child: Row(

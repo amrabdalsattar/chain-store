@@ -46,7 +46,7 @@ class SetupManager {
     try {
       final app = await Firebase.initializeApp(options: options);
 
-      debugPrint("App Name${app.name}");
+      debugPrint('App Name${app.name}');
     } catch (e) {
       if (kDebugMode) {
         print(e);

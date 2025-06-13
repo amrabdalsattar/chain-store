@@ -1,7 +1,7 @@
-import 'package:connect_chain_market/core/helpers/extensions.dart';
-import 'package:connect_chain_market/core/routing/routes.dart';
-import 'package:connect_chain_market/features/categories/ui/widgets/product_card.dart';
-import 'package:connect_chain_market/features/product_details/data/models/product_model.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../categories/ui/widgets/product_card.dart';
+import '../../../product_details/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

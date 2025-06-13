@@ -35,7 +35,7 @@ class SignupButtonBlocConsumer extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               context: context,
               title: 'The operation was successful.',
-              description: "A confirmation link has been sent to your email.",
+              description: 'A confirmation link has been sent to your email.',
               type: ToastificationType.success,
             );
           },

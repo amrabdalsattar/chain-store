@@ -11,10 +11,10 @@ class ChainStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(390, 844),
+      designSize: const Size(390, 844),
       builder:
           (_, child) => MaterialApp(
-            locale: Locale("en"),
+            locale: const Locale('en'),
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,

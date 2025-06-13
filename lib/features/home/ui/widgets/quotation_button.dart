@@ -24,7 +24,7 @@ class QuotationButton extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: ColorsHelper.primaryColor.withOpacity(0.3),
+                color: ColorsHelper.primaryColor.withValues(alpha: 0.3),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),

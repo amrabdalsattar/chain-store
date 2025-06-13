@@ -4,7 +4,7 @@ import '../../helpers/constant_string.dart';
 import 'api_error_model.dart';
 
 class ApiErrorHandler {
-  static ApiErrorModel handle(dynamic error) {
+  static ApiErrorModel handle(error) {
     if (error is DioException) {
       switch (error.type) {
         case DioExceptionType.connectionError:
@@ -33,7 +33,7 @@ class ApiErrorHandler {
   }
 }
 
-ApiErrorModel _handleError(dynamic data) {
+ApiErrorModel _handleError(data) {
   try {
     // Check if 'data' is a map and has 'message' and 'errors'
     final message = data['message'];

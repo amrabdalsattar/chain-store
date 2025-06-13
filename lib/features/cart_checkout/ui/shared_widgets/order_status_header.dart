@@ -15,7 +15,7 @@ class OrderStatusHeader extends StatelessWidget {
           width: 80.w,
           height: 80.w,
           decoration: BoxDecoration(
-            color: ColorsHelper.primaryColor.withOpacity(0.1),
+            color: ColorsHelper.primaryColor.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Icon(

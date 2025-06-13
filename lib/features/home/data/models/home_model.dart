@@ -1,4 +1,4 @@
-import 'package:connect_chain_market/features/product_details/data/models/product_model.dart';
+import '../../../product_details/data/models/product_model.dart';
 
 class CategoryModel {
   final String id;

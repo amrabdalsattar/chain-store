@@ -25,7 +25,7 @@ class ActionableTextRow extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "$text ",
+                text: '$text ',
                 style: AppTextStyles.rubikSemiOpacityBlackRegular16,
               ),
               TextSpan(

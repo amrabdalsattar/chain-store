@@ -1,5 +1,5 @@
-import 'package:connect_chain_market/core/helpers/spacing.dart';
-import 'package:connect_chain_market/core/theming/app_text_styles.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,7 +7,7 @@ class ProfileHeader extends StatelessWidget {
   final String name;
   final String email;
   final String? avatarText;
-  
+
   const ProfileHeader({
     super.key,
     required this.name,
@@ -40,15 +40,9 @@ class ProfileHeader extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              name,
-              style: AppTextStyles.rubikBlackBold20,
-            ),
+            Text(name, style: AppTextStyles.rubikBlackBold20),
             verticalSpace(1),
-            Text(
-              email,
-              style: AppTextStyles.rubikGrayMedium12,
-            ),
+            Text(email, style: AppTextStyles.rubikGrayMedium12),
           ],
         ),
       ],
