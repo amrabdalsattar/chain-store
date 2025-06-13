@@ -6,6 +6,20 @@ class Routes {
   static const String forgetPasswordScreenRoute = "/forgetPassword";
   static const String otpScreenRoute = "/otpScreen";
   static const String resetPasswordScreenRoute = "/resetPasswordScreen";
+  static const String profileScreenRoute = "/profileScreen";
+  static const String checkoutScreenRoute = "/checkoutScreen";
+  static const String orderConfirmationRoute = "/orderConfirmation";
+  static const String shoppingCartRoute = "/shoppingCart";
+  static const String productDetailsRoute = "/productDetails";
+  static const String homeScreenRoute = "/homeScreen";
+  static const String quotationScreenRoute = "/quotationScreen";
 
   static const String preLoginScreenRoute = "/preLoginScreenRoute";
+    static const String rattingScreenRoute = "/rattingScreen";
+
+
+  static const String businessCateogrySreenRoute =
+      "/businessCateogrySreenRoute";
+
+  static const String categoriesScreenRoute = "/categoriesScreen";
 }

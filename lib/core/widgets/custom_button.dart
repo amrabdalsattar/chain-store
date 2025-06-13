@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final double width;
   final double elevation;
   final bool isLoading;
+  final bool isEnabled;
   final Color? color;
   final TextStyle? textStyle;
   final Color? borderColor;
@@ -23,6 +24,7 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.elevation = 0,
     this.isLoading = false,
+    this.isEnabled = true,
     this.color,
     this.textStyle,
     this.borderColor,
@@ -32,25 +34,33 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: isEnabled && !isLoading ? onTap : null,
       child: Container(
         height: 50.h,
         width: width,
         decoration: BoxDecoration(
-          color: color ?? ColorsHelper.primaryColor,
+          color:
+              isEnabled
+                  ? (color ?? ColorsHelper.primaryColor)
+                  : ColorsHelper.borderGray,
           borderRadius: BorderRadius.circular(radius?.r ?? 8.r),
           border: Border.all(
             color: borderColor ?? ColorsHelper.borderGray,
             width: 1.5,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: elevation == 0 ? 0 : 0.25),
-              blurRadius: elevation,
-              spreadRadius: 1,
-              offset: Offset(0, elevation / 2),
-            ),
-          ],
+          boxShadow:
+              isEnabled
+                  ? [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(
+                        elevation == 0 ? 0 : 0.25,
+                      ),
+                      blurRadius: elevation,
+                      spreadRadius: 1,
+                      offset: Offset(0, elevation / 2),
+                    ),
+                  ]
+                  : [],
         ),
         child:
             isLoading
@@ -58,7 +68,13 @@ class CustomButton extends StatelessWidget {
                 : Center(
                   child: Text(
                     title,
-                    style: textStyle ?? AppTextStyles.robotoWhiteBold16,
+                    style:
+                        textStyle ??
+                        (isEnabled
+                            ? AppTextStyles.robotoWhiteBold16
+                            : AppTextStyles.robotoWhiteBold16.copyWith(
+                              color: ColorsHelper.semiOpacityBlack,
+                            )),
                   ),
                 ),
       ),

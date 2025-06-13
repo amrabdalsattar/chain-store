@@ -12,7 +12,8 @@ part of 'signup_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SignupState {
@@ -22,16 +23,14 @@ mixin _$SignupState {
     required TResult Function() loading,
     required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(String confirmationMessage) success,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(String confirmationMessage)? success,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -39,24 +38,21 @@ mixin _$SignupState {
     TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(String confirmationMessage)? success,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupInitialState value) initial,
     required TResult Function(SignupLoadingState value) loading,
     required TResult Function(SignupErrorState value) error,
     required TResult Function(SignupSuccessState value) success,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupInitialState value)? initial,
     TResult? Function(SignupLoadingState value)? loading,
     TResult? Function(SignupErrorState value)? error,
     TResult? Function(SignupSuccessState value)? success,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupInitialState value)? initial,
@@ -64,15 +60,15 @@ mixin _$SignupState {
     TResult Function(SignupErrorState value)? error,
     TResult Function(SignupSuccessState value)? success,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignupStateCopyWith<$Res> {
   factory $SignupStateCopyWith(
-          SignupState value, $Res Function(SignupState) then) =
-      _$SignupStateCopyWithImpl<$Res, SignupState>;
+    SignupState value,
+    $Res Function(SignupState) then,
+  ) = _$SignupStateCopyWithImpl<$Res, SignupState>;
 }
 
 /// @nodoc
@@ -91,18 +87,20 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
 
 /// @nodoc
 abstract class _$$SignupInitialStateImplCopyWith<$Res> {
-  factory _$$SignupInitialStateImplCopyWith(_$SignupInitialStateImpl value,
-          $Res Function(_$SignupInitialStateImpl) then) =
-      __$$SignupInitialStateImplCopyWithImpl<$Res>;
+  factory _$$SignupInitialStateImplCopyWith(
+    _$SignupInitialStateImpl value,
+    $Res Function(_$SignupInitialStateImpl) then,
+  ) = __$$SignupInitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SignupInitialStateImplCopyWithImpl<$Res>
     extends _$SignupStateCopyWithImpl<$Res, _$SignupInitialStateImpl>
     implements _$$SignupInitialStateImplCopyWith<$Res> {
-  __$$SignupInitialStateImplCopyWithImpl(_$SignupInitialStateImpl _value,
-      $Res Function(_$SignupInitialStateImpl) _then)
-      : super(_value, _then);
+  __$$SignupInitialStateImplCopyWithImpl(
+    _$SignupInitialStateImpl _value,
+    $Res Function(_$SignupInitialStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SignupState
   /// with the given fields replaced by the non-null parameter values.
@@ -208,18 +206,20 @@ abstract class _SignupInitialState implements SignupState {
 
 /// @nodoc
 abstract class _$$SignupLoadingStateImplCopyWith<$Res> {
-  factory _$$SignupLoadingStateImplCopyWith(_$SignupLoadingStateImpl value,
-          $Res Function(_$SignupLoadingStateImpl) then) =
-      __$$SignupLoadingStateImplCopyWithImpl<$Res>;
+  factory _$$SignupLoadingStateImplCopyWith(
+    _$SignupLoadingStateImpl value,
+    $Res Function(_$SignupLoadingStateImpl) then,
+  ) = __$$SignupLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SignupLoadingStateImplCopyWithImpl<$Res>
     extends _$SignupStateCopyWithImpl<$Res, _$SignupLoadingStateImpl>
     implements _$$SignupLoadingStateImplCopyWith<$Res> {
-  __$$SignupLoadingStateImplCopyWithImpl(_$SignupLoadingStateImpl _value,
-      $Res Function(_$SignupLoadingStateImpl) _then)
-      : super(_value, _then);
+  __$$SignupLoadingStateImplCopyWithImpl(
+    _$SignupLoadingStateImpl _value,
+    $Res Function(_$SignupLoadingStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SignupState
   /// with the given fields replaced by the non-null parameter values.
@@ -325,9 +325,10 @@ abstract class SignupLoadingState implements SignupState {
 
 /// @nodoc
 abstract class _$$SignupErrorStateImplCopyWith<$Res> {
-  factory _$$SignupErrorStateImplCopyWith(_$SignupErrorStateImpl value,
-          $Res Function(_$SignupErrorStateImpl) then) =
-      __$$SignupErrorStateImplCopyWithImpl<$Res>;
+  factory _$$SignupErrorStateImplCopyWith(
+    _$SignupErrorStateImpl value,
+    $Res Function(_$SignupErrorStateImpl) then,
+  ) = __$$SignupErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
@@ -336,23 +337,24 @@ abstract class _$$SignupErrorStateImplCopyWith<$Res> {
 class __$$SignupErrorStateImplCopyWithImpl<$Res>
     extends _$SignupStateCopyWithImpl<$Res, _$SignupErrorStateImpl>
     implements _$$SignupErrorStateImplCopyWith<$Res> {
-  __$$SignupErrorStateImplCopyWithImpl(_$SignupErrorStateImpl _value,
-      $Res Function(_$SignupErrorStateImpl) _then)
-      : super(_value, _then);
+  __$$SignupErrorStateImplCopyWithImpl(
+    _$SignupErrorStateImpl _value,
+    $Res Function(_$SignupErrorStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SignupState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$SignupErrorStateImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
+  $Res call({Object? apiErrorModel = null}) {
+    return _then(
+      _$SignupErrorStateImpl(
+        null == apiErrorModel
+            ? _value.apiErrorModel
+            : apiErrorModel // ignore: cast_nullable_to_non_nullable
+                as ApiErrorModel,
+      ),
+    );
   }
 }
 
@@ -388,7 +390,9 @@ class _$SignupErrorStateImpl implements SignupErrorState {
   @pragma('vm:prefer-inline')
   _$$SignupErrorStateImplCopyWith<_$SignupErrorStateImpl> get copyWith =>
       __$$SignupErrorStateImplCopyWithImpl<_$SignupErrorStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -480,9 +484,10 @@ abstract class SignupErrorState implements SignupState {
 
 /// @nodoc
 abstract class _$$SignupSuccessStateImplCopyWith<$Res> {
-  factory _$$SignupSuccessStateImplCopyWith(_$SignupSuccessStateImpl value,
-          $Res Function(_$SignupSuccessStateImpl) then) =
-      __$$SignupSuccessStateImplCopyWithImpl<$Res>;
+  factory _$$SignupSuccessStateImplCopyWith(
+    _$SignupSuccessStateImpl value,
+    $Res Function(_$SignupSuccessStateImpl) then,
+  ) = __$$SignupSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String confirmationMessage});
 }
@@ -491,23 +496,24 @@ abstract class _$$SignupSuccessStateImplCopyWith<$Res> {
 class __$$SignupSuccessStateImplCopyWithImpl<$Res>
     extends _$SignupStateCopyWithImpl<$Res, _$SignupSuccessStateImpl>
     implements _$$SignupSuccessStateImplCopyWith<$Res> {
-  __$$SignupSuccessStateImplCopyWithImpl(_$SignupSuccessStateImpl _value,
-      $Res Function(_$SignupSuccessStateImpl) _then)
-      : super(_value, _then);
+  __$$SignupSuccessStateImplCopyWithImpl(
+    _$SignupSuccessStateImpl _value,
+    $Res Function(_$SignupSuccessStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SignupState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? confirmationMessage = null,
-  }) {
-    return _then(_$SignupSuccessStateImpl(
-      null == confirmationMessage
-          ? _value.confirmationMessage
-          : confirmationMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? confirmationMessage = null}) {
+    return _then(
+      _$SignupSuccessStateImpl(
+        null == confirmationMessage
+            ? _value.confirmationMessage
+            : confirmationMessage // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -543,7 +549,9 @@ class _$SignupSuccessStateImpl implements SignupSuccessState {
   @pragma('vm:prefer-inline')
   _$$SignupSuccessStateImplCopyWith<_$SignupSuccessStateImpl> get copyWith =>
       __$$SignupSuccessStateImplCopyWithImpl<_$SignupSuccessStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
