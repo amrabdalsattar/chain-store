@@ -10,7 +10,7 @@ import '../../../../core/widgets/custom_button.dart';
 import '../shared_widgets/order_details_section.dart';
 import '../shared_widgets/order_status_header.dart';
 import '../shared_widgets/payment_method_info.dart';
-import '../shared_widgets/expandable_order_summary_section.dart';
+import '../cart_checkout_screen.dart/sections/order_summary_section/expandable_order_summary_section.dart';
 import '../shared_widgets/section_container.dart';
 import '../shared_widgets/shipping_info_section.dart';
 
@@ -56,10 +56,6 @@ class OrderConfirmationScreen extends StatelessWidget {
                 child: PaymentMethodInfo(),
               ),
               verticalSpace(24),
-
-              // Price Summary Section
-              const OrderSummarySection(hideProductsSection: true),
-              verticalSpace(32),
 
               // Continue Shopping Button
               CustomButton(

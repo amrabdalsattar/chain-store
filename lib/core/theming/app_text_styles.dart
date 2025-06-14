@@ -20,6 +20,12 @@ class AppTextStyles {
     color: ColorsHelper.primaryColor,
     fontWeight: FontWeightHelper.bold,
   );
+  static TextStyle rubikBlackBold16 = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 16.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
   static TextStyle rubikBlackBold20 = TextStyle(
     fontFamily: 'rubik',
 
@@ -55,6 +61,13 @@ class AppTextStyles {
     fontSize: 14.sp,
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.medium,
+  );
+
+  static TextStyle rubikBlackRegular12 = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 12.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.regular,
   );
 
   static TextStyle rubikSemiGreyRegular12 = TextStyle(
@@ -112,6 +125,14 @@ class AppTextStyles {
     fontSize: 12.sp,
     color: ColorsHelper.primaryColor,
     fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle rubikPrimaryRegular12 = TextStyle(
+    fontFamily: 'rubik',
+
+    fontSize: 12.sp,
+    color: ColorsHelper.primaryColor,
+    fontWeight: FontWeightHelper.regular,
   );
 
   static TextStyle rubikFadedBlack16 = TextStyle(
@@ -218,6 +239,14 @@ class AppTextStyles {
     color: ColorsHelper.gray,
     fontWeight: FontWeightHelper.regular,
   );
+
+  static TextStyle robotoGrayRegular10 = TextStyle(
+    fontFamily: 'roboto',
+    fontSize: 10.sp,
+    color: ColorsHelper.gray,
+    fontWeight: FontWeightHelper.regular,
+  );
+
   static TextStyle robotoDarkGrayRegular16 = TextStyle(
     fontFamily: 'roboto',
     fontSize: 16.sp,

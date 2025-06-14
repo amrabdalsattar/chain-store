@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 
 import '../../data/models/cart_response_model.dart';
 import '../../data/repos/cart_repo.dart';
-import 'cart_cubit_state.dart';
+import 'cart_state.dart';
 
 class CartCubit extends Cubit<CartState> {
   final CartRepo _repo;

@@ -10,7 +10,7 @@ class ShoppingCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: CartAppBar(),
+      appBar: CartAppBar(title: 'My Cart', isFirstScreen: true),
       body: CartBlocBuilder(),
     );
   }

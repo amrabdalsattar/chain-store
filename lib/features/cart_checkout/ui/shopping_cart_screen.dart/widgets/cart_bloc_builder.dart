@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/imaged_error.dart';
 import '../../../../../core/widgets/loading_indicator.dart';
-import '../../../logic/cubit/cart_cubit_cubit.dart';
-import '../../../logic/cubit/cart_cubit_state.dart';
+import '../../../logic/cart_cubit/cart_cubit.dart';
+import '../../../logic/cart_cubit/cart_state.dart';
 import 'cart_content.dart';
 import 'empty_cart.dart';
 

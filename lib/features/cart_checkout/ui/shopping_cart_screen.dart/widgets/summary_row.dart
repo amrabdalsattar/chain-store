@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/theming/app_text_styles.dart';
 import '../../../data/models/cart_response_model.dart';
-import '../../../logic/cubit/cart_cubit_cubit.dart';
+import '../../../logic/cart_cubit/cart_cubit.dart';
 
 class SummaryRow extends StatelessWidget {
   final CartInfo cartInfo;

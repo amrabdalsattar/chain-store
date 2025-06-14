@@ -7,7 +7,7 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../data/models/cart_response_model.dart';
-import '../../../logic/cubit/cart_cubit_cubit.dart';
+import '../../../logic/cart_cubit/cart_cubit.dart';
 import 'slidable_cart_item.dart';
 import 'summary_row.dart';
 
@@ -53,7 +53,7 @@ class CartContent extends StatelessWidget {
         verticalSpace(16),
         CustomButton(
           onTap: () {
-            context.pushNamed(Routes.checkoutScreenRoute);
+            context.pushNamed(Routes.checkoutScreenRoute, arguments: cartInfo);
           },
           title: 'Proceed to Checkout  ',
           width: 342.w,
