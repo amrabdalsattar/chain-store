@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_helper.dart';
 
-import '../../data/models/cart_response_model.dart';
-import '../shared_widgets/cart_app_bar.dart';
+import '../../../cart/data/models/cart_response_model.dart';
+import '../../../cart/ui/shared_widgets/cart_app_bar.dart';
 import 'sections/address_section/address_section.dart';
 
 import 'sections/payment_methods_section/payment_method_section.dart';

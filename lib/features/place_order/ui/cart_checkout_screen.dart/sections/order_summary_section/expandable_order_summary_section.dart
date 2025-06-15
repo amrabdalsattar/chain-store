@@ -9,7 +9,7 @@ import '../../../../../../core/routing/routes.dart';
 import '../../../../../../core/theming/app_text_styles.dart';
 import '../../../../../../core/theming/colors_helper.dart';
 import '../../../../../../core/widgets/custom_button.dart';
-import '../../../../data/models/cart_response_model.dart';
+import '../../../../../cart/data/models/cart_response_model.dart';
 
 import 'widgets/cart_items_list.dart';
 import 'widgets/price_row.dart';

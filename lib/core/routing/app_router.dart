@@ -1,12 +1,11 @@
 import '../../features/business_category/logic/cubit/business_category_cubit.dart';
 import '../../features/business_category/ui/business_category_screen.dart';
-import '../../features/cart_checkout/data/models/cart_response_model.dart';
-import '../../features/cart_checkout/data/repos/cart_repo.dart';
-import '../../features/cart_checkout/logic/cart_cubit/cart_cubit.dart';
+import '../../features/cart/data/repos/cart_repo.dart';
+import '../../features/cart/logic/cart_cubit/cart_cubit.dart';
 import '../../features/categories/ui/categories_screen.dart';
-import '../../features/cart_checkout/ui/cart_checkout_screen.dart/cart_checkout_screen.dart';
-import '../../features/cart_checkout/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
-import '../../features/cart_checkout/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
+import '../../features/place_order/ui/cart_checkout_screen.dart/cart_checkout_screen.dart';
+import '../../features/cart/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
+import '../../features/cart/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/product_details/data/models/product_model.dart';
@@ -74,7 +73,6 @@ class AppRouter {
           settings: settings,
         );
       case Routes.checkoutScreenRoute:
-        final cartInfo = arguments as CartInfo;
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: const CartCheckoutScreen(),
           settings: settings,

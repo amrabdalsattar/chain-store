@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/helpers/spacing.dart';
-import '../../../../../data/models/cart_response_model.dart';
-import '../../../../shared_widgets/expandable_order_summary_header.dart';
+import '../../../../../../cart/data/models/cart_response_model.dart';
+import '../../../../../../cart/ui/shared_widgets/expandable_order_summary_header.dart';
 import 'order_summary_cart_item.dart';
 
 class CartItemsList extends StatefulWidget {

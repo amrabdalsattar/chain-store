@@ -4,12 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 import '../../features/notifications/data/services/local_notification_service.dart';
 import '../../features/notifications/data/services/push_notification_service.dart';
 import '../../firebase_options.dart';
 import '../di/dependency_injection.dart';
 import '../theming/colors_helper.dart';
+import '../utils/api_keys.dart';
 import '../utils/app_bloc_observer.dart';
 import 'cache/shared_preferences_helper.dart';
 import 'token_helper.dart';
@@ -22,6 +24,7 @@ class SetupManager {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
+    Stripe.publishableKey = ApiKeys.stripePublishableKey;
     await _initFirebase();
     await SharedPreferencesHelper.init();
 

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/theming/app_text_styles.dart';
-import '../../../shared_widgets/payment_method_item.dart';
+import '../../../../../cart/ui/shared_widgets/payment_method_item.dart';
 
 class PaymentMethodSection extends StatefulWidget {
   const PaymentMethodSection({super.key});

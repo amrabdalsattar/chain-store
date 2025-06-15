@@ -6,7 +6,7 @@ import '../../../../../../../core/theming/app_text_styles.dart';
 import '../../../../../../../core/theming/colors_helper.dart';
 import '../../../../../../../core/utils/format_utils.dart';
 import '../../../../../../../core/widgets/custom_image_widget.dart';
-import '../../../../../data/models/cart_response_model.dart';
+import '../../../../../../cart/data/models/cart_response_model.dart';
 
 class OrderSummaryCartItem extends StatelessWidget {
   final CartItemModel item;
