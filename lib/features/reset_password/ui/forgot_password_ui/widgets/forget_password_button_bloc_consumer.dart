@@ -24,7 +24,7 @@ class ForgetPasswordButtonBlocConsumer extends StatelessWidget {
           forgetPasswordError:
               (apiErrorModel) => DialogsHelper.showErrorDialog(
                 context,
-                apiErrorModel.getErrorMessages()!,
+                apiErrorModel.getErrorMessages() ?? 'Unexpected Error occurred',
               ),
           forgetPasswordSuccess: (successMessage) {
             DialogsHelper.showSnackBar(context, successMessage);

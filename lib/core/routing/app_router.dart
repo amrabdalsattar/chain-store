@@ -1,9 +1,13 @@
 import '../../features/business_category/logic/cubit/business_category_cubit.dart';
 import '../../features/business_category/ui/business_category_screen.dart';
+import '../../features/cart/data/repos/cart_repo.dart';
+import '../../features/cart/logic/cart_cubit/cart_cubit.dart';
 import '../../features/categories/ui/categories_screen.dart';
-import '../../features/cart_checkout/ui/cart_checkout_screen.dart/cart_checkout_screen.dart';
-import '../../features/cart_checkout/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
-import '../../features/cart_checkout/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
+import '../../features/checkout_order/data/repos/checkout_repo.dart';
+import '../../features/checkout_order/logic/cubit/checkout_cubit.dart';
+import '../../features/checkout_order/ui/checkout_screen.dart/cart_checkout_screen.dart';
+import '../../features/cart/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
+import '../../features/cart/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/product_details/data/models/product_model.dart';
@@ -72,7 +76,10 @@ class AppRouter {
         );
       case Routes.checkoutScreenRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
-          screen: const CartCheckoutScreen(),
+          screen: BlocProvider(
+            create: (context) => CheckoutCubit(getIt<CheckoutRepo>()),
+            child: const CartCheckoutScreen(),
+          ),
           settings: settings,
         );
 
@@ -90,8 +97,11 @@ class AppRouter {
 
       case Routes.mainScreenRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
-          screen: BlocProvider(
-            create: (context) => MainCubit(),
+          screen: MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => CartCubit(getIt<CartRepo>())),
+              BlocProvider(create: (context) => MainCubit()),
+            ],
             child: const MainScreen(),
           ),
           settings: settings,

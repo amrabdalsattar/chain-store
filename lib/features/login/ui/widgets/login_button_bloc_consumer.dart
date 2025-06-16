@@ -25,7 +25,7 @@ class LoginButtonBlocConsumer extends StatelessWidget {
           error:
               (apiErrorModel) => DialogsHelper.showErrorDialog(
                 context,
-                apiErrorModel.getErrorMessages()!,
+                apiErrorModel.getErrorMessages() ?? 'Unexpected Error occurred',
               ),
           success:
               (loginResponseModel) =>

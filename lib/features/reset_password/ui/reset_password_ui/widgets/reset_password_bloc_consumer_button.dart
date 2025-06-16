@@ -24,7 +24,7 @@ class ResetPasswordBlocConsumerButton extends StatelessWidget {
           resetPasswordError:
               (apiErrorModel) => DialogsHelper.showErrorDialog(
                 context,
-                apiErrorModel.getErrorMessages()!,
+                apiErrorModel.getErrorMessages() ?? 'Unexpected Error occurred',
               ),
           resetPasswordSuccess: (message) {
             DialogsHelper.showSnackBar(context, message);

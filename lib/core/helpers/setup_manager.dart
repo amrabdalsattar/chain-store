@@ -22,6 +22,7 @@ class SetupManager {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
+
     await _initFirebase();
     await SharedPreferencesHelper.init();
 
