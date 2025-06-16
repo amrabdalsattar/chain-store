@@ -9,15 +9,19 @@ final class CheckoutInitialState extends CheckoutState {
   const CheckoutInitialState();
 }
 
-final class StripePaymentLoading extends CheckoutState {
-  const StripePaymentLoading();
+final class CheckoutOrderLoading extends CheckoutState {
+  const CheckoutOrderLoading();
 }
 
 final class StripePaymentSuccess extends CheckoutState {
   const StripePaymentSuccess();
 }
 
-final class StripePaymentFailure extends CheckoutState {
+final class CheckoutOrderFailure extends CheckoutState {
   final ApiErrorModel apiErrorModel;
-  const StripePaymentFailure(this.apiErrorModel);
+  const CheckoutOrderFailure(this.apiErrorModel);
+}
+
+final class PlaceOrderSuccess extends CheckoutState {
+  const PlaceOrderSuccess();
 }

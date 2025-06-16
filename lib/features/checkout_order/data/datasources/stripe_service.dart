@@ -7,10 +7,10 @@ import '../../../../core/networking/api_constants.dart';
 import '../../../../core/networking/api_helper.dart';
 import '../../../../core/networking/api_request_model.dart';
 import '../../../../core/utils/api_keys.dart';
-import '../models/ephemeral_key/ephemeral_key_response.dart';
-import '../models/init_payment_sheet_input_model.dart';
-import '../models/payment_intent/payment_intent_model.dart';
-import '../models/payment_intent_input_model.dart';
+import '../models/stripe_models/ephemeral_key/ephemeral_key_response.dart';
+import '../models/stripe_models/init_payment_sheet_input_model.dart';
+import '../models/stripe_models/payment_intent/payment_intent_model.dart';
+import '../models/stripe_models/payment_intent_input_model.dart';
 
 class StripeService {
   final ApiHelper _apiHelper;

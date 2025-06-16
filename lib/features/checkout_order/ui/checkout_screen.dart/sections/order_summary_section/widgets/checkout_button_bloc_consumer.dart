@@ -8,7 +8,7 @@ import '../../../../../../../core/helpers/extensions.dart';
 import '../../../../../../../core/routing/routes.dart';
 import '../../../../../../../core/theming/colors_helper.dart';
 import '../../../../../../../core/widgets/custom_button.dart';
-import '../../../../../data/models/payment_intent_input_model.dart';
+import '../../../../../data/models/stripe_models/payment_intent_input_model.dart';
 import '../../../../../logic/cubit/checkout_cubit.dart';
 
 class CheckoutButtonBlocConsumer extends StatelessWidget {
@@ -21,12 +21,12 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
       bloc: context.read<CheckoutCubit>(),
       listener: (context, state) {
         switch (state) {
-          case StripePaymentSuccess():
+          case PlaceOrderSuccess():
             context.pushReplacementNamed(
               Routes.orderConfirmationRoute,
               arguments: context.read<CheckoutCubit>().isCreditCardPayment,
             );
-          case StripePaymentFailure():
+          case CheckoutOrderFailure():
             context.pop();
             DialogsHelper.showToastificationMessage(
               context: context,
@@ -46,7 +46,7 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
             child: CustomButton(
               title: 'Confirm Order',
               width: double.infinity,
-              isLoading: state is StripePaymentLoading,
+              isLoading: state is CheckoutOrderLoading,
               radius: 12,
               height: 46,
               borderColor: ColorsHelper.primaryColor,
@@ -60,11 +60,7 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
                     ),
                   );
                 } else {
-                  context.pushReplacementNamed(
-                    Routes.orderConfirmationRoute,
-                    arguments:
-                        context.read<CheckoutCubit>().isCreditCardPayment,
-                  );
+                  context.read<CheckoutCubit>().placeOrder();
                 }
               },
             ),
