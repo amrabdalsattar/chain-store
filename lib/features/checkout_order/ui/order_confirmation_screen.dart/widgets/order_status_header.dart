@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/colors_helper.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/theming/colors_helper.dart';
 
 class OrderStatusHeader extends StatelessWidget {
   const OrderStatusHeader({super.key});

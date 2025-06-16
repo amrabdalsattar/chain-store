@@ -1,5 +1,4 @@
 import '../../../../core/helpers/extensions.dart';
-import '../../../../core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,17 +6,18 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_helper.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_button.dart';
-import '../shared_widgets/order_details_section.dart';
-import '../shared_widgets/order_status_header.dart';
-import '../shared_widgets/payment_method_info.dart';
-import '../shared_widgets/section_container.dart';
-import '../shared_widgets/shipping_info_section.dart';
+import 'widgets/section_container.dart';
+import 'widgets/order_status_header.dart';
+import 'widgets/payment_method_info.dart';
+import 'widgets/shipping_info_section.dart';
 
 class OrderConfirmationScreen extends StatelessWidget {
   const OrderConfirmationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isCreditCardPayment =
+        ModalRoute.of(context)!.settings.arguments as bool;
     return Scaffold(
       backgroundColor: ColorsHelper.homeScaffoldColor,
       appBar: const CustomAppBar(
@@ -33,13 +33,7 @@ class OrderConfirmationScreen extends StatelessWidget {
             children: [
               verticalSpace(24),
               const OrderStatusHeader(),
-              verticalSpace(24),
 
-              // Order Details Section
-              const SectionContainer(
-                title: 'Order Details',
-                child: OrderDetailsSection(),
-              ),
               verticalSpace(24),
 
               // Shipping Information Section
@@ -50,9 +44,11 @@ class OrderConfirmationScreen extends StatelessWidget {
               verticalSpace(24),
 
               // Payment Method Section
-              const SectionContainer(
+              SectionContainer(
                 title: 'Payment Method',
-                child: PaymentMethodInfo(),
+                child: PaymentMethodInfo(
+                  isCreditCardPayment: isCreditCardPayment,
+                ),
               ),
               verticalSpace(24),
 
@@ -61,7 +57,7 @@ class OrderConfirmationScreen extends StatelessWidget {
                 title: 'Continue Shopping',
                 width: double.infinity,
                 onTap: () {
-                  context.pushNamed(Routes.categoriesScreenRoute);
+                  context.pop();
                 },
                 color: ColorsHelper.primaryColor,
                 radius: 12,
