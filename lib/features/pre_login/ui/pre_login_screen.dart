@@ -25,7 +25,9 @@ class PreLoginScreen extends StatelessWidget {
             DialogsHelper.showToastificationMessage(
               context: context,
               title: 'Error',
-              description: state.apiErrorModel.getErrorMessages()!,
+              description:
+                  state.apiErrorModel.getErrorMessages() ??
+                  'Unexpected Error occurred',
               type: ToastificationType.error,
               alignment: Alignment.bottomCenter,
             );

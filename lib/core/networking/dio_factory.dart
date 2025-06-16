@@ -10,10 +10,10 @@ class DioFactory {
   static Dio get instance {
     if (_dio != null) return _dio!;
 
-    _dio = Dio()
-      ..options.baseUrl = ApiConstants.baseUrl
-      ..options.connectTimeout = ApiConstants.timeOut
-      ..options.receiveTimeout = ApiConstants.timeOut;
+    _dio =
+        Dio()
+          ..options.connectTimeout = ApiConstants.timeOut
+          ..options.receiveTimeout = ApiConstants.timeOut;
 
     addDioInterceptors();
 

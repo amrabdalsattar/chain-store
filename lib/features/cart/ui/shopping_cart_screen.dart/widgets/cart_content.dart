@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../../../core/helpers/extensions.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routing/routes.dart';
+import '../../../../../core/theming/colors_helper.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../data/models/cart_response_model.dart';
 import '../../../logic/cart_cubit/cart_cubit.dart';
@@ -55,7 +56,9 @@ class CartContent extends StatelessWidget {
           onTap: () {
             context.pushNamed(Routes.checkoutScreenRoute, arguments: cartInfo);
           },
-          title: 'Proceed to Checkout  ',
+          borderColor: ColorsHelper.primaryColor,
+          height: 46.h,
+          title: 'Proceed to Checkout',
           width: 342.w,
           radius: 32.r,
         ),

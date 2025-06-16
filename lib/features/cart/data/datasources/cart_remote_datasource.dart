@@ -12,6 +12,7 @@ class CartRemoteDatasource {
     final response = await _apiHelper.get(
       ApiRequestModel(
         endPoint: ApiConstants.getCartItemsEP,
+
         headers: {
           'Authorization': 'Bearer ${await TokenHelper.getSecuredUserToken()}',
         },

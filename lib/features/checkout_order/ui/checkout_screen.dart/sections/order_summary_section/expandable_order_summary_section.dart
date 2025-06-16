@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/helpers/extensions.dart';
 import '../../../../../../core/helpers/spacing.dart';
-
-import '../../../../../../core/routing/routes.dart';
 import '../../../../../../core/theming/app_text_styles.dart';
-import '../../../../../../core/theming/colors_helper.dart';
-import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/utils/format_utils.dart';
 import '../../../../../cart/data/models/cart_response_model.dart';
 
 import 'widgets/cart_items_list.dart';
+import 'widgets/checkout_button_bloc_consumer.dart';
 import 'widgets/price_row.dart';
 
 class OrderSummarySection extends StatefulWidget {
@@ -60,7 +56,8 @@ class _OrderSummarySectionState extends State<OrderSummarySection>
               ),
           verticalSpace(20),
           PriceRow(
-            label: 'Subtotal ( ${widget.cartInfo.items!.length} items )',
+            label:
+                'Subtotal ( ${widget.cartInfo.items!.length} ${getPluralOrSingular('item', widget.cartInfo.items!.length)} )',
             value: widget.cartInfo.total!,
           ),
           verticalSpace(12),
@@ -72,21 +69,7 @@ class _OrderSummarySectionState extends State<OrderSummarySection>
             isTotalPrice: true,
           ),
           verticalSpace(24),
-          Container(
-            color: ColorsHelper.white,
-            padding: EdgeInsets.only(bottom: 24.h),
-            child: CustomButton(
-              title: 'Confirm Order',
-              width: double.infinity,
-              radius: 12,
-              height: 46,
-              borderColor: ColorsHelper.primaryColor,
-              onTap: () {
-                // Order confirmation logic will be implemented later
-                context.pushNamed(Routes.orderConfirmationRoute);
-              },
-            ),
-          ),
+          CheckoutButtonBlocConsumer(totalAmount: widget.cartInfo.total!),
         ],
       ),
     );

@@ -26,7 +26,9 @@ class SignupButtonBlocConsumer extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 context: context,
                 title: 'Error',
-                description: apiErrorModel.getErrorMessages()!,
+                description:
+                    apiErrorModel.getErrorMessages() ??
+                    'Unexpected Error occurred',
                 type: ToastificationType.error,
               ),
           success: (confirmationMessage) {

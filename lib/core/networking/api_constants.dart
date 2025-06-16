@@ -16,5 +16,10 @@ class ApiConstants {
   // Cart Endpoints
   static const String getCartItemsEP = 'Cart/GetCartItems';
 
+  // Stripe
+  static const stripeBaseUrl = 'https://api.stripe.com/v1/';
+  static const createPaymentIntentEndPoint = 'payment_intents';
+  static const createEphemeralKeyEndPoint = 'ephemeral_keys';
+
   static const Duration timeOut = Duration(seconds: 20);
 }

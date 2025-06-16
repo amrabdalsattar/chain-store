@@ -3,8 +3,10 @@ import 'package:get_it/get_it.dart';
 
 import '../../features/cart/data/datasources/cart_remote_datasource.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
+import '../../features/checkout_order/data/repos/checkout_repo.dart';
 import '../../features/login/data/datasources/login_datasource.dart';
 import '../../features/login/data/repos/login_repo.dart';
+import '../../features/checkout_order/data/datasources/stripe_service.dart';
 import '../../features/pre_login/data/datasources/pre_login_datasource.dart';
 import '../../features/pre_login/data/repos/pre_login_repo.dart';
 import '../../features/reset_password/data/datasources/reset_password_data_source.dart';
@@ -46,4 +48,8 @@ Future<void> setUpGetIt() async {
     () => CartRemoteDatasource(getIt()),
   );
   getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
+
+  // Checkout order
+  getIt.registerLazySingleton<StripeService>(() => StripeService(getIt()));
+  getIt.registerLazySingleton<CheckoutRepo>(() => CheckoutRepo(getIt()));
 }

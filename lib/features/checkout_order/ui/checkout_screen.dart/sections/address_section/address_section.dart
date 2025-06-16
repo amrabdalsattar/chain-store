@@ -50,7 +50,7 @@ class AddressSection extends StatelessWidget {
                     style: AppTextStyles.rubikBlackRegular12,
                   ),
                 ),
-                Icon(Icons.keyboard_arrow_down, size: 16.w, color: Colors.grey),
+                Icon(Icons.more_vert_sharp, size: 16.w, color: Colors.grey),
               ],
             ),
           ),

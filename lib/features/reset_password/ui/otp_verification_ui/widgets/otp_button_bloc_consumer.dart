@@ -27,7 +27,7 @@ class OtpButtonBlocConsumer extends StatelessWidget {
           otpVerificationError:
               (apiErrorModel) => DialogsHelper.showErrorDialog(
                 context,
-                apiErrorModel.getErrorMessages()!,
+                apiErrorModel.getErrorMessages() ?? 'Unexpected Error occurred',
               ),
           otpVerificationSuccess: (message) {
             DialogsHelper.showSnackBar(context, message);

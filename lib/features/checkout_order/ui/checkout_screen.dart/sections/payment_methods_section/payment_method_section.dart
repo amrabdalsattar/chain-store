@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/theming/app_text_styles.dart';
 import '../../../../../cart/ui/shared_widgets/payment_method_item.dart';
+import '../../../../logic/cubit/checkout_cubit.dart';
 
 class PaymentMethodSection extends StatefulWidget {
   const PaymentMethodSection({super.key});
@@ -13,11 +15,10 @@ class PaymentMethodSection extends StatefulWidget {
 }
 
 class _PaymentMethodSectionState extends State<PaymentMethodSection> {
-  int _selectedPaymentMethod = 1;
-
-  void _selectPaymentMethod(int method) {
+  void _selectPaymentMethod() {
     setState(() {
-      _selectedPaymentMethod = method;
+      context.read<CheckoutCubit>().isCreditCardPayment =
+          !context.read<CheckoutCubit>().isCreditCardPayment;
     });
   }
 
@@ -39,16 +40,18 @@ class _PaymentMethodSectionState extends State<PaymentMethodSection> {
             iconData: Icons.add_card_sharp,
 
             title: 'Credit Card',
-            isSelected: _selectedPaymentMethod == 1,
-            onTap: () => _selectPaymentMethod(1),
+            isSelected:
+                context.read<CheckoutCubit>().isCreditCardPayment == true,
+            onTap: () => _selectPaymentMethod(),
           ),
           verticalSpace(12),
           PaymentMethodItem(
             iconData: Icons.monetization_on_outlined,
 
             title: 'Cash on Delivery',
-            isSelected: _selectedPaymentMethod == 2,
-            onTap: () => _selectPaymentMethod(2),
+            isSelected:
+                context.read<CheckoutCubit>().isCreditCardPayment == false,
+            onTap: () => _selectPaymentMethod(),
           ),
           verticalSpace(12),
         ],
