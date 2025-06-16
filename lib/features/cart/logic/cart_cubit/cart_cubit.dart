@@ -16,10 +16,12 @@ class CartCubit extends Cubit<CartState> {
     result.when(
       success: (cartInfo) {
         cartItems = cartInfo.items;
+
         if (cartItems.isEmpty) {
           emit(const EmptyCartState());
+        } else {
+          emit(LoadedCartInfoState(cartInfo));
         }
-        emit(LoadedCartInfoState(cartInfo));
       },
       failure: (apiErrorModel) {
         emit(ErrorCartState(apiErrorModel));

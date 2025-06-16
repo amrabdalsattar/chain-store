@@ -16,6 +16,9 @@ class ApiConstants {
   // Cart Endpoints
   static const String getCartItemsEP = 'Cart/GetCartItems';
 
+  // Orders EP
+  static const String placeOrderEP = 'Order/PlaceOrder';
+
   // Stripe
   static const stripeBaseUrl = 'https://api.stripe.com/v1/';
   static const createPaymentIntentEndPoint = 'payment_intents';
