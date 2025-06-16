@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../shared_widgets/cart_app_bar.dart';
+import 'widgets/cart_app_bar.dart';
 import 'widgets/cart_bloc_builder.dart';
 
 class ShoppingCartScreen extends StatelessWidget {

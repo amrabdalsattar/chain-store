@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/colors_helper.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/theming/colors_helper.dart';
 
 class PaymentMethodInfo extends StatelessWidget {
-  const PaymentMethodInfo({super.key});
+  final bool isCreditCardPayment;
+  const PaymentMethodInfo({super.key, required this.isCreditCardPayment});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class PaymentMethodInfo extends StatelessWidget {
           ),
           child: Center(
             child: Icon(
-              Icons.credit_card,
+              isCreditCardPayment
+                  ? Icons.credit_card
+                  : Icons.monetization_on_outlined,
               color: ColorsHelper.primaryColor,
               size: 24.w,
             ),
@@ -31,7 +34,7 @@ class PaymentMethodInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Credit Card',
+              isCreditCardPayment ? 'Credit Card' : 'Cash on Delivery',
               style: TextStyle(
                 fontFamily: 'Rubik',
                 fontSize: 16.sp,
@@ -39,13 +42,16 @@ class PaymentMethodInfo extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            Text(
-              '**** **** **** 4567',
-              style: TextStyle(
-                fontFamily: 'Rubik',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: ColorsHelper.secondaryGray,
+            Visibility(
+              visible: isCreditCardPayment,
+              child: Text(
+                '**** **** **** 4242',
+                style: TextStyle(
+                  fontFamily: 'Rubik',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
+                  color: ColorsHelper.secondaryGray,
+                ),
               ),
             ),
           ],

@@ -22,15 +22,9 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         switch (state) {
           case StripePaymentSuccess():
-            context.pop();
-            context.pop();
-            DialogsHelper.showToastificationMessage(
-              context: context,
-              title: 'Order Confirmed',
-              description:
-                  'Your order has been placed successfully. Thank you for shopping with us!',
-              type: ToastificationType.success,
-              alignment: Alignment.topCenter,
+            context.pushReplacementNamed(
+              Routes.orderConfirmationRoute,
+              arguments: context.read<CheckoutCubit>().isCreditCardPayment,
             );
           case StripePaymentFailure():
             context.pop();
@@ -65,9 +59,12 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
                       customerId: '123456Aa',
                     ),
                   );
-                  context.pushNamed(Routes.orderConfirmationRoute);
                 } else {
-                  context.pushNamed(Routes.orderConfirmationRoute);
+                  context.pushReplacementNamed(
+                    Routes.orderConfirmationRoute,
+                    arguments:
+                        context.read<CheckoutCubit>().isCreditCardPayment,
+                  );
                 }
               },
             ),
