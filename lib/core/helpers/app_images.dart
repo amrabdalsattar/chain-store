@@ -48,7 +48,7 @@ class AppImages {
   static const String navHomeIcon = 'assets/svgs/nav_home.svg';
   static const String navCategoryIcon = 'assets/svgs/nav_category.svg';
   static const String navCartIcon = 'assets/svgs/nav_cart.svg';
-  static const String navWishlistIcon = 'assets/svgs/nav_wishlist.svg';
+  static const String navWishlistIcon = 'assets/svgs/search_icon.svg';
   static const String navProfileIcon = 'assets/svgs/nav_profile.svg';
 
   // Profile SVG Icons
