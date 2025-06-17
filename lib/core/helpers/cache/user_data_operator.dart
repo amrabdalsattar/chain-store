@@ -1,6 +1,7 @@
 import '../../../features/login/data/models/login_response_model.dart';
 import '../../routing/routes.dart';
 import '../token_helper.dart';
+import 'secured_storage_helper.dart';
 import 'shared_preferences_helper.dart';
 import 'shared_preferences_keys.dart';
 
@@ -56,17 +57,18 @@ class UserDataOperator {
     );
   }
 
-  static Future<void> clearUserData() async {
-    await SharedPreferencesHelper.removeData(SharedPreferencesKeys.userName);
-    await SharedPreferencesHelper.removeData(SharedPreferencesKeys.userAddress);
-    await SharedPreferencesHelper.removeData(SharedPreferencesKeys.userEmail);
-    await SharedPreferencesHelper.removeData(SharedPreferencesKeys.userId);
-    await SharedPreferencesHelper.removeData(
-      SharedPreferencesKeys.userPhoneNumber,
-    );
-    await SharedPreferencesHelper.removeData(
-      SharedPreferencesKeys.userBusinessType,
-    );
+  static void clearUserData() {
+    Future.wait<void>([
+      SharedPreferencesHelper.removeData(SharedPreferencesKeys.userName),
+      SharedPreferencesHelper.removeData(SharedPreferencesKeys.userAddress),
+      SharedPreferencesHelper.removeData(SharedPreferencesKeys.userEmail),
+      SharedPreferencesHelper.removeData(SharedPreferencesKeys.userId),
+      SharedPreferencesHelper.removeData(SharedPreferencesKeys.userPhoneNumber),
+      SharedPreferencesHelper.removeData(
+        SharedPreferencesKeys.userBusinessType,
+      ),
+      SecuredStorageHelper.removeSecuredData(),
+    ]);
   }
 
   static setViewOnBoardingBool() async {

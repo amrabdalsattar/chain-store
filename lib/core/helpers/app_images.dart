@@ -52,12 +52,12 @@ class AppImages {
   static const String navProfileIcon = 'assets/svgs/nav_profile.svg';
 
   // Profile SVG Icons
-  static const String profileIcon = 'assets/svgs/profile_icon.svg';
-  static const String notificationIcon = 'assets/svgs/notification_icon.svg';
-  static const String wishlistIcon = 'assets/svgs/wishlist_icon.svg';
-  static const String orderHistoryIcon = 'assets/svgs/order_history_icon.svg';
-  static const String settingsIcon = 'assets/svgs/settings_icon.svg';
-  static const String logoutIcon = 'assets/svgs/logout_icon.svg';
+  static const String profileIcon = 'assets/images/profile_icon.png';
+  static const String notificationIcon = 'assets/images/notification.png';
+  static const String wishlistIcon = 'assets/images/wishlist_icon.png';
+  static const String orderHistoryIcon = 'assets/images/order_history_icon.png';
+  static const String settingsIcon = 'assets/images/settings_icon.png';
+  static const String logoutIcon = 'assets/images/logout_icon.png';
 
   // SVG Illustrations
   static const String generalErrorImage = 'assets/svgs/error_image.svg';
