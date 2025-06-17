@@ -1,8 +1,12 @@
 import '../../../core/helpers/app_images.dart';
+import '../../../core/helpers/cache/shared_preferences_helper.dart';
+import '../../../core/helpers/cache/shared_preferences_keys.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_helper.dart';
+import '../../../core/utils/format_utils.dart';
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/routing/routes.dart';
+import '../../../core/widgets/custom_divider.dart';
 import '../logic/cubit/profile_cubit.dart';
 import 'widgets/logout_button.dart';
 import 'widgets/profile_header.dart';
@@ -53,15 +57,21 @@ class _ProfileScreenContent extends StatelessWidget {
                     child: Column(
                       children: [
                         // User Profile Section
-                        const ProfileHeader(
-                          name: 'Mohamed Alaa',
-                          email: 'Mohamedelkarn2003@gmail.com',
-                          avatarText: 'MO',
+                        ProfileHeader(
+                          name: SharedPreferencesHelper.getString(
+                            SharedPreferencesKeys.userName,
+                          ),
+                          email: SharedPreferencesHelper.getString(
+                            SharedPreferencesKeys.userEmail,
+                          ),
+                          avatarText: getInitialLetters(
+                            SharedPreferencesHelper.getString(
+                              SharedPreferencesKeys.userName,
+                            ),
+                          ),
                         ),
-                        verticalSpace(24),
-                        _buildDivider(),
-                        verticalSpace(18),
-
+                        verticalSpace(8),
+                        const CustomDivider(),
                         // Menu Items
                         ProfileMenuItem(
                           iconPath: AppImages.profileIcon,
@@ -72,9 +82,8 @@ class _ProfileScreenContent extends StatelessWidget {
                             // Navigator.of(context).pushNamed(Routes.profileEditScreen);
                           },
                         ),
-                        verticalSpace(18),
-                        _buildDivider(),
-                        verticalSpace(18),
+
+                        const CustomDivider(),
 
                         ProfileMenuItem(
                           iconPath: AppImages.notificationIcon,
@@ -85,10 +94,7 @@ class _ProfileScreenContent extends StatelessWidget {
                             // Navigator.of(context).pushNamed(Routes.notificationsScreen);
                           },
                         ),
-                        verticalSpace(18),
-                        _buildDivider(),
-                        verticalSpace(18),
-
+                        const CustomDivider(),
                         ProfileMenuItem(
                           iconPath: AppImages.wishlistIcon,
                           title: 'Wishlist',
@@ -98,10 +104,7 @@ class _ProfileScreenContent extends StatelessWidget {
                             // Navigator.of(context).pushNamed(Routes.wishlistScreen);
                           },
                         ),
-                        verticalSpace(18),
-                        _buildDivider(),
-                        verticalSpace(18),
-
+                        const CustomDivider(),
                         ProfileMenuItem(
                           iconPath: AppImages.orderHistoryIcon,
                           title: 'Order history',
@@ -111,10 +114,7 @@ class _ProfileScreenContent extends StatelessWidget {
                             // Navigator.of(context).pushNamed(Routes.orderHistoryScreen);
                           },
                         ),
-                        verticalSpace(18),
-                        _buildDivider(),
-                        verticalSpace(18),
-
+                        const CustomDivider(),
                         ProfileMenuItem(
                           iconPath: AppImages.settingsIcon,
                           title: 'Settings',
@@ -124,9 +124,8 @@ class _ProfileScreenContent extends StatelessWidget {
                             // Navigator.of(context).pushNamed(Routes.settingsScreen);
                           },
                         ),
-                        verticalSpace(18),
-                        _buildDivider(),
-                        verticalSpace(18),
+
+                        const CustomDivider(),
 
                         // Logout Button
                         const LogoutButton(),
@@ -137,23 +136,9 @@ class _ProfileScreenContent extends StatelessWidget {
                 ),
               ),
             ),
-            // Loading overlay
-            if (state is ProfileLogoutLoading)
-              Container(
-                color: Colors.black.withValues(alpha: 0.3),
-                child: const Center(child: CircularProgressIndicator()),
-              ),
           ],
         );
       },
-    );
-  }
-
-  Widget _buildDivider() {
-    return const Divider(
-      color: ColorsHelper.borderGray,
-      thickness: 0.5,
-      height: 1,
     );
   }
 }

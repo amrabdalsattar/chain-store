@@ -4,7 +4,6 @@ import '../../logic/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});
@@ -28,20 +27,20 @@ class LogoutButton extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 32.w,
-                height: 32.w,
+                width: 20.w,
+                height: 20.w,
                 decoration: const BoxDecoration(shape: BoxShape.circle),
                 child:
                     isLoading
                         ? SizedBox(
-                          width: 20.w,
-                          height: 20.w,
+                          width: 18.w,
+                          height: 18.w,
                           child: const CircularProgressIndicator(
                             strokeWidth: 2,
                             color: Color(0xFFEA2C2C),
                           ),
                         )
-                        : SvgPicture.asset(AppImages.logoutIcon),
+                        : Image.asset(AppImages.logoutIcon),
               ),
               horizontalSpace(8),
               Text(

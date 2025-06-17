@@ -2,7 +2,6 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileMenuItem extends StatelessWidget {
   final String iconPath;
@@ -29,20 +28,15 @@ class ProfileMenuItem extends StatelessWidget {
           Row(
             children: [
               // Icon container
-              Container(
-                width: 32.w,
-                height: 32.w,
-                decoration: const BoxDecoration(shape: BoxShape.circle),
-                child: SvgPicture.asset(iconPath, width: 18.w, height: 18.h),
-              ),
-              horizontalSpace(12),
+              Image.asset(iconPath, scale: 4),
+              horizontalSpace(16),
               // Text column
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: AppTextStyles.rubikBlackRegular16),
+                  Text(title, style: AppTextStyles.rubikBlackRegular14),
                   SizedBox(height: 2.h),
-                  Text(subtitle, style: AppTextStyles.rubikGrayMedium12),
+                  Text(subtitle, style: AppTextStyles.robotoGrayRegular12),
                 ],
               ),
             ],
