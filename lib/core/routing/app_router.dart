@@ -8,6 +8,7 @@ import '../../features/checkout_order/logic/cubit/checkout_cubit.dart';
 import '../../features/checkout_order/ui/checkout_screen.dart/cart_checkout_screen.dart';
 import '../../features/checkout_order/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
 import '../../features/cart/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
+import '../../features/home/data/repos/home_repo.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/product_details/data/models/product_model.dart';
@@ -172,7 +173,7 @@ class AppRouter {
       case Routes.homeScreenRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: BlocProvider(
-            create: (context) => HomeCubit()..loadHomeData(),
+            create: (context) => HomeCubit(getIt<HomeRepo>()),
             child: const HomeScreen(),
           ),
           settings: settings,

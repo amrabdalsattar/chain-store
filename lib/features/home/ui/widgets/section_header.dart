@@ -17,18 +17,17 @@ class SectionHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: AppTextStyles.robotoWhiteBold16.copyWith(
-            color: ColorsHelper.black,
-          ),
-        ),
+        Text(title, style: AppTextStyles.rubikBlackBold16),
         GestureDetector(
           onTap: onSeeAllTap,
-          child: Text(
-            'See All',
-            style: AppTextStyles.robotoDarkGrayMedium14.copyWith(
-              color: ColorsHelper.primaryColor,
+          child: TextButton(
+            onPressed: () {},
+            child: Text(
+              'See All',
+              style: AppTextStyles.robotoGrayRegular12.copyWith(
+                decoration: TextDecoration.underline,
+                decorationColor: ColorsHelper.secondaryGray,
+              ),
             ),
           ),
         ),

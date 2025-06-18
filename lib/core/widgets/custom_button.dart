@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../helpers/app_images.dart';
 import '../theming/app_text_styles.dart';
 import '../theming/colors_helper.dart';
 import 'loading_indicator.dart';
@@ -9,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final String title;
   final void Function()? onTap;
   final double width;
+  final bool isArrowed;
   final double? height;
   final double elevation;
   final bool isLoading;
@@ -31,6 +34,7 @@ class CustomButton extends StatelessWidget {
     this.borderColor,
     this.radius,
     this.height,
+    this.isArrowed = false,
   });
 
   @override
@@ -68,16 +72,36 @@ class CustomButton extends StatelessWidget {
             isLoading
                 ? const LoadingIndicator(color: ColorsHelper.white)
                 : Center(
-                  child: Text(
-                    title,
-                    style:
-                        textStyle ??
-                        (isEnabled
-                            ? AppTextStyles.robotoWhiteBold16
-                            : AppTextStyles.robotoWhiteBold16.copyWith(
-                              color: ColorsHelper.semiOpacityBlack,
-                            )),
-                  ),
+                  child:
+                      isArrowed
+                          ? Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                title,
+                                style:
+                                    textStyle ??
+                                    (isEnabled
+                                        ? AppTextStyles.robotoWhiteBold16
+                                        : AppTextStyles.robotoWhiteBold16
+                                            .copyWith(
+                                              color:
+                                                  ColorsHelper.semiOpacityBlack,
+                                            )),
+                              ),
+                              SvgPicture.asset(AppImages.proceedArrow),
+                            ],
+                          )
+                          : Text(
+                            title,
+                            style:
+                                textStyle ??
+                                (isEnabled
+                                    ? AppTextStyles.robotoWhiteBold16
+                                    : AppTextStyles.robotoWhiteBold16.copyWith(
+                                      color: ColorsHelper.semiOpacityBlack,
+                                    )),
+                          ),
                 ),
       ),
     );

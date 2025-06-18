@@ -1,9 +1,23 @@
 part of 'home_cubit.dart';
 
-@freezed
-class HomeState with _$HomeState {
-  const factory HomeState.initial() = _Initial;
-  const factory HomeState.loading() = _Loading;
-  const factory HomeState.loaded(HomeModel homeData) = _Loaded;
-  const factory HomeState.error(String message) = _Error;
+sealed class HomeState {
+  const HomeState();
+}
+
+class HomeInitialState extends HomeState {
+  const HomeInitialState();
+}
+
+class HomeSuppliersLoadingState extends HomeState {
+  const HomeSuppliersLoadingState();
+}
+
+class HomeSuppliersLoadedState extends HomeState {
+  final List<SupplierDataModel> suppliers;
+  const HomeSuppliersLoadedState(this.suppliers);
+}
+
+class HomeSuppliersErrorState extends HomeState {
+  final ApiErrorModel apiErrorModel;
+  const HomeSuppliersErrorState(this.apiErrorModel);
 }

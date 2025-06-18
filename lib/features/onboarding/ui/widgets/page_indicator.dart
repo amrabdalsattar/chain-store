@@ -20,12 +20,13 @@ class PageIndicator extends StatelessWidget {
       activeIndex: activeIndex,
       count: length,
       effect: ExpandingDotsEffect(
-          expansionFactor: 3.w,
-          activeDotColor: ColorsHelper.primaryColor,
-          dotColor: ColorsHelper.fadedGray,
-          dotHeight: 6.h,
-          dotWidth: 6.w,
-          paintStyle: PaintingStyle.fill),
+        expansionFactor: 3.5.w,
+        activeDotColor: ColorsHelper.primaryColor,
+        dotColor: ColorsHelper.fadedGray,
+        dotHeight: 6.h,
+        dotWidth: 6.w,
+        paintStyle: PaintingStyle.fill,
+      ),
     );
   }
 }

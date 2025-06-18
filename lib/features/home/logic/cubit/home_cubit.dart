@@ -1,22 +1,30 @@
-import 'package:bloc/bloc.dart';
-import '../../data/models/home_model.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/networking/api_error_handler/api_error_model.dart';
+import '../../data/models/suppliers_response_model.dart';
+import '../../data/repos/home_repo.dart';
 
 part 'home_state.dart';
-part 'home_cubit.freezed.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(const HomeState.initial());
+  final HomeRepo _repo;
+  HomeCubit(this._repo) : super(const HomeInitialState());
 
-  Future<void> loadHomeData() async {
-    emit(const HomeState.loading());
-    try {
-      // In a real app, this would be fetched from an API
-      // For now, we'll use sample data
-      final homeData = HomeModel.getSampleHomeData();
-      emit(HomeState.loaded(homeData));
-    } catch (e) {
-      emit(HomeState.error(e.toString()));
-    }
+  List<SupplierDataModel> localSuppliers = [];
+
+  Future<void> getSuppliers() async {
+    emit(const HomeSuppliersLoadingState());
+    final result = await _repo.getTopSuppliers();
+    result.when(
+      success: (suppliers) {
+        if (isClosed) return;
+        localSuppliers = suppliers;
+        emit(HomeSuppliersLoadedState(localSuppliers));
+      },
+      failure: (apiErrorModel) {
+        if (isClosed) return;
+        emit(HomeSuppliersErrorState(apiErrorModel));
+      },
+    );
   }
 }

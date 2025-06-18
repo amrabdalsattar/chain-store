@@ -66,7 +66,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                       onTap: () => mainCubit.toggleCurrentTabIndex = 2,
                     ),
                     _buildNavItem(
-                      iconPath: AppImages.navWishlistIcon,
+                      iconPath: AppImages.searchBarIcon,
                       label: 'Find suppliers',
                       index: 3,
                       currentIndex: mainCubit.currentTabIndex,

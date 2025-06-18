@@ -16,13 +16,16 @@ class ApiConstants {
   // Cart Endpoints
   static const String getCartItemsEP = 'Cart/GetCartItems';
 
-  // Orders EP
+  // Orders Endpoints
   static const String placeOrderEP = 'Order/PlaceOrder';
 
-  // Stripe
+  // Stripe Endpoints
   static const stripeBaseUrl = 'https://api.stripe.com/v1/';
   static const createPaymentIntentEndPoint = 'payment_intents';
   static const createEphemeralKeyEndPoint = 'ephemeral_keys';
+
+  // Home Endpoints
+  static const getTopSuppliersEP = 'Supplier/GetSuppliers';
 
   static const Duration timeOut = Duration(seconds: 20);
 }
