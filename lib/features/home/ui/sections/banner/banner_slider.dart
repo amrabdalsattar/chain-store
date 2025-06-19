@@ -28,7 +28,7 @@ class _BannerSliderState extends State<BannerSlider> {
                   _currentIndex = index;
                 }),
             viewportFraction: 1,
-            enlargeFactor: 1,
+            enlargeCenterPage: true,
           ),
         ),
         verticalSpace(8),
