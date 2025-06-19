@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../../core/helpers/spacing.dart';
 import '../../../../../../cart/data/models/cart_response_model.dart';
-import '../../../../../../cart/ui/shopping_cart_screen.dart/widgets/expandable_order_summary_header.dart';
+import '../../../../../../cart/ui/widgets/expandable_order_summary_header.dart';
 import 'order_summary_cart_item.dart';
 
 class CartItemsList extends StatefulWidget {
   final bool hideProductsSection;
-  final CartInfo cartInfo;
+  final List<CartItemModel> cartItems;
   const CartItemsList({
     super.key,
     required this.hideProductsSection,
-    required this.cartInfo,
+    required this.cartItems,
   });
 
   @override
@@ -42,7 +42,7 @@ class _CartItemsListState extends State<CartItemsList> {
                   _isProductsExpanded
                       ? Column(
                         children: [
-                          ...widget.cartInfo.items!
+                          ...widget.cartItems
                               .map((item) => OrderSummaryCartItem(item: item))
                               .toList(),
                         ],

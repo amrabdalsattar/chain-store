@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-import '../../../data/models/cart_response_model.dart';
+import '../../data/models/cart_response_model.dart';
 import 'shopping_cart_item.dart';
 
 class SlidableCartItem extends StatelessWidget {

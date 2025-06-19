@@ -1,4 +1,4 @@
-import '../../../cart/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
+import '../../../cart/ui/shopping_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

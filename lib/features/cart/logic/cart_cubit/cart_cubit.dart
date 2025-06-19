@@ -8,6 +8,12 @@ class CartCubit extends Cubit<CartState> {
   final CartRepo _repo;
   CartCubit(this._repo) : super(const CartInitialState());
   List<CartItemModel> cartItems = [];
+  double totalPrice = 0;
+
+  void clearCart() {
+    cartItems.clear();
+    emit(const EmptyCartState());
+  }
 
   void getCartInfo() async {
     emit(const LoadingCartInfoState());
@@ -15,7 +21,8 @@ class CartCubit extends Cubit<CartState> {
 
     result.when(
       success: (cartInfo) {
-        cartItems = cartInfo.items;
+        totalPrice = cartInfo.total!;
+        cartItems = cartInfo.items!;
 
         if (cartItems.isEmpty) {
           emit(const EmptyCartState());
