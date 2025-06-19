@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/app_images.dart';
-import '../../../../core/theming/app_text_styles.dart';
-import '../../../../core/theming/colors_helper.dart';
-import '../../../../core/widgets/custom_button.dart';
+import '../../../../../core/helpers/app_images.dart';
+import '../../../../../core/theming/app_text_styles.dart';
+import '../../../../../core/theming/colors_helper.dart';
+import '../../../../../core/widgets/custom_button.dart';
 
 class BannerItem extends StatelessWidget {
   const BannerItem({super.key});

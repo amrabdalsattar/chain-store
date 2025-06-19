@@ -170,14 +170,7 @@ class AppRouter {
           screen: const QuotationScreen(),
           settings: settings,
         );
-      case Routes.homeScreenRoute:
-        return CustomAnimationsBuilder.buildFadeTransition(
-          screen: BlocProvider(
-            create: (context) => HomeCubit(getIt<HomeRepo>()),
-            child: const HomeScreen(),
-          ),
-          settings: settings,
-        );
+
       case Routes.productDetailsRoute:
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: ProductDetailsScreen(

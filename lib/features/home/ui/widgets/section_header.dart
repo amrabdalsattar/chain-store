@@ -2,11 +2,11 @@ import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 
-class SectionHeader extends StatelessWidget {
+class HomeSection extends StatelessWidget {
   final String title;
   final VoidCallback onSeeAllTap;
 
-  const SectionHeader({
+  const HomeSection({
     super.key,
     required this.title,
     required this.onSeeAllTap,

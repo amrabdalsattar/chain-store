@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../onboarding/ui/widgets/page_indicator.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../onboarding/ui/widgets/page_indicator.dart';
 import 'banner_item.dart';
 
 class BannerSlider extends StatefulWidget {

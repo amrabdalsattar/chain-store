@@ -46,6 +46,7 @@ class AppImages {
   static const String cashOnDelivery = 'assets/svgs/cash_on_delivery.svg';
   static const String searchBarIcon = 'assets/svgs/search_bar_icon.svg';
   static const String proceedArrow = 'assets/svgs/proceed_arrow.svg';
+  static const String starIcon = 'assets/svgs/star.svg';
 
   // Navigation Bar SVG Icons
   static const String navHomeIcon = 'assets/svgs/nav_home.svg';
