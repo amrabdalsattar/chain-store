@@ -12,12 +12,12 @@ class LoginResponseModel {
 }
 
 class UserData {
-  final String id;
-  final String name;
-  final String email;
-  final String address;
-  final String token;
-  final String phone;
+  final String? id;
+  final String? name;
+  final String? email;
+  final String? address;
+  final String? token;
+  final String? phone;
   dynamic businessType;
 
   UserData({

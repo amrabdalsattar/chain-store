@@ -2,33 +2,25 @@ import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 
-class SectionHeader extends StatelessWidget {
+class HomeSection extends StatelessWidget {
   final String title;
-  final VoidCallback onSeeAllTap;
+  final void Function()? onSeeAllPressed;
 
-  const SectionHeader({
-    super.key,
-    required this.title,
-    required this.onSeeAllTap,
-  });
+  const HomeSection({super.key, required this.title, this.onSeeAllPressed});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: AppTextStyles.robotoWhiteBold16.copyWith(
-            color: ColorsHelper.black,
-          ),
-        ),
-        GestureDetector(
-          onTap: onSeeAllTap,
+        Text(title, style: AppTextStyles.rubikBlackBold16),
+        TextButton(
+          onPressed: onSeeAllPressed,
           child: Text(
             'See All',
-            style: AppTextStyles.robotoDarkGrayMedium14.copyWith(
-              color: ColorsHelper.primaryColor,
+            style: AppTextStyles.robotoGrayRegular12.copyWith(
+              decoration: TextDecoration.underline,
+              decorationColor: ColorsHelper.secondaryGray,
             ),
           ),
         ),

@@ -8,12 +8,13 @@ import '../../../../../../../core/helpers/extensions.dart';
 import '../../../../../../../core/routing/routes.dart';
 import '../../../../../../../core/theming/colors_helper.dart';
 import '../../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../cart/logic/cart_cubit/cart_cubit.dart';
 import '../../../../../data/models/stripe_models/payment_intent_input_model.dart';
 import '../../../../../logic/cubit/checkout_cubit.dart';
 
 class CheckoutButtonBlocConsumer extends StatelessWidget {
-  final double totalAmount;
-  const CheckoutButtonBlocConsumer({super.key, required this.totalAmount});
+  final CartCubit cartCubit;
+  const CheckoutButtonBlocConsumer({super.key, required this.cartCubit});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
               Routes.orderConfirmationRoute,
               arguments: context.read<CheckoutCubit>().isCreditCardPayment,
             );
+            cartCubit.clearCart();
           case CheckoutOrderFailure():
             context.pop();
             DialogsHelper.showToastificationMessage(
@@ -54,7 +56,7 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
                 if (context.read<CheckoutCubit>().isCreditCardPayment) {
                   await context.read<CheckoutCubit>().executePayment(
                     PaymentIntentInputModel(
-                      amount: totalAmount + 100,
+                      amount: cartCubit.totalPrice + 100,
                       currency: 'EGP',
                       customerId: '123456Aa',
                     ),

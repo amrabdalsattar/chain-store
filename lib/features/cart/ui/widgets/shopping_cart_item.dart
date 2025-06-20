@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theming/app_text_styles.dart';
-import '../../../../../core/theming/colors_helper.dart';
-import '../../../../../core/utils/format_utils.dart';
-import '../../../../../core/widgets/custom_image_widget.dart';
-import '../../../data/models/cart_response_model.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../../../core/utils/format_utils.dart';
+import '../../../../core/widgets/custom_image_widget.dart';
+import '../../data/models/cart_response_model.dart';
 import 'quantity_control_widget.dart';
 
 class ShoppingCartItem extends StatelessWidget {

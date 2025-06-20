@@ -66,8 +66,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                       onTap: () => mainCubit.toggleCurrentTabIndex = 2,
                     ),
                     _buildNavItem(
-                      iconPath: AppImages.navWishlistIcon,
-                      label: 'Find suppliers',
+                      iconPath: AppImages.searchBarIcon,
+                      label: 'Explore',
                       index: 3,
                       currentIndex: mainCubit.currentTabIndex,
                       onTap: () => mainCubit.toggleCurrentTabIndex = 3,
@@ -164,8 +164,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                           iconPath,
                           width: 24.w,
                           height: 24.h,
-                          colorFilter: ColorFilter.mode(
-                            ColorsHelper.liteBlue,
+                          colorFilter: const ColorFilter.mode(
+                            ColorsHelper.secondaryGray,
                             BlendMode.srcIn,
                           ),
                         ),
@@ -177,7 +177,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                   color:
                       isSelected
                           ? ColorsHelper.primaryColor
-                          : ColorsHelper.liteBlue,
+                          : ColorsHelper.secondaryGray,
                   fontSize: 12.sp,
                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                   fontFamily: 'Rubik',

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/helpers/app_images.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theming/app_text_styles.dart';
-import '../../../../../core/theming/colors_helper.dart';
-import '../../../../../core/widgets/custom_button.dart';
-import '../../../../main/logic/cubit/main_cubit.dart';
+import '../../../../core/helpers/app_images.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../../../main/logic/cubit/main_cubit.dart';
 
 class EmptyCart extends StatelessWidget {
   const EmptyCart({super.key});

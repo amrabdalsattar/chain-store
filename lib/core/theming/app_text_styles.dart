@@ -281,6 +281,16 @@ class AppTextStyles {
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.bold,
   );
+  static TextStyle robotoBlackBold14 = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+  static TextStyle robotoBlackBold10 = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
   static TextStyle robotoFadedBlackRegular16 = TextStyle(
     fontSize: 15.sp,
     color: ColorsHelper.fadedBlack,
@@ -303,6 +313,11 @@ class AppTextStyles {
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle robotoWhiteRegular10 = TextStyle(
+    fontSize: 10.sp,
+    color: ColorsHelper.white,
+    fontWeight: FontWeightHelper.regular,
+  );
   static TextStyle robotoGrayRegular12 = TextStyle(
     fontSize: 12.sp,
     color: ColorsHelper.secondaryGray,
@@ -320,6 +335,12 @@ class AppTextStyles {
   );
   static TextStyle robotoPrimaryBold16 = TextStyle(
     fontSize: 16.sp,
+    color: ColorsHelper.primaryColor,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle robotoPrimaryBold10 = TextStyle(
+    fontSize: 10.sp,
     color: ColorsHelper.primaryColor,
     fontWeight: FontWeightHelper.bold,
   );

@@ -21,8 +21,8 @@ class CustomSearchTextFormField extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
         borderSide: const BorderSide(color: ColorsHelper.liteGray),
       ),
-      prefixIconPath: AppImages.connectChainLogo,
-      hintText: 'بحث',
+      prefixIconPath: AppImages.searchBarIcon,
+      hintText: 'Search',
       controller: TextEditingController(),
       validator: (value) {},
     );

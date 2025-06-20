@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../core/helpers/extensions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors_helper.dart';
-import '../../../../../core/widgets/custom_button.dart';
-import '../../../data/models/cart_response_model.dart';
-import '../../../logic/cart_cubit/cart_cubit.dart';
+import '../../../../core/helpers/extensions.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_helper.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../../data/models/cart_response_model.dart';
+import '../../logic/cart_cubit/cart_cubit.dart';
 import 'slidable_cart_item.dart';
 import 'summary_row.dart';
 
@@ -54,7 +54,10 @@ class CartContent extends StatelessWidget {
         verticalSpace(16),
         CustomButton(
           onTap: () {
-            context.pushNamed(Routes.checkoutScreenRoute, arguments: cartInfo);
+            context.pushNamed(
+              Routes.checkoutScreenRoute,
+              arguments: context.read<CartCubit>(),
+            );
           },
           borderColor: ColorsHelper.primaryColor,
           height: 46.h,

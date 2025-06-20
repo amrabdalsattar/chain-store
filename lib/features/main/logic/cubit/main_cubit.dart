@@ -1,9 +1,10 @@
-import '../../../cart/ui/shopping_cart_screen.dart/shopping_cart_screen.dart';
+import '../../../cart/ui/shopping_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/cache/user_data_operator.dart';
 import '../../../categories/ui/categories_screen.dart';
+import '../../../explore_suppliers/ui/explore_suppliers_tab.dart';
 import '../../../home/ui/home_screen.dart';
 import '../../../profile/ui/profile_screen.dart';
 
@@ -21,7 +22,7 @@ class MainCubit extends Cubit<dynamic> {
     const ProfileScreen(),
     const ShoppingCartScreen(),
     const HomeScreen(),
-    const Center(child: Text('Wishlist')),
+    const ExploreSuppliersTab(),
     const CategoriesScreen(),
   ];
 

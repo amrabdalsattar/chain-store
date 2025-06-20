@@ -4,19 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/theming/app_text_styles.dart';
 import '../../../../../../core/utils/format_utils.dart';
-import '../../../../../cart/data/models/cart_response_model.dart';
 
+import '../../../../../cart/logic/cart_cubit/cart_cubit.dart';
 import 'widgets/cart_items_list.dart';
 import 'widgets/checkout_button_bloc_consumer.dart';
 import 'widgets/price_row.dart';
 
 class OrderSummarySection extends StatefulWidget {
   final bool hideProductsSection;
-  final CartInfo cartInfo;
+  final CartCubit cartCubit;
   const OrderSummarySection({
     super.key,
     this.hideProductsSection = false,
-    required this.cartInfo,
+    required this.cartCubit,
   });
 
   @override
@@ -52,24 +52,24 @@ class _OrderSummarySectionState extends State<OrderSummarySection>
               )
               : CartItemsList(
                 hideProductsSection: widget.hideProductsSection,
-                cartInfo: widget.cartInfo,
+                cartItems: widget.cartCubit.cartItems,
               ),
           verticalSpace(20),
           PriceRow(
             label:
-                'Subtotal ( ${widget.cartInfo.items!.length} ${getPluralOrSingular('item', widget.cartInfo.items!.length)} )',
-            value: widget.cartInfo.total!,
+                'Subtotal ( ${widget.cartCubit.cartItems.length} ${getPluralOrSingular('item', widget.cartCubit.cartItems.length)} )',
+            value: widget.cartCubit.totalPrice,
           ),
           verticalSpace(12),
           const PriceRow(label: 'Shipping', value: 100),
           verticalSpace(16),
           PriceRow(
             label: 'Total',
-            value: (widget.cartInfo.total! + 100),
+            value: (widget.cartCubit.totalPrice + 100),
             isTotalPrice: true,
           ),
           verticalSpace(24),
-          CheckoutButtonBlocConsumer(totalAmount: widget.cartInfo.total!),
+          CheckoutButtonBlocConsumer(cartCubit: widget.cartCubit),
         ],
       ),
     );

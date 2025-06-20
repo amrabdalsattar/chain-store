@@ -5,6 +5,10 @@ import '../../features/cart/data/datasources/cart_remote_datasource.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
 import '../../features/checkout_order/data/datasources/place_order_datasource.dart';
 import '../../features/checkout_order/data/repos/checkout_repo.dart';
+import '../../features/explore_suppliers/data/datasources/suppliers_datasource.dart';
+import '../../features/explore_suppliers/data/repos/suppliers_repo.dart';
+import '../../features/home/data/datasources/home_remote_datasource.dart';
+import '../../features/home/data/repos/home_repo.dart';
 import '../../features/login/data/datasources/login_datasource.dart';
 import '../../features/login/data/repos/login_repo.dart';
 import '../../features/checkout_order/data/datasources/stripe_service.dart';
@@ -58,4 +62,16 @@ Future<void> setUpGetIt() async {
   getIt.registerLazySingleton<CheckoutRepo>(
     () => CheckoutRepo(getIt<StripeService>(), getIt<PlaceOrderDatasource>()),
   );
+
+  // Home
+  getIt.registerLazySingleton<HomeRemoteDataSource>(
+    () => HomeRemoteDataSource(getIt()),
+  );
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
+
+  // Suppliers
+  getIt.registerLazySingleton<SuppliersDatasource>(
+    () => SuppliersDatasource(getIt()),
+  );
+  getIt.registerLazySingleton<SuppliersRepo>(() => SuppliersRepo(getIt()));
 }

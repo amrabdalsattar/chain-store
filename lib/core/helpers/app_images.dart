@@ -21,6 +21,7 @@ class AppImages {
   static const String electronicsIcon = 'assets/images/electronics.png';
   static const String addIcon = 'assets/images/add.png';
   static const String emptyCart = 'assets/images/empty_cart.png';
+  static const String bannerMobile = 'assets/images/banner_mobile.png';
 
   // Cart & Checkout Images
   static const String productPlaceholder =
@@ -39,16 +40,18 @@ class AppImages {
   static const String phoneIcon = 'assets/svgs/phone.svg';
   static const String addressIcon = 'assets/svgs/address.svg';
   static const String wavingHandIcon = 'assets/svgs/waving_hand.svg';
-  static const String cartIcon = 'assets/svgs/cart.svg';
-  static const String appBarNotification = 'assets/svgs/notification.svg';
+
   static const String deleteIcon = 'assets/svgs/delete.svg';
   static const String cashOnDelivery = 'assets/svgs/cash_on_delivery.svg';
+  static const String searchBarIcon = 'assets/svgs/search_bar_icon.svg';
+  static const String proceedArrow = 'assets/svgs/proceed_arrow.svg';
+  static const String starIcon = 'assets/svgs/star.svg';
 
   // Navigation Bar SVG Icons
   static const String navHomeIcon = 'assets/svgs/nav_home.svg';
   static const String navCategoryIcon = 'assets/svgs/nav_category.svg';
   static const String navCartIcon = 'assets/svgs/nav_cart.svg';
-  static const String navWishlistIcon = 'assets/svgs/search_icon.svg';
+  static const String navSearchIcon = 'assets/svgs/search_icon.svg';
   static const String navProfileIcon = 'assets/svgs/nav_profile.svg';
 
   // Profile SVG Icons

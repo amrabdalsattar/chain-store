@@ -37,7 +37,7 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> _handleLoginSuccess(LoginResponseModel response) async {
     if (response.userData != null) {
       await UserDataOperator.saveUserData(response.userData!);
-      await TokenHelper.setSecuredUserToken(response.userData!.token);
+      await TokenHelper.setSecuredUserToken(response.userData!.token!);
     }
   }
 

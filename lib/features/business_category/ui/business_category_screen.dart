@@ -27,7 +27,7 @@ class BusinessCategoryScreen extends StatelessWidget {
               onTap:
                   businessCategoryCubit.isButtonEnabled
                       ? () {
-                        context.pushNamed(Routes.mainScreenRoute);
+                        context.pushReplacementNamed(Routes.mainScreenRoute);
                       }
                       : null,
             );
