@@ -28,9 +28,9 @@ class LoginButtonBlocConsumer extends StatelessWidget {
                 apiErrorModel.getErrorMessages() ?? 'Unexpected Error occurred',
               ),
           success:
-              (loginResponseModel) =>
-              // context.pushNamed(Routes.preLoginScreenRoute),
-              context.pushNamed(Routes.businessCategoryScreenRoute),
+              (loginResponseModel) => context.pushReplacementNamed(
+                Routes.businessCategoryScreenRoute,
+              ),
         );
       },
       builder:

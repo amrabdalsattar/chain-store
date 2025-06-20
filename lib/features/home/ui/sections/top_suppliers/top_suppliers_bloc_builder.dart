@@ -17,10 +17,11 @@ class TopSuppliersBlocBuilder extends StatelessWidget {
           (previous, current) =>
               current is HomeSuppliersLoadedState ||
               current is HomeSuppliersErrorState ||
+              current is HomeInitialState ||
               current is HomeSuppliersLoadingState,
       builder: (context, state) {
         switch (state) {
-          case HomeSuppliersLoadingState():
+          case HomeSuppliersLoadingState() || HomeInitialState():
             return const TopSuppliersShimmerLoading();
           case HomeSuppliersLoadedState():
             return TopSuppliersListView(suppliers: homeCubit.localSuppliers);

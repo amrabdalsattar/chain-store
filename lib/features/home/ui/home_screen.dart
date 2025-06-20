@@ -5,6 +5,7 @@ import '../../../core/helpers/spacing.dart';
 
 import '../../../core/widgets/custom_search_text_form_field.dart';
 
+import '../../main/logic/cubit/main_cubit.dart';
 import '../data/repos/home_repo.dart';
 import '../logic/cubit/home_cubit.dart';
 import 'sections/banner/banner_slider.dart';
@@ -62,8 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 SliverToBoxAdapter(
                   child: HomeSection(
                     title: 'Top Suppliers',
-                    onSeeAllTap: () {
-                      // Navigate to featured products screen
+                    onSeeAllPressed: () {
+                      context.read<MainCubit>().toggleCurrentTabIndex = 3;
                     },
                   ),
                 ),

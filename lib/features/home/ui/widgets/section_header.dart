@@ -4,13 +4,9 @@ import 'package:flutter/material.dart';
 
 class HomeSection extends StatelessWidget {
   final String title;
-  final VoidCallback onSeeAllTap;
+  final void Function()? onSeeAllPressed;
 
-  const HomeSection({
-    super.key,
-    required this.title,
-    required this.onSeeAllTap,
-  });
+  const HomeSection({super.key, required this.title, this.onSeeAllPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +14,13 @@ class HomeSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: AppTextStyles.rubikBlackBold16),
-        GestureDetector(
-          onTap: onSeeAllTap,
-          child: TextButton(
-            onPressed: () {},
-            child: Text(
-              'See All',
-              style: AppTextStyles.robotoGrayRegular12.copyWith(
-                decoration: TextDecoration.underline,
-                decorationColor: ColorsHelper.secondaryGray,
-              ),
+        TextButton(
+          onPressed: onSeeAllPressed,
+          child: Text(
+            'See All',
+            style: AppTextStyles.robotoGrayRegular12.copyWith(
+              decoration: TextDecoration.underline,
+              decorationColor: ColorsHelper.secondaryGray,
             ),
           ),
         ),

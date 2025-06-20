@@ -40,8 +40,7 @@ class AppImages {
   static const String phoneIcon = 'assets/svgs/phone.svg';
   static const String addressIcon = 'assets/svgs/address.svg';
   static const String wavingHandIcon = 'assets/svgs/waving_hand.svg';
-  static const String cartIcon = 'assets/svgs/cart.svg';
-  static const String appBarNotification = 'assets/svgs/notification.svg';
+
   static const String deleteIcon = 'assets/svgs/delete.svg';
   static const String cashOnDelivery = 'assets/svgs/cash_on_delivery.svg';
   static const String searchBarIcon = 'assets/svgs/search_bar_icon.svg';

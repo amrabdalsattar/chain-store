@@ -27,5 +27,9 @@ class ApiConstants {
   // Home Endpoints
   static const getTopSuppliersEP = 'Supplier/GetSuppliers';
 
+  // Suppliers Endpoints
+
+  static const exploreSuppliersEP = 'Supplier/SearchByName';
+
   static const Duration timeOut = Duration(seconds: 20);
 }

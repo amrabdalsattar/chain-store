@@ -16,7 +16,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 80,
       title: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -41,6 +40,18 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.notifications_none_outlined),
+          onPressed: () {},
+          iconSize: 22.r,
+        ),
+        IconButton(
+          icon: const Icon(Icons.shopping_cart_outlined),
+          onPressed: () {},
+          iconSize: 22.r,
+        ),
+      ],
     );
   }
 

@@ -27,12 +27,14 @@ class SupplierCard extends StatelessWidget {
             child: Container(
               color: ColorsHelper.homeScaffoldColor,
               child: CachedNetworkImage(
-                imageUrl:
-                    supplier.imageUrl ??
-                    'https://www.pngplay.com/wp-content/uploads/2/Happy-Man-Transparent-Background.png',
+                imageUrl: supplier.imageUrl!,
                 fit: BoxFit.contain,
                 placeholder: (_, __) => const LoadingIndicator(),
-                errorWidget: (_, __, ___) => const Icon(Icons.error),
+                errorWidget:
+                    (_, __, ___) => CachedNetworkImage(
+                      imageUrl:
+                          'https://www.pngplay.com/wp-content/uploads/2/Happy-Man-Transparent-Background.png',
+                    ),
                 width: 145.w,
                 height: 151.h,
               ),
@@ -43,7 +45,7 @@ class SupplierCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                supplier.name,
+                supplier.name!,
                 style: AppTextStyles.robotoBlackBold14,
                 maxLines: 1,
               ),
@@ -51,7 +53,7 @@ class SupplierCard extends StatelessWidget {
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  supplier.name,
+                  supplier.name!,
                   style: AppTextStyles.robotoGrayRegular12,
                 ),
               ),
@@ -59,7 +61,7 @@ class SupplierCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  StarredRate(rating: supplier.rating.toDouble()),
+                  StarredRate(rating: supplier.rating!.toDouble()),
                   Text(
                     'View Supplier',
                     style: AppTextStyles.robotoPrimaryBold10,
