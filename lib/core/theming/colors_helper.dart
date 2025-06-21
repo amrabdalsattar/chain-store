@@ -5,6 +5,7 @@ class ColorsHelper {
   static const Color transparent = Colors.transparent;
   static const Color black = Colors.black;
   static const Color red = Colors.red;
+  static const Color redAccent = Colors.redAccent;
   static const Color green = Colors.green;
 
   static const Color primaryColor = Color(0xFFF28B22);
@@ -12,6 +13,7 @@ class ColorsHelper {
   static const Color purple = Color(0xFF655B96);
   static Color fadedPurple = const Color(0xFF5B47BC).withValues(alpha: 0.3);
   static Color liteBlue = const Color(0xFF6B7280);
+  static Color gold = const Color(0xFFFFB543);
 
   // statistics data icons background colors
   static const Color dollarIconBackGroundColor = Color(0xFF28A745);

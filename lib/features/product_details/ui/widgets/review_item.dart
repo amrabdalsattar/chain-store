@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_helper.dart';
-import 'rating_stars.dart';
+import '../../../home/ui/sections/product/widgets/rating_stars.dart';
 
 class ReviewItem extends StatelessWidget {
   final Map<String, dynamic> review;

@@ -21,3 +21,17 @@ class HomeSuppliersErrorState extends HomeState {
   final ApiErrorModel apiErrorModel;
   const HomeSuppliersErrorState(this.apiErrorModel);
 }
+
+class MatchedProductsLoadingState extends HomeState {
+  const MatchedProductsLoadingState();
+}
+
+class MatchedProductsLoadedState extends HomeState {
+  final List<ProductDataModel> products;
+  const MatchedProductsLoadedState(this.products);
+}
+
+class MatchedProductsErrorState extends HomeState {
+  final ApiErrorModel apiErrorModel;
+  const MatchedProductsErrorState(this.apiErrorModel);
+}

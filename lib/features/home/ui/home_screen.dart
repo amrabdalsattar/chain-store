@@ -9,6 +9,7 @@ import '../../main/logic/cubit/main_cubit.dart';
 import '../data/repos/home_repo.dart';
 import '../logic/cubit/home_cubit.dart';
 import 'sections/banner/banner_slider.dart';
+import 'sections/product/bloc_builders/matched_products_bloc_builder.dart';
 import 'sections/top_suppliers/top_suppliers_bloc_builder.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/request_for_quotation_button.dart';
@@ -27,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
   late final HomeCubit homeCubit;
 
   Future<void> _fetchHomeData() async {
-    Future.microtask(() => [homeCubit.getSuppliers()]);
+    Future.microtask(
+      () => [homeCubit.getSuppliers(), homeCubit.getMatchedProducts()],
+    );
   }
 
   @override
@@ -50,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
               slivers: [
                 // Search Bar
                 const SliverToBoxAdapter(child: CustomSearchTextFormField()),
@@ -69,6 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SliverToBoxAdapter(child: TopSuppliersBlocBuilder()),
+                SliverToBoxAdapter(
+                  child: HomeSection(
+                    title: 'Matched Products ',
+                    onSeeAllPressed: () {},
+                  ),
+                ),
+                const SliverToBoxAdapter(child: MatchedProductsBlocBuilder()),
               ],
             ),
           ),

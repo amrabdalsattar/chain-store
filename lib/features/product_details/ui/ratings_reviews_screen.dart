@@ -5,7 +5,7 @@ import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_helper.dart';
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/widgets/custom_button.dart';
-import 'widgets/rating_stars.dart';
+import '../../home/ui/sections/product/widgets/rating_stars.dart';
 import 'widgets/review_item.dart';
 
 class RatingsReviewsScreen extends StatelessWidget {

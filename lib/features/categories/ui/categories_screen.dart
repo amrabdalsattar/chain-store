@@ -47,12 +47,12 @@ class CategoriesScreen extends StatelessWidget {
                                 // Recommendations section
                                 const SectionTile(title: 'Recommendations'),
                                 verticalSpace(12),
-                                ProductsGrid(products: products),
+                                CategoryProductsGrid(products: products),
                                 verticalSpace(24),
                                 // For you section
                                 const SectionTile(title: 'For you'),
                                 verticalSpace(12),
-                                ProductsGrid(products: products),
+                                CategoryProductsGrid(products: products),
                                 verticalSpace(24),
                                 // Get product inspiration section
                                 const SectionTile(

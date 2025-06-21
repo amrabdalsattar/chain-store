@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes.dart';
-import 'product_card.dart';
-
-class ProductsGrid extends StatelessWidget {
+class CategoryProductsGrid extends StatelessWidget {
   final List products;
-  const ProductsGrid({super.key, required this.products});
+  const CategoryProductsGrid({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -38,19 +35,7 @@ class ProductsGrid extends StatelessWidget {
             ),
             itemCount: products.length,
             itemBuilder: (context, index) {
-              final product = products[index];
-              return GestureDetector(
-                onTap: () {
-                  // Navigate to product details
-                  Navigator.pushNamed(context, Routes.productDetailsRoute);
-                },
-                child: ProductCard(
-                  title: product['title'] as String,
-                  price: product['price'] as String,
-                  rating: product['rating'] as double,
-                  imageUrl: product['imageUrl'] as String,
-                ),
-              );
+              return GestureDetector();
             },
           );
         },

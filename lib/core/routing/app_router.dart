@@ -8,8 +8,7 @@ import '../../features/checkout_order/logic/cubit/checkout_cubit.dart';
 import '../../features/checkout_order/ui/checkout_screen.dart/cart_checkout_screen.dart';
 import '../../features/checkout_order/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
 import '../../features/cart/ui/shopping_cart_screen.dart';
-import '../../features/product_details/data/models/product_model.dart';
-import '../../features/product_details/ui/product_details_screen.dart';
+
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
 import '../../features/profile/logic/cubit/profile_cubit.dart';
 import '../../features/profile/ui/profile_screen.dart';
@@ -168,13 +167,13 @@ class AppRouter {
           settings: settings,
         );
 
-      case Routes.productDetailsRoute:
-        return CustomAnimationsBuilder.buildFadeTransition(
-          screen: ProductDetailsScreen(
-            product: arguments as ProductModel? ?? ProductModel.sampleProduct(),
-          ),
-          settings: settings,
-        );
+      // case Routes.productDetailsRoute:
+      //   return CustomAnimationsBuilder.buildFadeTransition(
+      //     screen: ProductDetailsScreen(
+      //       product: arguments as ProductDataModel?,
+      //     ),
+      //     settings: settings,
+      //   );
       default:
         return null;
     }
