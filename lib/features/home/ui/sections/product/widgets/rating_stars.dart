@@ -38,7 +38,7 @@ class RatingStars extends StatelessWidget {
               ...List.generate(
                 5 - rating.toInt(),
                 (index) => Icon(
-                  Icons.star_border,
+                  Icons.star_border_rounded,
                   color: ColorsHelper.dividerGray,
                   size: size.sp,
                 ),
