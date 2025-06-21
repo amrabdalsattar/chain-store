@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/widgets/loading_indicator.dart';
-import '../../../../logic/cubit/home_cubit.dart';
-import '../../../widgets/product_grid.dart';
+import '../../../../../../../core/widgets/loading_indicator.dart';
+import '../../../../../logic/cubit/home_cubit.dart';
+import '../../../../widgets/section_header.dart';
+import 'matched_product_grid.dart';
 
 class MatchedProductsBlocBuilder extends StatelessWidget {
   const MatchedProductsBlocBuilder({super.key});
@@ -21,9 +23,17 @@ class MatchedProductsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         switch (state) {
           case MatchedProductsLoadingState() || HomeInitialState():
-            return const LoadingIndicator();
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 50.h),
+              child: const LoadingIndicator(),
+            );
           case MatchedProductsLoadedState():
-            return ProductGrid(products: state.products);
+            return HomeSection(
+              title: 'Matched Products ',
+              onSeeAllPressed: () {},
+
+              child: MatchedProductGrid(products: state.products),
+            );
           case MatchedProductsErrorState():
             return Center(
               child: Text(

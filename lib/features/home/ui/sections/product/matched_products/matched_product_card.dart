@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../core/helpers/app_images.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theming/app_text_styles.dart';
-import '../../../../../core/theming/colors_helper.dart';
-import '../../../../../core/utils/format_utils.dart';
-import '../../../../../core/widgets/loading_indicator.dart';
-import '../../../data/models/products_response_model.dart';
+import '../../../../../../core/helpers/app_images.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/theming/app_text_styles.dart';
+import '../../../../../../core/theming/colors_helper.dart';
+import '../../../../../../core/utils/format_utils.dart';
+import '../../../../../../core/widgets/loading_indicator.dart';
+import '../../../../data/models/products_response_model.dart';
 import 'widgets/rating_stars.dart';
 part 'widgets/product_image.dart';
 
 part 'widgets/product_info.dart';
 
-class ProductCard extends StatelessWidget {
+class MatchedProductCard extends StatelessWidget {
   final ProductDataModel product;
-  const ProductCard({super.key, required this.product});
+  const MatchedProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {

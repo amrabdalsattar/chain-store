@@ -25,4 +25,13 @@ class HomeRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
+  Future<ApiResult<List<ProductDataModel>>> getRecommendedProducts() async {
+    try {
+      final result = await _dataSource.getRecommendedProducts();
+      return ApiResult.success(result);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

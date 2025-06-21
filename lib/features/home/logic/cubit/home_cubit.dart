@@ -12,7 +12,8 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this._repo) : super(const HomeInitialState());
 
   List<SupplierDataModel> localSuppliers = [];
-  List<ProductDataModel> localProducts = [];
+  List<ProductDataModel> localMatchedProducts = [];
+  List<ProductDataModel> localRecommendedProducts = [];
 
   Future<void> getSuppliers() async {
     emit(const HomeSuppliersLoadingState());
@@ -36,12 +37,28 @@ class HomeCubit extends Cubit<HomeState> {
     result.when(
       success: (products) {
         if (isClosed) return;
-        localProducts = products;
-        emit(MatchedProductsLoadedState(localProducts));
+        localMatchedProducts = products;
+        emit(MatchedProductsLoadedState(localMatchedProducts));
       },
       failure: (apiErrorModel) {
         if (isClosed) return;
         emit(MatchedProductsErrorState(apiErrorModel));
+      },
+    );
+  }
+
+  Future<void> getRecommendedProducts() async {
+    emit(const RecommendedProductsLoadingState());
+    final result = await _repo.getRecommendedProducts();
+    result.when(
+      success: (products) {
+        if (isClosed) return;
+        localRecommendedProducts = products;
+        emit(RecommendedProductsLoadedState(localRecommendedProducts));
+      },
+      failure: (apiErrorModel) {
+        if (isClosed) return;
+        emit(RecommendedProductsErrorState(apiErrorModel));
       },
     );
   }

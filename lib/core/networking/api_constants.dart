@@ -32,6 +32,7 @@ class ApiConstants {
 
   // Products Endpoints
   static const getMatchedProductsEP = 'Product/GetMatchedProducts';
+  static const getRecommendedProductsEP = 'Product/GetRecommendedForCustomer';
 
   static const Duration timeOut = Duration(seconds: 20);
 }

@@ -5,15 +5,14 @@ import '../../../core/helpers/spacing.dart';
 
 import '../../../core/widgets/custom_search_text_form_field.dart';
 
-import '../../main/logic/cubit/main_cubit.dart';
 import '../data/repos/home_repo.dart';
 import '../logic/cubit/home_cubit.dart';
 import 'sections/banner/banner_slider.dart';
-import 'sections/product/bloc_builders/matched_products_bloc_builder.dart';
+import 'sections/product/matched_products/widgets/matched_products_bloc_builder.dart';
 import 'sections/top_suppliers/top_suppliers_bloc_builder.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/request_for_quotation_button.dart';
-import 'widgets/section_header.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _fetchHomeData() async {
     Future.microtask(
-      () => [homeCubit.getSuppliers(), homeCubit.getMatchedProducts()],
+      () => [
+        homeCubit.getSuppliers(),
+        homeCubit.getMatchedProducts(),
+        homeCubit.getRecommendedProducts(),
+      ],
     );
   }
 
@@ -64,21 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 SliverToBoxAdapter(child: verticalSpace(8)),
 
                 // Top Suppliers
-                SliverToBoxAdapter(
-                  child: HomeSection(
-                    title: 'Top Suppliers',
-                    onSeeAllPressed: () {
-                      context.read<MainCubit>().toggleCurrentTabIndex = 3;
-                    },
-                  ),
-                ),
                 const SliverToBoxAdapter(child: TopSuppliersBlocBuilder()),
-                SliverToBoxAdapter(
-                  child: HomeSection(
-                    title: 'Matched Products ',
-                    onSeeAllPressed: () {},
-                  ),
-                ),
+
+                // Matched Products
                 const SliverToBoxAdapter(child: MatchedProductsBlocBuilder()),
               ],
             ),

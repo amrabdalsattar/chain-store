@@ -1,12 +1,12 @@
-import '../../data/models/products_response_model.dart';
-import '../sections/product/product_card.dart';
+import '../../../../../data/models/products_response_model.dart';
+import '../matched_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductGrid extends StatelessWidget {
+class MatchedProductGrid extends StatelessWidget {
   final List<ProductDataModel> products;
 
-  const ProductGrid({super.key, required this.products});
+  const MatchedProductGrid({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ProductGrid extends StatelessWidget {
           final product = products[index];
           return GestureDetector(
             onTap: () {},
-            child: ProductCard(product: product),
+            child: MatchedProductCard(product: product),
           );
         },
       ),

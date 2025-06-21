@@ -1,4 +1,4 @@
-part of '../product_card.dart';
+part of '../matched_product_card.dart';
 
 class ProductImage extends StatelessWidget {
   final String imageUrl;

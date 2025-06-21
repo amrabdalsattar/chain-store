@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../main/logic/cubit/main_cubit.dart';
 import '../../../logic/cubit/home_cubit.dart';
+import '../../widgets/section_header.dart';
 import 'top_suppliers_list_view.dart';
 import 'top_suppliers_shimmer_loading.dart';
 
@@ -22,9 +25,18 @@ class TopSuppliersBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         switch (state) {
           case HomeSuppliersLoadingState() || HomeInitialState():
-            return const TopSuppliersShimmerLoading();
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.h),
+              child: const TopSuppliersShimmerLoading(),
+            );
           case HomeSuppliersLoadedState():
-            return TopSuppliersListView(suppliers: homeCubit.localSuppliers);
+            return HomeSection(
+              title: 'Top Suppliers',
+              onSeeAllPressed: () {
+                context.read<MainCubit>().toggleCurrentTabIndex = 3;
+              },
+              child: TopSuppliersListView(suppliers: homeCubit.localSuppliers),
+            );
           case HomeSuppliersErrorState():
             return Center(
               child: Text(

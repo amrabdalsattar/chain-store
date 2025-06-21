@@ -40,4 +40,21 @@ class HomeRemoteDataSource {
 
     return productsResponseModel.products;
   }
+
+  Future<List<ProductDataModel>> getRecommendedProducts() async {
+    final response = await _apiHelper.get(
+      ApiRequestModel(
+        endPoint: ApiConstants.getRecommendedProductsEP,
+        queries: {'minSupplierRating': 4, 'onlyInStock': true},
+        headers: {
+          'Authorization': 'Bearer ${await TokenHelper.getSecuredUserToken()}',
+        },
+      ),
+    );
+
+    final ProductsResponseModel productsResponseModel =
+        ProductsResponseModel.fromJson(response);
+
+    return productsResponseModel.products;
+  }
 }

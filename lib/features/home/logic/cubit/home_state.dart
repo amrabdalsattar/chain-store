@@ -8,6 +8,7 @@ class HomeInitialState extends HomeState {
   const HomeInitialState();
 }
 
+// Top Suppliers
 class HomeSuppliersLoadingState extends HomeState {
   const HomeSuppliersLoadingState();
 }
@@ -22,6 +23,8 @@ class HomeSuppliersErrorState extends HomeState {
   const HomeSuppliersErrorState(this.apiErrorModel);
 }
 
+// Matched Products
+
 class MatchedProductsLoadingState extends HomeState {
   const MatchedProductsLoadingState();
 }
@@ -34,4 +37,20 @@ class MatchedProductsLoadedState extends HomeState {
 class MatchedProductsErrorState extends HomeState {
   final ApiErrorModel apiErrorModel;
   const MatchedProductsErrorState(this.apiErrorModel);
+}
+
+// Recommended Products
+
+class RecommendedProductsLoadingState extends HomeState {
+  const RecommendedProductsLoadingState();
+}
+
+class RecommendedProductsLoadedState extends HomeState {
+  final List<ProductDataModel> products;
+  const RecommendedProductsLoadedState(this.products);
+}
+
+class RecommendedProductsErrorState extends HomeState {
+  final ApiErrorModel apiErrorModel;
+  const RecommendedProductsErrorState(this.apiErrorModel);
 }
