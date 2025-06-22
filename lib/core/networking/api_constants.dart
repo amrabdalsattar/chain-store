@@ -28,8 +28,11 @@ class ApiConstants {
   static const getTopSuppliersEP = 'Supplier/GetSuppliers';
 
   // Suppliers Endpoints
-
   static const exploreSuppliersEP = 'Supplier/SearchByName';
+
+  // Products Endpoints
+  static const getMatchedProductsEP = 'Product/GetMatchedProducts';
+  static const getRecommendedProductsEP = 'Product/GetRecommendedForCustomer';
 
   static const Duration timeOut = Duration(seconds: 20);
 }

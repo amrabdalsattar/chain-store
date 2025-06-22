@@ -287,7 +287,7 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.bold,
   );
   static TextStyle robotoBlackBold10 = TextStyle(
-    fontSize: 14.sp,
+    fontSize: 10.sp,
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.bold,
   );
