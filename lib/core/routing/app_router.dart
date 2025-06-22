@@ -30,6 +30,8 @@ import '../../features/reset_password/ui/otp_verification_ui/otp_screen.dart';
 import '../../features/reset_password/ui/reset_password_ui/reset_password_screen.dart';
 import '../../features/signup/logic/cubit/signup_cubit.dart';
 import '../../features/signup/ui/signup_screen.dart';
+import '../../features/wishlist/logic/cubit/wishlist_cubit.dart';
+import '../../features/wishlist/ui/wishlist_screen.dart';
 import '../di/dependency_injection.dart';
 import '../helpers/animations/custom_animations_builder.dart';
 import 'routes.dart';
@@ -98,6 +100,7 @@ class AppRouter {
             providers: [
               BlocProvider(create: (context) => CartCubit(getIt<CartRepo>())),
               BlocProvider(create: (context) => MainCubit()),
+              BlocProvider(create: (context) => WishlistCubit(getIt())),
             ],
             child: const MainScreen(),
           ),
@@ -174,6 +177,23 @@ class AppRouter {
       //     ),
       //     settings: settings,
       //   );
+
+      case Routes.wishlistScreenRoute:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        final cartCubit = args['cartCubit'] as CartCubit;
+        final wishlistCubit = args['wishlistCubit'] as WishlistCubit;
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: cartCubit),
+              BlocProvider.value(value: wishlistCubit),
+            ],
+            child: const WishlistScreen(),
+          ),
+          settings: settings,
+        );
+
       default:
         return null;
     }

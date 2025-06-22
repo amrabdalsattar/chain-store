@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/extensions.dart';
-import '../../../../core/theming/app_text_styles.dart';
-import '../../../../core/theming/colors_helper.dart';
+import '../helpers/extensions.dart';
+import '../theming/app_text_styles.dart';
+import '../theming/colors_helper.dart';
 
-class CartAppBar extends StatelessWidget implements PreferredSizeWidget {
+class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isFirstScreen;
-  const CartAppBar({
+  final Widget? actionWidget;
+  const BasicAppBar({
     super.key,
     required this.title,
     this.isFirstScreen = false,
+    this.actionWidget,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
+      actionsPadding: EdgeInsetsDirectional.only(end: 16.w),
+      actions: [actionWidget ?? const SizedBox.shrink()],
       leading:
           isFirstScreen
               ? null

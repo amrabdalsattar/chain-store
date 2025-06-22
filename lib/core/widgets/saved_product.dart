@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/app_text_styles.dart';
-import '../../../../core/theming/colors_helper.dart';
-import '../../../../core/utils/format_utils.dart';
-import '../../../../core/widgets/custom_image_widget.dart';
-import '../../data/models/cart_response_model.dart';
-import 'quantity_control_widget.dart';
+import '../helpers/spacing.dart';
+import '../theming/app_text_styles.dart';
+import '../theming/colors_helper.dart';
+import '../utils/format_utils.dart';
+import 'custom_button.dart';
+import 'custom_image_widget.dart';
+import '../../features/cart/ui/widgets/quantity_control_widget.dart';
 
-class ShoppingCartItem extends StatelessWidget {
-  final CartItemModel item;
-  const ShoppingCartItem({super.key, required this.item});
+class SavedProduct extends StatelessWidget {
+  final String productImage;
+  final String productName;
+  final double price;
+  final int? quantity;
+  final int minimumOrder;
+  final bool isCartItem;
+  const SavedProduct({
+    super.key,
+    required this.productImage,
+    required this.productName,
+    required this.price,
+    this.quantity,
+    required this.minimumOrder,
+    this.isCartItem = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +57,7 @@ class ShoppingCartItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.r),
               child: CustomImageWidget(
                 fit: BoxFit.cover,
-                imageUrl: item.productImage!,
+                imageUrl: productImage,
               ),
             ),
           ),
@@ -56,7 +69,7 @@ class ShoppingCartItem extends StatelessWidget {
               children: [
                 // Product title
                 Text(
-                  item.productName!,
+                  productName,
                   style: AppTextStyles.robotoBlackRegular12,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -87,7 +100,7 @@ class ShoppingCartItem extends StatelessWidget {
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              '${priceFormat(item.price!)} EGP',
+                              '${priceFormat(price)} EGP',
                               maxLines: 1,
                               style: AppTextStyles.robotoBlackBold12.copyWith(
                                 fontSize: 16.sp,
@@ -97,7 +110,7 @@ class ShoppingCartItem extends StatelessWidget {
                           verticalSpace(6),
                           // Minimum order quantity
                           Text(
-                            'min.order : ${item.minimumOrder} pcs ',
+                            'min.order : ${minimumOrder} pcs ',
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: AppTextStyles.robotoFadedBlackRegular16
@@ -106,7 +119,17 @@ class ShoppingCartItem extends StatelessWidget {
                         ],
                       ),
                     ),
-                    QuantityControlWidget(quantity: item.quantity!),
+
+                    isCartItem
+                        ? QuantityControlWidget(quantity: quantity ?? 0)
+                        : CustomButton(
+                          title: 'Add to cart',
+                          width: 103.w,
+                          borderColor: ColorsHelper.primaryColor,
+                          height: 34.h,
+                          radius: 16.r,
+                          textStyle: AppTextStyles.robotoExtraBlackWhite12,
+                        ),
                   ],
                 ),
               ],

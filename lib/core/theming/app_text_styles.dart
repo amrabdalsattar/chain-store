@@ -291,6 +291,11 @@ class AppTextStyles {
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.bold,
   );
+  static TextStyle robotoExtraBlackWhite12 = TextStyle(
+    fontSize: 12.sp,
+    color: ColorsHelper.white,
+    fontWeight: FontWeightHelper.extraBold,
+  );
   static TextStyle robotoFadedBlackRegular16 = TextStyle(
     fontSize: 15.sp,
     color: ColorsHelper.fadedBlack,

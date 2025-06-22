@@ -23,7 +23,7 @@ class ThemesHelper {
       color: ColorsHelper.white,
       surfaceTintColor: ColorsHelper.white,
     ),
-    scaffoldBackgroundColor: ColorsHelper.white,
+    scaffoldBackgroundColor: ColorsHelper.homeScaffoldColor,
     primaryColor: ColorsHelper.primaryColor,
     canvasColor: Colors.white,
     splashColor: ColorsHelper.transparent,

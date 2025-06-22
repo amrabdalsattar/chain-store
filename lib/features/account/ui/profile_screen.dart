@@ -1,12 +1,15 @@
 import '../../../core/helpers/app_images.dart';
 import '../../../core/helpers/cache/shared_preferences_helper.dart';
 import '../../../core/helpers/cache/shared_preferences_keys.dart';
+import '../../../core/helpers/extensions.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_helper.dart';
 import '../../../core/utils/format_utils.dart';
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/routing/routes.dart';
 import '../../../core/widgets/custom_divider.dart';
+import '../../cart/logic/cart_cubit/cart_cubit.dart';
+import '../../wishlist/logic/cubit/wishlist_cubit.dart';
 import '../logic/cubit/profile_cubit.dart';
 import 'widgets/logout_button.dart';
 import 'widgets/profile_header.dart';
@@ -100,8 +103,13 @@ class _ProfileScreenContent extends StatelessWidget {
                           title: 'Wishlist',
                           subtitle: 'Save items to buy later',
                           onTap: () {
-                            // Navigate to wishlist screen
-                            // Navigator.of(context).pushNamed(Routes.wishlistScreen);
+                            context.pushNamed(
+                              Routes.wishlistScreenRoute,
+                              arguments: {
+                                'cartCubit': context.read<CartCubit>(),
+                                'wishlistCubit': context.read<WishlistCubit>(),
+                              },
+                            );
                           },
                         ),
                         const CustomDivider(),

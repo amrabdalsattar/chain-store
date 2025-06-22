@@ -1,0 +1,46 @@
+part of 'wishlist_cubit.dart';
+
+sealed class WishlistState {
+  const WishlistState();
+}
+
+class WishlistLoadingState extends WishlistState {
+  const WishlistLoadingState();
+}
+
+// Wishlist Fetching States
+class WishlistLoadedState extends WishlistState {
+  final List<WishlistProductModel> wishlistProducts;
+  const WishlistLoadedState(this.wishlistProducts);
+}
+
+class WishlistErrorState extends WishlistState {
+  final ApiErrorModel apiErrorModel;
+  const WishlistErrorState(this.apiErrorModel);
+}
+
+class WishlistEmptyState extends WishlistState {
+  const WishlistEmptyState();
+}
+
+// Wishlist Adding States
+
+class AddedToWishlistState extends WishlistState {
+  const AddedToWishlistState();
+}
+
+class AddingToWishlistErrorState extends WishlistState {
+  final ApiErrorModel apiErrorModel;
+  const AddingToWishlistErrorState(this.apiErrorModel);
+}
+
+// Wishlist Removal States
+
+class RemovedFromWishlistState extends WishlistState {
+  const RemovedFromWishlistState();
+}
+
+class RemovingFromWishlistErrorState extends WishlistState {
+  final ApiErrorModel apiErrorModel;
+  const RemovingFromWishlistErrorState(this.apiErrorModel);
+}

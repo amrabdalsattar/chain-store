@@ -21,4 +21,5 @@ class Routes {
       '/businessCategoryScreenRoute';
 
   static const String categoriesScreenRoute = '/categoriesScreen';
+  static const String wishlistScreenRoute = '/wishlistScreen';
 }

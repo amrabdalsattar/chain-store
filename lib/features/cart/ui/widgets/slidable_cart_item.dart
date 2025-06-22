@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../data/models/cart_response_model.dart';
-import 'shopping_cart_item.dart';
+import '../../../../core/widgets/saved_product.dart';
 
 class SlidableCartItem extends StatelessWidget {
   final CartItemModel item;
@@ -37,7 +37,13 @@ class SlidableCartItem extends StatelessWidget {
             ),
           ],
         ),
-        child: ShoppingCartItem(item: item),
+        child: SavedProduct(
+          minimumOrder: item.minimumOrder ?? 0,
+          price: item.price ?? 0,
+          productName: item.productName ?? '',
+          productImage: item.productImage ?? '',
+          quantity: item.quantity ?? 0,
+        ),
       ),
     );
   }

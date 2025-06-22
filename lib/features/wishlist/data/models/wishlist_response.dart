@@ -14,13 +14,13 @@ class WishlistResponse {
 
 class WishlistProductModel {
   final int productId;
-  final String name;
-  final double price;
-  final int stock;
-  final String categoryName;
-  final String image;
-  final bool isStockAvailable;
-  final DateTime addedToWishlistDate;
+  final String? name;
+  final double? price;
+  final int? stock;
+  final String? categoryName;
+  final String? image;
+  final bool? isStockAvailable;
+  final DateTime? addedToWishlistDate;
 
   WishlistProductModel({
     required this.productId,
