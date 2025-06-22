@@ -25,6 +25,11 @@ class WishlistEmptyState extends WishlistState {
 
 // Wishlist Adding States
 
+class AddingToWishlistState extends WishlistState {
+  final int productId;
+  const AddingToWishlistState(this.productId);
+}
+
 class AddedToWishlistState extends WishlistState {
   const AddedToWishlistState();
 }
@@ -35,6 +40,11 @@ class AddingToWishlistErrorState extends WishlistState {
 }
 
 // Wishlist Removal States
+
+class RemovingFromWishlistState extends WishlistState {
+  final int productId;
+  const RemovingFromWishlistState(this.productId);
+}
 
 class RemovedFromWishlistState extends WishlistState {
   const RemovedFromWishlistState();

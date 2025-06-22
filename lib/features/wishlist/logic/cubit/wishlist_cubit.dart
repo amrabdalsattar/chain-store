@@ -9,6 +9,7 @@ part 'wishlist_state.dart';
 class WishlistCubit extends Cubit<WishlistState> {
   final WishlistRepo _repo;
   WishlistCubit(this._repo) : super(const WishlistLoadingState());
+
   List<int> wishlistProductsIDs = [];
   List<WishlistProductModel> wishlistProducts = [];
 
@@ -18,6 +19,10 @@ class WishlistCubit extends Cubit<WishlistState> {
       success: (products) {
         if (isClosed) return;
         wishlistProducts = products;
+        wishlistProductsIDs =
+            wishlistProducts
+                .map((product) => int.parse(product.productId.toString()))
+                .toList();
         if (wishlistProducts.isEmpty) {
           emit(const WishlistEmptyState());
         } else {
@@ -32,37 +37,42 @@ class WishlistCubit extends Cubit<WishlistState> {
   }
 
   Future<void> addToWishlist(int productId) async {
+    emit(AddingToWishlistState(productId));
     if (wishlistProductsIDs.contains(productId)) return;
     wishlistProductsIDs.add(productId);
-    emit(const AddedToWishlistState());
     final result = await _repo.addToWishlist(productId);
     result.when(
       success: (success) {
         if (isClosed) return;
         getWishlistItems();
+        emit(WishlistLoadedState(wishlistProducts));
       },
       failure: (apiErrorModel) {
-        wishlistProductsIDs.remove(productId);
         if (isClosed) return;
+        wishlistProductsIDs.remove(productId);
         emit(AddingToWishlistErrorState(apiErrorModel));
       },
     );
   }
 
   Future<void> removeFromWishlist(int productId) async {
+    emit(RemovingFromWishlistState(productId));
     if (!wishlistProductsIDs.contains(productId)) return;
     wishlistProductsIDs.remove(productId);
     wishlistProducts.removeWhere((product) => product.productId == productId);
-    emit(const RemovedFromWishlistState());
     final result = await _repo.removeFromWishlist(productId);
     result.when(
       success: (success) {
         if (isClosed) return;
-        emit(WishlistLoadedState(wishlistProducts));
+        if (wishlistProducts.isEmpty) {
+          emit(const WishlistEmptyState());
+        } else {
+          emit(WishlistLoadedState(wishlistProducts));
+        }
       },
       failure: (apiErrorModel) {
-        wishlistProductsIDs.add(productId);
         if (isClosed) return;
+        wishlistProductsIDs.add(productId);
         emit(RemovingFromWishlistErrorState(apiErrorModel));
       },
     );

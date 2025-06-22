@@ -24,13 +24,13 @@ class WishlistProductModel {
 
   WishlistProductModel({
     required this.productId,
-    required this.name,
-    required this.price,
-    required this.stock,
-    required this.categoryName,
-    required this.image,
-    required this.isStockAvailable,
-    required this.addedToWishlistDate,
+    this.name,
+    this.price,
+    this.stock,
+    this.categoryName,
+    this.image,
+    this.isStockAvailable,
+    this.addedToWishlistDate,
   });
 
   factory WishlistProductModel.fromJson(Map<String, dynamic> json) {

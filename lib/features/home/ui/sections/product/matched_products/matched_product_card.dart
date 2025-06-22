@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../../core/helpers/app_images.dart';
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/theming/app_text_styles.dart';
 import '../../../../../../core/theming/colors_helper.dart';
 import '../../../../../../core/utils/format_utils.dart';
 import '../../../../../../core/widgets/loading_indicator.dart';
+
+import '../../../../../wishlist/ui/widgets/wishlist_heart_bloc_listener.dart';
 import '../../../../data/models/products_response_model.dart';
 import 'widgets/rating_stars.dart';
 part 'widgets/product_image.dart';
@@ -30,7 +30,7 @@ class MatchedProductCard extends StatelessWidget {
             flex: 3,
             child: ProductImage(
               imageUrl: product.image ?? '',
-              isInWishlist: product.isInWishlist ?? false,
+              productId: product.productId!,
             ),
           ),
           verticalSpace(4),

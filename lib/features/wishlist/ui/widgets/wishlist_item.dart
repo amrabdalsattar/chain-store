@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/helpers/app_images.dart';
-import '../../../../core/theming/colors_helper.dart';
 import '../../../../core/widgets/saved_product.dart';
 import '../../data/models/wishlist_response.dart';
+import 'wishlist_heart_bloc_listener.dart';
 
 class WishlistItem extends StatelessWidget {
   final WishlistProductModel wishlistProduct;
@@ -36,12 +34,8 @@ class WishlistItem extends StatelessWidget {
           Positioned.directional(
             child: Padding(
               padding: EdgeInsets.all(12.r),
-              child: SvgPicture.asset(
-                AppImages.selectedHeart,
-                colorFilter: const ColorFilter.mode(
-                  ColorsHelper.redAccent,
-                  BlendMode.srcIn,
-                ),
+              child: WishlistHeartBlocListener(
+                productId: wishlistProduct.productId,
               ),
             ),
             textDirection: TextDirection.ltr,

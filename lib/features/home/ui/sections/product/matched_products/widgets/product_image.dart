@@ -2,13 +2,15 @@ part of '../matched_product_card.dart';
 
 class ProductImage extends StatelessWidget {
   final String imageUrl;
-  final bool isInWishlist;
+  final int productId;
+
   final bool hasConstrains;
   const ProductImage({
     super.key,
     required this.imageUrl,
-    required this.isInWishlist,
+
     this.hasConstrains = false,
+    required this.productId,
   });
 
   @override
@@ -33,19 +35,11 @@ class ProductImage extends StatelessWidget {
         ),
         Positioned.directional(
           child: SizedBox(
-            width: 37.w,
-            height: 37.h,
+            width: 40.w,
+            height: 40.h,
             child: Padding(
               padding: EdgeInsets.all(10.r),
-              child: SvgPicture.asset(
-                isInWishlist
-                    ? AppImages.selectedHeart
-                    : AppImages.unselectedHeart,
-                colorFilter: const ColorFilter.mode(
-                  ColorsHelper.redAccent,
-                  BlendMode.srcIn,
-                ),
-              ),
+              child: WishlistHeartBlocListener(productId: productId),
             ),
           ),
           textDirection: TextDirection.ltr,
