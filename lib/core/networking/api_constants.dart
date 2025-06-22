@@ -34,5 +34,10 @@ class ApiConstants {
   static const getMatchedProductsEP = 'Product/GetMatchedProducts';
   static const getRecommendedProductsEP = 'Product/GetRecommendedForCustomer';
 
+  // Wishlist Endpoints
+  static const getWishlistItemsEP = 'Wishlist/GetWishlistProducts';
+  static const addToWishlistEP = 'Wishlist/AddToWishlist';
+  static const removeFromWishlistEP = 'Wishlist/RemoveFromWishlist';
+
   static const Duration timeOut = Duration(seconds: 20);
 }

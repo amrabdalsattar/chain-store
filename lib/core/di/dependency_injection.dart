@@ -18,6 +18,7 @@ import '../../features/reset_password/data/datasources/reset_password_data_sourc
 import '../../features/reset_password/data/repos/reset_password_repo.dart';
 import '../../features/signup/data/datasources/signup_data_source.dart';
 import '../../features/signup/data/repos/signup_repo.dart';
+import '../../features/wishlist/data/datasources/wishlist_datasource.dart';
 import '../networking/api_helper.dart';
 import '../networking/dio_factory.dart';
 
@@ -74,4 +75,10 @@ Future<void> setUpGetIt() async {
     () => SuppliersDatasource(getIt()),
   );
   getIt.registerLazySingleton<SuppliersRepo>(() => SuppliersRepo(getIt()));
+
+  // Wishlist
+  getIt.registerLazySingleton<WishlistDatasource>(
+    () => WishlistDatasource(getIt<ApiHelper>()),
+  );
+  getIt.registerLazySingleton<WishlistRepo>(() => WishlistRepo(getIt()));
 }
