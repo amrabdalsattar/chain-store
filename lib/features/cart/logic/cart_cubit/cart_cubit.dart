@@ -15,7 +15,7 @@ class CartCubit extends Cubit<CartState> {
     emit(const EmptyCartState());
   }
 
-  void getCartInfo() async {
+  Future<void> getCartInfo() async {
     emit(const LoadingCartInfoState());
     final result = await _repo.getCartInfo();
 

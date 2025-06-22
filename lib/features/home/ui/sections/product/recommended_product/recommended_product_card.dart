@@ -24,8 +24,8 @@ class RecommendedProductCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: ProductImage(
+              productId: product.productId!,
               imageUrl: product.image ?? '',
-              isInWishlist: false,
               hasConstrains: true,
             ),
           ),
