@@ -18,6 +18,7 @@ class ApiConstants {
 
   // Orders Endpoints
   static const String placeOrderEP = 'Order/PlaceOrder';
+  static const String getCustomerOrdersEP = 'Order/GetCustomerOrders';
 
   // Stripe Endpoints
   static const stripeBaseUrl = 'https://api.stripe.com/v1/';
