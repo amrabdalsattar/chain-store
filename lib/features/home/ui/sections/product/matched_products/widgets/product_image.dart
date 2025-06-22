@@ -3,16 +3,18 @@ part of '../matched_product_card.dart';
 class ProductImage extends StatelessWidget {
   final String imageUrl;
   final bool isInWishlist;
+  final bool hasConstrains;
   const ProductImage({
     super.key,
     required this.imageUrl,
     required this.isInWishlist,
+    this.hasConstrains = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.expand,
+      fit: hasConstrains ? StackFit.loose : StackFit.expand,
       children: [
         Container(
           decoration: BoxDecoration(
@@ -25,6 +27,8 @@ class ProductImage extends StatelessWidget {
             placeholder: (_, __) => const LoadingIndicator(),
             errorWidget:
                 (_, __, ___) => const Center(child: Icon(Icons.broken_image)),
+            width: hasConstrains ? 100.w : null,
+            height: hasConstrains ? 100.h : null,
           ),
         ),
         Positioned.directional(

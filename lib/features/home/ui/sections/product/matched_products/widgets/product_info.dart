@@ -3,12 +3,14 @@ part of '../matched_product_card.dart';
 class ProductInfo extends StatelessWidget {
   final String productName;
   final double productPrice;
-  final double productRating;
+  final double? productRating;
+  final bool isRated;
   const ProductInfo({
     super.key,
     required this.productName,
     required this.productPrice,
-    required this.productRating,
+    this.productRating,
+    this.isRated = true,
   });
 
   @override
@@ -23,7 +25,9 @@ class ProductInfo extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         verticalSpace(6),
-        RatingStars(rating: productRating, showEmptyStars: false),
+        isRated
+            ? RatingStars(rating: productRating ?? 0, showEmptyStars: false)
+            : const SizedBox.shrink(),
         verticalSpace(6),
         FittedBox(
           fit: BoxFit.scaleDown,

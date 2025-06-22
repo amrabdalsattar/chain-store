@@ -9,6 +9,7 @@ import '../data/repos/home_repo.dart';
 import '../logic/cubit/home_cubit.dart';
 import 'sections/banner/banner_slider.dart';
 import 'sections/product/matched_products/widgets/matched_products_bloc_builder.dart';
+import 'sections/product/recommended_product/widgets/recommended_products_bloc_builder.dart';
 import 'sections/top_suppliers/top_suppliers_bloc_builder.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/request_for_quotation_button.dart';
@@ -71,6 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // Matched Products
                 const SliverToBoxAdapter(child: MatchedProductsBlocBuilder()),
+
+                const SliverToBoxAdapter(
+                  child: RecommendedProductsBlocBuilder(),
+                ),
+                SliverToBoxAdapter(child: verticalSpace(50)),
               ],
             ),
           ),

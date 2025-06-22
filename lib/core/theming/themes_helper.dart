@@ -19,7 +19,10 @@ class ThemesHelper {
       backgroundColor: Colors.white,
       selectedIconTheme: IconThemeData(color: ColorsHelper.primaryColor),
     ),
-    appBarTheme: const AppBarTheme(color: ColorsHelper.white),
+    appBarTheme: const AppBarTheme(
+      color: ColorsHelper.white,
+      surfaceTintColor: ColorsHelper.white,
+    ),
     scaffoldBackgroundColor: ColorsHelper.white,
     primaryColor: ColorsHelper.primaryColor,
     canvasColor: Colors.white,

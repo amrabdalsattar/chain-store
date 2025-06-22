@@ -30,8 +30,6 @@ class MatchedProductsBlocBuilder extends StatelessWidget {
           case MatchedProductsLoadedState():
             return HomeSection(
               title: 'Matched Products ',
-              onSeeAllPressed: () {},
-
               child: MatchedProductGrid(products: state.products),
             );
           case MatchedProductsErrorState():
