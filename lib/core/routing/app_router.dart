@@ -10,8 +10,8 @@ import '../../features/checkout_order/ui/order_confirmation_screen.dart/order_co
 import '../../features/cart/ui/shopping_cart_screen.dart';
 
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
-import '../../features/profile/logic/cubit/profile_cubit.dart';
-import '../../features/profile/ui/profile_screen.dart';
+import '../../features/account/logic/cubit/profile_cubit.dart';
+import '../../features/account/ui/profile_screen.dart';
 import '../../features/quotation/ui/quotation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
