@@ -6,7 +6,7 @@ import '../../../../core/helpers/cache/user_data_operator.dart';
 import '../../../categories/ui/categories_screen.dart';
 import '../../../explore_suppliers/ui/explore_suppliers_tab.dart';
 import '../../../home/ui/home_screen.dart';
-import '../../../profile/ui/profile_screen.dart';
+import '../../../account/ui/profile_screen.dart';
 
 class MainCubit extends Cubit<dynamic> {
   MainCubit() : super(0);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cart/logic/cart_cubit/cart_cubit.dart';
+import '../../wishlist/logic/cubit/wishlist_cubit.dart';
 import '../logic/cubit/main_cubit.dart';
 import 'widgets/bottom_navigation_bar/custom_bottom_nav_bar.dart';
 
@@ -16,6 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     context.read<CartCubit>().getCartInfo();
+    context.read<WishlistCubit>().getWishlistItems();
     super.initState();
   }
 

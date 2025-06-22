@@ -9,7 +9,7 @@ class ColorsHelper {
   static const Color green = Colors.green;
 
   static const Color primaryColor = Color(0xFFF28B22);
-  static const Color homeScaffoldColor = Color(0xFFF7F7F9);
+  static const Color homeScaffoldColor = Color(0xFFFEFEFE);
   static const Color purple = Color(0xFF655B96);
   static Color fadedPurple = const Color(0xFF5B47BC).withValues(alpha: 0.3);
   static Color liteBlue = const Color(0xFF6B7280);
