@@ -19,6 +19,7 @@ import '../../features/reset_password/data/repos/reset_password_repo.dart';
 import '../../features/signup/data/datasources/signup_data_source.dart';
 import '../../features/signup/data/repos/signup_repo.dart';
 import '../../features/wishlist/data/datasources/wishlist_datasource.dart';
+import '../../features/wishlist/data/repos/wishlist_repo.dart';
 import '../networking/api_helper.dart';
 import '../networking/dio_factory.dart';
 
