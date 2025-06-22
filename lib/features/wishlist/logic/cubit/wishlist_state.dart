@@ -36,7 +36,8 @@ class AddedToWishlistState extends WishlistState {
 
 class AddingToWishlistErrorState extends WishlistState {
   final ApiErrorModel apiErrorModel;
-  const AddingToWishlistErrorState(this.apiErrorModel);
+  final int productId;
+  const AddingToWishlistErrorState(this.apiErrorModel, this.productId);
 }
 
 // Wishlist Removal States
@@ -51,6 +52,7 @@ class RemovedFromWishlistState extends WishlistState {
 }
 
 class RemovingFromWishlistErrorState extends WishlistState {
+  final int productId;
   final ApiErrorModel apiErrorModel;
-  const RemovingFromWishlistErrorState(this.apiErrorModel);
+  const RemovingFromWishlistErrorState(this.apiErrorModel, this.productId);
 }

@@ -50,7 +50,7 @@ class WishlistCubit extends Cubit<WishlistState> {
       failure: (apiErrorModel) {
         if (isClosed) return;
         wishlistProductsIDs.remove(productId);
-        emit(AddingToWishlistErrorState(apiErrorModel));
+        emit(AddingToWishlistErrorState(apiErrorModel, productId));
       },
     );
   }
@@ -73,7 +73,7 @@ class WishlistCubit extends Cubit<WishlistState> {
       failure: (apiErrorModel) {
         if (isClosed) return;
         wishlistProductsIDs.add(productId);
-        emit(RemovingFromWishlistErrorState(apiErrorModel));
+        emit(RemovingFromWishlistErrorState(apiErrorModel, productId));
       },
     );
   }

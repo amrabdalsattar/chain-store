@@ -15,13 +15,13 @@ class WishlistHeartBlocListener extends StatelessWidget {
     final WishlistCubit wishlistCubit = context.read<WishlistCubit>();
     return BlocConsumer<WishlistCubit, WishlistState>(
       bloc: wishlistCubit,
-      // Filter listener to avoid redundant triggers
+
       listenWhen:
           (previous, current) =>
-              current is AddingToWishlistErrorState ||
-              current is RemovingFromWishlistErrorState ||
-              current is AddingToWishlistState ||
-              current is RemovingFromWishlistState,
+              (current is AddingToWishlistErrorState &&
+                  current.productId == productId) ||
+              (current is RemovingFromWishlistErrorState &&
+                  current.productId == productId),
       listener: (context, state) {
         if (state is AddingToWishlistErrorState) {
           DialogsHelper.showToastificationMessage(
@@ -70,7 +70,7 @@ class WishlistHeartBlocListener extends StatelessWidget {
             }
           },
           child: WishlistHeart(
-            key: ValueKey(productId),
+            key: Key('wishlist_heart_$productId'),
             isInWishlist: isInWishlist,
             isLoading: isLoading,
           ),
