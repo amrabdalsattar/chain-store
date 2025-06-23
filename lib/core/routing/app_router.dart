@@ -9,6 +9,8 @@ import '../../features/checkout_order/ui/checkout_screen.dart/cart_checkout_scre
 import '../../features/checkout_order/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
 import '../../features/cart/ui/shopping_cart_screen.dart';
 
+import '../../features/order_history/logic/cubit/orders_cubit.dart';
+import '../../features/order_history/ui/orders_history_screen.dart';
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
 import '../../features/account/logic/cubit/profile_cubit.dart';
 import '../../features/account/ui/profile_screen.dart';
@@ -190,6 +192,15 @@ class AppRouter {
               BlocProvider.value(value: wishlistCubit),
             ],
             child: const WishlistScreen(),
+          ),
+          settings: settings,
+        );
+
+      case Routes.ordersHistoryRoute:
+        return CustomAnimationsBuilder.buildFadeTransition(
+          screen: BlocProvider(
+            create: (context) => OrdersCubit(getIt())..getCustomerOrders(),
+            child: const OrdersHistoryScreen(),
           ),
           settings: settings,
         );

@@ -7,19 +7,26 @@ class CustomDivider extends StatelessWidget {
   final Color? color;
   final double? thickness;
   final double? height;
-  const CustomDivider({super.key, this.color, this.thickness, this.height});
+  final bool haveSpace;
+  const CustomDivider({
+    super.key,
+    this.color,
+    this.thickness,
+    this.height,
+    this.haveSpace = true,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        verticalSpace(18),
+        haveSpace ? verticalSpace(18) : const SizedBox.shrink(),
         Divider(
           color: color ?? ColorsHelper.borderGray,
           thickness: thickness ?? 0.5,
           height: height ?? 0,
         ),
-        verticalSpace(18),
+        haveSpace ? verticalSpace(18) : const SizedBox.shrink(),
       ],
     );
   }
