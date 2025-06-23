@@ -21,7 +21,7 @@ class MatchedProductGrid extends StatelessWidget {
           crossAxisSpacing: 16.w,
           mainAxisSpacing: 24.h,
         ),
-        itemCount: products.length,
+        itemCount: 4,
         itemBuilder: (context, index) {
           final product = products[index];
           return GestureDetector(

@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // Top Suppliers
                 const SliverToBoxAdapter(child: TopSuppliersBlocBuilder()),
+                SliverToBoxAdapter(child: verticalSpace(24)),
 
                 // Matched Products
                 const SliverToBoxAdapter(child: MatchedProductsBlocBuilder()),

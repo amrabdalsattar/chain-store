@@ -118,8 +118,7 @@ class _ProfileScreenContent extends StatelessWidget {
                           title: 'Order history',
                           subtitle: 'Track your past purchases and receipts',
                           onTap: () {
-                            // Navigate to order history screen
-                            // Navigator.of(context).pushNamed(Routes.orderHistoryScreen);
+                            context.pushNamed(Routes.ordersHistoryRoute);
                           },
                         ),
                         const CustomDivider(),

@@ -23,14 +23,17 @@ class ProductImage extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             color: ColorsHelper.homeScaffoldColor,
           ),
-          child: CachedNetworkImage(
-            imageUrl: imageUrl,
-            fit: BoxFit.cover,
-            placeholder: (_, __) => const LoadingIndicator(),
-            errorWidget:
-                (_, __, ___) => const Center(child: Icon(Icons.broken_image)),
-            width: hasConstrains ? 100.w : null,
-            height: hasConstrains ? 100.h : null,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              fit: BoxFit.cover,
+              placeholder: (_, __) => const LoadingIndicator(),
+              errorWidget:
+                  (_, __, ___) => const Center(child: Icon(Icons.broken_image)),
+              width: hasConstrains ? 100.w : null,
+              height: hasConstrains ? 100.h : null,
+            ),
           ),
         ),
         Positioned.directional(
