@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import 'active_orders_list.dart';
-import 'history_orders_list.dart';
+import '../../data/models/customer_orders_response.dart';
 import 'pending_orders_list.dart';
 
 class OrdersScreenContent extends StatelessWidget {
-  const OrdersScreenContent({super.key});
+  final List<OrderDataModel> historyOrders;
+  final List<OrderDataModel> activeOrders;
+  final List<OrderDataModel> pendingOrders;
+
+  const OrdersScreenContent({
+    super.key,
+    required this.historyOrders,
+    required this.activeOrders,
+    required this.pendingOrders,
+  });
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(child: ActiveOrdersList()),
+        SliverToBoxAdapter(
+          child: OrdersListView(
+            orders: activeOrders,
+            label: 'Active',
+            isActive: true,
+          ),
+        ),
         SliverToBoxAdapter(child: verticalSpace(38)),
-        const SliverToBoxAdapter(child: PendingOrdersList()),
+        SliverToBoxAdapter(
+          child: OrdersListView(orders: pendingOrders, label: 'Pending'),
+        ),
         SliverToBoxAdapter(child: verticalSpace(38)),
-        const SliverToBoxAdapter(child: HistoryOrdersList()),
+        SliverToBoxAdapter(
+          child: OrdersListView(orders: historyOrders, label: 'History'),
+        ),
       ],
     );
   }

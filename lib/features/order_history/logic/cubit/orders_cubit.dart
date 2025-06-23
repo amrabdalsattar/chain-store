@@ -21,10 +21,11 @@ class OrdersCubit extends Cubit<OrdersState> {
       success: (orders) {
         if (orders.isEmpty) {
           if (isClosed) return;
-          _filterOrders(orders);
+
           emit(const OrdersEmptyState());
         } else {
           if (isClosed) return;
+          _filterOrders(orders);
           emit(OrdersLoadedState(orders));
         }
       },

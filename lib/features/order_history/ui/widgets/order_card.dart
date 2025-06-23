@@ -3,12 +3,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/theming/colors_helper.dart';
+import '../../../../core/utils/format_utils.dart';
+import '../../data/models/customer_orders_response.dart';
 import 'timeline/order_time_line.dart';
 import 'products_images_row.dart';
 
 class OrderCard extends StatelessWidget {
   final bool isActive;
-  const OrderCard({super.key, required this.isActive});
+  final OrderDataModel orderDataModel;
+  const OrderCard({
+    super.key,
+    required this.isActive,
+    required this.orderDataModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,24 +31,21 @@ class OrderCard extends StatelessWidget {
           ListTile(
             contentPadding: EdgeInsets.symmetric(horizontal: 12.w),
             title: Text(
-              'Order No. 72 522',
+              'Order No. ${orderDataModel.orderNumber}',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: AppTextStyles.robotoBlackMedium14,
             ),
 
             subtitle: Text(
-              '1267 EGP .  30 Dec',
+              '${priceFormat(orderDataModel.subTotal)} EGP .  ${getDateFromTimeStamp(orderDataModel.orderDate.toString())}',
               style: AppTextStyles.rubikGrayRegular10,
             ),
-            trailing: const FittedBox(
+            trailing: FittedBox(
               fit: BoxFit.scaleDown,
               child: ProductsImagesRow(
-                urls: [
-                  'https://magicstudio.com/blog/content/images/2023/10/ringlight.jpg',
-                  'https://www.pngall.com/wp-content/uploads/2018/04/Clothing-PNG-Image-File.png',
-                  'https://www.pngall.com/wp-content/uploads/2018/04/Clothing-PNG-Image-File.png',
-                  'https://www.pngall.com/wp-content/uploads/2018/04/Clothing-PNG-Image-File.png',
-                  'https://www.pngall.com/wp-content/uploads/2018/04/Clothing-PNG-Image-File.png',
-                ],
+                urls:
+                    orderDataModel.products.map((e) => e.productImage).toList(),
               ),
             ),
           ),

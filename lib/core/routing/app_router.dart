@@ -197,7 +197,7 @@ class AppRouter {
         );
 
       case Routes.ordersHistoryRoute:
-        return CustomAnimationsBuilder.buildFadeTransition(
+        return CustomAnimationsBuilder.buildSlideRoute(
           screen: BlocProvider(
             create: (context) => OrdersCubit(getIt())..getCustomerOrders(),
             child: const OrdersHistoryScreen(),

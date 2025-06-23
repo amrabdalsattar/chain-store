@@ -11,7 +11,9 @@ class OrdersBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final OrdersCubit ordersCubit = context.read<OrdersCubit>();
     return BlocBuilder<OrdersCubit, OrdersState>(
+      bloc: ordersCubit,
       builder: (context, state) {
         switch (state) {
           case OrdersLoadingState():
@@ -23,7 +25,11 @@ class OrdersBlocBuilder extends StatelessWidget {
               listHeight: double.infinity,
             );
           case OrdersLoadedState():
-            return const OrdersScreenContent();
+            return OrdersScreenContent(
+              historyOrders: ordersCubit.historyOrders,
+              activeOrders: ordersCubit.activeOrders,
+              pendingOrders: ordersCubit.pendingOrders,
+            );
           case OrdersEmptyState():
             return const Center(child: Text('No orders found'));
           case OrdersErrorState():

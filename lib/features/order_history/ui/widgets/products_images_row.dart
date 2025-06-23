@@ -18,7 +18,7 @@ class ProductsImagesRow extends StatelessWidget {
       children: [
         for (int i = 0; i < loopLimit; i++) ...[
           CircleAvatar(
-            radius: 13.r,
+            radius: 16.r,
             backgroundColor: ColorsHelper.white,
             backgroundImage: CachedNetworkImageProvider(urls[i]),
           ),
@@ -27,7 +27,7 @@ class ProductsImagesRow extends StatelessWidget {
         if (urls.length > 2) ...[
           horizontalSpace(8),
           CircleAvatar(
-            radius: 13.r,
+            radius: 16.r,
             backgroundColor: ColorsHelper.liteGray,
             child: FittedBox(
               fit: BoxFit.scaleDown,
@@ -35,7 +35,7 @@ class ProductsImagesRow extends StatelessWidget {
                 '+${urls.length - 2}',
                 style: AppTextStyles.robotoGrayRegular15.copyWith(
                   fontWeight: FontWeightHelper.medium,
-                  fontSize: 10.sp,
+                  fontSize: 12.sp,
                 ),
               ),
             ),

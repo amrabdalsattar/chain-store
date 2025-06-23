@@ -29,3 +29,10 @@ String getPluralOrSingular(String word, int count) {
     return word;
   }
 }
+
+String getDateFromTimeStamp(String timestamp) {
+  final DateTime dateTime = DateTime.parse(timestamp);
+
+  final String formatted = DateFormat('MMM dd').format(dateTime);
+  return formatted;
+}
