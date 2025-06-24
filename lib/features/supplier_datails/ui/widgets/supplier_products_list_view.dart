@@ -19,7 +19,7 @@ class SupplierProductsListView extends StatelessWidget {
           (context, index) => SupplierProductCard(product: products[index]),
       separatorBuilder:
           (context, index) => Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.h),
+            padding: EdgeInsets.symmetric(vertical: 4.h),
             child: const CustomDivider(),
           ),
     );

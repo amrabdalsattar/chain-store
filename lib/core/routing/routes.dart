@@ -24,4 +24,6 @@ class Routes {
   static const String wishlistScreenRoute = '/wishlistScreen';
   static const String ordersHistoryRoute = '/ordersHistory';
   static const String supplierDetailsScreenRoute = '/supplierDataScreen';
+  static const String aboutUsScreenRoute = '/aboutUsScreen';
+  static const String privacyPolicyScreenRoute = '/privacyPolicyScreen';
 }
