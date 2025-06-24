@@ -34,6 +34,7 @@ class ApiConstants {
   // Products Endpoints
   static const getMatchedProductsEP = 'Product/GetMatchedProducts';
   static const getRecommendedProductsEP = 'Product/GetRecommendedForCustomer';
+  static const getSupplierProductsEP = 'Product/GetSupplierProducts';
 
   // Wishlist Endpoints
   static const getWishlistItemsEP = 'Wishlist/GetWishlistProducts';

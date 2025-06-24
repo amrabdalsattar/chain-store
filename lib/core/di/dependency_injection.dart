@@ -20,6 +20,8 @@ import '../../features/reset_password/data/datasources/reset_password_data_sourc
 import '../../features/reset_password/data/repos/reset_password_repo.dart';
 import '../../features/signup/data/datasources/signup_data_source.dart';
 import '../../features/signup/data/repos/signup_repo.dart';
+import '../../features/supplier_datails/data/datasources/supplier_products_datasource.dart';
+import '../../features/supplier_datails/data/repos/supplier_products_repo.dart';
 import '../../features/wishlist/data/datasources/wishlist_datasource.dart';
 import '../../features/wishlist/data/repos/wishlist_repo.dart';
 import '../networking/api_helper.dart';
@@ -90,4 +92,12 @@ Future<void> setUpGetIt() async {
     () => OrdersDatasource(getIt<ApiHelper>()),
   );
   getIt.registerLazySingleton<OrdersRepo>(() => OrdersRepo(getIt()));
+
+  // Supplier Products
+  getIt.registerLazySingleton<SupplierProductsDatasource>(
+    () => SupplierProductsDatasource(getIt<ApiHelper>()),
+  );
+  getIt.registerLazySingleton<SupplierProductsRepo>(
+    () => SupplierProductsRepo(getIt()),
+  );
 }
