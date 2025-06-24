@@ -16,6 +16,8 @@ import '../../features/order_history/data/datasources/orders_datasource.dart';
 import '../../features/order_history/data/repos/orders_repo.dart';
 import '../../features/pre_login/data/datasources/pre_login_datasource.dart';
 import '../../features/pre_login/data/repos/pre_login_repo.dart';
+import '../../features/product_details/data/datasource/product_details_datasource.dart';
+import '../../features/product_details/data/repos/product_details_repo.dart';
 import '../../features/reset_password/data/datasources/reset_password_data_source.dart';
 import '../../features/reset_password/data/repos/reset_password_repo.dart';
 import '../../features/signup/data/datasources/signup_data_source.dart';
@@ -53,6 +55,14 @@ Future<void> setUpGetIt() async {
     () => PreLoginDatasource(getIt()),
   );
   getIt.registerLazySingleton<PreLoginRepo>(() => PreLoginRepo(getIt()));
+
+  // ProductDetails DI
+  getIt.registerLazySingleton<ProductDetailsRepo>(
+    () => ProductDetailsRepo(getIt()),
+  );
+  getIt.registerLazySingleton<ProductDetailsDatasource>(
+    () => ProductDetailsDatasource(getIt()),
+  );
 
   // Cart DI
   getIt.registerLazySingleton<CartRemoteDatasource>(

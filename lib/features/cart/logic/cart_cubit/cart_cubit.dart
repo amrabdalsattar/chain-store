@@ -15,6 +15,20 @@ class CartCubit extends Cubit<CartState> {
     emit(const EmptyCartState());
   }
 
+  Future<void> addToCart(int productId, int quantity) async {
+    emit(const AddingItemToCartState());
+    final result = await _repo.addToCart(productId, quantity);
+
+    result.when(
+      success: (message) {
+        emit(const ItemAddedToCartState());
+      },
+      failure: (apiErrorModel) {
+        emit(ErrorCartState(apiErrorModel));
+      },
+    );
+  }
+
   Future<void> getCartInfo() async {
     emit(const LoadingCartInfoState());
     final result = await _repo.getCartInfo();

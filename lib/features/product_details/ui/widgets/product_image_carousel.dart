@@ -1,8 +1,11 @@
-import '../../../../core/helpers/app_images.dart';
+import '../../../../core/helpers/extensions.dart';
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/widgets/custom_image_widget.dart';
 
 class ProductImageCarousel extends StatefulWidget {
   final List<String> images;
@@ -56,24 +59,25 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
             itemBuilder: (context, index) {
               return Stack(
                 children: [
-                  Hero(
-                    tag: 'product_image_${widget.images[index]}',
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        bottom: 63.h,
-                        left: 66.w,
-                        right: 66.w,
-                      ),
-                      width: double.infinity,
-                      child: Image.network(
-                        'https://www.pngall.com/wp-content/uploads/2018/04/Clothing-PNG-Image-File.png',
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Image.asset(
-                            AppImages.productPlaceholder,
-                            fit: BoxFit.contain,
+                  Container(
+                    padding: EdgeInsets.only(
+                      bottom: 63.h,
+                      left: 66.w,
+                      right: 66.w,
+                    ),
+                    width: double.infinity,
+                    child: Center(
+                      child: CustomImageWidget(
+                        onTap: () {
+                          context.pushNamed(
+                            Routes.heroImageView,
+                            arguments: widget.images[index],
                           );
                         },
+                        height: 241.h,
+                        width: 342.w,
+                        imageUrl: widget.images[index],
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),

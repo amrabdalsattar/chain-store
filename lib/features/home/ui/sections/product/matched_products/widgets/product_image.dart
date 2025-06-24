@@ -3,8 +3,8 @@ part of '../matched_product_card.dart';
 class ProductImage extends StatelessWidget {
   final String imageUrl;
   final int productId;
-
   final bool hasConstrains;
+  
   const ProductImage({
     super.key,
     required this.imageUrl,

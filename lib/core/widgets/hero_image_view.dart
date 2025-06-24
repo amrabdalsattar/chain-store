@@ -8,10 +8,7 @@ import 'custom_loading_indicator.dart';
 class HeroImageView extends StatelessWidget {
   final String imageUrl;
 
-  const HeroImageView({
-    super.key,
-    required this.imageUrl,
-  });
+  const HeroImageView({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,7 @@ class HeroImageView extends StatelessWidget {
         ),
         child: PhotoView(
           imageProvider: CachedNetworkImageProvider(imageUrl),
-          backgroundDecoration: const BoxDecoration(
-            color: Colors.transparent,
-          ),
+          backgroundDecoration: const BoxDecoration(color: Colors.transparent),
           loadingBuilder: (context, event) {
             return Padding(
               padding: EdgeInsets.all(16.r),

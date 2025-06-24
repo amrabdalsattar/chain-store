@@ -16,6 +16,8 @@ class Routes {
 
   static const String preLoginScreenRoute = '/preLoginScreenRoute';
   static const String rattingScreenRoute = '/rattingScreen';
+  static const String heroImageView = '/heroImageView';
+
 
   static const String businessCategoryScreenRoute =
       '/businessCategoryScreenRoute';
