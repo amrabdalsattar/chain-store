@@ -1,3 +1,9 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../../../core/helpers/extensions.dart';
+import '../../../../../../../core/routing/routes.dart';
+import '../../../../../../cart/logic/cart_cubit/cart_cubit.dart';
+import '../../../../../../wishlist/logic/cubit/wishlist_cubit.dart';
 import '../../../../../data/models/products_response_model.dart';
 import '../matched_product_card.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +31,16 @@ class MatchedProductGrid extends StatelessWidget {
         itemBuilder: (context, index) {
           final product = products[index];
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              context.pushNamed(
+                Routes.productDetailsRoute,
+                arguments: {
+                  'cartCubit': context.read<CartCubit>(),
+                  'wishlistCubit': context.read<WishlistCubit>(),
+                  'productId': product.productId,
+                },
+              );
+            },
             child: MatchedProductCard(product: product),
           );
         },

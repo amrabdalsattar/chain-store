@@ -21,37 +21,40 @@ mixin _$ProductDetailsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(ProductDetailsResponse prodcut) loaded,
+    required TResult Function(String message) error,
     required TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )
-    loaded,
-    required TResult Function(String message) error,
+    attributeChanged,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(ProductDetailsResponse prodcut)? loaded,
+    TResult? Function(String message)? error,
     TResult? Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult? Function(String message)? error,
+    attributeChanged,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(ProductDetailsResponse prodcut)? loaded,
+    TResult Function(String message)? error,
     TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult Function(String message)? error,
+    attributeChanged,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +63,7 @@ mixin _$ProductDetailsState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(AttributeChanged value) attributeChanged,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -67,6 +71,7 @@ mixin _$ProductDetailsState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
+    TResult? Function(AttributeChanged value)? attributeChanged,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -74,6 +79,7 @@ mixin _$ProductDetailsState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(AttributeChanged value)? attributeChanged,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -145,13 +151,14 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(ProductDetailsResponse prodcut) loaded,
+    required TResult Function(String message) error,
     required TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )
-    loaded,
-    required TResult Function(String message) error,
+    attributeChanged,
   }) {
     return initial();
   }
@@ -161,13 +168,14 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(ProductDetailsResponse prodcut)? loaded,
+    TResult? Function(String message)? error,
     TResult? Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult? Function(String message)? error,
+    attributeChanged,
   }) {
     return initial?.call();
   }
@@ -177,13 +185,14 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(ProductDetailsResponse prodcut)? loaded,
+    TResult Function(String message)? error,
     TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult Function(String message)? error,
+    attributeChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -199,6 +208,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(AttributeChanged value) attributeChanged,
   }) {
     return initial(this);
   }
@@ -210,6 +220,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
+    TResult? Function(AttributeChanged value)? attributeChanged,
   }) {
     return initial?.call(this);
   }
@@ -221,6 +232,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(AttributeChanged value)? attributeChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -279,13 +291,14 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(ProductDetailsResponse prodcut) loaded,
+    required TResult Function(String message) error,
     required TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )
-    loaded,
-    required TResult Function(String message) error,
+    attributeChanged,
   }) {
     return loading();
   }
@@ -295,13 +308,14 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(ProductDetailsResponse prodcut)? loaded,
+    TResult? Function(String message)? error,
     TResult? Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult? Function(String message)? error,
+    attributeChanged,
   }) {
     return loading?.call();
   }
@@ -311,13 +325,14 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(ProductDetailsResponse prodcut)? loaded,
+    TResult Function(String message)? error,
     TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult Function(String message)? error,
+    attributeChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -333,6 +348,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(AttributeChanged value) attributeChanged,
   }) {
     return loading(this);
   }
@@ -344,6 +360,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
+    TResult? Function(AttributeChanged value)? attributeChanged,
   }) {
     return loading?.call(this);
   }
@@ -355,6 +372,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(AttributeChanged value)? attributeChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -375,7 +393,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
     $Res Function(_$LoadedImpl) then,
   ) = __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String? selectedSize, int selectedColorIndex, int quantity});
+  $Res call({ProductDetailsResponse prodcut});
 }
 
 /// @nodoc
@@ -391,28 +409,13 @@ class __$$LoadedImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? selectedSize = freezed,
-    Object? selectedColorIndex = null,
-    Object? quantity = null,
-  }) {
+  $Res call({Object? prodcut = null}) {
     return _then(
       _$LoadedImpl(
-        selectedSize:
-            freezed == selectedSize
-                ? _value.selectedSize
-                : selectedSize // ignore: cast_nullable_to_non_nullable
-                    as String?,
-        selectedColorIndex:
-            null == selectedColorIndex
-                ? _value.selectedColorIndex
-                : selectedColorIndex // ignore: cast_nullable_to_non_nullable
-                    as int,
-        quantity:
-            null == quantity
-                ? _value.quantity
-                : quantity // ignore: cast_nullable_to_non_nullable
-                    as int,
+        null == prodcut
+            ? _value.prodcut
+            : prodcut // ignore: cast_nullable_to_non_nullable
+                as ProductDetailsResponse,
       ),
     );
   }
@@ -421,22 +424,14 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({
-    this.selectedSize,
-    required this.selectedColorIndex,
-    required this.quantity,
-  });
+  const _$LoadedImpl(this.prodcut);
 
   @override
-  final String? selectedSize;
-  @override
-  final int selectedColorIndex;
-  @override
-  final int quantity;
+  final ProductDetailsResponse prodcut;
 
   @override
   String toString() {
-    return 'ProductDetailsState.loaded(selectedSize: $selectedSize, selectedColorIndex: $selectedColorIndex, quantity: $quantity)';
+    return 'ProductDetailsState.loaded(prodcut: $prodcut)';
   }
 
   @override
@@ -444,17 +439,11 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            (identical(other.selectedSize, selectedSize) ||
-                other.selectedSize == selectedSize) &&
-            (identical(other.selectedColorIndex, selectedColorIndex) ||
-                other.selectedColorIndex == selectedColorIndex) &&
-            (identical(other.quantity, quantity) ||
-                other.quantity == quantity));
+            (identical(other.prodcut, prodcut) || other.prodcut == prodcut));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, selectedSize, selectedColorIndex, quantity);
+  int get hashCode => Object.hash(runtimeType, prodcut);
 
   /// Create a copy of ProductDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -469,15 +458,16 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(ProductDetailsResponse prodcut) loaded,
+    required TResult Function(String message) error,
     required TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )
-    loaded,
-    required TResult Function(String message) error,
+    attributeChanged,
   }) {
-    return loaded(selectedSize, selectedColorIndex, quantity);
+    return loaded(prodcut);
   }
 
   @override
@@ -485,15 +475,16 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(ProductDetailsResponse prodcut)? loaded,
+    TResult? Function(String message)? error,
     TResult? Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult? Function(String message)? error,
+    attributeChanged,
   }) {
-    return loaded?.call(selectedSize, selectedColorIndex, quantity);
+    return loaded?.call(prodcut);
   }
 
   @override
@@ -501,17 +492,18 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(ProductDetailsResponse prodcut)? loaded,
+    TResult Function(String message)? error,
     TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult Function(String message)? error,
+    attributeChanged,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(selectedSize, selectedColorIndex, quantity);
+      return loaded(prodcut);
     }
     return orElse();
   }
@@ -523,6 +515,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(AttributeChanged value) attributeChanged,
   }) {
     return loaded(this);
   }
@@ -534,6 +527,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
+    TResult? Function(AttributeChanged value)? attributeChanged,
   }) {
     return loaded?.call(this);
   }
@@ -545,6 +539,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(AttributeChanged value)? attributeChanged,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -555,15 +550,9 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements ProductDetailsState {
-  const factory _Loaded({
-    final String? selectedSize,
-    required final int selectedColorIndex,
-    required final int quantity,
-  }) = _$LoadedImpl;
+  const factory _Loaded(final ProductDetailsResponse prodcut) = _$LoadedImpl;
 
-  String? get selectedSize;
-  int get selectedColorIndex;
-  int get quantity;
+  ProductDetailsResponse get prodcut;
 
   /// Create a copy of ProductDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -644,13 +633,14 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(ProductDetailsResponse prodcut) loaded,
+    required TResult Function(String message) error,
     required TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )
-    loaded,
-    required TResult Function(String message) error,
+    attributeChanged,
   }) {
     return error(message);
   }
@@ -660,13 +650,14 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(ProductDetailsResponse prodcut)? loaded,
+    TResult? Function(String message)? error,
     TResult? Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult? Function(String message)? error,
+    attributeChanged,
   }) {
     return error?.call(message);
   }
@@ -676,13 +667,14 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(ProductDetailsResponse prodcut)? loaded,
+    TResult Function(String message)? error,
     TResult Function(
       String? selectedSize,
       int selectedColorIndex,
       int quantity,
     )?
-    loaded,
-    TResult Function(String message)? error,
+    attributeChanged,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -698,6 +690,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(AttributeChanged value) attributeChanged,
   }) {
     return error(this);
   }
@@ -709,6 +702,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
+    TResult? Function(AttributeChanged value)? attributeChanged,
   }) {
     return error?.call(this);
   }
@@ -720,6 +714,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(AttributeChanged value)? attributeChanged,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -738,5 +733,218 @@ abstract class _Error implements ProductDetailsState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AttributeChangedImplCopyWith<$Res> {
+  factory _$$AttributeChangedImplCopyWith(
+    _$AttributeChangedImpl value,
+    $Res Function(_$AttributeChangedImpl) then,
+  ) = __$$AttributeChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? selectedSize, int selectedColorIndex, int quantity});
+}
+
+/// @nodoc
+class __$$AttributeChangedImplCopyWithImpl<$Res>
+    extends _$ProductDetailsStateCopyWithImpl<$Res, _$AttributeChangedImpl>
+    implements _$$AttributeChangedImplCopyWith<$Res> {
+  __$$AttributeChangedImplCopyWithImpl(
+    _$AttributeChangedImpl _value,
+    $Res Function(_$AttributeChangedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ProductDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedSize = freezed,
+    Object? selectedColorIndex = null,
+    Object? quantity = null,
+  }) {
+    return _then(
+      _$AttributeChangedImpl(
+        selectedSize:
+            freezed == selectedSize
+                ? _value.selectedSize
+                : selectedSize // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        selectedColorIndex:
+            null == selectedColorIndex
+                ? _value.selectedColorIndex
+                : selectedColorIndex // ignore: cast_nullable_to_non_nullable
+                    as int,
+        quantity:
+            null == quantity
+                ? _value.quantity
+                : quantity // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$AttributeChangedImpl implements AttributeChanged {
+  const _$AttributeChangedImpl({
+    this.selectedSize,
+    required this.selectedColorIndex,
+    required this.quantity,
+  });
+
+  @override
+  final String? selectedSize;
+  @override
+  final int selectedColorIndex;
+  @override
+  final int quantity;
+
+  @override
+  String toString() {
+    return 'ProductDetailsState.attributeChanged(selectedSize: $selectedSize, selectedColorIndex: $selectedColorIndex, quantity: $quantity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AttributeChangedImpl &&
+            (identical(other.selectedSize, selectedSize) ||
+                other.selectedSize == selectedSize) &&
+            (identical(other.selectedColorIndex, selectedColorIndex) ||
+                other.selectedColorIndex == selectedColorIndex) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, selectedSize, selectedColorIndex, quantity);
+
+  /// Create a copy of ProductDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AttributeChangedImplCopyWith<_$AttributeChangedImpl> get copyWith =>
+      __$$AttributeChangedImplCopyWithImpl<_$AttributeChangedImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProductDetailsResponse prodcut) loaded,
+    required TResult Function(String message) error,
+    required TResult Function(
+      String? selectedSize,
+      int selectedColorIndex,
+      int quantity,
+    )
+    attributeChanged,
+  }) {
+    return attributeChanged(selectedSize, selectedColorIndex, quantity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProductDetailsResponse prodcut)? loaded,
+    TResult? Function(String message)? error,
+    TResult? Function(
+      String? selectedSize,
+      int selectedColorIndex,
+      int quantity,
+    )?
+    attributeChanged,
+  }) {
+    return attributeChanged?.call(selectedSize, selectedColorIndex, quantity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProductDetailsResponse prodcut)? loaded,
+    TResult Function(String message)? error,
+    TResult Function(
+      String? selectedSize,
+      int selectedColorIndex,
+      int quantity,
+    )?
+    attributeChanged,
+    required TResult orElse(),
+  }) {
+    if (attributeChanged != null) {
+      return attributeChanged(selectedSize, selectedColorIndex, quantity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+    required TResult Function(AttributeChanged value) attributeChanged,
+  }) {
+    return attributeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? error,
+    TResult? Function(AttributeChanged value)? attributeChanged,
+  }) {
+    return attributeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    TResult Function(AttributeChanged value)? attributeChanged,
+    required TResult orElse(),
+  }) {
+    if (attributeChanged != null) {
+      return attributeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AttributeChanged implements ProductDetailsState {
+  const factory AttributeChanged({
+    final String? selectedSize,
+    required final int selectedColorIndex,
+    required final int quantity,
+  }) = _$AttributeChangedImpl;
+
+  String? get selectedSize;
+  int get selectedColorIndex;
+  int get quantity;
+
+  /// Create a copy of ProductDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AttributeChangedImplCopyWith<_$AttributeChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

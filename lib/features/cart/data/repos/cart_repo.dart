@@ -16,4 +16,12 @@ class CartRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+  Future<ApiResult<String>> addToCart(int productId, int quantity) async {
+    try {
+      await _remoteDatasource.addToCart(productId, quantity);
+      return const ApiResult.success('Item added to cart successfully');
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

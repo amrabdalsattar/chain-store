@@ -25,4 +25,16 @@ class CartRemoteDatasource {
 
     return cartResponseModel.cartInfo!;
   }
+
+  Future<void> addToCart(int productId, int quantity) async {
+    await _apiHelper.post(
+      ApiRequestModel(
+        endPoint: ApiConstants.addToCartEP,
+        headers: {
+          'Authorization': 'Bearer ${await TokenHelper.getSecuredUserToken()}',
+        },
+        body: {'productId': productId, 'quantity': quantity},
+      ),
+    );
+  }
 }

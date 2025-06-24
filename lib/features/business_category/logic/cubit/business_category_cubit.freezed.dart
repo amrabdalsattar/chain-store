@@ -559,26 +559,26 @@ abstract class BusinessCategoryDeselectedState
 }
 
 /// @nodoc
-abstract class _$$BusinessCategorySubmitedStateImplCopyWith<$Res> {
-  factory _$$BusinessCategorySubmitedStateImplCopyWith(
-    _$BusinessCategorySubmitedStateImpl value,
-    $Res Function(_$BusinessCategorySubmitedStateImpl) then,
-  ) = __$$BusinessCategorySubmitedStateImplCopyWithImpl<$Res>;
+abstract class _$$BusinessCategorySubmittedStateImplCopyWith<$Res> {
+  factory _$$BusinessCategorySubmittedStateImplCopyWith(
+    _$BusinessCategorySubmittedStateImpl value,
+    $Res Function(_$BusinessCategorySubmittedStateImpl) then,
+  ) = __$$BusinessCategorySubmittedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String category});
 }
 
 /// @nodoc
-class __$$BusinessCategorySubmitedStateImplCopyWithImpl<$Res>
+class __$$BusinessCategorySubmittedStateImplCopyWithImpl<$Res>
     extends
         _$BusinessCategoryStateCopyWithImpl<
           $Res,
-          _$BusinessCategorySubmitedStateImpl
+          _$BusinessCategorySubmittedStateImpl
         >
-    implements _$$BusinessCategorySubmitedStateImplCopyWith<$Res> {
-  __$$BusinessCategorySubmitedStateImplCopyWithImpl(
-    _$BusinessCategorySubmitedStateImpl _value,
-    $Res Function(_$BusinessCategorySubmitedStateImpl) _then,
+    implements _$$BusinessCategorySubmittedStateImplCopyWith<$Res> {
+  __$$BusinessCategorySubmittedStateImplCopyWithImpl(
+    _$BusinessCategorySubmittedStateImpl _value,
+    $Res Function(_$BusinessCategorySubmittedStateImpl) _then,
   ) : super(_value, _then);
 
   /// Create a copy of BusinessCategoryState
@@ -587,7 +587,7 @@ class __$$BusinessCategorySubmitedStateImplCopyWithImpl<$Res>
   @override
   $Res call({Object? category = null}) {
     return _then(
-      _$BusinessCategorySubmitedStateImpl(
+      _$BusinessCategorySubmittedStateImpl(
         null == category
             ? _value.category
             : category // ignore: cast_nullable_to_non_nullable
@@ -599,9 +599,9 @@ class __$$BusinessCategorySubmitedStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BusinessCategorySubmitedStateImpl
+class _$BusinessCategorySubmittedStateImpl
     implements BusinessCategorySubmittedState {
-  const _$BusinessCategorySubmitedStateImpl(this.category);
+  const _$BusinessCategorySubmittedStateImpl(this.category);
 
   @override
   final String category;
@@ -615,7 +615,7 @@ class _$BusinessCategorySubmitedStateImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BusinessCategorySubmitedStateImpl &&
+            other is _$BusinessCategorySubmittedStateImpl &&
             (identical(other.category, category) ||
                 other.category == category));
   }
@@ -628,11 +628,11 @@ class _$BusinessCategorySubmitedStateImpl
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BusinessCategorySubmitedStateImplCopyWith<
-    _$BusinessCategorySubmitedStateImpl
+  _$$BusinessCategorySubmittedStateImplCopyWith<
+    _$BusinessCategorySubmittedStateImpl
   >
-  get copyWith => __$$BusinessCategorySubmitedStateImplCopyWithImpl<
-    _$BusinessCategorySubmitedStateImpl
+  get copyWith => __$$BusinessCategorySubmittedStateImplCopyWithImpl<
+    _$BusinessCategorySubmittedStateImpl
   >(this, _$identity);
 
   @override
@@ -716,15 +716,15 @@ class _$BusinessCategorySubmitedStateImpl
 
 abstract class BusinessCategorySubmittedState implements BusinessCategoryState {
   const factory BusinessCategorySubmittedState(final String category) =
-      _$BusinessCategorySubmitedStateImpl;
+      _$BusinessCategorySubmittedStateImpl;
 
   String get category;
 
   /// Create a copy of BusinessCategoryState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BusinessCategorySubmitedStateImplCopyWith<
-    _$BusinessCategorySubmitedStateImpl
+  _$$BusinessCategorySubmittedStateImplCopyWith<
+    _$BusinessCategorySubmittedStateImpl
   >
   get copyWith => throw _privateConstructorUsedError;
 }

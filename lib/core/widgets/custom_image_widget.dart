@@ -30,22 +30,25 @@ class CustomImageWidget extends StatelessWidget {
     return Material(
       child: InkWell(
         onTap: onTap,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(borderRadius.r),
-          child: CachedNetworkImage(
-            imageUrl: imageUrl,
-            placeholder:
-                (_, __) =>
-                    placeholder ??
-                    Padding(
-                      padding: EdgeInsets.all(16.r),
-                      child: const FittedBox(child: CustomLoadingIndicator()),
-                    ),
-            errorWidget:
-                (_, __, ___) => errorWidget ?? const Icon(Icons.broken_image),
-            height: height.h,
-            width: width.w,
-            fit: fit,
+        child: Hero(
+          tag: imageUrl,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(borderRadius.r),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              placeholder:
+                  (_, __) =>
+                      placeholder ??
+                      Padding(
+                        padding: EdgeInsets.all(16.r),
+                        child: const FittedBox(child: CustomLoadingIndicator()),
+                      ),
+              errorWidget:
+                  (_, __, ___) => errorWidget ?? const Icon(Icons.broken_image),
+              height: height.h,
+              width: width.w,
+              fit: fit,
+            ),
           ),
         ),
       ),
