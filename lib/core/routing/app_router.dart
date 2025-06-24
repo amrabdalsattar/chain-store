@@ -1,3 +1,5 @@
+import '../../features/account/ui/screens/about_us_screen/about_us_screen.dart';
+import '../../features/account/ui/screens/privacy_policy_screen/privacy_policy_screen.dart';
 import '../../features/business_category/logic/cubit/business_category_cubit.dart';
 import '../../features/business_category/ui/business_category_screen.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
@@ -14,7 +16,7 @@ import '../../features/order_history/logic/cubit/orders_cubit.dart';
 import '../../features/order_history/ui/orders_history_screen.dart';
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
 import '../../features/account/logic/cubit/profile_cubit.dart';
-import '../../features/account/ui/profile_screen.dart';
+import '../../features/account/ui/account_screen.dart';
 import '../../features/quotation/ui/quotation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -115,7 +117,7 @@ class AppRouter {
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: BlocProvider(
             create: (context) => ProfileCubit(),
-            child: const ProfileScreen(),
+            child: const AccountScreen(),
           ),
           settings: settings,
         );
@@ -218,6 +220,17 @@ class AppRouter {
                       ..getSupplierProducts(supplier.id!),
             child: const SupplierDetailsScreen(),
           ),
+          settings: settings,
+        );
+      case Routes.aboutUsScreenRoute:
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: const AboutUsScreen(),
+          settings: settings,
+        );
+
+      case Routes.privacyPolicyScreenRoute:
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: const PrivacyPolicyScreen(),
           settings: settings,
         );
 

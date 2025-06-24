@@ -11,6 +11,7 @@ import '../../../core/widgets/custom_divider.dart';
 import '../../cart/logic/cart_cubit/cart_cubit.dart';
 import '../../wishlist/logic/cubit/wishlist_cubit.dart';
 import '../logic/cubit/profile_cubit.dart';
+import 'widgets/app_informations.dart';
 import 'widgets/logout_button.dart';
 import 'widgets/profile_header.dart';
 import 'widgets/profile_menu_item.dart';
@@ -18,8 +19,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class AccountScreen extends StatelessWidget {
+  const AccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -137,6 +138,7 @@ class _ProfileScreenContent extends StatelessWidget {
                         // Logout Button
                         const LogoutButton(),
                         verticalSpace(32),
+                        const AppInformations(),
                       ],
                     ),
                   ),

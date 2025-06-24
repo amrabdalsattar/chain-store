@@ -27,10 +27,18 @@ class ThemesHelper {
     primaryColor: ColorsHelper.primaryColor,
     canvasColor: Colors.white,
     splashColor: ColorsHelper.transparent,
-    textButtonTheme: const TextButtonThemeData(
-      // style: ButtonStyle(
-      //     textStyle: WidgetStatePropertyAll(AppTextStyles.cairoBlackBold13
-      //         .copyWith(color: ColorsHelper.black))),
+    hoverColor: Colors.amber,
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: WidgetStateProperty.resolveWith<Color?>((
+          Set<WidgetState> states,
+        ) {
+          if (states.contains(WidgetState.pressed)) {
+            return ColorsHelper.primaryColor.withValues(alpha: 0.2);
+          }
+          return null; // Default overlay
+        }),
+      ),
     ),
     dialogTheme: const DialogThemeData(
       backgroundColor: ColorsHelper.white,
