@@ -9,6 +9,7 @@ import '../../features/checkout_order/ui/checkout_screen.dart/cart_checkout_scre
 import '../../features/checkout_order/ui/order_confirmation_screen.dart/order_confirmation_screen.dart';
 import '../../features/cart/ui/shopping_cart_screen.dart';
 
+import '../../features/home/data/models/suppliers_response_model.dart';
 import '../../features/order_history/logic/cubit/orders_cubit.dart';
 import '../../features/order_history/ui/orders_history_screen.dart';
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
@@ -32,6 +33,8 @@ import '../../features/reset_password/ui/otp_verification_ui/otp_screen.dart';
 import '../../features/reset_password/ui/reset_password_ui/reset_password_screen.dart';
 import '../../features/signup/logic/cubit/signup_cubit.dart';
 import '../../features/signup/ui/signup_screen.dart';
+import '../../features/supplier_datails/logic/cubit/supplier_products_cubit.dart';
+import '../../features/supplier_datails/ui/supplier_details_screen.dart';
 import '../../features/wishlist/logic/cubit/wishlist_cubit.dart';
 import '../../features/wishlist/ui/wishlist_screen.dart';
 import '../di/dependency_injection.dart';
@@ -201,6 +204,19 @@ class AppRouter {
           screen: BlocProvider(
             create: (context) => OrdersCubit(getIt())..getCustomerOrders(),
             child: const OrdersHistoryScreen(),
+          ),
+          settings: settings,
+        );
+
+      case Routes.supplierDetailsScreenRoute:
+        final supplier = arguments as SupplierDataModel;
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: BlocProvider(
+            create:
+                (_) =>
+                    SupplierProductsCubit(getIt())
+                      ..getSupplierProducts(supplier.id!),
+            child: const SupplierDetailsScreen(),
           ),
           settings: settings,
         );
