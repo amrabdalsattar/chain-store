@@ -36,16 +36,16 @@ class SupplierProductCard extends StatelessWidget {
 
               children: [
                 Text(
-                  '${product.name}',
+                  '${product.name ?? ''}',
                   style: AppTextStyles.robotoBlackRegular12,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
                 verticalSpace(8),
                 Text(
-                  'IN-STOCK : ${product.stock}',
+                  'min. Order : ${((product.stock ?? 0) ~/ 2)}',
                   style: AppTextStyles.robotoBlackRegular12.copyWith(
-                    color: ColorsHelper.green,
+                    color: ColorsHelper.rejectedOrderBackGroundColor,
                   ),
                 ),
                 verticalSpace(8),
