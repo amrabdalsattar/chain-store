@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '../../../../core/networking/api_error_handler/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../datasources/cart_remote_datasource.dart';
@@ -13,9 +15,11 @@ class CartRepo {
 
       return ApiResult.success(result);
     } catch (error) {
+      log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
   Future<ApiResult<String>> addToCart(int productId, int quantity) async {
     try {
       await _remoteDatasource.addToCart(productId, quantity);
