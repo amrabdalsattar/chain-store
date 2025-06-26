@@ -38,13 +38,14 @@ class CustomTextFormField extends StatelessWidget {
     this.filled,
     this.focusedBorder,
     this.suffix,
-    this.isReadOnly, this.onChanged,
+    this.isReadOnly,
+    this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged:onChanged ,
+      onChanged: onChanged,
       readOnly: isReadOnly ?? false,
       canRequestFocus: isReadOnly != null ? !isReadOnly! : true,
       controller: controller,

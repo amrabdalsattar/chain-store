@@ -1,11 +1,7 @@
 part of '../product_details_screen.dart';
 
-
 class ColorSelectorSection extends StatelessWidget {
-  const ColorSelectorSection({
-    super.key,
-    required this.cubit,
-  });
+  const ColorSelectorSection({super.key, required this.cubit});
 
   final ProductDetailsCubit cubit;
 

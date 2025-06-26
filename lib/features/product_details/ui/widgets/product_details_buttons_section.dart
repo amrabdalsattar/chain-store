@@ -55,7 +55,7 @@ class ProductDetailsButtonsSection extends StatelessWidget {
                 }
               },
               builder: (context, state) {
-                bool isLoading = state is AddingItemToCartState;
+                final bool isLoading = state is AddingItemToCartState;
                 return CustomButton(
                   isLoading: isLoading,
                   title: 'Add To Cart',

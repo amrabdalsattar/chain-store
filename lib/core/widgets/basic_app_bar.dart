@@ -9,11 +9,13 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isFirstScreen;
   final Widget? actionWidget;
+  final Color backgroundColor;
   const BasicAppBar({
     super.key,
     required this.title,
     this.isFirstScreen = false,
     this.actionWidget,
+    this.backgroundColor = ColorsHelper.white,
   });
 
   @override
@@ -30,10 +32,10 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () => context.pop(),
                 iconSize: 20.r,
               ),
-      title: Text(title, style: AppTextStyles.rubikBlackBold24),
+      title: Text(title, style: AppTextStyles.rubikBlackMedium20),
       centerTitle: true,
-      surfaceTintColor: ColorsHelper.white,
-      backgroundColor: ColorsHelper.white,
+      surfaceTintColor: backgroundColor,
+      backgroundColor: backgroundColor,
     );
   }
 

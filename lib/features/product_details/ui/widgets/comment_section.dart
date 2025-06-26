@@ -1,11 +1,7 @@
 part of '../product_details_screen.dart';
 
-
-
 class CommentSection extends StatelessWidget {
-  const CommentSection({
-    super.key,
-  });
+  const CommentSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +39,11 @@ class CommentSection extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Tasneem Wael',
-                                style:
-                                    AppTextStyles.robotoBlackMedium15,
+                                style: AppTextStyles.robotoBlackMedium15,
                               ),
                             ],
                           ),
@@ -61,8 +55,7 @@ class CommentSection extends StatelessWidget {
                               children: [
                                 Text(
                                   '4.0',
-                                  style:
-                                      AppTextStyles.robotoBlackMedium15,
+                                  style: AppTextStyles.robotoBlackMedium15,
                                 ),
                                 horizontalSpace(4),
                                 const RatingStars(rating: 4, size: 16),
@@ -75,8 +68,9 @@ class CommentSection extends StatelessWidget {
                     verticalSpace(8),
                     Text(
                       'I wasn’t expecting much, but wow—this T-shirt is next-level comfy! The fabric feels super soft on the skin, and the fit is just right—not too tight, not too loose.',
-                      style: AppTextStyles.robotoFadedBlackRegular16
-                          .copyWith(fontSize: 14.sp),
+                      style: AppTextStyles.robotoFadedBlackRegular16.copyWith(
+                        fontSize: 14.sp,
+                      ),
                     ),
                     verticalSpace(8),
                     Row(

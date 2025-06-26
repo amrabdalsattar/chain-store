@@ -1,6 +1,5 @@
 part of '../product_details_screen.dart';
 
-
 class RattingSection extends StatelessWidget {
   const RattingSection({super.key, required this.product});
 
@@ -45,4 +44,3 @@ class RattingSection extends StatelessWidget {
     );
   }
 }
-  

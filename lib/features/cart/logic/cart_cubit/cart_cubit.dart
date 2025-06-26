@@ -21,6 +21,7 @@ class CartCubit extends Cubit<CartState> {
 
     result.when(
       success: (message) {
+        getCartInfo();
         emit(const ItemAddedToCartState());
       },
       failure: (apiErrorModel) {

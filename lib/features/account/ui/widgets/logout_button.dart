@@ -1,6 +1,6 @@
 import '../../../../core/helpers/app_images.dart';
 import '../../../../core/helpers/spacing.dart';
-import '../../logic/cubit/profile_cubit.dart';
+import '../../logic/cubit/account_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +10,7 @@ class LogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProfileCubit, ProfileState>(
+    return BlocBuilder<AccountCubit, AccountState>(
       builder: (context, state) {
         final bool isLoading = state.maybeWhen(
           logoutLoading: () => true,
@@ -22,7 +22,7 @@ class LogoutButton extends StatelessWidget {
               isLoading
                   ? null
                   : () {
-                    context.read<ProfileCubit>().logout();
+                    context.read<AccountCubit>().logout();
                   },
           child: Row(
             children: [

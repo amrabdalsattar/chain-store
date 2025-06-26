@@ -10,7 +10,7 @@ import '../../../core/routing/routes.dart';
 import '../../../core/widgets/custom_divider.dart';
 import '../../cart/logic/cart_cubit/cart_cubit.dart';
 import '../../wishlist/logic/cubit/wishlist_cubit.dart';
-import '../logic/cubit/profile_cubit.dart';
+import '../logic/cubit/account_cubit.dart';
 import 'widgets/app_informations.dart';
 import 'widgets/logout_button.dart';
 import 'widgets/profile_header.dart';
@@ -25,16 +25,16 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProfileCubit(),
-      child: _ProfileScreenContent(),
+      create: (context) => AccountCubit(),
+      child: _AccountScreenContent(),
     );
   }
 }
 
-class _ProfileScreenContent extends StatelessWidget {
+class _AccountScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ProfileCubit, ProfileState>(
+    return BlocConsumer<AccountCubit, AccountState>(
       listener: (context, state) {
         state.maybeWhen(
           logoutSuccess: () {
@@ -82,8 +82,7 @@ class _ProfileScreenContent extends StatelessWidget {
                           title: 'Profile',
                           subtitle: 'View and edit your personal information',
                           onTap: () {
-                            // Navigate to profile edit screen
-                            // Navigator.of(context).pushNamed(Routes.profileEditScreen);
+                            context.pushNamed(Routes.profileScreenRoute);
                           },
                         ),
 
