@@ -41,6 +41,13 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.bold,
   );
 
+  static TextStyle rubikBlackMedium20 = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 20.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.medium,
+  );
+
   static TextStyle rubikBlackRegular16 = TextStyle(
     fontFamily: 'rubik',
     fontSize: 16.sp,

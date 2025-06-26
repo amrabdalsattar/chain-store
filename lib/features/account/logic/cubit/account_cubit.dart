@@ -3,22 +3,22 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../core/helpers/cache/user_data_operator.dart';
 
-part 'profile_state.dart';
-part 'profile_cubit.freezed.dart';
+part 'account_state.dart';
+part 'account_cubit.freezed.dart';
 
-class ProfileCubit extends Cubit<ProfileState> {
-  ProfileCubit() : super(const ProfileState.initial());
+class AccountCubit extends Cubit<AccountState> {
+  AccountCubit() : super(const AccountState.initial());
 
   // Add profile-related methods here
   void logout() {
     // Implement logout functionality
-    emit(const ProfileState.logoutLoading());
+    emit(const AccountState.logoutLoading());
 
     // Here you would typically call a repository method to handle logout
     // For now, we'll just emit a success state after a delay
     Future.delayed(const Duration(milliseconds: 500), () {
       UserDataOperator.clearUserData();
-      emit(const ProfileState.logoutSuccess());
+      emit(const AccountState.logoutSuccess());
     });
   }
 }

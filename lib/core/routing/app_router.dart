@@ -16,8 +16,8 @@ import '../../features/order_history/logic/cubit/orders_cubit.dart';
 import '../../features/order_history/ui/orders_history_screen.dart';
 import '../../features/product_details/ui/product_details_screen.dart';
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
-import '../../features/account/logic/cubit/profile_cubit.dart';
-import '../../features/account/ui/account_screen.dart';
+import '../../features/profile/logic/cubit/profile_cubit.dart';
+import '../../features/profile/ui/profile_screen.dart';
 import '../../features/quotation/ui/quotation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -116,10 +116,10 @@ class AppRouter {
           settings: settings,
         );
       case Routes.profileScreenRoute:
-        return CustomAnimationsBuilder.buildFadeTransition(
+        return CustomAnimationsBuilder.buildSlideRoute(
           screen: BlocProvider(
             create: (context) => ProfileCubit(),
-            child: const AccountScreen(),
+            child: const ProfileScreen(),
           ),
           settings: settings,
         );

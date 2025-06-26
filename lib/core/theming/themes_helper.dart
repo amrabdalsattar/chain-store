@@ -24,10 +24,10 @@ class ThemesHelper {
       surfaceTintColor: ColorsHelper.white,
     ),
     scaffoldBackgroundColor: ColorsHelper.homeScaffoldColor,
-    primaryColor: ColorsHelper.primaryColor,
     canvasColor: Colors.white,
     splashColor: ColorsHelper.transparent,
     hoverColor: Colors.amber,
+    colorSchemeSeed: ColorsHelper.primaryColor,
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         overlayColor: WidgetStateProperty.resolveWith<Color?>((

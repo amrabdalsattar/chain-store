@@ -1,6 +1,5 @@
 part of '../product_details_screen.dart';
 
-
 class DescriptionSection extends StatelessWidget {
   const DescriptionSection({super.key, required this.product});
 

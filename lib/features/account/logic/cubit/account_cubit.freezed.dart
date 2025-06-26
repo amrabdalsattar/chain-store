@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'profile_cubit.dart';
+part of 'account_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -42,23 +42,23 @@ mixin _$ProfileState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLogoutLoading value) logoutLoading,
-    required TResult Function(ProfileLogoutSuccess value) logoutSuccess,
-    required TResult Function(ProfileLogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult? Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult? Function(ProfileLogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult Function(ProfileLogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -66,13 +66,13 @@ mixin _$ProfileState {
 /// @nodoc
 abstract class $ProfileStateCopyWith<$Res> {
   factory $ProfileStateCopyWith(
-    ProfileState value,
-    $Res Function(ProfileState) then,
-  ) = _$ProfileStateCopyWithImpl<$Res, ProfileState>;
+    AccountState value,
+    $Res Function(AccountState) then,
+  ) = _$ProfileStateCopyWithImpl<$Res, AccountState>;
 }
 
 /// @nodoc
-class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
+class _$ProfileStateCopyWithImpl<$Res, $Val extends AccountState>
     implements $ProfileStateCopyWith<$Res> {
   _$ProfileStateCopyWithImpl(this._value, this._then);
 
@@ -166,9 +166,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLogoutLoading value) logoutLoading,
-    required TResult Function(ProfileLogoutSuccess value) logoutSuccess,
-    required TResult Function(ProfileLogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
   }) {
     return initial(this);
   }
@@ -177,9 +177,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult? Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult? Function(ProfileLogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
   }) {
     return initial?.call(this);
   }
@@ -188,9 +188,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult Function(ProfileLogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -200,7 +200,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements ProfileState {
+abstract class _Initial implements AccountState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -227,7 +227,7 @@ class __$$ProfileLogoutLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileLogoutLoadingImpl implements ProfileLogoutLoading {
+class _$ProfileLogoutLoadingImpl implements LogoutLoading {
   const _$ProfileLogoutLoadingImpl();
 
   @override
@@ -286,9 +286,9 @@ class _$ProfileLogoutLoadingImpl implements ProfileLogoutLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLogoutLoading value) logoutLoading,
-    required TResult Function(ProfileLogoutSuccess value) logoutSuccess,
-    required TResult Function(ProfileLogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
   }) {
     return logoutLoading(this);
   }
@@ -297,9 +297,9 @@ class _$ProfileLogoutLoadingImpl implements ProfileLogoutLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult? Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult? Function(ProfileLogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
   }) {
     return logoutLoading?.call(this);
   }
@@ -308,9 +308,9 @@ class _$ProfileLogoutLoadingImpl implements ProfileLogoutLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult Function(ProfileLogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
     required TResult orElse(),
   }) {
     if (logoutLoading != null) {
@@ -320,8 +320,8 @@ class _$ProfileLogoutLoadingImpl implements ProfileLogoutLoading {
   }
 }
 
-abstract class ProfileLogoutLoading implements ProfileState {
-  const factory ProfileLogoutLoading() = _$ProfileLogoutLoadingImpl;
+abstract class LogoutLoading implements AccountState {
+  const factory LogoutLoading() = _$ProfileLogoutLoadingImpl;
 }
 
 /// @nodoc
@@ -347,7 +347,7 @@ class __$$ProfileLogoutSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileLogoutSuccessImpl implements ProfileLogoutSuccess {
+class _$ProfileLogoutSuccessImpl implements LogoutSuccess {
   const _$ProfileLogoutSuccessImpl();
 
   @override
@@ -406,9 +406,9 @@ class _$ProfileLogoutSuccessImpl implements ProfileLogoutSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLogoutLoading value) logoutLoading,
-    required TResult Function(ProfileLogoutSuccess value) logoutSuccess,
-    required TResult Function(ProfileLogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
   }) {
     return logoutSuccess(this);
   }
@@ -417,9 +417,9 @@ class _$ProfileLogoutSuccessImpl implements ProfileLogoutSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult? Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult? Function(ProfileLogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
   }) {
     return logoutSuccess?.call(this);
   }
@@ -428,9 +428,9 @@ class _$ProfileLogoutSuccessImpl implements ProfileLogoutSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult Function(ProfileLogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
     required TResult orElse(),
   }) {
     if (logoutSuccess != null) {
@@ -440,8 +440,8 @@ class _$ProfileLogoutSuccessImpl implements ProfileLogoutSuccess {
   }
 }
 
-abstract class ProfileLogoutSuccess implements ProfileState {
-  const factory ProfileLogoutSuccess() = _$ProfileLogoutSuccessImpl;
+abstract class LogoutSuccess implements AccountState {
+  const factory LogoutSuccess() = _$ProfileLogoutSuccessImpl;
 }
 
 /// @nodoc
@@ -481,7 +481,7 @@ class __$$ProfileLogoutErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileLogoutErrorImpl implements ProfileLogoutError {
+class _$ProfileLogoutErrorImpl implements LogoutError {
   const _$ProfileLogoutErrorImpl(this.message);
 
   @override
@@ -555,9 +555,9 @@ class _$ProfileLogoutErrorImpl implements ProfileLogoutError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLogoutLoading value) logoutLoading,
-    required TResult Function(ProfileLogoutSuccess value) logoutSuccess,
-    required TResult Function(ProfileLogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
   }) {
     return logoutError(this);
   }
@@ -566,9 +566,9 @@ class _$ProfileLogoutErrorImpl implements ProfileLogoutError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult? Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult? Function(ProfileLogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
   }) {
     return logoutError?.call(this);
   }
@@ -577,9 +577,9 @@ class _$ProfileLogoutErrorImpl implements ProfileLogoutError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLogoutLoading value)? logoutLoading,
-    TResult Function(ProfileLogoutSuccess value)? logoutSuccess,
-    TResult Function(ProfileLogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
     required TResult orElse(),
   }) {
     if (logoutError != null) {
@@ -589,9 +589,8 @@ class _$ProfileLogoutErrorImpl implements ProfileLogoutError {
   }
 }
 
-abstract class ProfileLogoutError implements ProfileState {
-  const factory ProfileLogoutError(final String message) =
-      _$ProfileLogoutErrorImpl;
+abstract class LogoutError implements AccountState {
+  const factory LogoutError(final String message) = _$ProfileLogoutErrorImpl;
 
   String get message;
 
