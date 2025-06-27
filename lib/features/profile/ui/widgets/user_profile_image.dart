@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/cache/shared_preferences_helper.dart';
-import '../../../../core/helpers/cache/shared_preferences_keys.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/theming/colors_helper.dart';
@@ -59,7 +57,7 @@ class UserProfileImage extends StatelessWidget {
         ),
         verticalSpace(12),
         Text(
-          SharedPreferencesHelper.getString(SharedPreferencesKeys.userName),
+          context.read<ProfileCubit>().userName,
           style: AppTextStyles.rubikBlackBold16,
         ),
       ],
