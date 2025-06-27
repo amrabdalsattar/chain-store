@@ -16,6 +16,7 @@ import '../../features/order_history/logic/cubit/orders_cubit.dart';
 import '../../features/order_history/ui/orders_history_screen.dart';
 import '../../features/product_details/ui/product_details_screen.dart';
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
+import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/cubit/profile_cubit.dart';
 import '../../features/profile/ui/profile_screen.dart';
 import '../../features/quotation/ui/quotation_screen.dart';
@@ -118,7 +119,9 @@ class AppRouter {
       case Routes.profileScreenRoute:
         return CustomAnimationsBuilder.buildSlideRoute(
           screen: BlocProvider(
-            create: (context) => ProfileCubit(),
+            create:
+                (context) =>
+                    ProfileCubit(getIt<ProfileRepo>())..fetchCustomerProfile(),
             child: const ProfileScreen(),
           ),
           settings: settings,

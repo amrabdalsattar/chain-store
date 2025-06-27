@@ -19,14 +19,14 @@ class UserProfileImageBlocConsumer extends StatelessWidget {
       bloc: profileCubit,
       listenWhen:
           (previous, current) =>
-              current is ProfileErrorState ||
+              current is ProfileLocalErrorState ||
               current is ProfileImagePickedState,
       buildWhen:
           (previous, current) =>
               current is ProfileImagePickedState ||
               current is ProfileInitialState,
       listener: (_, state) {
-        if (state is ProfileErrorState) {
+        if (state is ProfileLocalErrorState) {
           DialogsHelper.showToastificationMessage(
             context: context,
             title: 'Error',

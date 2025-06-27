@@ -43,5 +43,9 @@ class ApiConstants {
   static const addToWishlistEP = 'Wishlist/AddToWishlist';
   static const removeFromWishlistEP = 'Wishlist/RemoveFromWishlist';
 
+  // Profile Endpoints
+  static const getCustomerProfileEP = 'Customer/GetProfile';
+  static const updateCustomerProfileEP = 'Customer/UpdateProfile';
+
   static const Duration timeOut = Duration(seconds: 20);
 }

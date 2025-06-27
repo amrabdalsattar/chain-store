@@ -36,7 +36,7 @@ class UserDataTextField extends StatelessWidget {
                 : TextCapitalization.none,
         onChanged: (value) {
           if (!profileCubit.isEditModeOn) {
-            profileCubit.startUpdatingProfile();
+            profileCubit.startUpdatingProfileState();
           } else {
             return;
           }
