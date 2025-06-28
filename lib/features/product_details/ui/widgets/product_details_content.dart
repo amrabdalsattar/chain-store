@@ -12,7 +12,7 @@ class ProductDetailsContent extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorsHelper.white,
       appBar: AppBar(
-        backgroundColor: ColorsHelper.homeScaffoldColor,
+        backgroundColor: ColorsHelper.backgroundScaffoldColor,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: ColorsHelper.black),
@@ -29,7 +29,7 @@ class ProductDetailsContent extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Product Image Carousel
             ProductImageCarousel(images: product.imageUrls),
@@ -47,11 +47,11 @@ class ProductDetailsContent extends StatelessWidget {
 
                   verticalSpace(16),
                   // Sizes
-                  SizeSelectorSection(cubit: cubit),
-                  verticalSpace(16),
+                  // SizeSelectorSection(cubit: cubit),
+                  // verticalSpace(16),
                   // Colors
-                  ColorSelectorSection(cubit: cubit),
-                  verticalSpace(16),
+                  // ColorSelectorSection(cubit: cubit),
+                  // verticalSpace(16),
                   // Quantity
                   QuantitySelectorSection(cubit: cubit),
                   verticalSpace(16),

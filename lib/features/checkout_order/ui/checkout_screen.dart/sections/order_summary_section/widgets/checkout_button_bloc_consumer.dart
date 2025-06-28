@@ -56,7 +56,8 @@ class CheckoutButtonBlocConsumer extends StatelessWidget {
                 if (context.read<CheckoutCubit>().isCreditCardPayment) {
                   await context.read<CheckoutCubit>().executePayment(
                     PaymentIntentInputModel(
-                      amount: cartCubit.totalPrice + 100,
+                      amount:
+                          cartCubit.totalPrice + (cartCubit.totalPrice * 0.01),
                       currency: 'EGP',
                       customerId: '123456Aa',
                     ),

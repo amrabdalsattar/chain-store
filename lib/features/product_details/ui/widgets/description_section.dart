@@ -8,16 +8,9 @@ class DescriptionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Product Description',
-          style: TextStyle(
-            fontFamily: 'Rubik',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w600,
-            color: ColorsHelper.black,
-          ),
-        ),
+        Text('Product Description', style: AppTextStyles.rubikBlackBold14),
         verticalSpace(8),
         // Expandable Description
         LayoutBuilder(

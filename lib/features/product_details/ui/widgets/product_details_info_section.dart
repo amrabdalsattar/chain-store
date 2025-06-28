@@ -8,24 +8,20 @@ class ProductDetailsInfoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+          padding: EdgeInsets.symmetric(vertical: 5.h),
           decoration: BoxDecoration(
             color: ColorsHelper.homeScaffoldColor,
             borderRadius: BorderRadius.circular(6.r),
           ),
           child: Text(
-            'Cotton Club',
-            style: TextStyle(
-              fontFamily: 'Rubik',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: ColorsHelper.black,
-            ),
+            '${product.categoryName}',
+            style: AppTextStyles.robotoBlackBold10,
           ),
         ),
-        verticalSpace(16),
+
         // Price and Sale Badge
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,12 +36,23 @@ class ProductDetailsInfoSection extends StatelessWidget {
                     product.name,
                     style: AppTextStyles.rubikBlackBold20,
                   ),
-                  horizontalSpace(12),
-                  Text(
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    '${product.price} EGP',
-                    style: AppTextStyles.rubikBlackBold20,
+                  verticalSpace(8),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          '${product.price} EGP',
+                          style: AppTextStyles.robotoBlackBold20,
+                        ),
+                      ),
+                      Text(
+                        '  each, > 5 pcs',
+                        style: AppTextStyles.robotoBlackRegular12,
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -75,7 +82,7 @@ class ProductStatusSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.r),
+      padding: EdgeInsets.all(6.r),
       decoration: BoxDecoration(
         color:
             isInStock

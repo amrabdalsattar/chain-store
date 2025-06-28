@@ -9,7 +9,7 @@ class QuantitySelectorSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text('Quantity :', style: AppTextStyles.rubikBlackBold15),
+        Text('Quantity :', style: AppTextStyles.rubikBlackBold14),
         horizontalSpace(16),
         // Quantity Selector
         BlocBuilder<ProductDetailsCubit, ProductDetailsState>(

@@ -7,7 +7,7 @@ import '../../../core/theming/app_text_styles.dart';
 import '../../../core/theming/colors_helper.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_empty_widget.dart';
-import '../../../core/widgets/custom_loading_indicator.dart';
+import '../../../core/widgets/loading_indicator.dart';
 import '../../cart/logic/cart_cubit/cart_cubit.dart';
 import '../../cart/logic/cart_cubit/cart_state.dart';
 import '../../home/ui/sections/product/matched_products/widgets/rating_stars.dart';
@@ -50,13 +50,13 @@ class ProductDetailsScreen extends StatelessWidget {
           buildWhen: (previous, current) => current is! AttributeChanged,
           builder: (context, state) {
             return state.map(
-              loading: (_) => const Center(child: CustomLoadingIndicator()),
+              loading: (_) => const LoadingIndicator(),
               error: (error) => CustomEmptyWidget(message: error.message),
-              initial: (_) => const Center(child: CustomLoadingIndicator()),
+              initial: (_) => const LoadingIndicator(),
               attributeChanged: (_) => const SizedBox.shrink(),
               loaded:
                   (data) => ProductDetailsContent(
-                    product: data.prodcut,
+                    product: data.product,
                     productId: productId,
                   ),
             );
