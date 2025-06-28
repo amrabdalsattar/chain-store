@@ -20,6 +20,7 @@ class CustomButton extends StatelessWidget {
   final TextStyle? textStyle;
   final Color? borderColor;
   final double? radius;
+  final Color loadingIndicatorColor;
 
   const CustomButton({
     super.key,
@@ -35,6 +36,7 @@ class CustomButton extends StatelessWidget {
     this.radius,
     this.height,
     this.isArrowed = false,
+    this.loadingIndicatorColor = ColorsHelper.white,
   });
 
   @override
@@ -70,7 +72,7 @@ class CustomButton extends StatelessWidget {
         ),
         child:
             isLoading
-                ? const LoadingIndicator(color: ColorsHelper.white)
+                ? LoadingIndicator(color: loadingIndicatorColor)
                 : Center(
                   child:
                       isArrowed

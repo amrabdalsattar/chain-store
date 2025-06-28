@@ -6,12 +6,15 @@ class ProductDetailsButtonsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ProductDetailsCubit productDetailsCubit =
+        context.read<ProductDetailsCubit>();
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      height: 80.h,
       decoration: BoxDecoration(
         color: ColorsHelper.white,
         border: const Border(
-          top: BorderSide(color: ColorsHelper.borderGray, width: 1),
+          top: BorderSide(color: ColorsHelper.homeScaffoldColor, width: 1),
         ),
         boxShadow: [
           BoxShadow(
@@ -28,6 +31,7 @@ class ProductDetailsButtonsSection extends StatelessWidget {
               title: 'Buy Now',
               width: double.infinity,
               color: ColorsHelper.primaryColor,
+              borderColor: ColorsHelper.transparent,
               radius: 32.r,
               textStyle: TextStyle(
                 color: ColorsHelper.white,
@@ -38,6 +42,7 @@ class ProductDetailsButtonsSection extends StatelessWidget {
               onTap: () {
                 // Buy now logic
               },
+              height: 41.h,
             ),
           ),
           horizontalSpace(16),
@@ -50,7 +55,7 @@ class ProductDetailsButtonsSection extends StatelessWidget {
                   );
                 } else if (state is ErrorCartState) {
                   DialogsHelper.showBasicToast(
-                    state.apiErrorModel.message ?? 'Unkown Error',
+                    state.apiErrorModel.message ?? 'Unknown Error',
                   );
                 }
               },
@@ -58,6 +63,7 @@ class ProductDetailsButtonsSection extends StatelessWidget {
                 final bool isLoading = state is AddingItemToCartState;
                 return CustomButton(
                   isLoading: isLoading,
+                  loadingIndicatorColor: ColorsHelper.primaryColor,
                   title: 'Add To Cart',
                   width: double.infinity,
                   radius: 32.r,
@@ -69,8 +75,12 @@ class ProductDetailsButtonsSection extends StatelessWidget {
                     fontSize: 16.sp,
                   ),
                   borderColor: ColorsHelper.borderGray,
+                  height: 41.h,
                   onTap: () {
-                    context.read<CartCubit>().addToCart(productId, 1);
+                    context.read<CartCubit>().addToCart(
+                      productId,
+                      productDetailsCubit.quantity,
+                    );
                   },
                 );
               },

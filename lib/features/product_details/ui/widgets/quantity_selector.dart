@@ -1,3 +1,4 @@
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/theming/colors_helper.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class QuantitySelector extends StatelessWidget {
           icon: Icons.remove,
           onPressed: quantity > 1 ? onDecrease : null,
         ),
-        SizedBox(width: 16.w),
+        horizontalSpace(4),
         Container(
           width: 40.w,
           alignment: Alignment.center,
@@ -35,7 +36,7 @@ class QuantitySelector extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 16.w),
+        horizontalSpace(4),
         _buildButton(icon: Icons.add, onPressed: onIncrease),
       ],
     );
@@ -53,10 +54,7 @@ class QuantitySelector extends StatelessWidget {
         width: 32.w,
         height: 32.h,
         decoration: BoxDecoration(
-          color:
-              isEnabled
-                  ? ColorsHelper.white
-                  : ColorsHelper.borderGray.withValues(alpha: 0.3),
+          color: isEnabled ? ColorsHelper.white : ColorsHelper.white,
           borderRadius: BorderRadius.circular(10.r),
           border: Border.all(
             color:

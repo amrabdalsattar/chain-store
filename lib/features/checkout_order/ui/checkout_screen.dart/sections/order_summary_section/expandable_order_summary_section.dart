@@ -61,11 +61,16 @@ class _OrderSummarySectionState extends State<OrderSummarySection>
             value: widget.cartCubit.totalPrice,
           ),
           verticalSpace(12),
-          const PriceRow(label: 'Shipping', value: 100),
+          PriceRow(
+            label: 'Fees ( 1% )',
+            value: (widget.cartCubit.totalPrice * 0.01),
+          ),
           verticalSpace(16),
           PriceRow(
             label: 'Total',
-            value: (widget.cartCubit.totalPrice + 100),
+            value:
+                widget.cartCubit.totalPrice +
+                (widget.cartCubit.totalPrice * 0.01),
             isTotalPrice: true,
           ),
           verticalSpace(24),

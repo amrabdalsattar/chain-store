@@ -195,7 +195,7 @@ class AppRouter {
         final cartCubit = args['cartCubit'] as CartCubit;
         final wishlistCubit = args['wishlistCubit'] as WishlistCubit;
         final productId = args['productId'] as int;
-        return CustomAnimationsBuilder.buildFadeTransition(
+        return CustomAnimationsBuilder.buildSlideRoute(
           screen: MultiBlocProvider(
             providers: [
               BlocProvider.value(value: cartCubit),
