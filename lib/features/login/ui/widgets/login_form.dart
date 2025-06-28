@@ -68,6 +68,7 @@ class _LoginFormState extends State<LoginForm> {
                 return 'Please enter your password.';
               }
             },
+            textInputAction: TextInputAction.done,
           ),
         ],
       ),

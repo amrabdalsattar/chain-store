@@ -39,7 +39,7 @@ class BannerItem extends StatelessWidget {
                   ),
                   CustomButton(
                     textStyle: AppTextStyles.robotoBlackBold12,
-                    isArrowed: true,
+                    hasWidget: true,
                     title: 'Shop Now',
                     width: 122.w,
                     radius: 32,

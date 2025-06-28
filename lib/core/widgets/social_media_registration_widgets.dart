@@ -46,8 +46,8 @@ class SocialMediaRegistrationWidgets extends StatelessWidget {
 
   Container buildSocialMediaButton(String logoPath) {
     return Container(
-      width: 90.w,
-      height: 48.h,
+      width: 85.w,
+      height: 43.h,
       padding: EdgeInsets.all(10.r),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),

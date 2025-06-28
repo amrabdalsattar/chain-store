@@ -16,6 +16,7 @@ class ApiConstants {
   // Cart Endpoints
   static const String getCartItemsEP = 'Cart/GetCartItems';
   static const String addToCartEP = 'Cart/AddItemToCart';
+  static const String removeFromCartEP = 'Cart/RemoveFromCart';
 
   // Orders Endpoints
   static const String placeOrderEP = 'Order/PlaceOrder';
@@ -46,6 +47,10 @@ class ApiConstants {
   // Profile Endpoints
   static const getCustomerProfileEP = 'Customer/GetProfile';
   static const updateCustomerProfileEP = 'Customer/UpdateProfile';
+
+  // Categories Endpoints
+  static const getProductsByCategoryEP = 'Product/GetProductsByCategory';
+  static const getCategoriesEP = 'Category/GetAll';
 
   static const Duration timeOut = Duration(seconds: 20);
 }

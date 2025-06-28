@@ -11,7 +11,8 @@ class CustomButton extends StatelessWidget {
   final String title;
   final void Function()? onTap;
   final double width;
-  final bool isArrowed;
+  final bool hasWidget;
+  final Widget? widget;
   final double? height;
   final double elevation;
   final bool isLoading;
@@ -35,8 +36,9 @@ class CustomButton extends StatelessWidget {
     this.borderColor,
     this.radius,
     this.height,
-    this.isArrowed = false,
+    this.hasWidget = false,
     this.loadingIndicatorColor = ColorsHelper.white,
+    this.widget,
   });
 
   @override
@@ -75,34 +77,44 @@ class CustomButton extends StatelessWidget {
                 ? LoadingIndicator(color: loadingIndicatorColor)
                 : Center(
                   child:
-                      isArrowed
+                      hasWidget
                           ? Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                title,
-                                style:
-                                    textStyle ??
-                                    (isEnabled
-                                        ? AppTextStyles.robotoWhiteBold16
-                                        : AppTextStyles.robotoWhiteBold16
-                                            .copyWith(
-                                              color:
-                                                  ColorsHelper.semiOpacityBlack,
-                                            )),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  title,
+                                  style:
+                                      textStyle ??
+                                      (isEnabled
+                                          ? AppTextStyles.robotoWhiteBold16
+                                          : AppTextStyles.robotoWhiteBold16
+                                              .copyWith(
+                                                color:
+                                                    ColorsHelper
+                                                        .semiOpacityBlack,
+                                              )),
+                                ),
                               ),
-                              SvgPicture.asset(AppImages.proceedArrow),
+                              widget ??
+                                  SvgPicture.asset(AppImages.proceedArrow),
                             ],
                           )
-                          : Text(
-                            title,
-                            style:
-                                textStyle ??
-                                (isEnabled
-                                    ? AppTextStyles.robotoWhiteBold16
-                                    : AppTextStyles.robotoWhiteBold16.copyWith(
-                                      color: ColorsHelper.semiOpacityBlack,
-                                    )),
+                          : FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              title,
+                              style:
+                                  textStyle ??
+                                  (isEnabled
+                                      ? AppTextStyles.robotoWhiteBold16
+                                      : AppTextStyles.robotoWhiteBold16
+                                          .copyWith(
+                                            color:
+                                                ColorsHelper.semiOpacityBlack,
+                                          )),
+                            ),
                           ),
                 ),
       ),

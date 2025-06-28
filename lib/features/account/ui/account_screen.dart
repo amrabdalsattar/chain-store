@@ -115,7 +115,7 @@ class _AccountScreenContent extends StatelessWidget {
                         const CustomDivider(),
                         ProfileMenuItem(
                           iconPath: AppImages.orderHistoryIcon,
-                          title: 'Order history',
+                          title: 'Orders history',
                           subtitle: 'Track your past purchases and receipts',
                           onTap: () {
                             context.pushNamed(Routes.ordersHistoryRoute);

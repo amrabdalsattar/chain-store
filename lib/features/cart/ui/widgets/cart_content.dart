@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../core/helpers/dialogs_helper.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
@@ -31,15 +32,8 @@ class CartContent extends StatelessWidget {
                   (item) => SlidableCartItem(
                     item: item,
                     onDelete: () {
-                      // Handle delete action
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            '${item.productName} removed from cart',
-                          ),
-                          duration: const Duration(seconds: 2),
-                        ),
-                      );
+                      context.read<CartCubit>().removeFromCart(item.productId!);
+                      DialogsHelper.showBasicToast('Item removed from cart');
                     },
                   ),
                 ),

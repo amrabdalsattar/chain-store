@@ -33,6 +33,7 @@ part 'widgets/comment_section.dart';
 part 'widgets/description_section.dart';
 part 'widgets/ratting_section.dart';
 part 'widgets/product_details_buttons_section.dart';
+part 'widgets/cart_button.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final int productId;

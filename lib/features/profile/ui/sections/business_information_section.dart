@@ -16,6 +16,7 @@ class BusinessInformationSection extends StatelessWidget {
         UserDataTextField(
           labelText: 'Business Name',
           controller: profileCubit.businessNameController,
+          textInputAction: TextInputAction.done,
         ),
       ],
     );

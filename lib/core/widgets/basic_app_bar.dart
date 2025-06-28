@@ -10,12 +10,16 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool isFirstScreen;
   final Widget? actionWidget;
   final Color backgroundColor;
+  final TextStyle? titleStyle;
+  final bool? centerTitle;
   const BasicAppBar({
     super.key,
     required this.title,
     this.isFirstScreen = false,
     this.actionWidget,
     this.backgroundColor = ColorsHelper.white,
+    this.titleStyle,
+    this.centerTitle,
   });
 
   @override
@@ -32,8 +36,8 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () => context.pop(),
                 iconSize: 20.r,
               ),
-      title: Text(title, style: AppTextStyles.rubikBlackMedium20),
-      centerTitle: true,
+      title: Text(title, style: titleStyle ?? AppTextStyles.rubikBlackMedium20),
+      centerTitle: centerTitle ?? true,
       surfaceTintColor: backgroundColor,
       backgroundColor: backgroundColor,
     );

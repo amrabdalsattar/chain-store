@@ -30,6 +30,7 @@ class WishlistItem extends StatelessWidget {
             price: wishlistProduct.price ?? 0,
             minimumOrder: wishlistProduct.stock ?? 0,
             isCartItem: false,
+            productId: wishlistProduct.productId,
           ),
           Positioned.directional(
             child: Padding(

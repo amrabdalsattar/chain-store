@@ -13,6 +13,7 @@ class CustomSearchTextFormField extends StatelessWidget {
     return CustomTextFormField(
       onChanged: onChanged,
       filled: false,
+      textInputAction: TextInputAction.search,
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(32),
         borderSide: const BorderSide(color: ColorsHelper.primaryColor),

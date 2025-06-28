@@ -28,4 +28,13 @@ class CartRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
+  Future<ApiResult<void>> removeFromCart(int itemId) async {
+    try {
+      await _remoteDatasource.removeFromCart(itemId);
+      return const ApiResult.success(());
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

@@ -21,26 +21,25 @@ class WishlistHeartBlocListener extends StatelessWidget {
               (current is AddingToWishlistErrorState &&
                   current.productId == productId) ||
               (current is RemovingFromWishlistErrorState &&
+                  current.productId == productId) ||
+              (current is AddedToWishlistState &&
+                  current.productId == productId) ||
+              (current is RemovedFromWishlistState &&
                   current.productId == productId),
       listener: (context, state) {
-        if (state is AddingToWishlistErrorState) {
+        if (state is AddingToWishlistErrorState ||
+            state is RemovingFromWishlistErrorState) {
           DialogsHelper.showToastificationMessage(
             context: context,
             title: 'Error',
-            description:
-                state.apiErrorModel.getErrorMessages() ?? 'Unknown Error',
+            description: 'Failed to update wishlist',
             type: ToastificationType.error,
             alignment: Alignment.topCenter,
           );
-        } else if (state is RemovingFromWishlistErrorState) {
-          DialogsHelper.showToastificationMessage(
-            context: context,
-            title: 'Error',
-            description:
-                state.apiErrorModel.getErrorMessages() ?? 'Unknown Error',
-            type: ToastificationType.error,
-            alignment: Alignment.topCenter,
-          );
+        } else if (state is AddedToWishlistState) {
+          DialogsHelper.showBasicToast('Added to wishlist');
+        } else if (state is RemovedFromWishlistState) {
+          DialogsHelper.showBasicToast('Removed from wishlist');
         } else {
           return;
         }

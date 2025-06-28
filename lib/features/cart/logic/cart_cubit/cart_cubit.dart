@@ -50,4 +50,24 @@ class CartCubit extends Cubit<CartState> {
       },
     );
   }
+
+  Future<void> removeFromCart(int itemId) async {
+    emit(const RemovingItemFromCartState());
+    cartItems.removeWhere((item) => item.productId == itemId);
+    final result = await _repo.removeFromCart(itemId);
+
+    result.when(
+      success: (success) {
+        getCartInfo();
+        emit(const ItemRemovedFromCartState());
+      },
+      failure: (apiErrorModel) {
+        emit(ErrorCartState(apiErrorModel));
+      },
+    );
+  }
+
+  bool isInCart(int productId) {
+    return cartItems.any((item) => item.productId == productId);
+  }
 }
