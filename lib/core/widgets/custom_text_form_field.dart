@@ -22,6 +22,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? filled;
   final bool? isReadOnly;
   final Function(String)? onChanged;
+  final TextInputAction? textInputAction;
 
   const CustomTextFormField({
     super.key,
@@ -40,16 +41,20 @@ class CustomTextFormField extends StatelessWidget {
     this.suffix,
     this.isReadOnly,
     this.onChanged,
+    this.textInputAction,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChanged,
+      onTapOutside: (event) => FocusScope.of(context).unfocus(),
       readOnly: isReadOnly ?? false,
       canRequestFocus: isReadOnly != null ? !isReadOnly! : true,
       controller: controller,
       maxLines: maxLines,
+      onTapUpOutside: (event) => FocusScope.of(context).unfocus(),
+      textInputAction: textInputAction ?? TextInputAction.next,
       textCapitalization:
           keyboardType == TextInputType.name
               ? TextCapitalization.words
@@ -74,7 +79,7 @@ class CustomTextFormField extends StatelessWidget {
         focusColor: ColorsHelper.primaryColor,
         hintText: hintText,
         suffixIcon: suffixIcon,
-        hintStyle: AppTextStyles.robotoGrayRegular15.copyWith(height: 1.8),
+        hintStyle: AppTextStyles.robotoGrayRegular12.copyWith(fontSize: 13.sp),
         fillColor: fillColor ?? ColorsHelper.offWhite,
         filled: filled ?? true,
         focusedBorder:
@@ -112,7 +117,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
       ),
       obscureText: isObscure ?? false,
-      // style: AppTextStyles.tajawalDarkGrayMedium14,
+      style: AppTextStyles.robotoDarkGrayMedium14,
       cursorColor: ColorsHelper.primaryColor,
     );
   }

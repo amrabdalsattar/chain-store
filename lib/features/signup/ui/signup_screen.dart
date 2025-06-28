@@ -18,12 +18,7 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(
-            left: 32.w,
-            right: 32.w,
-            top: 30.h,
-            bottom: 24.h,
-          ),
+          padding: EdgeInsets.only(left: 32.w, right: 32.w, top: 30.h),
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
@@ -35,7 +30,7 @@ class SignupScreen extends StatelessWidget {
                   title: 'Create a new account.',
                   subTitle: 'Sign up and start managing your orders with ease!',
                 ),
-                verticalSpace(48),
+                verticalSpace(30),
                 const SignupForm(),
                 verticalSpace(40),
                 const SignupButtonBlocConsumer(),
@@ -49,6 +44,7 @@ class SignupScreen extends StatelessWidget {
                   text: 'Do you have an account?',
                   actionText: 'Login',
                 ),
+                verticalSpace(24),
               ],
             ),
           ),

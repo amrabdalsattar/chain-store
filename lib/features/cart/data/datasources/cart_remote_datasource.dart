@@ -37,4 +37,16 @@ class CartRemoteDatasource {
       ),
     );
   }
+
+  Future<void> removeFromCart(int itemId) async {
+    await _apiHelper.delete(
+      ApiRequestModel(
+        endPoint: ApiConstants.removeFromCartEP,
+        headers: {
+          'Authorization': 'Bearer ${await TokenHelper.getSecuredUserToken()}',
+        },
+        queries: {'itemId': itemId},
+      ),
+    );
+  }
 }

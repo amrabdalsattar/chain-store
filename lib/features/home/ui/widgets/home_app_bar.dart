@@ -46,11 +46,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
           iconSize: 22.r,
         ),
-        IconButton(
-          icon: const Icon(Icons.shopping_cart_outlined),
-          onPressed: () {},
-          iconSize: 22.r,
-        ),
       ],
     );
   }

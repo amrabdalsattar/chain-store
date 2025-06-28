@@ -43,6 +43,7 @@ class SlidableCartItem extends StatelessWidget {
           productName: item.productName ?? '',
           productImage: item.productImage ?? '',
           quantity: item.quantity ?? 0,
+          productId: item.productId!,
         ),
       ),
     );

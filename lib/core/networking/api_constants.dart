@@ -16,6 +16,7 @@ class ApiConstants {
   // Cart Endpoints
   static const String getCartItemsEP = 'Cart/GetCartItems';
   static const String addToCartEP = 'Cart/AddItemToCart';
+  static const String removeFromCartEP = 'Cart/RemoveFromCart';
 
   // Orders Endpoints
   static const String placeOrderEP = 'Order/PlaceOrder';

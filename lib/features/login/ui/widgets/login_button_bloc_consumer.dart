@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/dialogs_helper.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_helper.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../logic/login_cubit.dart';
 import '../../logic/login_state.dart';
@@ -28,15 +29,15 @@ class LoginButtonBlocConsumer extends StatelessWidget {
                 apiErrorModel.getErrorMessages() ?? 'Unexpected Error occurred',
               ),
           success:
-              (loginResponseModel) => context.pushReplacementNamed(
-                Routes.businessCategoryScreenRoute,
-              ),
+              (loginResponseModel) =>
+                  context.pushReplacementNamed(Routes.mainScreenRoute),
         );
       },
       builder:
           (context, state) => CustomButton(
             title: 'Sign in',
             width: double.infinity,
+            borderColor: ColorsHelper.primaryColor,
             isLoading: state is LoginLoadingState,
             onTap: () {
               context.read<LoginCubit>().emitLoginStates();

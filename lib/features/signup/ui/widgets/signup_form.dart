@@ -35,7 +35,6 @@ class _SignUpFormState extends State<SignupForm> {
       key: signupCubit.formKey,
       child: Column(
         children: [
-          verticalSpace(24),
           CustomTextFormField(
             hintText: 'Name',
             controller: signupCubit.nameController,
@@ -187,6 +186,7 @@ class _SignUpFormState extends State<SignupForm> {
                 return 'Passwords do not match, please try again.';
               }
             },
+            textInputAction: TextInputAction.done,
           ),
         ],
       ),

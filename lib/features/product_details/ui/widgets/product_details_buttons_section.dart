@@ -47,43 +47,9 @@ class ProductDetailsButtonsSection extends StatelessWidget {
           ),
           horizontalSpace(16),
           Expanded(
-            child: BlocConsumer<CartCubit, CartState>(
-              listener: (context, state) {
-                if (state is ItemAddedToCartState) {
-                  DialogsHelper.showBasicToast(
-                    'Item added to cart successfully!',
-                  );
-                } else if (state is ErrorCartState) {
-                  DialogsHelper.showBasicToast(
-                    state.apiErrorModel.message ?? 'Unknown Error',
-                  );
-                }
-              },
-              builder: (context, state) {
-                final bool isLoading = state is AddingItemToCartState;
-                return CustomButton(
-                  isLoading: isLoading,
-                  loadingIndicatorColor: ColorsHelper.primaryColor,
-                  title: 'Add To Cart',
-                  width: double.infinity,
-                  radius: 32.r,
-                  color: ColorsHelper.white,
-                  textStyle: TextStyle(
-                    color: ColorsHelper.black,
-                    fontFamily: 'Rubik',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16.sp,
-                  ),
-                  borderColor: ColorsHelper.borderGray,
-                  height: 41.h,
-                  onTap: () {
-                    context.read<CartCubit>().addToCart(
-                      productId,
-                      productDetailsCubit.quantity,
-                    );
-                  },
-                );
-              },
+            child: CartButton(
+              productId: productId,
+              quantity: productDetailsCubit.quantity,
             ),
           ),
         ],

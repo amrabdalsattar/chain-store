@@ -12,6 +12,7 @@ class UserDataTextField extends StatelessWidget {
   final TextEditingController? controller;
   final bool enabled;
   final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
   const UserDataTextField({
     super.key,
     this.labelText,
@@ -19,6 +20,7 @@ class UserDataTextField extends StatelessWidget {
     this.enabled = true,
     this.keyboardType,
     this.labeled = true,
+    this.textInputAction,
   });
 
   @override
@@ -27,6 +29,9 @@ class UserDataTextField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),
       child: TextFormField(
+        onTapOutside: (event) => FocusScope.of(context).unfocus(),
+        onTapUpOutside: (event) => FocusScope.of(context).unfocus(),
+        textInputAction: textInputAction ?? TextInputAction.done,
         controller: controller,
         keyboardType: keyboardType,
         style: AppTextStyles.rubikBlackRegular14,

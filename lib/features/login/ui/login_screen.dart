@@ -32,13 +32,13 @@ class LoginScreen extends StatelessWidget {
                   subTitle:
                       'Access your account and start your journey with us!',
                 ),
-                verticalSpace(48),
+                verticalSpace(40),
                 const LoginForm(),
                 ForgotPasswordTextButton(
                   onPressed:
                       () => context.pushNamed(Routes.forgetPasswordScreenRoute),
                 ),
-                verticalSpace(40),
+                verticalSpace(30),
                 const LoginButtonBlocConsumer(),
                 verticalSpace(24),
                 const SocialMediaRegistrationWidgets(),
