@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/theming/colors_helper.dart';
 import '../../../../data/models/products_response_model.dart';
-import '../matched_products/matched_product_card.dart';
+import '../matched_products/product_card.dart';
 
 class RecommendedProductCard extends StatelessWidget {
   final ProductDataModel product;

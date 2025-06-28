@@ -47,5 +47,9 @@ class ApiConstants {
   static const getCustomerProfileEP = 'Customer/GetProfile';
   static const updateCustomerProfileEP = 'Customer/UpdateProfile';
 
+  // Categories Endpoints
+  static const getProductsByCategoryEP = 'Product/GetProductsByCategory';
+  static const getCategoriesEP = 'Category/GetAll';
+
   static const Duration timeOut = Duration(seconds: 20);
 }

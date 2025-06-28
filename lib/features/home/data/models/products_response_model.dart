@@ -25,7 +25,7 @@ class ProductDataModel {
   final String? supplierId;
   final String? businessType;
   final double? supplierRating;
-  final DateTime? createdDate;
+
   final bool? isInWishlist;
 
   ProductDataModel({
@@ -41,7 +41,7 @@ class ProductDataModel {
     required this.supplierId,
     required this.businessType,
     required this.supplierRating,
-    required this.createdDate,
+
     required this.isInWishlist,
   });
 
@@ -59,7 +59,7 @@ class ProductDataModel {
       supplierId: json['supplierId'],
       businessType: json['businessType'],
       supplierRating: (json['supplierRating'] as num).toDouble(),
-      createdDate: DateTime.parse(json['createdDate']),
+
       isInWishlist: json['isInWishlist'],
     );
   }

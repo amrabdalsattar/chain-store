@@ -31,7 +31,8 @@ class AddingToWishlistState extends WishlistState {
 }
 
 class AddedToWishlistState extends WishlistState {
-  const AddedToWishlistState();
+  final int productId;
+  const AddedToWishlistState(this.productId);
 }
 
 class AddingToWishlistErrorState extends WishlistState {
@@ -48,7 +49,8 @@ class RemovingFromWishlistState extends WishlistState {
 }
 
 class RemovedFromWishlistState extends WishlistState {
-  const RemovedFromWishlistState();
+  final int productId;
+  const RemovedFromWishlistState(this.productId);
 }
 
 class RemovingFromWishlistErrorState extends WishlistState {

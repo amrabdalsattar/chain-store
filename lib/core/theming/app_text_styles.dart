@@ -358,6 +358,12 @@ class AppTextStyles {
     color: ColorsHelper.black,
     fontWeight: FontWeightHelper.regular,
   );
+
+  static TextStyle robotoBlackRegular14 = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.regular,
+  );
   static TextStyle robotoWhiteRegular10 = TextStyle(
     fontSize: 10.sp,
     color: ColorsHelper.white,

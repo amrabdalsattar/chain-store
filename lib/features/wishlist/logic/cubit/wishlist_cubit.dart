@@ -44,6 +44,7 @@ class WishlistCubit extends Cubit<WishlistState> {
     result.when(
       success: (success) {
         if (isClosed) return;
+        emit(AddedToWishlistState(productId));
         getWishlistItems();
         emit(WishlistLoadedState(wishlistProducts));
       },
@@ -67,6 +68,7 @@ class WishlistCubit extends Cubit<WishlistState> {
         if (wishlistProducts.isEmpty) {
           emit(const WishlistEmptyState());
         } else {
+          emit(RemovedFromWishlistState(productId));
           emit(WishlistLoadedState(wishlistProducts));
         }
       },

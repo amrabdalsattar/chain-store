@@ -3,6 +3,8 @@ import 'package:get_it/get_it.dart';
 
 import '../../features/cart/data/datasources/cart_remote_datasource.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
+import '../../features/categories/data/datasources/categories_datasource.dart';
+import '../../features/categories/data/repos/categories_repo.dart';
 import '../../features/checkout_order/data/datasources/place_order_datasource.dart';
 import '../../features/checkout_order/data/repos/checkout_repo.dart';
 import '../../features/explore_suppliers/data/datasources/suppliers_datasource.dart';
@@ -118,4 +120,10 @@ Future<void> setUpGetIt() async {
     () => ProfileDatasource(getIt<ApiHelper>()),
   );
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
+
+  // Categories
+  getIt.registerLazySingleton<CategoriesDatasource>(
+    () => CategoriesDatasource(getIt()),
+  );
+  getIt.registerLazySingleton<CategoriesRepo>(() => CategoriesRepo(getIt()));
 }

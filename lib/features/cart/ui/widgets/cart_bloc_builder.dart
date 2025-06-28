@@ -13,6 +13,8 @@ class CartBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CartCubit cartCubit = context.read<CartCubit>();
+    cartCubit.cartItems.isEmpty ? cartCubit.getCartInfo() : null;
     return BlocBuilder<CartCubit, CartState>(
       buildWhen:
           (previous, current) =>
@@ -29,7 +31,9 @@ class CartBlocBuilder extends StatelessWidget {
           case EmptyCartState():
             return const EmptyCart();
           case ErrorCartState():
-            return ImagedError(errorMessage: state.apiErrorModel.message!);
+            return Center(
+              child: ImagedError(errorMessage: state.apiErrorModel.message!),
+            );
           default:
             return const Center(child: Text('Unknown Error'));
         }

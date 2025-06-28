@@ -42,6 +42,7 @@ class ColorsHelper {
   static const Color orderChipBackGroundColor = Color(0xFFF3F3F3);
   static const Color borderGray = Color(0xFFD1D1D1);
   static Color dividerGray = const Color(0xFF999999).withValues(alpha: 0.60);
+  static Color tabBarGray = const Color(0xFFF5F5F5);
 
   static const Color offWhite = Color.fromARGB(171, 242, 242, 242);
 
