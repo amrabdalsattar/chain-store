@@ -14,7 +14,7 @@ class RequestForQuotationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.pushNamed(Routes.quotationScreenRoute);
+        context.pushNamed(Routes.rfqScreen);
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 19.h),

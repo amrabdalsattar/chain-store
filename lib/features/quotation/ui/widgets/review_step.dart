@@ -58,9 +58,9 @@ class ReviewStep extends StatelessWidget {
           _buildInfoItem('Product Name', cubit.productNameController.text),
           verticalSpace(12),
           _buildInfoItem('Quantity', cubit.quantityController.text),
-          if (cubit.notesController.text.isNotEmpty) ...[
+          if (cubit.detailsController.text.isNotEmpty) ...[
             verticalSpace(12),
-            _buildInfoItem('Additional Notes', cubit.notesController.text),
+            _buildInfoItem('Additional Notes', cubit.detailsController.text),
           ],
           verticalSpace(24),
           _buildSectionTitle('Contact Information'),

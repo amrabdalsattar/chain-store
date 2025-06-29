@@ -1,60 +1,257 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
 
+import '../../../../core/helpers/cache/shared_preferences_helper.dart';
+import '../../../../core/helpers/cache/shared_preferences_keys.dart';
 import '../../data/models/quotation_model.dart';
+import '../../data/models/rfq_model.dart';
+import '../../data/models/rfq_request_model.dart';
+import '../../data/models/rfq_category_response.dart';
+import '../../data/models/rfq_recommended_supplier_response.dart';
+import '../../data/repos/quotation_repo.dart';
 
 part 'quotation_state.dart';
 
-// Maximum number of steps in the quotation process
 const int maxSteps = 3;
 
 class QuotationCubit extends Cubit<QuotationState> {
-  QuotationCubit() : super(QuotationState.initial());
-  
-  // Current step in the quotation process
+  final QuotationRepo quotationRepo;
+  QuotationCubit(this.quotationRepo) : super(QuotationState.initial());
+
+  final GlobalKey<FormState> formKey = GlobalKey();
+  bool shareBusinessCard = false;
+  bool isPolicySelected = false;
+
   int currentStep = 0;
-  
-  // Form controllers for product details
   final productNameController = TextEditingController();
   final quantityController = TextEditingController();
-  final notesController = TextEditingController();
-  
-  // Form controllers for contact details
+  final detailsController = TextEditingController();
+
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
   final companyNameController = TextEditingController();
 
-  // Form keys for validation
   final productFormKey = GlobalKey<FormState>();
   final contactFormKey = GlobalKey<FormState>();
 
-  void submitQuotation() {
-    final quotation = QuotationModel(
-      productName: productNameController.text,
-      quantity: int.tryParse(quantityController.text) ?? 0,
-      notes: notesController.text.isEmpty ? null : notesController.text,
-      name: nameController.text,
-      email: emailController.text,
-      phone: phoneController.text,
-      companyName: companyNameController.text.isEmpty ? null : companyNameController.text,
-    );
-    
-    // Here you would typically send the quotation to an API
-    // For now, we'll just update the state to show success
-    emit(state.copyWith(isSubmitting: true));
-    
-    // Simulate API call
-    Future.delayed(const Duration(seconds: 2), () {
-      emit(state.copyWith(
-        isSubmitting: false,
-        isSubmitted: true,
-        quotation: quotation,
-      ));
-    });
+  List<File> images = [];
+
+  Future<void> suggestDetailsWithGemini() async {
+    final productName = nameController.text.trim();
+    if (productName.isEmpty) return;
+
+    emit(state.copyWith(isLoading: true, clearErrorMessage: true));
+    try {
+      final model = GenerativeModel(
+        model: 'gemini-2.0-flash',
+        apiKey:
+            'AIzaSyCGFiuMBzuIW1q7T8ASrF9eNEsQZ5OMDLc', // Replace with your Gemini API key
+      );
+      final prompt =
+          'do not exceed 500 charachter'
+          'Suggest a detailed purchasing requirement for the product: $productName.'
+          'do not add anything about what you did and do not add sumarization at the end';
+
+      final content = [Content.text(prompt)];
+      final response = await model.generateContent(content);
+      final suggestion = response.text?.trim() ?? '';
+      // Format output: replace * or - with • and ensure line breaks
+      final formatted = suggestion
+          .replaceAll(
+            RegExp(r'(\*{1,3}|#{1,6})'),
+            '',
+          ) // Remove *, **, ***, ##, etc.
+          .replaceAllMapped(RegExp(r'^[*-]\s*', multiLine: true), (m) => '• ')
+          .replaceAll('\\n', '\n');
+      detailsController.text = formatted;
+      emit(state.copyWith(isLoading: false));
+    } catch (e) {
+      emit(
+        state.copyWith(isLoading: false, errorMessage: 'AI suggestion failed'),
+      );
+    }
   }
-  
-  // Navigation methods for multi-step form
+
+  Future<void> fetchRFQQuotations(String rfqId) async {
+    emit(
+      state.copyWith(
+        isLoading: true,
+        rfqState: RFQState.rfqQuotationsState,
+        clearErrorMessage: true,
+      ),
+    );
+    final result = await quotationRepo.getRFQQuotations(rfqId);
+    result.when(
+      success: (data) {
+        final quotations = data as QuotationResponseModel;
+        emit(
+          state.copyWith(
+            isLoading: false,
+            quotations: quotations.data,
+            clearErrorMessage: true,
+          ),
+        );
+      },
+      failure: (error) {
+        emit(state.copyWith(isLoading: false, errorMessage: error.message));
+      },
+    );
+  }
+
+  Future<void> getCustomerRFQs() async {
+    emit(
+      state.copyWith(
+        isLoading: true,
+        rfqState: RFQState.manageRFQState,
+        clearErrorMessage: true,
+      ),
+    );
+    final result = await quotationRepo.getCustomerRFQs();
+    result.when(
+      success: (quotatoins) {
+        emit(
+          state.copyWith(
+            isLoading: false,
+            rfqs: quotatoins,
+            clearErrorMessage: true,
+          ),
+        );
+      },
+      failure: (error) {
+        emit(state.copyWith(isSubmitting: false, errorMessage: error.message));
+      },
+    );
+  }
+
+  void selectCategory(String categoryId) {
+    emit(state.copyWith(selectedCategory: int.parse(categoryId)));
+  }
+
+  void fetchCategories() async {
+    final result = await quotationRepo.getAllCategories();
+    result.when(
+      success: (data) {
+        final response = data as RFQCategoryResponse;
+        emit(
+          state.copyWith(
+            categories: response.categories,
+            clearErrorMessage: true,
+          ),
+        );
+      },
+      failure: (error) {
+        emit(state.copyWith(errorMessage: error.message));
+      },
+    );
+  }
+
+  Future<void> submitQuotation() async {
+    if (!isPolicySelected) {
+      emit(state.copyWith(errorMessage: 'Please Accept the polices'));
+      return;
+    }
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        rfqState: RFQState.newRFQState,
+        clearErrorMessage: true,
+      ),
+    );
+    final quotation = RFQRequestModel(
+      customerId: SharedPreferencesHelper.getString(
+        SharedPreferencesKeys.userId,
+      ),
+      productName: nameController.text,
+      categoryId: state.selectedCategory ?? 0,
+      quantity: int.parse(quantityController.text),
+      unit: 'piece',
+      shareBusinessCard: shareBusinessCard,
+      description: detailsController.text,
+      deadline: DateTime.now().add(const Duration(days: 7)).toIso8601String(),
+    );
+    final result = await quotationRepo.createQuotation(quotation);
+    result.when(
+      success: (id) {
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            isSubmitted: true,
+            rfqId: id,
+            clearErrorMessage: true,
+            rfqState: RFQState.newRFQState,
+          ),
+        );
+      },
+      failure: (error) {
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            errorMessage: error.message,
+            isSubmitted: false,
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> changeQuotationStatus(
+    int quotationId, {
+    bool isReject = false,
+  }) async {
+    emit(
+      state.copyWith(
+        isLoading: true,
+        rfqState: RFQState.quotationState,
+        clearErrorMessage: true,
+      ),
+    );
+    late var result;
+    if (isReject) {
+      result = await quotationRepo.rejectQuotation(quotationId);
+    } else {
+      result = await quotationRepo.acceptQuotatoin(quotationId);
+    }
+
+    result.when(
+      success: (success) {
+        emit(
+          state.copyWith(
+            isLoading: false,
+            rfqState: RFQState.quotationState,
+            clearErrorMessage: true,
+          ),
+        );
+      },
+      failure: (error) {
+        emit(
+          state.copyWith(
+            isLoading: false,
+            errorMessage: error.message,
+            rfqState: RFQState.quotationState,
+          ),
+        );
+      },
+    );
+  }
+
+  void clearErrorMessage() {
+    emit(state.copyWith(clearErrorMessage: true));
+  }
+
+  void addImage(File image) {
+    images.add(image);
+    emit(state.copyWith(rfqState: RFQState.rfqImageUploading));
+  }
+
+  void removeImage() {
+    images.removeAt(0);
+    emit(state.copyWith(rfqState: RFQState.rfqImageUploading));
+  }
+
   void nextStep() {
     if (currentStep == 0 && productFormKey.currentState!.validate()) {
       currentStep = 1;
@@ -64,14 +261,14 @@ class QuotationCubit extends Cubit<QuotationState> {
       emit(state.copyWith());
     }
   }
-  
+
   void previousStep() {
     if (currentStep > 0) {
       currentStep--;
       emit(state.copyWith());
     }
   }
-  
+
   void goToStep(int step) {
     if (step >= 0 && step < maxSteps) {
       currentStep = step;
@@ -79,19 +276,23 @@ class QuotationCubit extends Cubit<QuotationState> {
     }
   }
 
+  void setRFQId(int id) {
+    emit(state.copyWith(rfqId: id));
+  }
+
+  void setQuotationId(int quotation) {
+    emit(state.copyWith(quotationId: quotation));
+  }
+
   @override
   Future<void> close() {
-    // Dispose product details controllers
     productNameController.dispose();
     quantityController.dispose();
-    notesController.dispose();
-    
-    // Dispose contact details controllers
+    detailsController.dispose();
     nameController.dispose();
     emailController.dispose();
     phoneController.dispose();
     companyNameController.dispose();
-    
     return super.close();
   }
 }

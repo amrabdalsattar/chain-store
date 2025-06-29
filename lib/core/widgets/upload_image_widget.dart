@@ -31,9 +31,9 @@ class UploadImageWidget extends StatelessWidget {
                 const Icon(Icons.cloud_upload_outlined, size: 36),
                 verticalSpace(12),
                 Text(
-                  'You can add up to 5 images.',
-                  style: AppTextStyles.rubikSemiGreyRegular12.copyWith(
-                    color: ColorsHelper.subText,
+                  'Upload Image',
+                  style: AppTextStyles.robotoDarkGrayMedium14.copyWith(
+                    color: ColorsHelper.semiGray,
                   ),
                 ),
               ],

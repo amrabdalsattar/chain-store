@@ -22,6 +22,7 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final double? radius;
   final Color loadingIndicatorColor;
+  final Color? textColor;
 
   const CustomButton({
     super.key,
@@ -39,6 +40,7 @@ class CustomButton extends StatelessWidget {
     this.hasWidget = false,
     this.loadingIndicatorColor = ColorsHelper.white,
     this.widget,
+    this.textColor,
   });
 
   @override
@@ -62,8 +64,8 @@ class CustomButton extends StatelessWidget {
               isEnabled
                   ? [
                     BoxShadow(
-                      color: Colors.black.withValues(
-                        alpha: elevation == 0 ? 0 : 0.25,
+                      color: Colors.black.withOpacity(
+                        elevation == 0 ? 0 : 0.25,
                       ),
                       blurRadius: elevation,
                       spreadRadius: 1,
@@ -89,9 +91,17 @@ class CustomButton extends StatelessWidget {
                                       textStyle ??
                                       (isEnabled
                                           ? AppTextStyles.robotoWhiteBold16
+                                              .copyWith(
+                                                color:
+                                                    textColor ??
+                                                    AppTextStyles
+                                                        .robotoWhiteBold16
+                                                        .color,
+                                              )
                                           : AppTextStyles.robotoWhiteBold16
                                               .copyWith(
                                                 color:
+                                                    textColor ??
                                                     ColorsHelper
                                                         .semiOpacityBlack,
                                               )),
@@ -109,9 +119,17 @@ class CustomButton extends StatelessWidget {
                                   textStyle ??
                                   (isEnabled
                                       ? AppTextStyles.robotoWhiteBold16
+                                          .copyWith(
+                                            color:
+                                                textColor ??
+                                                AppTextStyles
+                                                    .robotoWhiteBold16
+                                                    .color,
+                                          )
                                       : AppTextStyles.robotoWhiteBold16
                                           .copyWith(
                                             color:
+                                                textColor ??
                                                 ColorsHelper.semiOpacityBlack,
                                           )),
                             ),

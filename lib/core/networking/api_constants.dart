@@ -22,10 +22,23 @@ class ApiConstants {
   static const String placeOrderEP = 'Order/PlaceOrder';
   static const String getCustomerOrdersEP = 'Order/GetCustomerOrders';
 
+  // RFQ Endpoints
+  static const String createRFQEP = 'RFQ/Create';
+  static const String getCustomerRFQsEP = 'RFQ/Customer';
+  static const String getCustomerQuotationByIdEP = 'RFQ/Customer';
+  static const String assignSupplierToRFQEP = 'RFQ/AssignSuppliers';
+  static const String getRFQQuotationsEp = 'Quotation/ByRFQ';
+  static const String getQuotationDetailsEP = 'Quotation/';
+  static const String acceptQuotationEP = 'Quotation/Approve';
+  static const String rejectQuoationEP = 'Quotation/Reject';
+
   // Stripe Endpoints
   static const stripeBaseUrl = 'https://api.stripe.com/v1/';
   static const createPaymentIntentEndPoint = 'payment_intents';
   static const createEphemeralKeyEndPoint = 'ephemeral_keys';
+
+  // Categories Endpoints
+  static const getAllCategoriesEP = 'Category/GetAll';
 
   // Home Endpoints
   static const getTopSuppliersEP = 'Supplier/GetSuppliers';

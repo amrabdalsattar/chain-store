@@ -22,6 +22,7 @@ class AppImages {
   static const String addIcon = 'assets/images/add.png';
   static const String emptyCart = 'assets/images/empty_cart.png';
   static const String bannerMobile = 'assets/images/banner_mobile.png';
+  static const String rfqImage = 'assets/images/rfq_image.png';
   static const String aboutUsIllustration =
       'assets/images/about_us_illustration.png';
 

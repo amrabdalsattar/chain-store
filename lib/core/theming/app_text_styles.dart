@@ -257,6 +257,70 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.bold,
   );
 
+  // Custom styles for RFQ response
+  static TextStyle font18BlackBold = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 18.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle font14GrayRegular = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 14.sp,
+    color: ColorsHelper.gray,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font20BlackBold = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 20.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle font16BlackBold = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 16.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle font14BlackMedium = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.medium,
+  );
+
+  static TextStyle font14BlackBold = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle font14BlackRegular = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font14BlackSemiBold = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 14.sp,
+    color: ColorsHelper.black,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+
+  static TextStyle font12GrayRegular = TextStyle(
+    fontFamily: 'rubik',
+    fontSize: 12.sp,
+    color: ColorsHelper.gray,
+    fontWeight: FontWeightHelper.regular,
+  );
+
   // roboto font
   static TextStyle robotoGrayRegular15 = TextStyle(
     fontFamily: 'roboto',
