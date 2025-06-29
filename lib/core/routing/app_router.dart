@@ -16,10 +16,15 @@ import '../../features/order_history/logic/cubit/orders_cubit.dart';
 import '../../features/order_history/ui/orders_history_screen.dart';
 import '../../features/product_details/ui/product_details_screen.dart';
 import '../../features/product_details/ui/ratings_reviews_screen.dart';
+import '../../features/quotation/data/models/quotation_model.dart';
+import '../../features/quotation/logic/cubit/quotation_cubit.dart';
+import '../../features/quotation/ui/screens/manage_rfqs_screen.dart';
+import '../../features/quotation/ui/screens/quotation_details_screen.dart';
+import '../../features/quotation/ui/screens/new_quotation_screen.dart';
+import '../../features/quotation/ui/screens/quotation_success_screen.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/profile/logic/cubit/profile_cubit.dart';
 import '../../features/profile/ui/profile_screen.dart';
-import '../../features/quotation/ui/quotation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,6 +36,8 @@ import '../../features/onboarding/logic/cubit/onboarding_cubit.dart';
 import '../../features/onboarding/ui/onboarding_screen.dart';
 import '../../features/pre_login/logic/cubit/pre_login_cubit.dart';
 import '../../features/pre_login/ui/pre_login_screen.dart';
+import '../../features/quotation/ui/screens/rfq_quotations_screen.dart';
+import '../../features/quotation/ui/screens/rfq_screen.dart';
 import '../../features/reset_password/logic/cubit/reset_password_cubit.dart';
 import '../../features/reset_password/ui/forgot_password_ui/forget_password_screen.dart';
 import '../../features/reset_password/ui/otp_verification_ui/otp_screen.dart';
@@ -57,6 +64,44 @@ class AppRouter {
           screen: BlocProvider(
             create: (context) => LoginCubit(getIt()),
             child: const LoginScreen(),
+          ),
+          settings: settings,
+        );
+
+      case Routes.rfqScreen:
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: BlocProvider(
+            create: (context) => QuotationCubit(getIt())..fetchCategories(),
+            child: const RfqScreen(),
+          ),
+          settings: settings,
+        );
+      case Routes.quotationSuccessScreenRoute:
+        final quotationCubit = arguments as QuotationCubit;
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: BlocProvider.value(
+            value: quotationCubit,
+            child: const QuotationSuccessScreen(),
+          ),
+          settings: settings,
+        );
+
+      case Routes.manageRfQsScreenRoute:
+        final quotationCubit = arguments as QuotationCubit;
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: BlocProvider.value(
+            value: quotationCubit,
+            child: const ManageRfqsScreen(),
+          ),
+          settings: settings,
+        );
+      case Routes.newQuotationScreenRoute:
+        final quotationCubit = arguments as QuotationCubit;
+
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: BlocProvider.value(
+            value: quotationCubit,
+            child: const NewQuotationScreen(),
           ),
           settings: settings,
         );
@@ -176,9 +221,28 @@ class AppRouter {
           settings: settings,
         );
 
-      case Routes.quotationScreenRoute:
+      case Routes.quotationDetailsScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        final quotation = args['quotation'] as QuotationModel;
+        final cubit = args['cubit'] as QuotationCubit;
         return CustomAnimationsBuilder.buildFadeTransition(
-          screen: const QuotationScreen(),
+          screen: BlocProvider.value(
+            value: cubit,
+            child: QuotationDetailsScreen(quotation: quotation),
+          ),
+          settings: settings,
+        );
+      case Routes.rfqQuotationScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        final cubit = args['cubit'] as QuotationCubit;
+        final rfqId = args['rfqId'] as String;
+        return CustomAnimationsBuilder.buildFadeTransition( 
+          screen: BlocProvider.value(
+            value: cubit..fetchRFQQuotations(rfqId),
+            child: const RFQQuotationsScreen(),
+          ),
           settings: settings,
         );
 

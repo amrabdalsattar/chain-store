@@ -9,7 +9,6 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final Widget? suffix;
-
   final String? prefixIconPath;
   final bool? isObscure;
   final TextInputType? keyboardType;
@@ -66,6 +65,7 @@ class CustomTextFormField extends StatelessWidget {
           vertical: maxLines > 1 ? 16.h : 14.h,
           horizontal: 12.w,
         ),
+        suffix: suffix,
         prefixIcon:
             prefixIconPath != null
                 ? Padding(

@@ -12,7 +12,7 @@ class Routes {
   static const String shoppingCartRoute = '/shoppingCart';
   static const String productDetailsRoute = '/productDetails';
   static const String homeScreenRoute = '/homeScreen';
-  static const String quotationScreenRoute = '/quotationScreen';
+  static const String newQuotationScreenRoute = '/quotationScreen';
 
   static const String preLoginScreenRoute = '/preLoginScreenRoute';
   static const String rattingScreenRoute = '/rattingScreen';
@@ -23,6 +23,18 @@ class Routes {
       '/businessCategoryScreenRoute';
 
   static const String categoriesScreenRoute = '/categoriesScreen';
+  static const String quotationSuccessScreenRoute = '/quotationSuccessScreen';
+  static const String quotationResponseScreenRoute = '/quotationResponseScreen';
+  static const String manageRfQsScreenRoute = '/manageQuotationScreen';
+
+  static const String rfqMatchedSuppliersScreenRoute =
+      '/matchedSuplliersScreen';
+
+  static const String rfqScreen = '/rfqScreen';
+  static const String rfqQuotationScreen = '/rfqQuotationScreen';
+  static const String quotationDetailsScreen = '/quotationDetailsScreen';
+
+
   static const String wishlistScreenRoute = '/wishlistScreen';
   static const String ordersHistoryRoute = '/ordersHistory';
   static const String supplierDetailsScreenRoute = '/supplierDataScreen';

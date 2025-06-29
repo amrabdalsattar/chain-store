@@ -18,6 +18,8 @@ import '../../features/order_history/data/datasources/orders_datasource.dart';
 import '../../features/order_history/data/repos/orders_repo.dart';
 import '../../features/pre_login/data/datasources/pre_login_datasource.dart';
 import '../../features/pre_login/data/repos/pre_login_repo.dart';
+import '../../features/quotation/data/datasource/quotation_datasource.dart';
+import '../../features/quotation/data/repos/quotation_repo.dart';
 import '../../features/product_details/data/datasource/product_details_datasource.dart';
 import '../../features/product_details/data/repos/product_details_repo.dart';
 import '../../features/profile/data/datasources/profile_datasource.dart';
@@ -43,6 +45,12 @@ Future<void> setUpGetIt() async {
   // Authentication DI
   getIt.registerLazySingleton<LoginDatasource>(() => LoginDatasource(getIt()));
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+
+  // Quotation DI
+  getIt.registerLazySingleton<QuotationDatasource>(
+    () => QuotationDatasource(getIt()),
+  );
+  getIt.registerLazySingleton<QuotationRepo>(() => QuotationRepo(getIt()));
 
   getIt.registerLazySingleton<SignupDataSource>(
     () => SignupDataSource(getIt()),

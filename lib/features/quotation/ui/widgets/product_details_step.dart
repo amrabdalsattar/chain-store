@@ -90,7 +90,7 @@ class ProductDetailsStep extends StatelessWidget {
               hintText: 'Additional Notes (Optional)',
               prefixIconPath:
                   'assets/svgs/note.svg', // Use appropriate icon if available
-              controller: cubit.notesController,
+              controller: cubit.detailsController,
               maxLines: 4,
               validator: (_) => null,
             ),
