@@ -5,7 +5,7 @@ class NewQuotationScreenContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<QuotationCubit>();
+    final cubit = context.read<NewQuotationCubit>();
 
     return Scaffold(
       backgroundColor: ColorsHelper.black,

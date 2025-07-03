@@ -7,17 +7,18 @@ class RFQDropDownMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<NewQuotationCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('* $title', style: AppTextStyles.robotoBlackSemiBold16),
         verticalSpace(10),
-        BlocBuilder<QuotationCubit, QuotationState>(
-          builder: (context, state) {
+        StatefulBuilder(
+          builder: (context, setState) {
             return CustomDropdownButton(
-              value: state.selectedCategory?.toString(),
+              value: cubit.selectedCategory?.toString(),
               items:
-                  state.categories
+                  cubit.categories
                       .map(
                         (category) => DropdownMenuItem(
                           value: category.id.toString(),
@@ -27,12 +28,13 @@ class RFQDropDownMenu extends StatelessWidget {
                       .toList(),
               onChanged: (value) {
                 if (value != null) {
-                  context.read<QuotationCubit>().selectCategory(value);
+                  cubit.selectCategory(value);
+                  setState(() {}); // To update the UI
                 }
               },
               hintText: 'Select Category',
               validator: (p0) {
-                if (state.selectedCategory == null) {
+                if (cubit.selectedCategory == null) {
                   return 'Please select a category';
                 }
                 return null;

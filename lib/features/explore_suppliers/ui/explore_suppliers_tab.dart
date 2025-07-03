@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/di/dependency_injection.dart';
 import '../../../core/helpers/spacing.dart';
 
+import '../../cart/logic/cart_cubit/cart_cubit.dart';
+import '../../wishlist/logic/cubit/wishlist_cubit.dart';
 import '../data/repos/suppliers_repo.dart';
 import '../logic/cubit/suppliers_cubit.dart';
 import 'widgets/suppliers_filtration_bloc_builder.dart';
@@ -43,7 +45,13 @@ class _ExploreSuppliersTabState extends State<ExploreSuppliersTab> {
                 verticalSpace(24),
                 const SuppliersFiltrationSection(),
                 verticalSpace(32),
-                const SuppliersFiltrationBlocBuilder(),
+                BlocProvider.value(
+                  value: context.read<WishlistCubit>(),
+                  child: BlocProvider.value(
+                    value: context.read<CartCubit>(),
+                    child: const SuppliersFiltrationBlocBuilder(),
+                  ),
+                ),
               ],
             ),
           ),

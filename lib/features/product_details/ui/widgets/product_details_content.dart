@@ -65,7 +65,7 @@ class ProductDetailsContent extends StatelessWidget {
               ),
             ),
             // Comment Section
-            const CommentSection(),
+            ReviewsSection(product: product),
           ],
         ),
       ),

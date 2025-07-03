@@ -49,6 +49,19 @@ class _AccountScreenContent extends StatelessWidget {
         return Stack(
           children: [
             Scaffold(
+              floatingActionButton: FloatingActionButton(
+                backgroundColor: ColorsHelper.primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusGeometry.circular(12),
+                ),
+                onPressed: () {
+                  context.pushNamed(Routes.customerSupportScreenRoute);
+                },
+                child: const Icon(
+                  Icons.support_agent_rounded,
+                  color: ColorsHelper.liteGray,
+                ),
+              ),
               backgroundColor: ColorsHelper.homeScaffoldColor,
               appBar: const CustomAppBar(
                 title: 'Account',

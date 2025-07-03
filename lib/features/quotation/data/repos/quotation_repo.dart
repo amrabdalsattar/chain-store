@@ -48,8 +48,8 @@ class QuotationRepo {
 
   Future<ApiResult<List<RFQModel>>> getCustomerRFQs() async {
     try {
-      final quotations = await _quotationDatasource.getCustomerRFQs();
-      return ApiResult.success(quotations);
+      final rfqs = await _quotationDatasource.getCustomerRFQs();
+      return ApiResult.success(rfqs);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }

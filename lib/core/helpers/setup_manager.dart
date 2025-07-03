@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../../features/chat/data/model/chat_service.dart';
 import '../../features/notifications/data/services/local_notification_service.dart';
 import '../../features/notifications/data/services/push_notification_service.dart';
 import '../../firebase_options.dart';
@@ -22,7 +22,7 @@ class SetupManager {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-
+    await ChatService.instance.initZIM();
     await _initFirebase();
     await SharedPreferencesHelper.init();
 

@@ -5,45 +5,48 @@ class ManageRFQsStatsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<QuotationCubit, QuotationState>(
+    return BlocBuilder<ManageRFQCubit, ManageRfqState>(
       builder: (context, state) {
-        final rfqs = state.rfqs ?? [];
-        final pendingCount =
-            rfqs
-                .where((rfq) => rfq.status.name.toLowerCase() == 'pending')
-                .length;
-        final completedCount =
-            rfqs
-                .where((rfq) => rfq.status.name.toLowerCase() == 'accepted')
-                .length;
+        if (state is ManageRfqStatetSuccessState) {
+          final pendingCount =
+              state.rfqs
+                  .where((rfq) => rfq.status.name.toLowerCase() == 'pending')
+                  .length;
+          final completedCount =
+              state.rfqs
+                  .where((rfq) => rfq.status.name.toLowerCase() == 'approved')
+                  .length;
 
-        return Container(
-          margin: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Row(
-            children: [
-              RfqStatCard(
-                title: 'Total RFQs',
-                value: rfqs.length.toString(),
-                icon: Icons.assignment,
-                color: Colors.blue,
-              ),
-              SizedBox(width: 12.w),
-              RfqStatCard(
-                title: 'Pending',
-                value: pendingCount.toString(),
-                icon: Icons.pending,
-                color: Colors.orange,
-              ),
-              SizedBox(width: 12.w),
-              RfqStatCard(
-                title: 'Completed',
-                value: completedCount.toString(),
-                icon: Icons.check_circle,
-                color: Colors.green,
-              ),
-            ],
-          ),
-        );
+          return Container(
+            margin: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              children: [
+                RfqStatCard(
+                  title: 'Total RFQs',
+                  value: state.rfqs.length.toString(),
+                  icon: Icons.assignment,
+                  color: Colors.blue,
+                ),
+                SizedBox(width: 12.w),
+                RfqStatCard(
+                  title: 'Pending',
+                  value: pendingCount.toString(),
+                  icon: Icons.pending,
+                  color: Colors.orange,
+                ),
+                SizedBox(width: 12.w),
+                RfqStatCard(
+                  title: 'Completed',
+                  value: completedCount.toString(),
+                  icon: Icons.check_circle,
+                  color: Colors.green,
+                ),
+              ],
+            ),
+          );
+        } else {
+          return const SizedBox();
+        }
       },
     );
   }

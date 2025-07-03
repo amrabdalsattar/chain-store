@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../data/models/product_details_response.dart';
 import '../../data/repos/product_details_repo.dart';
 
@@ -15,16 +15,23 @@ class ProductDetailsCubit extends Cubit<ProductDetailsState> {
   String? _selectedSize;
   int _selectedColorIndex = 0;
   int _quantity = 1;
+  late int _productId;
+   late ProductDetailsResponse _currentProduct;
 
   String? get selectedSize => _selectedSize;
   int get selectedColorIndex => _selectedColorIndex;
+  int get productId => _productId;
+  ProductDetailsResponse get currentProduct=>_currentProduct;
+
   int get quantity => _quantity;
 
-  void fetchProductDetails(int productId) async {
+  Future<void> fetchProductDetails(int productId) async {
+    _productId = productId;
     final response = await _productDetailsRepo.getProductDetails(productId);
 
     response.when(
       success: (prodcut) {
+        _currentProduct = prodcut;
         emit(ProductDetailsState.loaded(prodcut));
       },
       failure: (error) {

@@ -26,10 +26,7 @@ class RfqCard extends StatelessWidget {
           onTap: () {
             context.pushNamed(
               Routes.rfqQuotationScreen,
-              arguments: {
-                'rfqId': rfq.id.toString(),
-                'cubit': context.read<QuotationCubit>(),
-              },
+              arguments: rfq.id.toString(),
             );
           },
           child: Padding(
@@ -132,11 +129,14 @@ class RfqCard extends StatelessWidget {
                       SizedBox(height: 12.h),
                       Row(
                         children: [
-                          const RfqDetailsItem(
+                          RfqDetailsItem(
                             icon: Icons.access_time,
-                            label: 'Created',
-                            value: '2 days ago', // Replace with actual date
-                            color: Colors.orange,
+                            label: 'Deadline',
+                            value:
+                                rfq.deadline != null
+                                    ? '${rfq.deadline!.year}-${rfq.deadline!.month.toString().padLeft(2, '0')}-${rfq.deadline!.day.toString().padLeft(2, '0')}'
+                                    : 'unknown', // Replace with actual date
+                            color: Colors.redAccent,
                           ),
                           SizedBox(width: 16.w),
                           const RfqDetailsItem(

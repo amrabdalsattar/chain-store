@@ -3,7 +3,7 @@ part of '../screens/new_quotation_screen.dart';
 class RFQForm extends StatelessWidget {
   const RFQForm({super.key, required this.cubit});
 
-  final QuotationCubit cubit;
+  final NewQuotationCubit cubit;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,8 @@ class RFQForm extends StatelessWidget {
           ),
           verticalSpace(16),
 
-          const RFQDropDownMenu(title: 'Category'),
-          verticalSpace(16),
+          // const RFQDropDownMenu(title: 'Category'),
+          // verticalSpace(16),
           RFQDetailsTextFieldWithAi(cubit: cubit),
           verticalSpace(17),
           Text(

@@ -17,4 +17,6 @@ class ProductDetailsDatasource {
 
     return ProductDetailsResponse.fromJson(response);
   }
+
+
 }

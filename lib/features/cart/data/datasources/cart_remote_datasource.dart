@@ -49,4 +49,28 @@ class CartRemoteDatasource {
       ),
     );
   }
+
+  Future<void> incrementCartItem(int itemId) async {
+    await _apiHelper.put(
+      ApiRequestModel(
+        endPoint: ApiConstants.incrementCartItem,
+        headers: {
+          'Authorization': 'Bearer ${await TokenHelper.getSecuredUserToken()}',
+        },
+        queries: {'itemId': itemId},
+      ),
+    );
+  }
+
+  Future<void> decrementCartItem(int itemId) async {
+    await _apiHelper.put(
+      ApiRequestModel(
+        endPoint: ApiConstants.decrementCartItem,
+        headers: {
+          'Authorization': 'Bearer ${await TokenHelper.getSecuredUserToken()}',
+        },
+        queries: {'itemId': itemId},
+      ),
+    );
+  }
 }

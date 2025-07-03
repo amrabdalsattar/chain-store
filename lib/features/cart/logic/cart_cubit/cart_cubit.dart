@@ -67,6 +67,45 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
+ Future<void> incrementCartItem(int itemId) async {
+  emit(ChangeCartItemLoadingState());
+  final item = cartItems.firstWhere((item) => item.productId == itemId);
+  item.quantity! + 1;
+  final result = await _repo.incrementCartItem(itemId);
+
+  result.when(
+    success: (message) {
+      getCartInfo();
+      emit( ItemQuantityChangedState());
+    },
+    failure: (apiErrorModel) {
+      emit(ErrorCartState(apiErrorModel));
+    },
+  );
+}
+
+// Future<void> decrementCartItem(int itemId) async {
+//   emit(ChangeCartItemLoadingState());
+//   final item = cartItems.firstWhere((item) => item.productId == itemId);
+//   if (item.quantity! > 1) {
+//     final newQuantity = item.quantity! - 1;
+//     final result = await _repo.decrementCartItem(itemId);
+
+//     result.when(
+//       success: (message) {
+//         getCartInfo();
+//         emit( ItemQuantityChangedState());
+//       },
+//       failure: (apiErrorModel) {
+//         emit(ErrorCartState(apiErrorModel));
+//       },
+//     );
+//   } else {
+//     // Optionally, you can remove the item if quantity reaches 0
+//     await removeFromCart(itemId);
+//   }
+// }
+
   bool isInCart(int productId) {
     return cartItems.any((item) => item.productId == productId);
   }

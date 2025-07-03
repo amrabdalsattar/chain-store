@@ -4,12 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
+import '../../../../core/widgets/custom_error_widget.dart';
 import '../../../../core/widgets/custom_filter_button.dart';
 import '../../../../core/widgets/custom_loading_indicator.dart';
+import '../../../profile/data/models/customer_profile_response_model.dart';
 import '../../data/models/rfq_model.dart';
 import '../../logic/cubit/quotation_cubit.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/theming/colors_helper.dart';
+import '../../logic/manage_rfq_cubit/cubit/manage_rfq_cubit.dart';
 // Parts
 part '../widgets/rfq_card.dart';
 part '../widgets/rfq_details_item.dart';
@@ -24,7 +27,7 @@ class ManageRfqsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<QuotationCubit>().getCustomerRFQs();
+    context.read<ManageRFQCubit>().getCustomerRFQs();
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
@@ -54,7 +57,7 @@ class ManageRfqsScreen extends StatelessWidget {
           const ManageRFQHeaderSection(),
           // Stats Section
           const ManageRFQsStatsSection(),
-          verticalSpace(20.h),
+          verticalSpace(20),
           // RFQs List Section
           const ManageRfqsListHeader(),
           verticalSpace(12),

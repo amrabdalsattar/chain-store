@@ -18,9 +18,11 @@ class Routes {
   static const String rattingScreenRoute = '/rattingScreen';
   static const String heroImageView = '/heroImageView';
 
-
   static const String businessCategoryScreenRoute =
       '/businessCategoryScreenRoute';
+
+  static const String customerSupportScreenRoute =
+      '/customerSupportScreenRoute';
 
   static const String categoriesScreenRoute = '/categoriesScreen';
   static const String quotationSuccessScreenRoute = '/quotationSuccessScreen';
@@ -33,7 +35,6 @@ class Routes {
   static const String rfqScreen = '/rfqScreen';
   static const String rfqQuotationScreen = '/rfqQuotationScreen';
   static const String quotationDetailsScreen = '/quotationDetailsScreen';
-
 
   static const String wishlistScreenRoute = '/wishlistScreen';
   static const String ordersHistoryRoute = '/ordersHistory';

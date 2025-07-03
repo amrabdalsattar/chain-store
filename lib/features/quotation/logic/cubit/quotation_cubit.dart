@@ -40,42 +40,6 @@ class QuotationCubit extends Cubit<QuotationState> {
 
   List<File> images = [];
 
-  Future<void> suggestDetailsWithGemini() async {
-    final productName = nameController.text.trim();
-    if (productName.isEmpty) return;
-
-    emit(state.copyWith(isLoading: true, clearErrorMessage: true));
-    try {
-      final model = GenerativeModel(
-        model: 'gemini-2.0-flash',
-        apiKey:
-            'AIzaSyCGFiuMBzuIW1q7T8ASrF9eNEsQZ5OMDLc', // Replace with your Gemini API key
-      );
-      final prompt =
-          'do not exceed 500 charachter'
-          'Suggest a detailed purchasing requirement for the product: $productName.'
-          'do not add anything about what you did and do not add sumarization at the end';
-
-      final content = [Content.text(prompt)];
-      final response = await model.generateContent(content);
-      final suggestion = response.text?.trim() ?? '';
-      // Format output: replace * or - with • and ensure line breaks
-      final formatted = suggestion
-          .replaceAll(
-            RegExp(r'(\*{1,3}|#{1,6})'),
-            '',
-          ) // Remove *, **, ***, ##, etc.
-          .replaceAllMapped(RegExp(r'^[*-]\s*', multiLine: true), (m) => '• ')
-          .replaceAll('\\n', '\n');
-      detailsController.text = formatted;
-      emit(state.copyWith(isLoading: false));
-    } catch (e) {
-      emit(
-        state.copyWith(isLoading: false, errorMessage: 'AI suggestion failed'),
-      );
-    }
-  }
-
   Future<void> fetchRFQQuotations(String rfqId) async {
     emit(
       state.copyWith(
@@ -123,28 +87,6 @@ class QuotationCubit extends Cubit<QuotationState> {
       },
       failure: (error) {
         emit(state.copyWith(isSubmitting: false, errorMessage: error.message));
-      },
-    );
-  }
-
-  void selectCategory(String categoryId) {
-    emit(state.copyWith(selectedCategory: int.parse(categoryId)));
-  }
-
-  void fetchCategories() async {
-    final result = await quotationRepo.getAllCategories();
-    result.when(
-      success: (data) {
-        final response = data as RFQCategoryResponse;
-        emit(
-          state.copyWith(
-            categories: response.categories,
-            clearErrorMessage: true,
-          ),
-        );
-      },
-      failure: (error) {
-        emit(state.copyWith(errorMessage: error.message));
       },
     );
   }
@@ -240,16 +182,6 @@ class QuotationCubit extends Cubit<QuotationState> {
 
   void clearErrorMessage() {
     emit(state.copyWith(clearErrorMessage: true));
-  }
-
-  void addImage(File image) {
-    images.add(image);
-    emit(state.copyWith(rfqState: RFQState.rfqImageUploading));
-  }
-
-  void removeImage() {
-    images.removeAt(0);
-    emit(state.copyWith(rfqState: RFQState.rfqImageUploading));
   }
 
   void nextStep() {

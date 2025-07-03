@@ -1,4 +1,4 @@
-enum RFQStatus { pending, approved, rejected }
+enum RFQStatus { pending, approved, rejected, completed, closed }
 
 class RFQModel {
   final int? id;
@@ -84,6 +84,10 @@ extension QuotationStatusExtension on RFQStatus {
         return RFQStatus.approved;
       case 'rejected':
         return RFQStatus.rejected;
+      case 'completed':
+        return RFQStatus.completed;
+      case 'closed':
+        return RFQStatus.closed;
       default:
         return RFQStatus.pending;
     }

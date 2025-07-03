@@ -1,3 +1,5 @@
+enum QuotationStatus { pending, approved, rejected, ordered }
+
 class QuotationResponseModel {
   final List<QuotationModel> data;
   final bool isSuccess;
@@ -35,7 +37,7 @@ class QuotationModel {
   final double unitPrice;
   final int deliveryTimeInDays;
   final String deliveryTerm;
-  final double deliveryFee;
+  final double deliveryFee; 
   final String notes;
   final String validUntil;
   final String createdAt;

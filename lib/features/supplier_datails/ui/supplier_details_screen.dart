@@ -9,6 +9,8 @@ import '../../../core/theming/colors_helper.dart';
 import '../../../core/widgets/basic_app_bar.dart';
 import '../../../core/widgets/loading_indicator.dart';
 import '../../../core/widgets/shimmer_loading_list.dart';
+import '../../chat/data/model/chat_service.dart';
+import '../../chat/ui/chat_screen.dart';
 import '../../home/data/models/suppliers_response_model.dart';
 import '../logic/cubit/supplier_products_cubit.dart';
 import 'widgets/supplier_products_list_view.dart';
@@ -26,7 +28,28 @@ class SupplierDetailsScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as SupplierDataModel;
 
     return Scaffold(
-      appBar: const BasicAppBar(title: 'Supplier Details'),
+      appBar: BasicAppBar(
+        title: 'Supplier Details',
+        actionWidget: IconButton(
+          onPressed: () async {
+            // Chat Place
+            // await ChatService.instance.initZIM();
+
+            // Navigator.of(context).push(
+            //   MaterialPageRoute(
+            //     builder:
+            //         (context) => ChatScreen(
+            //           targetUserId: '1',
+            //           currentUserId: '3',
+            //           currentUserName: 'zakaria',
+            //           targetUserName: 'mohamed',
+            //         ),
+            //   ),
+            // );
+          },
+          icon: const Icon(Icons.message, color: Colors.black),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: CustomScrollView(
