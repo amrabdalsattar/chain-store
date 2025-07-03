@@ -1,3 +1,5 @@
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import '../../../core/di/dependency_injection.dart';
 import '../../../core/helpers/dialogs_helper.dart';
 import '../../../core/helpers/extensions.dart';
@@ -7,6 +9,7 @@ import '../../../core/theming/app_text_styles.dart';
 import '../../../core/theming/colors_helper.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_empty_widget.dart';
+import '../../../core/widgets/custom_image_widget.dart';
 import '../../../core/widgets/loading_indicator.dart';
 import '../../cart/logic/cart_cubit/cart_cubit.dart';
 import '../../cart/logic/cart_cubit/cart_state.dart';
@@ -34,6 +37,7 @@ part 'widgets/description_section.dart';
 part 'widgets/ratting_section.dart';
 part 'widgets/product_details_buttons_section.dart';
 part 'widgets/cart_button.dart';
+part 'widgets/see_all_review_button.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final int productId;
@@ -50,17 +54,18 @@ class ProductDetailsScreen extends StatelessWidget {
         body: BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
           buildWhen: (previous, current) => current is! AttributeChanged,
           builder: (context, state) {
-            return state.map(
-              loading: (_) => const LoadingIndicator(),
-              error: (error) => CustomEmptyWidget(message: error.message),
-              initial: (_) => const LoadingIndicator(),
-              attributeChanged: (_) => const SizedBox.shrink(),
-              loaded:
-                  (data) => ProductDetailsContent(
-                    product: data.product,
-                    productId: productId,
-                  ),
-            );
+            return state.mapOrNull(
+                  loading: (_) => const LoadingIndicator(),
+                  error: (error) => CustomEmptyWidget(message: error.message),
+                  initial: (_) => const LoadingIndicator(),
+                  attributeChanged: (_) => const SizedBox.shrink(),
+                  loaded:
+                      (data) => ProductDetailsContent(
+                        product: data.prodcut,
+                        productId: productId,
+                      ),
+                ) ??
+                const SizedBox();
           },
         ),
       ),

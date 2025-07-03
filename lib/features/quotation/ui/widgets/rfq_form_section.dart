@@ -3,7 +3,7 @@ part of '../screens/new_quotation_screen.dart';
 class RFQFormSection extends StatelessWidget {
   const RFQFormSection({super.key, required this.cubit});
 
-  final QuotationCubit cubit;
+  final NewQuotationCubit cubit;
 
   @override
   Widget build(BuildContext context) {

@@ -37,4 +37,22 @@ class CartRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
+  Future<ApiResult<void>> incrementCartItem(int itemId) async {
+    try {
+      await _remoteDatasource.incrementCartItem(itemId);
+      return const ApiResult.success(());
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  Future<ApiResult<void>> decrementCartItem(int itemId) async {
+    try {
+      await _remoteDatasource.decrementCartItem(itemId);
+      return const ApiResult.success(());
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

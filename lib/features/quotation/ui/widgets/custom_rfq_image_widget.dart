@@ -1,14 +1,13 @@
 part of '../screens/new_quotation_screen.dart';
 
 class CustomRFQImageWidget extends StatelessWidget {
-  final QuotationCubit cubit;
+  final NewQuotationCubit cubit;
   const CustomRFQImageWidget({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<QuotationCubit, QuotationState>(
-      buildWhen: (prev, curr) => curr.rfqState == RFQState.rfqImageUploading,
-      builder: (context, state) {
+    return StatefulBuilder(
+      builder: (context, setState) {
         if (cubit.images.isEmpty) {
           return InkWell(
             onTap: () {
@@ -17,6 +16,7 @@ class CustomRFQImageWidget extends StatelessWidget {
                 currentImages: [],
                 onImagePicked: (image) {
                   cubit.addImage(image);
+                  setState(() {}); // To update the UI
                 },
                 onError: (error) {
                   DialogsHelper.showErrorDialog(context, error);
@@ -52,7 +52,7 @@ class CustomRFQImageWidget extends StatelessWidget {
           return Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadiusGeometry.circular(12),
+                borderRadius: BorderRadius.circular(12),
                 child: Image.file(
                   cubit.images[0],
                   fit: BoxFit.cover,
@@ -66,6 +66,7 @@ class CustomRFQImageWidget extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     cubit.removeImage();
+                    setState(() {}); // To update the UI
                   },
                   child: Container(
                     decoration: BoxDecoration(

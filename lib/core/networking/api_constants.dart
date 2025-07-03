@@ -17,6 +17,9 @@ class ApiConstants {
   static const String getCartItemsEP = 'Cart/GetCartItems';
   static const String addToCartEP = 'Cart/AddItemToCart';
   static const String removeFromCartEP = 'Cart/RemoveFromCart';
+    static const String incrementCartItem = 'Cart/IncrementCartItem';
+  static const String decrementCartItem = 'Cart/DecrementCartItem';
+
 
   // Orders Endpoints
   static const String placeOrderEP = 'Order/PlaceOrder';
@@ -51,6 +54,10 @@ class ApiConstants {
   static const getRecommendedProductsEP = 'Product/GetRecommendedForCustomer';
   static const getSupplierProductsEP = 'Product/GetSupplierProducts';
   static const getProductDetailsEP = 'Product/CustomerGetProductDetails';
+  // Reviews Endpoints
+
+  static const addReview = 'Review/AddReview';
+  static const updateReivew = 'Review/UpdateReview';
 
   // Wishlist Endpoints
   static const getWishlistItemsEP = 'Wishlist/GetWishlistProducts';

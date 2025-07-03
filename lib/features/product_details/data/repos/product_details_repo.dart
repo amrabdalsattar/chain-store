@@ -18,4 +18,6 @@ class ProductDetailsRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
+  
 }

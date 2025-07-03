@@ -10,6 +10,7 @@ import '../../logic/cubit/quotation_cubit.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/theming/colors_helper.dart';
+import '../../logic/manage_rfq_quotations_cubit/cubit/manage_rfq_quotations_cubit.dart';
 
 class RFQQuotationsScreen extends StatelessWidget {
   const RFQQuotationsScreen({super.key});
@@ -19,20 +20,22 @@ class RFQQuotationsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorsHelper.homeScaffoldColor,
       appBar: _buildAppBar(),
-      body: BlocBuilder<QuotationCubit, QuotationState>(
+      body: BlocBuilder<ManageRFQQuotationCubit, ManageRFQQuotationsState>(
         builder: (context, state) {
-          final quotations = state.quotations ?? [];
-
-          if (state.isLoading &&
-              state.rfqState == RFQState.rfqQuotationsState) {
-            return const Center(child: CustomLoadingIndicator());
-          }
-
-          if (quotations.isEmpty) {
-            return _buildEmptyState();
-          }
-
-          return _buildQuotationsList(quotations);
+          return state.whenOrNull(
+                loading: () {
+                  return const Center(child: CustomLoadingIndicator());
+                },
+                success: (response) {
+                  final quotations = response.data;
+                  if (quotations.isEmpty) {
+                    // If no Quotations Found
+                    return _buildEmptyState();
+                  }
+                  return _buildQuotationsList(quotations);
+                },
+              ) ??
+              const SizedBox();
         },
       ),
     );
@@ -206,7 +209,7 @@ class RFQQuotationsScreen extends StatelessWidget {
         context.pushNamed(
           Routes.quotationDetailsScreen,
           arguments: {
-            'cubit': context.read<QuotationCubit>(),
+            'cubit': context.read<ManageRFQQuotationCubit>(),
             'quotation': quotation,
           },
         );

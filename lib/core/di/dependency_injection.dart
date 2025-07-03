@@ -24,6 +24,8 @@ import '../../features/product_details/data/datasource/product_details_datasourc
 import '../../features/product_details/data/repos/product_details_repo.dart';
 import '../../features/profile/data/datasources/profile_datasource.dart';
 import '../../features/profile/data/repos/profile_repo.dart';
+import '../../features/rating&review/data/datasource/rating_review_datasource.dart';
+import '../../features/rating&review/data/repos/rating_review_repo.dart';
 import '../../features/reset_password/data/datasources/reset_password_data_source.dart';
 import '../../features/reset_password/data/repos/reset_password_repo.dart';
 import '../../features/signup/data/datasources/signup_data_source.dart';
@@ -76,6 +78,13 @@ Future<void> setUpGetIt() async {
     () => ProductDetailsDatasource(getIt()),
   );
 
+  // rating & reviews DI
+  getIt.registerLazySingleton<RatingReviewDatasource>(
+    () => RatingReviewDatasource(getIt()),
+  );
+  getIt.registerLazySingleton<RatingReviewRepo>(
+    () => RatingReviewRepo(getIt()),
+  );
   // Cart DI
   getIt.registerLazySingleton<CartRemoteDatasource>(
     () => CartRemoteDatasource(getIt()),

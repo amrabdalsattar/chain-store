@@ -56,3 +56,13 @@ class ItemRemovalErrorState extends CartState {
   final ApiErrorModel apiErrorModel;
   const ItemRemovalErrorState(this.apiErrorModel);
 }
+
+class ItemQuantityChangedState extends CartState {}
+
+class ChangeCartItemLoadingState extends CartState {}
+
+class ChangeCartItemErrorState extends CartState {
+  final ApiErrorModel error;
+
+  ChangeCartItemErrorState(this.error);
+}

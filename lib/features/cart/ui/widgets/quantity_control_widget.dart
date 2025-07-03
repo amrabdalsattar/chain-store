@@ -20,7 +20,9 @@ class QuantityControlWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(Icons.remove, size: 16.w, color: ColorsHelper.black),
+          InkWell(onTap: () {
+            
+          },child: Icon(Icons.remove, size: 16.w, color: ColorsHelper.black)),
           horizontalSpace(8),
           Text('$quantity', style: AppTextStyles.robotoBlackRegular12),
           horizontalSpace(8),

@@ -1,3 +1,5 @@
+import '../../../rating&review/data/models/review_model.dart';
+
 class ProductDetailsResponse {
   final String? sku;
   final String name;
@@ -9,7 +11,7 @@ class ProductDetailsResponse {
   final String categoryName;
   final List<String> sizes;
   final List<String> colors;
-  final List<dynamic> reviews;
+  final List<ReviewModel>? reviews;
   final num averageRating;
   final int totalRatings;
   final int totalReviews;
@@ -58,7 +60,14 @@ class ProductDetailsResponse {
               ?.map((e) => e.toString())
               .toList() ??
           [],
-      reviews: json['reviews'] as List<dynamic>? ?? [],
+      reviews:
+          (json['reviews'] as List<dynamic>?)
+              ?.map(
+                (review) =>
+                    ReviewModel.fromJson(review as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
       averageRating: json['averageRating'] ?? 0,
       totalRatings: json['totalRatings'] ?? 0,
       totalReviews: json['totalReviews'] ?? 0,

@@ -55,11 +55,9 @@ class QuotationSuccessScreen extends StatelessWidget {
                 title: 'View RFQs',
                 width: double.infinity,
                 onTap: () async {
-                  final quotationCubit = context.read<QuotationCubit>();
 
                   context.pushReplacementNamed(
                     Routes.manageRfQsScreenRoute,
-                    arguments: quotationCubit,
                   );
                 },
               ),

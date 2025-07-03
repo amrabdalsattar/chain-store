@@ -1,13 +1,9 @@
 part of '../screens/new_quotation_screen.dart';
 
-
 class RFQDetailsTextFieldWithAi extends StatelessWidget {
-  const RFQDetailsTextFieldWithAi({
-    super.key,
-    required this.cubit,
-  });
+  const RFQDetailsTextFieldWithAi({super.key, required this.cubit});
 
-  final QuotationCubit cubit;
+  final NewQuotationCubit cubit;
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +25,19 @@ class RFQDetailsTextFieldWithAi extends StatelessWidget {
           ),
         ),
         horizontalSpace(8),
-        BlocBuilder<QuotationCubit, QuotationState>(
+        BlocBuilder<NewQuotationCubit, NewQuotationState>(
           builder: (context, state) {
-            return IconButton(
-              icon:
-                  state.isLoading
-                      ? const CircularProgressIndicator()
-                      : const Icon(
-                        Icons.auto_fix_high,
-                        color: Colors.blue,
-                      ),
-              tooltip: 'Suggest with AI',
-              onPressed:
-                  state.isLoading
-                      ? null
-                      : () async {
-                        await cubit.suggestDetailsWithGemini();
-                      },
-            );
+            if (state is NewQuotationfillWithAiLoadingState) {
+              return const SizedBox(height: 30, child: SpinningLogo());
+            } else {
+              return IconButton(
+                icon: const Icon(Icons.auto_awesome),
+                tooltip: 'Suggest with AI',
+                onPressed: () async {
+                  await cubit.suggestDetailsWithGemini();
+                },
+              );
+            }
           },
         ),
       ],

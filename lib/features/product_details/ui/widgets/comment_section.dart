@@ -1,10 +1,16 @@
 part of '../product_details_screen.dart';
 
-class CommentSection extends StatelessWidget {
-  const CommentSection({super.key});
+class ReviewsSection extends StatelessWidget {
+  const ReviewsSection({super.key, required this.product});
+  final ProductDetailsResponse product;
 
   @override
   Widget build(BuildContext context) {
+    final reviews = product.reviews;
+    if (reviews == null || reviews.isEmpty) {
+      return SeeAllReviewButton(product: product);
+    }
+    final review = reviews.first;
     return Column(
       children: [
         Padding(
@@ -42,68 +48,39 @@ class CommentSection extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Tasneem Wael',
+                                review.customerName,
                                 style: AppTextStyles.robotoBlackMedium15,
                               ),
                             ],
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  '4.0',
-                                  style: AppTextStyles.robotoBlackMedium15,
-                                ),
-                                horizontalSpace(4),
-                                const RatingStars(rating: 4, size: 16),
-                              ],
-                            ),
-                          ],
-                        ),
+                        RatingStars(rating: review.rate, size: 16),
                       ],
                     ),
                     verticalSpace(8),
                     Text(
-                      'I wasn’t expecting much, but wow—this T-shirt is next-level comfy! The fabric feels super soft on the skin, and the fit is just right—not too tight, not too loose.',
+                      review.review,
                       style: AppTextStyles.robotoFadedBlackRegular16.copyWith(
                         fontSize: 14.sp,
                       ),
                     ),
                     verticalSpace(8),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.thumb_up_alt_outlined,
-                          size: 22,
-                          color: ColorsHelper.black,
-                        ),
-                        horizontalSpace(8),
-                        const Icon(
-                          Icons.thumb_down_alt_outlined,
-                          size: 22,
-                          color: ColorsHelper.black,
-                        ),
-                      ],
-                    ),
                   ],
                 ),
               ),
               Positioned(
-                top: -25,
-                left: -5,
+                top: -15,
+                left: -0,
                 child: Container(
-                  width: 50.w,
-                  height: 50.h,
+                  width: 45.w,
+                  height: 45.h,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: ColorsHelper.liteGray,
                   ),
                   child: ClipOval(
-                    child: Image.network(
-                      'https://cdn2.vectorstock.com/i/1000x1000/54/41/young-and-elegant-woman-avatar-profile-vector-9685441.jpg',
+                    child: CustomImageWidget(
+                      imageUrl: review.customerImage,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -113,22 +90,7 @@ class CommentSection extends StatelessWidget {
           ),
         ),
         verticalSpace(10),
-        Container(
-          padding: EdgeInsets.only(right: 20.w),
-          alignment: Alignment.centerRight,
-          child: TextButton(
-            onPressed: () {
-              context.pushNamed(Routes.rattingScreenRoute);
-            },
-            child: Text(
-              'See All Reviews',
-              style: AppTextStyles.robotoBlackBold12.copyWith(
-                color: ColorsHelper.fadedBlack,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ),
-        ),
+        SeeAllReviewButton(product: product),
       ],
     );
   }

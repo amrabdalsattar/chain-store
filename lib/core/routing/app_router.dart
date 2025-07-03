@@ -14,8 +14,15 @@ import '../../features/cart/ui/shopping_cart_screen.dart';
 import '../../features/home/data/models/suppliers_response_model.dart';
 import '../../features/order_history/logic/cubit/orders_cubit.dart';
 import '../../features/order_history/ui/orders_history_screen.dart';
+import '../../features/product_details/data/models/product_details_response.dart';
+import '../../features/product_details/logic/cubit/product_details_cubit.dart';
 import '../../features/product_details/ui/product_details_screen.dart';
-import '../../features/product_details/ui/ratings_reviews_screen.dart';
+import '../../features/quotation/logic/manage_rfq_cubit/cubit/manage_rfq_cubit.dart';
+import '../../features/quotation/logic/new_quotation_cubit/cubit/new_quotation_cubit.dart';
+import '../../features/quotation/logic/manage_rfq_quotations_cubit/cubit/manage_rfq_quotations_cubit.dart';
+import '../../features/rating&review/logic/cubit/rating_reviews_cubit.dart';
+import '../../features/rating&review/ui/ratings_reviews_screen.dart';
+import '../../features/profile/ui/custom_support_screen.dart';
 import '../../features/quotation/data/models/quotation_model.dart';
 import '../../features/quotation/logic/cubit/quotation_cubit.dart';
 import '../../features/quotation/ui/screens/manage_rfqs_screen.dart';
@@ -71,36 +78,37 @@ class AppRouter {
       case Routes.rfqScreen:
         return CustomAnimationsBuilder.buildSlideRoute(
           screen: BlocProvider(
-            create: (context) => QuotationCubit(getIt())..fetchCategories(),
+            create: (context) => QuotationCubit(getIt()),
             child: const RfqScreen(),
           ),
           settings: settings,
         );
-      case Routes.quotationSuccessScreenRoute:
-        final quotationCubit = arguments as QuotationCubit;
+      case Routes.customerSupportScreenRoute:
         return CustomAnimationsBuilder.buildSlideRoute(
-          screen: BlocProvider.value(
-            value: quotationCubit,
-            child: const QuotationSuccessScreen(),
-          ),
+          screen: const CustomSupportScreen(),
+          settings: settings,
+        );
+      case Routes.quotationSuccessScreenRoute:
+        return CustomAnimationsBuilder.buildSlideRoute(
+          screen: const QuotationSuccessScreen(),
           settings: settings,
         );
 
       case Routes.manageRfQsScreenRoute:
-        final quotationCubit = arguments as QuotationCubit;
         return CustomAnimationsBuilder.buildSlideRoute(
-          screen: BlocProvider.value(
-            value: quotationCubit,
+          screen: BlocProvider(
+            create: (context) => ManageRFQCubit(getIt()),
             child: const ManageRfqsScreen(),
           ),
           settings: settings,
         );
       case Routes.newQuotationScreenRoute:
-        final quotationCubit = arguments as QuotationCubit;
-
         return CustomAnimationsBuilder.buildSlideRoute(
-          screen: BlocProvider.value(
-            value: quotationCubit,
+          screen: BlocProvider(
+            create:
+                (context) =>
+                    NewQuotationCubit(quotationRepo: getIt())
+                      ..fetchCategories(),
             child: const NewQuotationScreen(),
           ),
           settings: settings,
@@ -115,8 +123,21 @@ class AppRouter {
           settings: settings,
         );
       case Routes.rattingScreenRoute:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        final ProductDetailsResponse product = args['product'];
+        final ProductDetailsCubit cubit = args['cubit'];
         return CustomAnimationsBuilder.buildSlideRoute(
-          screen: const RatingsReviewsScreen(),
+          screen: BlocProvider.value(
+            value: cubit,
+            child: BlocProvider(
+              create:
+                  (_) =>
+                      RatingReviewsCubit(getIt(), cubit)
+                        ..setProductId(cubit.productId),
+              child: RatingsReviewsScreen(product: product),
+            ),
+          ),
           settings: settings,
         );
 
@@ -225,22 +246,21 @@ class AppRouter {
         final args = settings.arguments as Map<String, dynamic>;
 
         final quotation = args['quotation'] as QuotationModel;
-        final cubit = args['cubit'] as QuotationCubit;
+        final cubit = args['cubit'] as ManageRFQQuotationCubit;
         return CustomAnimationsBuilder.buildFadeTransition(
           screen: BlocProvider.value(
-            value: cubit,
+            value: cubit..setCurrentQuotation(quotation),
             child: QuotationDetailsScreen(quotation: quotation),
           ),
           settings: settings,
         );
       case Routes.rfqQuotationScreen:
-        final args = settings.arguments as Map<String, dynamic>;
-
-        final cubit = args['cubit'] as QuotationCubit;
-        final rfqId = args['rfqId'] as String;
-        return CustomAnimationsBuilder.buildFadeTransition( 
-          screen: BlocProvider.value(
-            value: cubit..fetchRFQQuotations(rfqId),
+        final rfqId = arguments as String;
+        return CustomAnimationsBuilder.buildFadeTransition(
+          screen: BlocProvider(
+            create:
+                (context) =>
+                    ManageRFQQuotationCubit(getIt())..fetchRFQQuotations(rfqId),
             child: const RFQQuotationsScreen(),
           ),
           settings: settings,

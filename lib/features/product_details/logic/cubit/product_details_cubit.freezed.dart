@@ -413,7 +413,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
     return _then(
       _$LoadedImpl(
         null == prodcut
-            ? _value.product
+            ? _value.prodcut
             : prodcut // ignore: cast_nullable_to_non_nullable
                 as ProductDetailsResponse,
       ),
@@ -424,14 +424,14 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(this.product);
+  const _$LoadedImpl(this.prodcut);
 
   @override
-  final ProductDetailsResponse product;
+  final ProductDetailsResponse prodcut;
 
   @override
   String toString() {
-    return 'ProductDetailsState.loaded(prodcut: $product)';
+    return 'ProductDetailsState.loaded(prodcut: $prodcut)';
   }
 
   @override
@@ -439,11 +439,11 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            (identical(other.product, product) || other.product == product));
+            (identical(other.prodcut, prodcut) || other.prodcut == prodcut));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, product);
+  int get hashCode => Object.hash(runtimeType, prodcut);
 
   /// Create a copy of ProductDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -467,7 +467,7 @@ class _$LoadedImpl implements _Loaded {
     )
     attributeChanged,
   }) {
-    return loaded(product);
+    return loaded(prodcut);
   }
 
   @override
@@ -484,7 +484,7 @@ class _$LoadedImpl implements _Loaded {
     )?
     attributeChanged,
   }) {
-    return loaded?.call(product);
+    return loaded?.call(prodcut);
   }
 
   @override
@@ -503,7 +503,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(product);
+      return loaded(prodcut);
     }
     return orElse();
   }
@@ -552,7 +552,7 @@ class _$LoadedImpl implements _Loaded {
 abstract class _Loaded implements ProductDetailsState {
   const factory _Loaded(final ProductDetailsResponse prodcut) = _$LoadedImpl;
 
-  ProductDetailsResponse get product;
+  ProductDetailsResponse get prodcut;
 
   /// Create a copy of ProductDetailsState
   /// with the given fields replaced by the non-null parameter values.

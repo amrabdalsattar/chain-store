@@ -20,6 +20,7 @@ class RattingSection extends StatelessWidget {
               style: AppTextStyles.rubikBlackBold15,
             ),
             verticalSpace(4),
+            // Stars lPart
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
@@ -36,7 +37,7 @@ class RattingSection extends StatelessWidget {
             ),
             verticalSpace(4),
             Text(
-              '${product.totalRatings} Rating & ${product.reviews.length} Reviews',
+              '${product.totalRatings} Rating & ${product.reviews?.length ?? 0} Reviews',
               style: TextStyle(
                 fontFamily: 'Rubik',
                 fontSize: 14.sp,

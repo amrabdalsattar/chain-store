@@ -21,6 +21,7 @@ class CartBlocBuilder extends StatelessWidget {
               current is LoadingCartInfoState ||
               current is LoadedCartInfoState ||
               current is EmptyCartState ||
+              current is ItemQuantityChangedState ||
               current is ErrorCartState,
       builder: (context, state) {
         switch (state) {
